@@ -53,7 +53,6 @@
   * 파일/스토리지(storage, media)
   * 회원/인증(user)
   * 모바일(mobile)
-  * 에디터(editor)
   * 권한(permission)
   * 카테고리(category)
   * 데이터베이스(database)
