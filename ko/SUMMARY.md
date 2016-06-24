@@ -17,25 +17,25 @@
 
 * XE 기본구조
   * 라이프 사이클
-  * 디렉토리 구조
+  * 디렉토리 구조 `first`
   * 서비스
   * 컴포넌트*(각 컴포넌트에 대한 소개 및 사용법. 제작법은 미포함)*
-  * 플러그인
+  * 플러그인 `first`
 
 
 
 * 플러그인
-  * 플러그인 생성하기
+  * 플러그인 생성하기 `first`
   * 플러그인 구조
   * 다국어 지원
-  * 버전 관리(install, update)
-  * 페이지 추가
+  * 버전 관리(install, update) `first`
+  * 페이지 추가 `first`
   * 관리페이지 추가
   * 컴포넌트 등록
 
 
 * 컴포넌트 제작
-  * 테마
+  * 테마 `first`
   * 스킨
   * 위젯
   * 모듈
@@ -51,7 +51,7 @@
   * 댓글(comment)
   * 이벤트/인터셉션(event/interception)
   * 파일/스토리지(storage, media)
-  * 회원/인증(user)
+  * 회원/인증(user) `first`
   * 모바일(mobile)
   * 권한(permission)
   * 카테고리(category)
