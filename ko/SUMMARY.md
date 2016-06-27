@@ -15,7 +15,7 @@
        * config 디렉토리
 * XE 기본구조
    * [라이프 사이클](lifecycle.md)
-   * 디렉토리 구조 `first`
+   * [디렉토리 구조 `first`](structure.md)
    * 서비스
    * 컴포넌트*(각 컴포넌트에 대한 소개 및 사용법. 제작법은 미포함)*
    * 플러그인 `first`
