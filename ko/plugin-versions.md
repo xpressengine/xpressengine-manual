@@ -1,2 +1,2 @@
-# 버전 관리(install, update) `first`
+# 플러그인 버전 관리
 
