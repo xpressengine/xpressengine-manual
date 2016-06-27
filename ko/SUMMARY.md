@@ -20,7 +20,7 @@
    * 컴포넌트*(각 컴포넌트에 대한 소개 및 사용법. 제작법은 미포함)*
    * [플러그인 `first`](plugin.md)
 * 플러그인
-   * 플러그인 생성하기 `first`
+   * [플러그인 생성하기 `first`](make-plugin.md)
    * 플러그인 구조
    * 다국어 지원
    * 버전 관리(install, update) `first`
