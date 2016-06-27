@@ -23,7 +23,7 @@
    * [플러그인 생성하기 `first`](make-plugin.md)
    * 플러그인 구조
    * 다국어 지원
-   * 버전 관리(install, update) `first`
+   * [버전 관리(install, update) `first`](plugin-versions.md)
    * 페이지 추가
    * 관리페이지 추가
    * 컴포넌트 등록
