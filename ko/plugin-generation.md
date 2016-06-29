@@ -5,3 +5,4 @@
 ```
 $ php artisan make:plugin <plugin_id> <plugin_namespace> <plugin_title>
 ```
+
