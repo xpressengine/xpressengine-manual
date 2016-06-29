@@ -4,20 +4,31 @@
 
 
 * 시작하기
-  > test
-
   * 설치하기
     * git 저장소 사용하기
-    * 터미널에서 설치하기
+      > git clone, composer update, php artisan xe:install을 사용하여 xe를 설치하는 방법에 대한 설명
+
+    * 인스톨러로 설치하기
+      > 터미널에서 installer를 사용하여 xe를 설치하는 방법에 대한 설명
+
     * 웹 인스톨러로 설치하기
-  * 웹서버 설정
+      > web installer로 설치하는 방법에 대한 설명
+
+  * 서버 환경 설정
+    > linux/window: composer 및 file permission 안내
+    > apache/nginx: rewrite 안내 등 각 서버별 유의사항 설명
+
+    * linux
+    * window
     * apache
     * nginx
-    * window
   * 사이트 설정
+    > 각 config 파일의 용도 설명, cascading config 설명
+
     * .env 사용하기
     * config 디렉토리
   * 업데이트
+    > xe core의 업데이트 방법 설명
 
 
 * XE 기본구조
