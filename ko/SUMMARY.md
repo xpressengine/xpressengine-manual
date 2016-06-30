@@ -18,7 +18,7 @@
 * XE 기본구조
    * [라이프 사이클](lifecycle.md)
    * [디렉토리 구조 `first`](structure.md)
-   * 서비스
+   * [서비스](service.md)
    * [컴포넌트](components.md)
    * [플러그인 `first`](plugin.md)
 * 플러그인
