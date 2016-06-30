@@ -44,7 +44,7 @@
    * 댓글(comment)
    * 이벤트/인터셉션(event/interception)
    * 파일/스토리지(storage, media)
-   * 회원/인증(user) `first`
+   * [회원/인증(user) `first`](user.md)
    * 모바일(mobile)
    * 권한(permission)
    * 카테고리(category)
