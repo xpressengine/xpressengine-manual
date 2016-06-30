@@ -6,10 +6,10 @@
 $ php artisan make:plugin <name> <namespace> <title>
 ```
 
-`name` 파라메터는 플러그인을 인식할 때 사용하는 플러그인의 id입니다. 플러그인의 디렉토리명으로도 사용됩니다.
+`name` 파라메터는 플러그인의 고유 id입니다. 플러그인의 디렉토리 이름으로도 사용됩니다.
 
 `namespace` 파라메터에는 플러그인 클래스의 네임스페이스를 지정합니다. 지정한 네임스페이스는 플러그인 클래스 뿐만 아니라 플러그인 내에 존재하는 모든 PHP 클래스의 네임스페이스로도 사용됩니다. 이 네임스페이스는 다른 개발자가 작성한 클래스와 클래스명이 동일할 때 서로 구분하기 위해 사용됩니다. 다른 사람과 중복되지 않는 자신만의 고유한 네임스페이스를 지정하십시오. 가능하면 자신의 이름이나 소속회사명을 사용하시길 권장합니다. 
 
-예를 들어, 본인의 이름이 'SungbumHong'이고 'blog' 플러그인이라면 `SungbumHong\XePlugins\Blog`를 네임스페이스로 사용하십시오. 또다른 플러그인 'cafe'가 있다면, cafe 플러그인에는 `SungbumHong\XePlugins\Cafe`를 네임스페이스로 사용할 수 있습니다.
+예를 들어, 본인의 이름이 'SungbumHong'이고 'blog' 플러그인이라면 `SungbumHong\XePlugins\Blog` 또는 `SungbumHong\Blog`를 네임스페이스로 사용하십시오. 또다른 플러그인 'cafe'가 있다면, cafe 플러그인에는 `SungbumHong\XePlugins\Cafe`를 네임스페이스로 사용할 수 있습니다.
 
 
