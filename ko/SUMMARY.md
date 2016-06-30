@@ -19,7 +19,7 @@
    * [라이프 사이클](lifecycle.md)
    * [디렉토리 구조 `first`](structure.md)
    * 서비스
-   * 컴포넌트
+   * [컴포넌트](components.md)
    * [플러그인 `first`](plugin.md)
 * 플러그인
    * [플러그인 생성하기 `first`](plugin-generation.md)
