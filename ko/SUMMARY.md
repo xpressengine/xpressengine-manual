@@ -56,7 +56,8 @@
    * 카테고리(category)
    * 데이터베이스(database)
    * 메일(email)
-   * ...
+   * 프론트엔드(Frontend)
+   * 이미지처리(Image)
    * 헬퍼(helpers)
 * 콘솔명령
    * 명령어 목록
