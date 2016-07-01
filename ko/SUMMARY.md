@@ -3,20 +3,20 @@
 * [Introduction](README.md)
 * 시작하기
    * 설치하기
-     * git 저장소 사용하기
-     * 인스톨러로 설치하기
-     * 웹 인스톨러로 설치하기
+       * git 저장소 사용하기
+       * 인스톨러로 설치하기
+       * 웹 인스톨러로 설치하기
    * 서버 환경 설정
-     * linux
-     * window
-     * apache
-     * nginx
+       * linux
+       * window
+       * apache
+       * nginx
    * 업데이트
- * 사이트 설정
+       * 사이트 설정
    * .env
    * config 디렉토리
    * 관리페이지 URL 변경
-   * 디버깅
+   * [디버깅](debugging.md)
 * XE 구조
    * [디렉토리 구조 `first`](structure.md)
    * [컴포넌트](components.md)
@@ -66,4 +66,4 @@
 * 콘솔명령
    * 명령어 목록
    * ...
-* 
+
