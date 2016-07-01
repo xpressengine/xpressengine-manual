@@ -4,7 +4,7 @@
 
 플러그인 개발자들은 자신의 원하는 타입의 컴포넌트를 제작하여 사용할 수 있습니다. 플러그인을 하나 생성한 다음, 플러그인에 컴포넌트를 제작하여 넣으십시오. 그 다음 플러그인을 통해 컴포넌트를 XE에 등록할 수 있습니다. 
 
-예를 들어, 테마를 제작하여 XE에 등록하고 싶을 수 있습니다. 
+예를 들어, 어떤 개발자가 테마를 직접 제작하여 XE에서 사용하고 싶을 수 있습니다. 테마 개발자는 테마의 이름을 'white'로 정합니다. 테마 개발자는 빈 플러그인을 하나 생성하고, 테마 컴포넌트를 규칙에 
 
 
 
@@ -16,16 +16,16 @@ XE는 기본적으로 11개 타입의 컴포넌트를 가지고 있습니다. �
 
 ```
 \Xpressengine\Plugin\ComponentInterface
-  ├── \Xpressengine\Theme\AbstractTheme
-  ├── \Xpressengine\Module\AbstractModule
-  ├── \Xpressengine\Skin\AbstractSkin
-  ├── \Xpressengine\DynamicField\AbstractType
-  ├── \Xpressengine\DynamicField\AbstractSkin
-  ├── \Xpressengine\ToggleMenu\AbstractToggleMenu
-  ├── \Xpressengine\UIObject\AbstractUIObject
-  ├── \Xpressengine\Widget\AbstractWidget
-  ├── \Xpressengine\Editor\AbstractEditor
-  └── \Xpressengine\Editor\AbstractTool
+  ├── 테마 - \Xpressengine\Theme\AbstractTheme
+  ├── 모듈 - \Xpressengine\Module\AbstractModule
+  ├── 스킨 - \Xpressengine\Skin\AbstractSkin
+  ├── 다이나믹필드 타입 - \Xpressengine\DynamicField\AbstractType
+  ├── 다이나믹필드 스킨 - \Xpressengine\DynamicField\AbstractSkin
+  ├── 토글메뉴 - \Xpressengine\ToggleMenu\AbstractToggleMenu
+  ├── UI오브젝트 - \Xpressengine\UIObject\AbstractUIObject
+  ├── 위젯 - \Xpressengine\Widget\AbstractWidget
+  ├── 에디터 - \Xpressengine\Editor\AbstractEditor
+  └── 에디터툴 - \Xpressengine\Editor\AbstractTool
 ```
 
 
