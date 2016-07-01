@@ -13,9 +13,8 @@
        * nginx
    * 업데이트
 * 사이트 설정
-   * [.env](env.md)
    * [config 디렉토리](configurations.md)
-   * 관리페이지 URL 변경
+   * [.env](env.md)
    * [디버깅](debugging.md)
 * XE 구조
    * [디렉토리 구조 `first`](structure.md)
