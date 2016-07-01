@@ -28,7 +28,7 @@
    * 응답(Response)
    * 프리젠터(Presenter)
    * 템플릿(Blade Template)
-* 플러그인 제작
+* 플러그인
    * [플러그인 생성하기 `first`](plugin-generation.md)
    * [플러그인 구조](plugin-structure.md)
    * 다국어 지원
