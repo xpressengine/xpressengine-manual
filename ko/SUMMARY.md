@@ -15,8 +15,9 @@
      * .env 사용하기
      * config 디렉토리
    * 업데이트
+* 기본 사용법
    * 
-* XE 기본구조
+* XE 구조
    * [라이프 사이클](lifecycle.md)
    * [디렉토리 구조 `first`](structure.md)
    * [컴포넌트](components.md)
