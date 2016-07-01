@@ -49,6 +49,7 @@
    * 권한(permission)
    * 카테고리(category)
    * 데이터베이스(database)
+   * 메일(email)
    * ...
    * 헬퍼(helpers)
 * 콘솔명령
