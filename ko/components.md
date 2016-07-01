@@ -10,12 +10,13 @@
 
 ## 컴포넌트 인터페이스
 
-모든 컴포넌트는 `Xpressengine\Plugin\ComponentInterface` 인터페이스를 구현한 클래스를 가지고 있어야 합니다.
-이 인터페이스는 각 컴포넌트의 기본적인 정보를 
+모든 컴포넌트는 `Xpressengine\Plugin\ComponentInterface` 인터페이스를 구현한 클래스를 가지고 있어야 합니다. 이 인터페이스는 컴포넌트를 XE에 등록할 때 필요한 규칙을 한정해주는 역할을 합니다.
 
 ## 컴포넌트 타입
 
-XE는 기본적으로 11개 타입의 컴포넌트를 가지고 있습니다. 각 타입의 컴포넌트는 모두 `\Xpressengine\Plugin\ComponentInterface` 클래스를 구현한 추상클래스를 정의하고 있습니다.
+XE는 기본적으로 11개 타입의 컴포넌트를 가지고 있습니다. 각 타입의 컴포넌트는 모두 `\Xpressengine\Plugin\ComponentInterface` 클래스를 구현한 추상클래스를 정의하고 있습니다. 또, 여러분이 어떤 타입의 컴포넌트를 제작하고 싶다면, 그 타입의 추상클래스를 상속받는 클래스를 하나 정의해야 합니다.
+
+만약, 테마 컴포넌트를 하나 제작하려고 한다면 테마 타입의 추상클래스인 `\Xpressengine\Theme\AbstractTheme`를 상속받는 클래스를 정의해야 합니다.
 
 ```
 \Xpressengine\Plugin\ComponentInterface
