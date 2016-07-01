@@ -14,7 +14,7 @@
    * 업데이트
        * 사이트 설정
    * [.env](env.md)
-   * config 디렉토리
+   * [config 디렉토리](configurations.md)
    * 관리페이지 URL 변경
    * [디버깅](debugging.md)
 * XE 구조
