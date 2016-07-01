@@ -11,12 +11,12 @@
      * window
      * apache
      * nginx
-   * 사이트 설정
-     * .env 사용하기
-     * config 디렉토리
-     * 관리페이지 URL 변경
-     * 디버깅
    * 업데이트
+ * 사이트 설정
+   * .env
+   * config 디렉토리
+   * 관리페이지 URL 변경
+   * 디버깅
 * XE 구조
    * [디렉토리 구조 `first`](structure.md)
    * [컴포넌트](components.md)
