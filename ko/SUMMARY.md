@@ -14,6 +14,7 @@
    * 사이트 설정
      * .env 사용하기
      * config 디렉토리
+     * 디버깅
    * 업데이트
 * XE 구조
    * [디렉토리 구조 `first`](structure.md)
@@ -50,13 +51,13 @@
    * 댓글(comment)
    * 이벤트/인터셉션(event/interception)
    * 파일/스토리지(storage, media)
-   * [회원/인증(user) `first`](user.md)
+   * [회원/인증(user/auth) `first`](user.md)
    * 모바일(mobile)
    * 권한(permission)
    * 카테고리(category)
    * 데이터베이스(database)
    * 메일(email)
-   * 프론트엔드(Frontend)
+   * 프론트엔드(frontend/assets)
    * 이미지처리(Image)
    * 세션(Session)
    * 쿠키(Cookie)
@@ -64,5 +65,4 @@
 * 콘솔명령
    * 명령어 목록
    * ...
-* 디버깅
 * 
