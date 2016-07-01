@@ -1,5 +1,4 @@
 # config 디렉토리
 
 > cascading config 사용법 안내.
-> config cache 사용법 안내
-> 
+> config cache command 사용법 안내
