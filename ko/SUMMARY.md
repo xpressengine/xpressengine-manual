@@ -13,7 +13,7 @@
        * nginx
    * 업데이트
        * 사이트 설정
-   * .env
+   * [.env](env.md)
    * config 디렉토리
    * 관리페이지 URL 변경
    * [디버깅](debugging.md)
