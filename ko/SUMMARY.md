@@ -37,7 +37,7 @@
    * [버전 관리(install, update) `first`](plugin-versions.md)
    * 관리페이지 추가
    * 컴포넌트 등록
-* 컴포넌트 제작
+* 컴포넌트
    * [테마 `first`](component-theme.md)
    * 스킨
    * 위젯
