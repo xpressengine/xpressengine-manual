@@ -16,9 +16,14 @@
      * config 디렉토리
    * 업데이트
 * 기본 사용법
-   * 
-* XE 구조
    * [라이프 사이클](lifecycle.md)
+   * 라우팅(routing)
+   * 컨트롤러(Controllers)
+   * 요청(Request)
+   * 응답(Response)
+   * 프리젠터(Presenter)
+   * 템플릿(Blade Template)
+* XE 구조
    * [디렉토리 구조 `first`](structure.md)
    * [컴포넌트](components.md)
    * [플러그인 `first`](plugin.md)
