@@ -15,6 +15,11 @@
      * .env 사용하기
      * config 디렉토리
    * 업데이트
+* XE 구조
+   * [디렉토리 구조 `first`](structure.md)
+   * [컴포넌트](components.md)
+   * [플러그인 `first`](plugin.md)
+   * [서비스](service.md)
 * 기본 사용법
    * [라이프 사이클](lifecycle.md)
    * 라우팅(routing)
@@ -23,17 +28,11 @@
    * 응답(Response)
    * 프리젠터(Presenter)
    * 템플릿(Blade Template)
-* XE 구조
-   * [디렉토리 구조 `first`](structure.md)
-   * [컴포넌트](components.md)
-   * [플러그인 `first`](plugin.md)
-   * [서비스](service.md)
-* 플러그인
+* 플러그인 제작
    * [플러그인 생성하기 `first`](plugin-generation.md)
    * [플러그인 구조](plugin-structure.md)
    * 다국어 지원
    * [버전 관리(install, update) `first`](plugin-versions.md)
-   * 페이지 추가
    * 관리페이지 추가
    * 컴포넌트 등록
 * 컴포넌트 제작
@@ -62,3 +61,5 @@
 * 콘솔명령
    * 명령어 목록
    * ...
+* 디버깅
+* 
