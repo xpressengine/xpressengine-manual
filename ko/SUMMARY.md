@@ -3,18 +3,19 @@
 * [Introduction](README.md)
 * 시작하기
    * 설치하기
-       * git 저장소 사용하기
-       * 인스톨러로 설치하기
-       * 웹 인스톨러로 설치하기
+     * git 저장소 사용하기
+     * 인스톨러로 설치하기
+     * 웹 인스톨러로 설치하기
    * 서버 환경 설정
-       * linux
-       * window
-       * apache
-       * nginx
+     * linux
+     * window
+     * apache
+     * nginx
    * 사이트 설정
-       * .env 사용하기
-       * config 디렉토리
+     * .env 사용하기
+     * config 디렉토리
    * 업데이트
+   * 
 * XE 기본구조
    * [라이프 사이클](lifecycle.md)
    * [디렉토리 구조 `first`](structure.md)
