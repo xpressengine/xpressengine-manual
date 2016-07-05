@@ -284,6 +284,7 @@ $userEmailRepository = XeUser::pendingEmails();
 
 #### 이메일 생성
 
+...
 
 #### 이메일 수정
 
@@ -298,6 +299,7 @@ $userEmailRepository = XeUser::pendingEmails();
 
 #### 그룹 조회
 
+...
 
 #### 그룹 생성
 
@@ -317,54 +319,18 @@ XeUser::deleteGroup($group);
 
 #### 그룹 수정
 
+...
+
 #### 그룹 삭제
 
-
-
-
-
-
----
-
-
-
-UserHandler에서 제공하는 생성(create), 삭제(delete), 업데이트(update) 기능은 아래 코드를 참고하십시오.
-
-
-// 이메일정보 생성/수정/삭제
-$user = XeUser::find('123');
-$data = [
-'address' => 'foo@email.com'
-];
-$confirmed = true; // 승인|승인대기 이메일 구분
-
-$email = XeUser::createEmail($user, $data, $confirmed);
-XeUser::updateEmail($email, ['address' => 'bar@email.com']);
-XeUser::deleteEmail($email);
-
-
-### 회원 부가 정보
-
-계정(account), 이메일(email), 승인대기 이메일(pending email), 그룹(group)과 같은 회원의 부가 정보를 조회할 때에는  각각의 Repository를 사용하십시오.
-
-```php
-// 각 Repository의 로드
-$accountRepository = XeUser::accounts();
-$emailRepository = XeUser::emails();
-$pendingEmailRepository = XeUser::pendingEmails();
-$groupRepository = XeUser::groups();
-```
-
-
-
-
-
-
+...
 
 
 
 
 ## 인증
+
+#### 현재 로그인한 사용자 조회
 
 #### 로그인
 
