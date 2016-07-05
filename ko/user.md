@@ -311,19 +311,20 @@ $groupData = [
 ];
 
 $group = XeUser::createGroup($groupData);
-XeUser::updateGroup($group, ['name' => '기본회원']);
-XeUser::deleteGroup($group);
-
 ```
 
 
 #### 그룹 수정
 
-...
+```php
+XeUser::updateGroup($group, ['name' => '기본회원']);
+```
 
 #### 그룹 삭제
 
-...
+```php
+XeUser::deleteGroup($group);
+```
 
 
 
