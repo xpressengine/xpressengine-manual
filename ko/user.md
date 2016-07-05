@@ -129,9 +129,9 @@ $newUser = XeUser::create($data);
 ```php
 // 순수 회원정보만 등록
 $data = [
-'displayName' => 'foo',
-'email' => 'foo@email.com',
-'password' => '...'
+  'displayName' => 'foo',
+  'email' => 'foo@email.com',
+  'password' => '...'
 ]
 
 $newUser = XeUser::users()->create($data);
