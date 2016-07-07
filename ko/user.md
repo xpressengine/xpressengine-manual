@@ -35,22 +35,23 @@ XE는 이메일 정보를 `\Xpressengine\User\Models\UserAccount` 엘로퀀트 �
 
 회원은 하나의 승인대기 이메일을 가질 수 있습니다. 신규회원이 가입할 때 입력한 이메일은 승인대기 이메일로 등록됩니다. 승인대기 이메일은 승인된 이메일과 별도의 테이블에 저장되며, 이메일 인증과정을 거친 후에 승인된 이메일로 등록됩니다.
 
-XE는 승인대기이메일 정보를 `\Xpressengine\User\Models\UserAccount` 엘로퀀트 모델로 표현하며 `user_pending_email` 테이블에 저장합니다.
-
+XE는 승인대기 이메일 정보를 `\Xpressengine\User\Models\UserAccount` 엘로퀀트 모델로 표현하며 `user_pending_email` 테이블에 저장합니다.
 
 > 사이트 관리자가 '이메일 인증' 기능을 사용하도록 설정했을 경우, 가입시 등록한 이메일 승인대기 이메일에 등록됩니다. 만약 이메일 인증 기능을 사용하지 않는다면, 가입과 동시에 일반 이메일로 등록됩니다.
+
 
 #### 회원등급
 
 한명의 회원은 3개의 회원등급(최고관리자, 관리자, 일반회원) 중 하나를 부여받습니다. `최고관리자(super)`는 사이트 내에서 모든 권한을 가지는 운영자입니다. `관리자(manager)`는 일반적으로 사이트를 함께 관리하는 부운영자라고 생각할 수 있습니다. `일반회원(member)`는 사이트에 사용자인 일반적인 회원입니다.
 
-회원등급은 별도의 테이블에 저장되지 않으며, 회원 테이블의 `rating` 컬럼에 저장됩니다.
-
+회원등급은 별도의 테이블에 저장되지 않으며, 회원(user) 테이블의 `rating` 컬럼에 저장됩니다.
 
 
 #### 그룹
 
 회원그룹은 회원을 자유롭게 그루핑할 때 사용합니다. 사이트관리자는 자유롭게 회원그룹을 생성할 수 있고, 회원을 다수의 회원그룹에 소속시킬 수 있습니다. 회원그룹은 권한을 부여받을 수 있는 대상이 될 수 있습니다.
+
+XE는 그룹 정보를 `\Xpressengine\User\Models\UserGroup` 엘로퀀트 모델로 표현하며 `user_group` 테이블에 저장합니다. 또, 회원과 회원이 소속된 그룹의 관계는 `user_group_user` 테이블에 저장됩니다.
 
 
 
@@ -299,16 +300,41 @@ $userEmailRepository = XeUser::pendingEmails();
 
 #### 이메일 생성
 
-...
+회원 이메일을 생성할 때에는 `XeUser`파사드의 `createEmail` 메소드를 사용하십시오.
+
+```php
+$user = XeUser::find('123');
+
+$emailData = [
+  'address' => 'foo@bar.com'
+];
+
+$email = XeUser::createEmail($user, $emailData, true);
+```
+
+`createEmail` 메소드의 마지막 메소드는 생성하는 이메일의 승인 여부를 지정합니다. `true`이면 승인된 이메일로 저장되며, `false`이면 승인대기 이메일로 저장됩니다.
+
 
 #### 이메일 수정
 
-...
+기등록 된 이메일(또는 승인대기 이메일)을 수정할 수 있습니다. `XeUser::updateEmail`을 사용하십시오.
+
+```php
+$email->address = 'foo@bar.com';
+XeUser::updateEmail($email);
+
+// or
+
+XeUser::updateEmail($email, ['address'=>'foo@bar.com']);
+```
 
 #### 이메일 삭제
 
-...
+이메일(또는 승인대기 이메일)을 삭제할 수 있습니다. `XeUser::deleteEmail`을 사용하십시오.
 
+```php
+XeUser::deleteEmail($email);
+```
 
 ### 회원 그룹 관리 
 
