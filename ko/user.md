@@ -383,6 +383,18 @@ XeUser::deleteGroup($group);
 $user = Auth::user();
 ```
 
+또는 request 인스턴스를 사용할 수도 있습니다.
+
+```php
+$user = request()->user();
+```
+
+로그인한 사용자의 아이디(id)만 조회할 수도 있습니다.
+
+```php
+$loggedUserId = Auth::id();
+```
+
 #### 로그인 상태 조회
 
 `check` 메소드를 사용하면 접속 중인 사용자가 로그인을 한 상태인지 조회할 수 있습니다.
