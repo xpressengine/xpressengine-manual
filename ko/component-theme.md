@@ -53,14 +53,19 @@ plugins/my_plugin/theme/
     └── theme.blade.php
 ```
 
+`Theme.php`는 테마클래스 파일입니다. 모든 테마 클래스 파일은 테마 컴포넌트의 추상 클래스인 `\Xpressengine\Theme\AbstractTheme` 클래스를 상속받아야 합니다. 하지만 테마 생성 커맨드로 생성된 테마의 클래스는 `GenericTheme` 클래스를 상속받고 있습니다. `GenericTheme` 클래스는 테마 제작자들에게 규격화 된 테마 구조를 제공하므로써 테마 제작 작업을 손쉽게 할 수 있도록 도와줍니다. `Theme.php` 파일은 처음 생성된 다음에는 수정할 필요가 없습니다. 다만,
+
+`assets` 디렉토리에는 테마에 필요한 js나 css 또는 이미지와 같은 asset 파일을 추가하십시오.
 
 
 
-테마 출력
 
-테마 편집
 
-테마 설정
+## 테마 출력
+
+## 테마 편집
+
+## 테마 설정
 
 
 
