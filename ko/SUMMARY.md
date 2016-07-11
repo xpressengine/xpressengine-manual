@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * 시작하기
-   * 설치하기
+   * [설치하기](c124_ce58_d558_ae30.md)
        * [git 저장소 사용하기](git_c800_c7a5_c18c_c0ac_c6a9_d558_ae30.md)
        * 인스톨러로 설치하기
        * 웹 인스톨러로 설치하기
