@@ -34,8 +34,38 @@ $ composer install
 ...
 $ php artisan xe:install
 ...
+```
 
 위 명령어 실행하면 인스톨이 시작되면 설치 정보를 입력합니다.
 
 
 ## 설치 정보 입력
+
+#### 데이터베이스, 사이트 정보 입력
+*인스톨러 캡쳐 이미지*(database, site 정보 입력 / 엔터)
+인스톨러가 Database 및 기본 설정 파일을 생성합니다. 이 작업은 시간이 오래 걸릴 수 있습니다.
+
+인스톨은 영여, 한국어 두가지 언어 설치를 지원합니다.
+다른 언어의 설치는 인스톨 후에 언어팩을 업로드 해서 사용가능합니다. RC 버전에서 지원할 예정입니다.
+
+
+#### 관리자 정보 입력
+*인스톨러 캡쳐 이미지*(관리자 정보 입력)
+
+
+#### 디렉토리 권한 및 서버 정보 수집 동의
+*인스톨러 캡쳐 이미지*(설정)
+
+
+
+## 설정 파일을 이용한 설치
+설정파일을 사용하면 더욱 쉽게 설치할 수 있습니다. 설치하기 전에 아래와 같이 커맨드를 실행하여 설정파일을 생성합니다.
+```
+$ copy('http://start.xpressengine.io/installer', 'installer');" && php installer make
+Install configuration file is generated. (.xe_install_config.yaml)
+Write your configuration data to the file.
+```
+
+xe_install_config.yaml 파일이 생성됩니다. 파일을 열고 설치 정보를 입력하세요.
+설치 커맨드를 실행합니다. --config 및 --no-interact 옵션을 사용하십시오.
+
