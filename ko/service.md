@@ -53,7 +53,6 @@ XE는 라라벨이 제공하는 위 서비스 이외에도 문서(document), 댓
 - Site
 - Skin
 - Storage
-- Support
 - Tag
 - Temporary
 - Theme
