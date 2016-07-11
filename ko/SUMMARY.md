@@ -56,7 +56,7 @@
    * 모바일(mobile)
    * 권한(permission)
    * 카테고리(category)
-   * 데이터베이스(database)
+   * [데이터베이스(database)](b370_c774_d130_bca0_c774_c2a428_database.md)
    * 메일(email)
    * 프론트엔드(frontend/assets)
    * 이미지처리(Image)
