@@ -68,4 +68,13 @@ Write your configuration data to the file.
 
 xe_install_config.yaml 파일이 생성됩니다. 파일을 열고 설치 정보를 입력하세요.
 설치 커맨드를 실행합니다. --config 및 --no-interact 옵션을 사용하십시오.
+```
+$ php installer install --config=.xe_install_config.yaml --no-interact
+```
+
+#### 설치옵션
+* --config=< configfile> 설정파일을 지정합니다.
+* --no-interact 대화형입력을 사용하지 않고 설정파일의 정보를 사용하여 자동으로 설치합니다. 이 옵션을 --config옵션과 같이 사용해야 합니다.
+* --install-dir 설치경로를 지정합니다. 지정하지 않을 경우 현재 디렉토리에 설치합니다.
+
 
