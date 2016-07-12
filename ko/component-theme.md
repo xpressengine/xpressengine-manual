@@ -5,7 +5,7 @@
 
 ## 테마 생성
 
-빈 테마를 생성하려면 우선 테마가 위치할 플러그인이 있어야 합니다. 만약 플러그인이 아직 준비되지 않았다면, [플러그인 생성하기](plugin-generation.md)를 참고하세요.
+빈 테마를 생성하려면 우선 테마가 소속될 플러그인이 있어야 합니다. 만약 플러그인이 아직 준비되지 않았다면, [플러그인 생성하기](plugin-generation.md) 문서를 참고하시기 바랍니다.
 
 플러그인이 준비되었다면 아래 커맨드를 사용하여 빈 테마를 생성합니다.
 
@@ -40,15 +40,15 @@ Theme is created successfully.
 
 생성되는 테마의 간단한 정보를 터미널에서 볼 수 있습니다.
 
-생성된 테마는 아래의 디렉토리 구조를 가집니다.
+생성된 테마는 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/theme/` 디렉토리는 테마의 모든 파일이 담겨 있는 '테마 디렉토리'입니다. 
 ```
 plugins/my_plugin/theme/
 ├── Theme.php
-├── assets
-│   └── css
+├── assets/
+│   └── css/
 │       └── theme.css
 ├── info.php
-└── views
+└── views/
     ├── gnb.blade.php
     └── theme.blade.php
 ```
@@ -102,13 +102,60 @@ return [
 ];
 ```
 
-`view`
+`view` 필드는 테마를 출력할 때 사용할 템플릿 파일을 지정하는 필드입니다. 위 설정의 경우 `views` 디렉토리에 들어있는 `theme.blade.php`을 지정한 것입니다.
 
+`setting` 필드에는 테마 설정 페이지에서 사용할 설정 항목에 대한 정보를 지정합니다.
 
+`support` 필드에는 이 테마가 데스크탑 버전과 모바일 버전을 각각 지원하는지를 지정합니다.
 
+`editable` 필드에는 테마 편집 페이지에서 편집할 수 있는 파일의 목록을 지정합니다.
 
 
 ## 테마 출력
+
+테마가 웹페이지에 출력될 때 사용될 템플릿은 `info.php` 파일의 `view` 필드에 지정되어 있습니다. 위 설정의 경우 실제로는 `views/theme.blade.php` 파일에 해당됩니다.
+
+### 메인컨텐츠 출력하기
+
+웹페이지가 출력될 때, 테마는 그 웹페이지의 메인컨텐츠를 출력해줘야 합니다. 메인컨텐츠는 `$content` 변수에 담겨 있습니다.
+
+`theme.blade.php` 파일에서 메인컨텐츠가 출력될 위치에 아래와 같이 삽입하십시오.
+
+```
+{!! $content !!}
+```
+
+### 템플릿 파일 분리하기
+
+테마에서 출력할 내용이 많아지면 `theme.blade.php`이 너무 복잡해집니다. 이럴 때 블레이드 문법의 `@extends`, `@section`, `@yield` `@include` 키워드를 잘 사용하면 템플릿 파일을 분리할 수 있습니다.
+
+`theme.blade.php`에서 `@include`를 사용하여 header와 footer 영역을 분리해보았습니다.
+
+```php
+<!-- theme.blade.php -->
+
+@include($theme::view('header'))
+
+<div class="content" id="content">
+{!! $content !!}
+</div>
+
+@include($theme::view('footer'))
+```
+
+header와 footer에 해당하는 파일은 `views` 디렉토리에 미리 추가되어 있어야 합니다.
+
+```
+..
+└── views/
+    ├── header.blade.php
+    ├── footer.blade.php    
+    └── theme.blade.php
+```
+
+테마의 템플릿 파일에서 뷰이름을 지정할 때, `$theme::view()` 메소드를 사용하십시오. 이 메소드는 템플릿 파일의 경로를 지정할 때, `views` 디렉토리를 기준으로 하는 상대경로로 지정할 수 있도록 도와줍니다.
+
+
 
 ## 테마 편집
 
