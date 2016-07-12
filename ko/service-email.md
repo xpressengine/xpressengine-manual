@@ -45,8 +45,6 @@ Mail::send('emails.welcome', ['key' => 'value'], function($message)
 ```
 
 
-
-
 HTML 뷰에 추가로 플레인 텍스트 뷰를 지정할 수도 있습니다:
 
 ```php
