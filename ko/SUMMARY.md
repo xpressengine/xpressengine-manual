@@ -52,7 +52,7 @@
    * 댓글(comment)
    * [이벤트/인터셉션(event/interception)](interception.md)
    * 파일/스토리지(storage, media)
-   * [회원/인증(user/auth) `first`](user.md)
+   * [회원/인증(user/auth) `first`](service-user.md)
    * 모바일(mobile)
    * 권한(permission)
    * 카테고리(category)
