@@ -57,7 +57,7 @@
    * 권한(permission)
    * 카테고리(category)
    * [데이터베이스(database)](service-database.md)
-   * 메일(email)
+   * [메일(email)](service-email.md)
    * 프론트엔드(frontend/assets)
    * 이미지처리(Image)
    * [세션(Session)](service-session.md)
