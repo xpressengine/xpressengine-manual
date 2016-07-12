@@ -47,7 +47,7 @@
    * [토글메뉴](component-togglemenu.md)
    * ...
 * 서비스
-   * 설정(config)
+   * [설정(config)](service-config.md)
    * 문서(document)
    * 댓글(comment)
    * [이벤트/인터셉션(event/interception)](service-interception.md)
