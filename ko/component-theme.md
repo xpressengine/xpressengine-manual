@@ -125,13 +125,13 @@ return [
 {!! $content !!}
 ```
 
-### 템플릿 파일 분리하기
+### 레이아웃 구성하기
 
 테마에서 출력할 내용이 많아지면 `theme.blade.php`이 너무 복잡해집니다. 이럴 때 블레이드 문법의 `@extends`, `@section`, `@yield` `@include` 키워드를 잘 사용하면 템플릿 파일을 분리할 수 있습니다.
 
 `theme.blade.php`에서 `@include`를 사용하여 header와 footer 영역을 분리해보았습니다.
 
-```php
+```html
 <!-- theme.blade.php -->
 
 @include($theme::view('header'))
@@ -156,10 +156,53 @@ header와 footer에 해당하는 파일은 `views` 디렉토리에 미리 추가
 테마의 템플릿 파일에서 뷰이름을 지정할 때, `$theme::view()` 메소드를 사용하십시오. 이 메소드는 템플릿 파일의 경로를 지정할 때, `views` 디렉토리를 기준으로 하는 상대경로로 지정할 수 있도록 도와줍니다.
 
 
+### 테마 설정 변수 사용하기
 
-## 테마 편집
+각 테마는 테마를 커스터마이징할 수 있도록 옵션을 제공할 수 있습니다. 이 옵션은 사이트 관리자가 테마 설정 페이지를 통해 지정할 수 있고, 지정된 설정값은 테마를 출력할 때 `$config` 변수를 사용하여 참조할 수 있습니다.
+
+```html
+@if($config->get('use_sidebar', false))
+<div class="sidebar">
+...
+</div>
+@endif
+```
+
+`$config` 변수는 `ConfigEntity`의 인스턴스입니다. `get` 메소드를 사용하면 손쉽게 설정값을 가져올 수 있습니다. `get` 메소드의 두번째 파라메터는 기본값(default value)입니다.
+
+```php
+// use_sidebar 설정 조회, use_sidebar 설정이 존재하지 않을 경우 기본값으로 false를 반환
+$config->get('use_sidebar', false);
+```
+
+
+### asset 파일 로드하기
+
+#### 이미지 파일 로드하기
+
+이미지 파일을 로드하려면 `$theme::asset()` 메소드를 사용하십시오. `assets` 디렉토리를 기준으로 파일의 상대경로를 입력해주시면 됩니다.
+
+```html
+<img src="{{ $theme::asset('img/logo.png') }}" alt="로고 이미지">
+```
+
+#### css, js 파일 로드하기
+
+css, js 파일은 `XeFrontend` 파사드(Frontend 서비스)를 사용하여 로드하십시오.
+
+```php
+{{ XeFrontend::css(
+    $theme::asset('css/theme.css')
+)->load() }}
+```
+
+`XeFrontend` 파사드의 자세한 사용법은 [Frontend 서비스 문서]()를 참고하십시오.
 
 ## 테마 설정
+
+
+
+## 테마 편집
 
 
 
