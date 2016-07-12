@@ -43,7 +43,7 @@
    * 위젯
    * 모듈
    * UI오브젝트
-   * 에디터
+   * [에디터](component-editor.md)
    * [토글메뉴](component-togglemenu.md)
    * ...
 * 서비스
