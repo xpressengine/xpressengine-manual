@@ -4,7 +4,7 @@
 * 시작하기
    * [설치하기](c124_ce58_d558_ae30.md)
        * [기본 설치하기](installation-basic.md)
-       * [웹 인스톨러로 설치하기](c6f9_c778_c2a4_d1a8_b7ec_b85c_c124_ce58_d558_ae30.md)
+       * [웹 인스톨러로 설치하기](installation-web.md)
        * git 저장소 사용하기
        * 인스톨러로 설치하기
    * 서버 환경 설정
