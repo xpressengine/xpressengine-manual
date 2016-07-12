@@ -76,7 +76,7 @@ Mail::send('emails.welcome', $data, function($message)
 $message->attach($pathToFile, ['as' => $display, 'mime' => $mime]);
 ```
 
-이메일을 보내기 위한 뷰 대신에 간단한 문자열을 사용하고자 한다면 `use` 메소드를 사용하면 됩니다:
+이메일을 보내기 위한 뷰 대신에 간단한 문자열을 사용하고자 한다면 `raw` 메소드를 사용하면 됩니다:
 
 ```php
 Mail::raw('Text to e-mail', function($message)
