@@ -44,7 +44,7 @@
    * 모듈
    * UI오브젝트
    * 에디터
-   * 토글메뉴
+   * [토글메뉴](component-togglemenu.md)
    * ...
 * 서비스
    * 설정(config)
