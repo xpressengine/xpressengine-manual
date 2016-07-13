@@ -7,3 +7,30 @@
 
 ![xe3 life](assets/lifecycle/xe3lifecycle.png)
 
+## index.php
+
+- service container load
+- kernel load
+- generate request
+- run kernel
+
+## Kernel
+- bootstrapping
+  - load service
+- load middlewares
+
+## Middlewares
+
+- various middlewares
+
+## Router
+- find controller
+- call controller
+
+## Controller
+- resolve request
+- use many services
+
+## Presenter
+- make response
+- apply skin, wrap theme
