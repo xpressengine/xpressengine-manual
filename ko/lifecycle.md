@@ -9,6 +9,7 @@
 
 ## index.php
 
+- autoload
 - service container load
 - kernel load
 - generate request
