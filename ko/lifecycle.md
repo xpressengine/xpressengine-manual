@@ -4,3 +4,4 @@
 
 
 
+![xe3 lifecycle](assets/lifecycle/xe3lifecycle.png)
