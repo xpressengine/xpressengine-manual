@@ -17,7 +17,7 @@
 
 ## Kernel
 - bootstrapping
-  - load service
+  - load service providers
 - load middlewares
 
 ## Middlewares
