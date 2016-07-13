@@ -1,0 +1,2 @@
+# 권한(permission)
+
