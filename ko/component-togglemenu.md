@@ -2,7 +2,6 @@
 토글메뉴는 형태에 따라 4가지 타입을 지원합니다.
 
 - MENUTYPE_EXEC
-- MENUTYPE_FUNC
 - MENUTYPE_LINK
 - MENUTYPE_RAW 
 
@@ -10,7 +9,7 @@
 추가하고자 하는 새로운 토글메뉴 클래스에서 `AbstractToggleMenu` 를 상속 받습니다. 그리고 명시된 추상메서드를 구현합니다.
 
 * `getText`: 메뉴가 펼쳐졌을때 보여지게될 문자열입니다.
-* `getType`: `MENUTYPE_EXEC`, `MENUTYPE_FUNC`, `MENUTYPE_LINK`, `MENUTYPE_RAW` 네가지 중 한가지를 반환해야 합니다.
+* `getType`: `MENUTYPE_EXEC`, `MENUTYPE_LINK`, `MENUTYPE_RAW` 네가지 중 한가지를 반환해야 합니다.
 * `getAction`: 해당 메뉴를 클릭했을때 실행 되어질 js 문자열입니다. 만약 타입이 `raw` 인 경우 html 이 반환되어야 합니다.
 * `getScript`: 메뉴의 동작을 위해 특정 js 파일이 필요한 경우 해당 파일의 경로를 반환해 줍니다.
 
@@ -28,34 +27,6 @@ public function getAction()
   return 'alert("hello")';
 }
 ```
-
-##### func
-`func` 타입은 지정한 특정 함수를 실행시켜 줍니다. 이때 XE에서는 해당 함수에 토글메뉴에 지정된 대상과 대상에 속한 문서의 아이디를 인자로 전달해줍니다.
-```
-public function getType()
-{
-  return static::MENUTYPE_FUNC;
-}
-
-public function getAction()
-{
-  return 'someMethod';
-}
-
-public function getScript()
-{
-  return asset('path/to/script/some.js');
-}
-```
-
-```
-# some.js
-function someMethod(type, id)
-{
-  ...
-}
-```
-> 토글메뉴에 지정된 대상이라 함은 토글메뉴에서 대상을 구분할 수 있는 값을 말합니다. 인스턴스를 가지는 대상은 인스턴스 아이디를 포함한 문자열이 됩니다. ex) `module/board@board/{instanceId}`, `comment/{instanceId}`
 
 
 ##### link
