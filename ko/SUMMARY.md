@@ -55,7 +55,7 @@
    * [회원/인증(user/auth)](service-user.md)
    * 모바일(mobile)
    * [권한(permission)](service-permission.md)
-   * 카테고리(category)
+   * [카테고리(category)](service-category.md)
    * [데이터베이스(database)](service-database.md)
    * [메일(email)](service-email.md)
    * 프론트엔드(frontend/assets)
