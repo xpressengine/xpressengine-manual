@@ -9,6 +9,7 @@ XE의 라이프 사이클은 크게 두 가지 경우로 나눌 수 있습니다
 
 ![xe3 life](assets/lifecycle/xe3lifecycle.png)
 
+
 ## index.php
 
 사용자의 웹브라우저로부터 http 전송 요청이 들어올 경우, XE는 항상 `index.php`파일을 실행시킵니다. `index.php` 파일이 그리 많은 코드를 가지고 있는 것은 아닙니다.
