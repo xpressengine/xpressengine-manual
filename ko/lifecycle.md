@@ -35,14 +35,19 @@ Http 커널은 부팅 과정에서 에러 처리, 로그 설정, 어플리케이
 
 ## 미들웨어
 
-Http 커널은 `Request` 처리할 준비가 완료되면, 커널에 등록된 미들웨어들에게 `Request`를 전달합니다. XE로 들어오는 모든 요청은 항상 이 미들웨어들을 한번씩 거치게 됩니다.
+Http 커널은 `Request` 처리할 준비가 완료되면, 커널에 등록된 미들웨어들에게 `Request`를 전달합니다. XE로 들어오는 모든 요청은 항상 미들웨어들을 한번씩 거치게 됩니다.
 
-## Router
-- find controller
-- call controller
+## 라우터
+
+미들웨어를 통과한 `Request`는 라우터에게 전달됩니다. 라우터는 전달받은 `Request`를 전담하여 처리할 컨트롤러가 누군지 찾고, 찾은 컨트롤러를 호출합니다.
+
 
 ## Controller
-- resolve request
+
+`Request`는 정확히 XE가 해주길 바라는 명령이 컨트롤러는 실제로 
+
+- 
+- - resolve request
 - use many services
 
 ## Presenter
