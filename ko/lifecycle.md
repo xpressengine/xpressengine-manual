@@ -17,31 +17,25 @@ XE의 라이프 사이클은 크게 두 가지 경우로 나눌 수 있습니다
 
 그 다음으로 서비스 컨테이너를 생성합니다. 서비스 컨테이너는 생성되자마자 주요 서비스인 라우팅(routing) 서비스와 이벤트(events) 서비스를 등록합니다.
 
-세번째로는 http 요청을 처리하기 위한 Http 커널을 생성합니다. 그리고 현재 http 요청에 대한 정보를 가지는 Request 인스턴스를 생성합니다.
+세번째로는 http 요청을 처리하기 위한 Http 커널을 생성합니다. 그리고 현재 http 요청에 대한 정보를 가지는 `Request` 인스턴스를 생성합니다.
 
-마지막으로 Request 인스턴스를 커널에게 전달하여 http 요청의 본격적인 처리를 시작합니다.
+마지막으로 `Request` 인스턴스를 커널에게 전달하여 http 요청의 본격적인 처리를 시작합니다.
 
 
 ## Http 커널
 
-Http 커널의 주목적은 http 요청을 처리하고, 브라우저로 돌려줄 응답(Http Response)를 만드는 것입니다.
+Http 커널의 주목적은 단순하게 `Request`를 처리하고, 브라우저로 돌려줄 응답(Http Response)를 만드는 것입니다.
 
-Http 커널은 `Illuminate\Foundation\Http\Kernel`를 상속받고 있으며, 생성된 다음에는 요청을 처리할 준비, 즉 부팅(bootstrapping)을 합니다.
+Http 커널은 `Illuminate\Foundation\Http\Kernel`를 상속받고 있으며, 생성된 다음에는 `Request`를 처리할 준비, 즉 부팅(bootstrapping)을 합니다.
 
 Http 커널은 부팅 과정에서 에러 처리, 로그 설정, 어플리케이션의 실행 환경의 검사 등 실제로 요청이 처리되기 전에 수행해야 되는 작업들을 합니다.
 
 또, Http 커널은 부팅 과정에서 데이터베이스, 문서, 회원과 같은 XE에서 제공하는 대부분의 [서비스](service.md)를 앞서 생성된 서비스 컨테이너에 등록합니다. 
 
 
+## 미들웨어
 
-
-- bootstrapping
-  - load service providers
-- load middlewares
-
-## Middlewares
-
-- various middlewares
+Http 커널은 `Request` 처리할 준비가 완료되면, 커널에 등록된 미들웨어들에게 `Request`를 전달합니다. XE로 들어오는 모든 요청은 항상 이 미들웨어들을 한번씩 거치게 됩니다.
 
 ## Router
 - find controller
