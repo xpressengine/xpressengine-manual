@@ -91,7 +91,7 @@ Route::get('user/{name?}', function($name = 'John')
 `name` 파라미터는 옵션입니다. `name` 파라미터가 URL에 포함되어 있지 않아도 위 라우트가 작동됩니다.
 
 
-#### 정규표현식로 파라미터 제약하기
+#### 정규표현식으로 파라미터 제약하기
 
 ```php
 Route::get('user/{name}', function($name)
@@ -113,32 +113,6 @@ Route::get('user/{id}/{name}', function($id, $name)
     //
 })
 ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
-```
-
-
-#### 라우트 파라미터 값에 엑세스하기
-
-라우트 밖에서 라우트 파라미터 값에 엑세스할 필요가 있는 경우 `input` 메소드를 사용합니다:
-
-```php
-if ($route->input('id') == 1)
-{
-    //
-}
-```
-
-또한, `Illuminate\Http\Request` 인스턴스를 통해서 현재의 라우트 파라미터에 엑세스 할 수 있습니다. 현재 요청에 대한 인스턴스는 `Illuminate\Http\Request` 타입힌트를 하거나, `Request` 파사드를 사용하면 의존성 주입을 통해서 엑세스 할 수 있습니다:
-
-```php
-use Illuminate\Http\Request;
-
-Route::get('user/{id}', function(Request $request, $id)
-{
-    if ($request->route('id'))
-    {
-        //
-    }
-});
 ```
 
 ## 이름이 지정된 라우트
@@ -166,10 +140,16 @@ Route::get('user/profile', [
 $url = route('profile');
 
 $redirect = redirect()->route('profile');
+```
 
-`currentRouteName` 메소드는 현재의 요청에 대한 라우트 이름을 반환합니다.
+라우트가 파라미터를 가지고 있다면, `route` 함수의 두번째 인자로 파라미터를 전달할 수 있습니다. 주어진 파라미터는 자동으로 URL에 추가됩니다.
 
-$name = Route::currentRouteName();
+```php
+Route::get('user/{id}/profile', ['as' => 'profile', function ($id) {
+    //
+}]);
+
+$url = route('profile', ['id' => 1]);
 ```
 
 ## Route Groups
@@ -179,9 +159,11 @@ $name = Route::currentRouteName();
 
 속성값들을 공유하는 것은 `Route::group` 메소드의 첫 번째 인자로 배열을 지정하면 됩니다.
 
-### 미들웨어
+### 라우트 미들웨어
 
-라우트 그룹에 지정하는 배열의 `middleware` 값에 미들웨어의 목록을 정의함으로써 그룹내의 모든 라우트에 미들웨어가 적용됩니다. 미들웨어는 배열에 정의된 순서대로 실행될것입니다:
+라우트 미들웨어는 Http 커널의 미들웨어와는 별개입니다.
+
+라우트 그룹에 지정하는 배열의 `middleware` 값에 미들웨어의 목록을 정의함으로써 그룹 내의 모든 라우트에 미들웨어가 적용됩니다. 라우트 미들웨어는 배열에 정의된 순서대로 실행될것입니다:
 
 ```php
 Route::group(['middleware' => ['foo','bar']], function()
