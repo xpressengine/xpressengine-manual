@@ -206,23 +206,6 @@ Route::group(['namespace' => 'Admin'], function()
 
 > **참고:** 기본적으로 `RouteServiceProvider`에서 포함하고 있는 `routes.php` 파일에는 라우트 컨트롤들을 위해서 네임스페이스가 지정되어 있습니다. 따라서 `App\Http\Controllers`의 전체 네임스페이스를 따로 지정할 필요는 없습니다.
 
-#### 서브 도메인 라우팅
-
-라라벨 라우트에서는 와일드 파라미터 형태의 도메인 값을 설정하여 서브 도메인을 처리할 수 있습니다:
-
-#### 서브 도메인 라우트 등록하기
-
-```php
-Route::group(['domain' => '{account}.myapp.com'], function()
-{
-
-    Route::get('user/{id}', function($account, $id)
-    {
-        //
-    });
-
-});
-```
 
 ### 라우트 접두어 지정하기
 
