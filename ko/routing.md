@@ -81,19 +81,15 @@ Route::get('user/{name?}', function($name = null)
 {
     return $name;
 });
-```
 
-`name` 파라미터는 옵션입니다. `name` 파라미터가 URL에 포함되어 있지 않아도 위 라우트가 작동됩니다.
-
-
-#### 기본값을 가진 선택적인 라우트 파라미터
-
-```php
 Route::get('user/{name?}', function($name = 'John')
 {
     return $name;
 });
 ```
+
+`name` 파라미터는 옵션입니다. `name` 파라미터가 URL에 포함되어 있지 않아도 위 라우트가 작동됩니다.
+
 
 #### 정규표현식로 파라미터 제약하기
 
@@ -111,11 +107,7 @@ Route::get('user/{id}', function($id)
     //
 })
 ->where('id', '[0-9]+');
-```
 
-#### 파리미터 제약을 배열로 전달하기
-
-```php
 Route::get('user/{id}/{name}', function($id, $name)
 {
     //
@@ -123,22 +115,6 @@ Route::get('user/{id}/{name}', function($id, $name)
 ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 ```
 
-#### 글로벌 패턴 지정하기
-
-`pattern` 메소드를 사용하면 라우트 파리미터 변수를 지정한 정규 표현식에서 항상 제약을 할 수 있습니다. 이들은 `RouteServiceProvider`의 `before` 메소드로 정의하는 것을 권장합니다:
-
-```php
-$router->pattern('id', '[0-9]+');
-```
-
-한번 패턴이 지정되고 나면 모든 라우트에서 사용하는 파라미터에 대해서 적용됩니다:
-
-```php
-Route::get('user/{id}', function($id)
-{
-    // Only called if {id} is numeric.
-});
-```
 
 #### 라우트 파라미터 값에 엑세스하기
 
