@@ -36,6 +36,13 @@ Route::delete('foo/bar', function()
 });
 ```
 
+`Closuer` 대신 컨트롤러를 사용할 수도 있습니다.
+
+
+```php
+Route::get('user/profile', 'UserController@showProfile');
+```
+
 #### 여러 HTTP 메소드에 라우트 등록하기
 
 ```php
@@ -161,9 +168,12 @@ $url = route('profile', ['id' => 1]);
 
 ### 라우트 미들웨어
 
-라우트 미들웨어는 Http 커널의 미들웨어와는 별개입니다.
+라우트 그룹에 지정하는 배열의 `middleware` 값에 미들웨어의 목록을 정의함으로써 그룹 내의 모든 라우트에 미들웨어가 적용됩니다. 특정 라우트들에만 실
+라우트 미들웨어는 배열에 정의된 순서대로 실행될것입니다:
 
-라우트 그룹에 지정하는 배열의 `middleware` 값에 미들웨어의 목록을 정의함으로써 그룹 내의 모든 라우트에 미들웨어가 적용됩니다. 라우트 미들웨어는 배열에 정의된 순서대로 실행될것입니다:
+> 주의!
+> 라우트 미들웨어는 Http 커널의 미들웨어와는 별개입니다. 
+
 
 ```php
 Route::group(['middleware' => ['foo','bar']], function()
