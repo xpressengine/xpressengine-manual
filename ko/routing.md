@@ -45,7 +45,7 @@ Route::match(['get', 'post'], '/', function()
 });
 ```
 
-`any` 메소드를 사용하면 모든 http 메소드에 응답하는 라우드를 등록할 수도 있습니다.
+`any` 메소드를 사용하면 모든 http 메소드에 응답하는 라우트를 등록할 수도 있습니다.
 ```php
 Route::any('foo', function()
 {
@@ -82,6 +82,9 @@ Route::get('user/{name?}', function($name = null)
     return $name;
 });
 ```
+
+`name` 파라미터는 옵션입니다. `name` 파라미터가 URL에 포함되어 있지 않아도 위 라우트가 작동됩니다.
+
 
 #### 기본값을 가진 선택적인 라우트 파라미터
 
