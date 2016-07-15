@@ -36,7 +36,7 @@ Route::delete('foo/bar', function()
 });
 ```
 
-`Closuer` 대신 컨트롤러를 사용할 수도 있습니다.
+`Closure` 대신 컨트롤러를 사용할 수도 있습니다.
 
 
 ```php
