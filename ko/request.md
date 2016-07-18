@@ -177,12 +177,10 @@ if ($request->hasFile('photo'))
 }
 ```
 
-`file` 메소드는 `SplFileInfo` 클래스를 상속하고 있는 `Symfony\Component\HttpFoundation\File\UploadedFile`의 인스턴스를 반환하고 파일에 대한 처리를 할 수 있는 다양한 메소드를 제공합니다.
-
 #### 업로드한 파일이 유효한지 판단하기
 
 ```php
-if (Request::file('photo')->isValid())
+if ($request->file('photo')->isValid())
 {
     //
 }
@@ -191,9 +189,9 @@ if (Request::file('photo')->isValid())
 #### 업로드한 파일 이동하기
 
 ```php
-Request::file('photo')->move($destinationPath);
+$request->file('photo')->move($destinationPath);
 
-Request::file('photo')->move($destinationPath, $fileName);
+$request->file('photo')->move($destinationPath, $fileName);
 ```
 
 ### 기타 파일 메소드
