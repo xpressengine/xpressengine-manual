@@ -205,13 +205,13 @@ $request->file('photo')->move($destinationPath, $fileName);
 #### Request URI 가져오기
 
 ```php
-$uri = Request::path();
+$uri = $request->path();
 ```
 
 #### Request 가 AJAX 요청인지 확인
 
 ```php
-if (Request::ajax())
+if ($request->ajax())
 {
     //
 }
@@ -220,9 +220,9 @@ if (Request::ajax())
 #### Request 메소드 확인하기
 
 ```php
-$method = Request::method();
+$method = $request->method();
 
-if (Request::isMethod('post'))
+if ($request->isMethod('post'))
 {
     //
 }
@@ -231,7 +231,7 @@ if (Request::isMethod('post'))
 #### 현재 request가 패턴에 일치하는지 확인하기
 
 ```php
-if (Request::is('admin/*'))
+if ($request->is('admin/*'))
 {
     //
 }
@@ -240,5 +240,5 @@ if (Request::is('admin/*'))
 #### 현재 request URL 가져오기
 
 ```php
-$url = Request::url();
+$url = $request->url();
 ```
