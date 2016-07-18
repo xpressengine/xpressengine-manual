@@ -34,13 +34,13 @@ Two of the primary benefits of using Blade are _template inheritance_ and _secti
 </html>
 ```
 
-보는 바와 같이, 이 파일은 일반적인 HTML 마크업을 가지고 있습니다. 그런데 `@section` 과 `@yield` 지시자에 주목해 주십시오. `@section` 지시자는 이름에서도 알 수 있듯이 컨텐츠의 섹션을 정의하고 있고. 반대로 `@yield` 지시자는 주어진 섹션의 컨텐츠를 출력하고 있습니다.
+보는 바와 같이, 이 파일은 일반적인 HTML 마크업을 가지고 있습니다. 그런데 `@section` 과 `@yield` 지시어에 주목해 주십시오. `@section` 지시어는 이름에서도 알 수 있듯이 컨텐츠의 섹션을 정의하고 있고. 반대로 `@yield` 지시어는 주어진 섹션의 컨텐츠를 출력하고 있습니다.
 
 이제 레이아웃은 정의했고, 이 레이아웃을 상속받을 자식 페이지를 정의해 보겠습니다.
 
 ### 레이아웃 확장하기
 
-자식페이지를 정의할 때, `@extends` 지시자를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 레이아웃을 상속(`@extends`)받는 뷰들은 `@section` 지시자를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 자식 페이지에서 주입한 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
+자식페이지를 정의할 때, `@extends` 지시어를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 레이아웃을 상속(`@extends`)받는 뷰들은 `@section` 지시어를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 자식 페이지에서 주입한 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
 
 ```html
 <!-- Stored in resources/views/child.blade.php -->
@@ -64,7 +64,7 @@ Two of the primary benefits of using Blade are _template inheritance_ and _secti
 
 In this example, the `sidebar` section is utilizing the `@@parent` directive to append (rather than overwriting) content to the layout's sidebar. The `@@parent` directive will be replaced by the content of the layout when the view is rendered.
 
-위의 예에서, `sidebar` 섹션은 레이아웃의 사이드바에 컨텐츠를 붙이기 위해 `@@parent` 지시자를 사용하고 있습니다. `@@parent` 지시자는 뷰가 렌더링 될 때, 그 레이아웃의 `sidebar` 섹션이 가지고 있는 컨텐츠로 대체될 것입니다.
+위의 예에서, `sidebar` 섹션은 레이아웃의 사이드바에 컨텐츠를 붙이기 위해 `@@parent` 지시어를 사용하고 있습니다. `@@parent` 지시어는 뷰가 렌더링 될 때, 그 레이아웃의 `sidebar` 섹션이 가지고 있는 컨텐츠로 대체될 것입니다.
 
 Of course, just like plain PHP views, Blade views may be returned from routes using the global `view` helper function:
 
@@ -134,7 +134,7 @@ Sometimes you may wish to echo a variable, but you aren't sure if the variable h
 
 위의 예에서, 만약 `$name` 변수가 존재하면 그 값이 출력될 것이고, 존재하지 않는다면 대신 `Default`라는 문자가 출력될 것입니다.
 
-#### Escape 하지 않고 데이터 출력하기
+#### 이스케이프하지 않고 데이터 출력하기
 
 By default, Blade `{{ }}` statements are automatically sent through PHP's `htmlentities` function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:
 
@@ -149,15 +149,11 @@ Hello, {!! $name !!}.
 
 ## 제어문
 
-In addition to template inheritance and displaying data, Blade also provides convenient short-cuts for common PHP control structures, such as conditional statements and loops. These short-cuts provide a very clean, terse way of working with PHP control structures, while also remaining familiar to their PHP counterparts.
-
 블레이드는 템플릿 상속 및 데이터 출력과 더불어, 조건문이나 반복문과 같이 일반적인 PHP 제어문의 실행을 위해 편리하고 간결한 구문을 제공합니다. 이 구문들은 매우 깔끔하고 간단하면서도, 대응되는 PHP 제어문들과 비슷한 모습을 띄고 있습니다.
 
 #### If문
 
-You may construct `if` statements using the `@if`, `@elseif`, `@else`, and `@endif` directives. These directives function identically to their PHP counterparts:
-
-`if` 문은 `@if`, `@elseif`, `@else`와 `@endif` 지시자를 사용하여 구성할 수 있습니다. 이 지시자들은 각각 대응되는 PHP 구문과 동일하게 작동합니다.
+`if` 문은 `@if`, `@elseif`, `@else`와 `@endif` 지시어를 사용하여 구성할 수 있습니다. 이 지시어들은 각각 대응되는 PHP 구문과 동일하게 작동합니다.
 
 ```php
 @if (count($records) === 1)
@@ -169,7 +165,7 @@ You may construct `if` statements using the `@if`, `@elseif`, `@else`, and `@end
 @endif
 ```
 
-더 편한방법으로, 블레이드는 `@unless` 지시자를 제공합니다.
+편의성을 위해, 블레이드는 `@unless` 지시어를 제공합니다.
 
 ```php
 @unless (Auth::check())
@@ -181,111 +177,91 @@ You may construct `if` statements using the `@if`, `@elseif`, `@else`, and `@end
 
 In addition to conditional statements, Blade provides simple directives for working with PHP's supported loop structures. Again, each of these directives functions identically to their PHP counterparts:
 
+조건문과 더불어, 블레이드는 PHP가 지원하는 반복문 기능을 하는 간단한 지시어를 제공합니다. 다시 한번 말하지만, 각각의 지시어들은 대응하는 PHP 구문과 동일한 기능을 합니다.
 
-    @for ($i = 0; $i < 10; $i++)
-        The current value is {{ $i }}
-    @endfor
+```php
+@for ($i = 0; $i < 10; $i++)
+    The current value is {{ $i }}
+@endfor
 
-    @foreach ($users as $user)
-        <p>This is user {{ $user->id }}</p>
-    @endforeach
+@foreach ($users as $user)
+    <p>This is user {{ $user->id }}</p>
+@endforeach
 
-    @forelse ($users as $user)
-        <li>{{ $user->name }}</li>
-    @empty
-        <p>No users</p>
-    @endforelse
+@forelse ($users as $user)
+    <li>{{ $user->name }}</li>
+@empty
+    <p>No users</p>
+@endforelse
 
-    @while (true)
-        <p>I'm looping forever.</p>
-    @endwhile
+@while (true)
+    <p>I'm looping forever.</p>
+@endwhile
+```
 
-#### Including Sub-Views
+#### 서브 뷰 포함하기
 
-Blade's `@include` directive, allows you to easily include a Blade view from within an existing view. All variables that are available to the parent view will be made available to the included view:
+`@include` 지시어는 손쉽게 블레이드 뷰를 현재의 뷰에 포함(include)시킬수 있도록 도와줍니다. 부모 뷰에서 사용할 수 있는 모든 변수는 포함된 서브 뷰에서도 사용할 수 있습니다.
 
-    <div>
-        @include('shared.errors')
+```php
+<div>
+    @include('shared.errors')
 
-        <form>
-            <!-- Form Contents -->
-        </form>
-    </div>
+    <form>
+        <!-- Form Contents -->
+    </form>
+</div>
+```
 
 Even though the included view will inherit all data available in the parent view, you may also pass an array of extra data to the included view:
 
-    @include('view.name', ['some' => 'data'])
+서브 뷰는 부모 뷰의 모든 데이터를 상속받겠지만, 그 외에 더 많은 데이터를 배열 형식으로 전달할 수 있습니다.
 
-> **Note:** You should avoid using the `__DIR__` and `__FILE__` constants in your Blade views, since they will refer to the location of the cached view.
+```php
+@include('view.name', ['some' => 'data'])
+```
 
-#### Rendering Views For Collections
+> **주의:** 블레이드 뷰 안에서 `__DIR__`과 `__FILE__`과 같은 상수를 사용하지 마십시오. 블레이드 뷰는 캐싱된 뷰의 위치를 참조하기 때문입니다.
 
-You may combine loops and includes into one line with Blade's `@each` directive:
 
-    @each('view.name', $jobs, 'job')
+#### 컬렉션을 뷰에서 렌더링하기
 
-The first argument is the view partial to render for each element in the array or collection. The second argument is the array or collection you wish to iterate over, while the third argument is the variable name that will be assigned to the current iteration within the view. So, for example, if you are iterating over an array of `jobs`, typically you will want to access each job as a `job` variable within your view partial.
+블레이드의 `@each` 지시어를 사용하면 반복문(loop)과 `include` 구문을 한 줄로 합칠 수 있습니다.
+
+```php
+@each('view.name', $jobs, 'job')
+```
+
+첫번째 인자는 배열이나 컬렉션의 각 요소를 렌더링하기 위한 서브 뷰의 이름입니다. 두번째 인자는 반복 처리하는 배열이나 컬렉션이며 세번째 인수는 뷰에서의 반복값이 대입되는 변수의 이름입니다. 예를 들어 `jobs` 배열을 반복 처리하려면 보통 서브 뷰에서 각 과제를 `job` 변수로 접근해야 할 것입니다.
 
 You may also pass a fourth argument to the `@each` directive. This argument determines the view that will be rendered if the given array is empty.
 
-    @each('view.name', $jobs, 'job', 'view.empty')
+또한 `@each` 지시어로 네번째 인수를 전달할 수도 있습니다. 이 인자는 특정 배열이 비었을 경우 렌더링될 뷰를 결정합니다.
 
-#### Comments
+```php
+@each('view.name', $jobs, 'job', 'view.empty')
+```
+
+#### 주석
 
 Blade also allows you to define comments in your views. However, unlike HTML comments, Blade comments are not included in the HTML returned by your application:
 
-    {{-- This comment will not be present in the rendered HTML --}}
+블레이드는 또한 뷰에 주석을 정의할 수 있습니다. 하지만 HTML 주석과는 다르게, 블레이드 주석은 브라우저로 전송되는 HTML에 포함되어 있지 않습니다:
 
-<a name="service-injection"></a>
-## Service Injection
+```
+{{-- This comment will not be present in the rendered HTML --}}
+```
+
+## 서비스 주입하기
 
 The `@inject` directive may be used to retrieve a service from the Laravel [service container](/docs/{{version}}/container). The first argument passed to `@inject` is the name of the variable the service will be placed into, while the second argument is the class / interface name of the service you wish to resolve:
 
-    @inject('metrics', 'App\Services\MetricsService')
+`@inject` 지시어는 서비스 컨테이너로부터 서비스를 조회하는 데에 사용될 수 있습니다. `@inject`에 전달된 첫번째 인자는 서비스가 할당될 변수의 이름이며 두번째 인자는 주입하려는 서비스의 클래스/인터페이스의 이름입니다:
 
-    <div>
-        Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
-    </div>
+```php
+@inject('metrics', 'App\Services\MetricsService')
 
-<a name="extending-blade"></a>
-## Extending Blade
-
-Blade even allows you to define your own custom directives. You can use the `directive` method to register a directive. When the Blade compiler encounters the directive, it calls the provided callback with its parameter.
-
-The following example creates a `@datetime($var)` directive which formats a given `$var`:
-
-    <?php
-
-    namespace App\Providers;
-
-    use Blade;
-    use Illuminate\Support\ServiceProvider;
-
-    class AppServiceProvider extends ServiceProvider
-    {
-        /**
-         * Perform post-registration booting of services.
-         *
-         * @return void
-         */
-        public function boot()
-        {
-            Blade::directive('datetime', function($expression) {
-                return "<?php echo with{$expression}->format('m/d/Y H:i'); ?>";
-            });
-        }
-
-        /**
-         * Register bindings in the container.
-         *
-         * @return void
-         */
-        public function register()
-        {
-            //
-        }
-    }
-
-As you can see, Laravel's `with` helper function was used in this directive. The `with` helper simply returns the object / value it is given, allowing for convenient method chaining. The final PHP generated by this directive will be:
-
-    <?php echo with($var)->format('m/d/Y H:i'); ?>
+<div>
+    Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
+</div>
+```
