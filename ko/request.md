@@ -128,9 +128,9 @@ $request->flash();
 #### 몇개의 입력값만 세션에 저장하기
 
 ```php
-Request::flashOnly('username', 'email');
+$request->flashOnly('username', 'email');
 
-Request::flashExcept('password');
+$request->flashExcept('password');
 ```
 
 #### 플래쉬 & 리다이렉트
