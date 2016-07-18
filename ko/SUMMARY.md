@@ -19,7 +19,7 @@
    * [플러그인](plugin.md)
    * [서비스](service.md)
 * 기본 사용법
-   * [라이프 사이클](lifecycle.md)
+   * [라이프 사이클 - 100%](lifecycle.md)
    * [라우팅(routing)](routing.md)
    * [컨트롤러(Controllers)](controllers.md)
    * [요청(Request)](request.md)
