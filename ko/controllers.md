@@ -32,7 +32,9 @@ class UserController extends Controller {
 
 다음과 같이 컨트롤러의 액션에 라우트를 지정할 수 있습니다:
 
-	Route::get('user/{id}', 'UserController@showProfile');
+```php
+Route::get('user/{id}', 'UserController@showProfile');
+```
 
 > **주의:** 모든 컨트롤러는 base 컨트롤러를 상속받아야 합니다.
 
