@@ -58,7 +58,7 @@
    * 이미지처리(Image)
    * [세션(Session)](service-session.md)
    * 헬퍼(helpers)
-   * 쿠키(cookie)
+   * [쿠키(cookie)](service-cookie.md)
 * 콘솔명령
    * 명령어 목록
    * ...
