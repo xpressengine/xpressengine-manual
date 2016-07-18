@@ -100,10 +100,7 @@ $url = action('FooController@method');
 
 	}
 
-<!--chak-comment-HTTP-컨트롤러(HTTP-Controllers)-컨트롤러-미들웨어--->
-
-<a name="implicit-controllers"></a>
-## 암시적 컨트롤러
+## 묵시적 컨트롤러
 
 라라벨에서는 한번의 라우팅 등록으로 컨트롤러를 통해 모든 액션들을 처리할 수 있는 손쉬운 방법을 제공합니다. 먼저 `Route::controller` 메소드를 사용하여 경로를 지정합니다:
 
