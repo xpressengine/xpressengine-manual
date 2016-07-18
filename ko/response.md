@@ -1,65 +1,10 @@
 # 응답(Response)
 
-## 기본적인 Responses
-
-#### 라우트로부터 문자열 반환
-
-가장 기본적인 Response는 라우트로부터 반환되는 문자열입니다:
-
-```php
-Route::get('/', function()
-{
-    return 'Hello World';
-});
-```
-
-#### Response 사용의 제한
+## Response 사용의 제한
 
 XE의 기본 프레임워크인 라라벨에서는 대부분의 라우트나 컨트롤러 액션에서 `Illuminate\Http\Response`의 인스턴스나 [뷰](/docs/5.0/views)를 반환하도록 합니다. 
 
 하지만 XE는 웹 브라우저로 html 형식의 응답을 보낼 때, 스킨과 테마를 적용한 후 보내야 합니다. 특별한 경우가 아니라면 컨트롤러에서 `Illuminate\Http\Response` 인스턴스나 뷰를 직접 반환(return)하지 마십시오. 대신, [프리젠터](presenter.md)를 사용하여 반환하십시오. 반드시 [프리젠터](presenter.md)를 사용해야만 테마와 스킨이 적용되고 위젯 또한 정상적으로 출력됩니다.
-
-```php
-use Illuminate\Http\Response;
-
-return (new Response($content, $status))
-              ->header('Content-Type', $value);
-```
-
-좀 더 쉬운 방법으로 `response` 헬퍼함수를 사용할 수 있습니다.
-
-```php
-return response($content, $status)
-              ->header('Content-Type', $value);
-```
-
-> **참고:** `Response` 객체의 사용 가능한 전체 메소드 목록은 [API 문서](http://laravel.com/api/master/Illuminate/Http/Response.html)와 [Symfony API 문서](http://api.symfony.com/2.5/Symfony/Component/HttpFoundation/Response.html)를 참고하십시오.
-
-#### Response에서 뷰파일 내보내기
-
-`Response` 클래스 메소드에 액세스 할 필요가 있지만, Response의 컨텐츠 내용으로 뷰를 반환하고 싶다면, `view` 메소드를 사용하면 됩니다.
-
-```php
-return response()->view('hello')->header('Content-Type', $type);
-```
-
-#### Response에 Cookie 추가하기
-
-```php
-return response($content)->withCookie(cookie('name', 'value'));
-```
-
-#### 메소드 체이닝
-
-대부분의 `Response` 메소드는 유연하게 response를 만들 수 있도록 체이닝이 가능합니다:
-
-	return response()->view('hello')->header('Content-Type', $type)
-                     ->withCookie(cookie('name', 'value'));
-
-
-#### 테마 및 스킨 적용하기
-
-XE의 웹 브라우저로 html 형식의 응답을 보낼 경우에는 스킨과, 테마를 적용한 후 보내야 합니다. 특별한 경우가 아니라면 컨트롤러에서 `Illuminate\Http\Response` 인스턴스나 뷰를 직접 반환(return)하지 마십시오.
 
 
 ## 리다이렉트
