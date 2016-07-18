@@ -37,11 +37,15 @@ return response($content, $status)
 
 `Response` 클래스 메소드에 액세스 할 필요가 있지만, Response의 컨텐츠 내용으로 뷰를 반환하고 싶다면, `view` 메소드를 사용하면 됩니다.
 
-	return response()->view('hello')->header('Content-Type', $type);
+```php
+return response()->view('hello')->header('Content-Type', $type);
+```
 
 #### Response에 Cookie 추가하기
 
-	return response($content)->withCookie(cookie('name', 'value'));
+```php
+return response($content)->withCookie(cookie('name', 'value'));
+```
 
 #### 메소드 체이닝
 
