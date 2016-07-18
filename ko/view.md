@@ -54,33 +54,11 @@ $view = view('greetings', $data);
 
 이러한 방식으로 정보를 전달할 때,`$data`는 키/값으로 구성된 배열이어야 합니다. 뷰 안에서 여러분은 `{{ $key }}`와 같이 각각의 키에 해당하는 값에 엑세스 할 수 있습니다. (`$data['$key']`는 존재한다고 가정합니다. )
 
-#### 모든 뷰에서 데이터 공유하기
-
-XE에서 표시하는 모든 뷰에서 데이터를 공유할 필요가 있을 수도 있습니다. 이 경우 몇 가지의 옵션이 있습니다. `view` 헬퍼 함수를 사용하거나 `Illuminate\Contracts\View\Factory` [contract](/docs/5.0/contracts)를 이용하는 법, 또는 와일드 카드의 [view composer](#view-composers)를 통하는 방법입니다.
-
-`view` 헬퍼함수를 이용하는 예제입니다.
-
-    view()->share('data', [1, 2, 3]);
-
-`View` 파사드를 사용할 수도 있습니다.
-
-    View::share('data', [1, 2, 3]);
-
-일반적으로 `share` 메소드는 서비스 프로바이더의 `boot` 메소드 안에서 호출합니다.  `AppServiceProvider`에서 편하게 추가할수도 있고, 다른 별도의 서비스 프로바이더를 생성하고 구성할 수도 있습니다.
-
-> ** 참고:** `view` 헬퍼함수를 전달 인자 없이 호출하는 경우에는 반환값은 `Illuminate\Contracts\View\Factory` contract의 구현체가 됩니다.
-
-#### 뷰가 존재하는지 판단하기
-
-뷰 파일이 존재하는 판단해야될 필요가 있다면 `exists` 메소드를 사용하면 됩니다:
-
-    if (view()->exists('emails.customer'))
-    {
-        //
-    }
 
 #### 파일 패스로부터 view 반환
 
 필요하다면 절대경로를 기반으로 뷰를 생성할 수도 있습니다:
 
-    return view()->file($pathToFile, $data);
+```php
+return view()->file($pathToFile, $data);
+```
