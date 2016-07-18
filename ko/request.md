@@ -160,10 +160,12 @@ $username = Request::old('username');
 
 ## 파일 처리
 
+
+
 #### 업로드한 파일 가져오기
 
 ```php
-$file = Request::file('photo');
+$file = $request->file('photo');
 ```
 
 #### 파일이 업로드 되었는지 확인하기
