@@ -33,7 +33,7 @@ Route::get('/', function()
 
 두 번째 전달 인자는 템플릿에서 사용하기 위한 데이터의 배열입니다.
 
-\당연하게도 뷰는 `resources/views` 디렉토리의 중첩된 서브 디렉토리를 구성할 수 있습니다. 예를 들어, 뷰파일이 `resources/views/admin/profile.php`처럼 저장되었다면 다음처럼 호출해야 합니다:
+당연하게도 뷰는 `resources/views` 디렉토리의 중첩된 서브 디렉토리를 구성할 수 있습니다. 예를 들어, 뷰파일이 `resources/views/admin/profile.php`처럼 저장되었다면 다음처럼 호출해야 합니다:
 
     return view('admin.profile', $data);
 
