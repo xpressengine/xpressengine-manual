@@ -64,60 +64,87 @@ Two of the primary benefits of using Blade are _template inheritance_ and _secti
 
 In this example, the `sidebar` section is utilizing the `@@parent` directive to append (rather than overwriting) content to the layout's sidebar. The `@@parent` directive will be replaced by the content of the layout when the view is rendered.
 
+위의 예에서, `sidebar` 섹션은 레이아웃의 사이드바에 컨텐츠를 붙이기 위해 `@@parent` 지시자를 사용하고 있습니다. `@@parent` 지시자는 뷰가 렌더링 될 때, 그 레이아웃의 `sidebar` 섹션이 가지고 있는 컨텐츠로 대체될 것입니다.
+
 Of course, just like plain PHP views, Blade views may be returned from routes using the global `view` helper function:
 
-    Route::get('blade', function () {
-        return view('child');
-    });
+블레이드 템플릿은 순수한 PHP 뷰와 마찬가지로 `view` 헬퍼를 사용하여 곧바로 반환될 수 있습니다.
 
-<a name="displaying-data"></a>
-## Displaying Data
+```php
+Route::get('blade', function () {
+    return view('child');
+});
+```
+
+## 데이터 출력하기
 
 You may display data passed to your Blade views by wrapping the variable in "curly" braces. For example, given the following route:
 
-    Route::get('greeting', function () {
-        return view('welcome', ['name' => 'Samantha']);
-    });
+중괄호(culry brace)로 변수를 감싸면, 블레이드 뷰로 전달된 데이터를 출력할 수 있습니다. 예를 들어, 주어진 라우트가 있을 때:
 
-You may display the contents of the `name` variable like so:
+```php
+Route::get('greeting', function () {
+    return view('welcome', ['name' => 'Samantha']);
+});
+```
 
-    Hello, {{ $name }}.
+`name` 변수의 값을 다음과 같이 출력할 수 있습니다:
 
-Of course, you are not limited to displaying the contents of the variables passed to the view. You may also echo the results of any PHP function. In fact, you can put any PHP code you wish inside of a Blade echo statement:
+```html
+Hello, {{ $name }}.
+```
 
-    The current UNIX timestamp is {{ time() }}.
+뷰로 전달된 변수들의 값을 출력하는 것에 별다른 제한은 없습니다. PHP 함수의 결과 값을 출력할 수도 있습니다. 블레이드의 데이터 출력 구문 안에는 어떤 PHP 코드도 들어갈 수 있습니다.
 
-> **Note:** Blade `{{ }}` statements are automatically sent through PHP's `htmlentities` function to prevent XSS attacks.
+```html
+The current UNIX timestamp is {{ time() }}.
+```
 
-#### Blade & JavaScript Frameworks
+> **주의:** `{{ }}` 구문은 자동으로 PHP의 `htmlentities` 함수로 감싼 후 출력합니다. XSS 공격을 방어하기 위함입니다.
+
+#### 블레이드 & 자바스크립트 프레임워크
 
 Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the `@` symbol to inform the Blade rendering engine an expression should remain untouched. For example:
 
-    <h1>Laravel</h1>
+많은 자바스크립트 프레임웍에서도 브라우저에 출력되어야 할 데이터를 표시하기 위해 중괄호("curly" braces)를 사용하고 있습니다. 이럴 경우, `@` 기호를 사용하면 블레이드 랜더링 엔진은 이 구문을 변환하지 않고 그대로 출력할 것입니다. 예를 들어:
 
-    Hello, @{{ name }}.
+```php
+<h1>Laravel</h1>
 
-In this example, the `@` symbol will be removed by Blade; however, `{{ name }}` expression will remain untouched by the Blade engine, allowing it to instead be rendered by your JavaScript framework.
+Hello, @{{ name }}.
+```
 
-#### Echoing Data If It Exists
+위의 예에서 `@` 기호는 블레이드에 의해서 제거될 것이고, 나머지 `{{ name }}` 구문은 블레이드 엔진에 의해 해석되지 않고 그대로 남아있게 되어, 자바스크립트 프레임워크에 의해 변환되어 집니다.
+
+#### 데이터가 존재하는지 확인후 출력하기
 
 Sometimes you may wish to echo a variable, but you aren't sure if the variable has been set. We can express this in verbose PHP code like so:
 
-    {{ isset($name) ? $name : 'Default' }}
+가끔 변수를 출력할 때, 그 변수가 실제로 존재하는지 확신하지 못할 때도 있습니다. 이때 다음과 같이 PHP 코드를 사용할 수 있습니다.
 
-However, instead of writing a ternary statement, Blade provides you with the following convenient short-cut:
+```php
+{{ isset($name) ? $name : 'Default' }}
+```
 
-    {{ $name or 'Default' }}
+이렇게 3항연산자를 사용하는 대신, 블레이드는 다음과 같은 편리한 구문을 제공합니다:
 
-In this example, if the `$name` variable exists, its value will be displayed. However, if it does not exist, the word `Default` will be displayed.
+```php
+{{ $name or 'Default' }}
+```
 
-#### Displaying Unescaped Data
+위의 예에서, 만약 `$name` 변수가 존재하면 그 값이 출력될 것이고, 존재하지 않는다면 대신 `Default`라는 문자가 출력될 것입니다.
+
+#### Escape 하지 않고 데이터 출력하기
 
 By default, Blade `{{ }}` statements are automatically sent through PHP's `htmlentities` function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:
 
-    Hello, {!! $name !!}.
+기본적으로, `{{ }}` 구문은 XSS 공격을 방어하기 위해 자동으로 PHP의 `htmlentities` 함수를 실행후 반환합니다. 만약 데이터를 `htmlentities` 함수를 거치지 않은채 출력하고 싶다면, 다음과 같은 구문을 사용하십시오.
 
-> **Note:** Be very careful when echoing content that is supplied by users of your application. Always use the double curly brace syntax to escape any HTML entities in the content.
+```php
+Hello, {!! $name !!}.
+```
+
+> ** 주의:** 사용자로부터 입력 된 내용을 표시 할 때에는 escape에 대한 매우 세심한 주의가 필요합니다. 컨텐츠의 HTML 엔티티를 escape 하기위해 항상 이중 중괄호 표기법을 사용하십시오.
 
 <a name="control-structures"></a>
 ## Control Structures
