@@ -64,9 +64,6 @@ class UserController extends Controller {
 }
 ```
 
-<!--chak-comment-HTTP-Requests-Request-인스턴스-획득하기-->
-
-<a name="retrieving-input"></a>
 ## 입력값 검색하기
 
 #### 입력값 검색하기
