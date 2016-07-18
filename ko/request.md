@@ -115,41 +115,48 @@ $input = $request->input('products.0.name');
 
 ## 이전 입력
 
-라라벨에서는 현재 request의 입력값을 다음 request까지 유지하는 방법을 제공합니다. 예를 들어, 폼의 입력값 체크에서 에러가 발생하면 작성한 값들을 다시 채워줘야 할 필요가 있을 수 있습니다.
+XE는 현재 request의 입력값을 다음 request까지 유지하는 방법을 제공합니다. 예를 들어, 폼의 입력값 체크에서 에러가 발생하면 작성한 값들을 다시 채워줘야 할 필요가 있을 수 있습니다.
 
 #### 입력값들 세션에 저장하기
 
 `flash` 메소드는 현재의 입력들을 [세션](/docs/5.0/session)에 저장하여 사용자가 다음번에 request를 보내도 사용가능하게 만들어 줍니다.
 
-	Request::flash();
+```php
+Request::flash();
+```
 
 #### 몇개의 입력값만 세션에 저장하기
 
-	Request::flashOnly('username', 'email');
+```php
+Request::flashOnly('username', 'email');
 
-	Request::flashExcept('password');
+Request::flashExcept('password');
+```
 
 #### 플래쉬 & 리다이렉트
 
 대부분 이전 페이지로 리다이렉트 하면서 입력값을 플래슁 하기를 원하는 데, 이 경우 리다이렉트와 함께 입력값 플래싱을 메소드 체이닝으로 사용할 수 있습니다.
 
-	return redirect('form')->withInput();
+```php
+return redirect('form')->withInput();
 
-	return redirect('form')->withInput(Request::except('password'));
+return redirect('form')->withInput(Request::except('password'));
+```
 
 #### 이전 입력값 검색하기
 
 이전 Request에 대해 저장된 입력값을 검색하기 위해서는 `Request` 인스턴스의 `old` 메소드를 사용하면 됩니다.
 
-	$username = Request::old('username');
+```php
+$username = Request::old('username');
+```
 
 블레이드 템플릿 안에서 지난 입력값을 보여주려면 `old` 헬퍼함수를 사용하는 것이 보다 편리합니다:
 
-	{{ old('username') }}
+```php
+{{ old('username') }}
+```
 
-<!--chak-comment-HTTP-Requests-이전-입력-->
-
-<a name="cookies"></a>
 ## 쿠키
 
 모든 쿠키는 라라벨 프레임워크에서 인증 코드와 함께 암호화 됩니다. 이 말은 클라이언트가 변경되었을 때 쿠키가 유효하지 않다는 것을 의미합니다.
