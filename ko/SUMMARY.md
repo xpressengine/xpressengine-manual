@@ -25,7 +25,7 @@
    * [요청(Request)](request.md)
    * [응답(Response)](response.md)
    * [프리젠터(Presenter)](presenter.md)
-   * 템플릿(Blade Template)
+   * [템플릿(Blade Template)](template.md)
 * 플러그인
    * [플러그인 생성하기](plugin-generation.md)
    * [플러그인 구조](plugin-structure.md)
