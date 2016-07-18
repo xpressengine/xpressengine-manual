@@ -162,68 +162,65 @@ $username = Request::old('username');
 
 #### 업로드한 파일 가져오기
 
-	$file = Request::file('photo');
+$file = Request::file('photo');
 
 #### 파일이 업로드 되었는지 확인하기
 
-	if (Request::hasFile('photo'))
-	{
-		//
-	}
+if (Request::hasFile('photo'))
+{
+    //
+}
 
 `file` 메소드는 `SplFileInfo` 클래스를 상속하고 있는 `Symfony\Component\HttpFoundation\File\UploadedFile`의 인스턴스를 반환하고 파일에 대한 처리를 할 수 있는 다양한 메소드를 제공합니다.
 
 #### 업로드한 파일이 유효한지 판단하기
 
-	if (Request::file('photo')->isValid())
-	{
-		//
-	}
+if (Request::file('photo')->isValid())
+{
+    //
+}
 
 #### 업로드한 파일 이동하기
 
-	Request::file('photo')->move($destinationPath);
+Request::file('photo')->move($destinationPath);
 
-	Request::file('photo')->move($destinationPath, $fileName);
+Request::file('photo')->move($destinationPath, $fileName);
 
 ### 기타 파일 메소드
 
 그 밖에도 다양한 메소드들이 `UploadedFile` 인스턴스에 준비되어 있습니다. 추가적인 메소들에 대한 정보는 [API 문서](http://api.symfony.com/2.5/Symfony/Component/HttpFoundation/File/UploadedFile.html)를 참고하십시오.
 
-<!--chak-comment-HTTP-Requests-파일-처리-->
-
-<a name="other-request-information"></a>
 ## 기타 Request에 대한 정보
 
 `Request` 클래스는 `Symfony\Component\HttpFoundation\Request` 클래스를 상속하고 있으며 어플리케이션을 위한 HTTP request을 확인하는 많은 메소드를 제공하고 있습니다. 다음은 몇몇 예시들입니다.
 
 #### Request URI 가져오기
 
-	$uri = Request::path();
+$uri = Request::path();
 
 #### Request 가 AJAX 요청인지 확인
 
-	if (Request::ajax())
-	{
-		//
-	}
+if (Request::ajax())
+{
+    //
+}
 
 #### Request 메소드 확인하기
 
-	$method = Request::method();
+$method = Request::method();
 
-	if (Request::isMethod('post'))
-	{
-		//
-	}
+if (Request::isMethod('post'))
+{
+    //
+}
 
 #### 현재 request가 패턴에 일치하는지 확인하기
 
-	if (Request::is('admin/*'))
-	{
-		//
-	}
+if (Request::is('admin/*'))
+{
+    //
+}
 
 #### 현재 request URL 가져오기
 
-	$url = Request::url();
+$url = Request::url();
