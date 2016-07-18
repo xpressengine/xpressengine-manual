@@ -34,34 +34,33 @@ Two of the primary benefits of using Blade are _template inheritance_ and _secti
 </html>
 ```
 
-As you can see, this file contains typical HTML mark-up. However, take note of the `@section` and `@yield` directives. The `@section` directive, as the name implies, defines a section of content, while the `@yield` directive is used to display the contents of a given section.
-
 보는 바와 같이, 이 파일은 일반적인 HTML 마크업을 가지고 있습니다. 그런데 `@section` 과 `@yield` 지시자에 주목해 주십시오. `@section` 지시자는 이름에서도 알 수 있듯이 컨텐츠의 섹션을 정의하고 있고. 반대로 `@yield` 지시자는 주어진 섹션의 컨텐츠를 출력하고 있습니다.
-
-Now that we have defined a layout for our application, let's define a child page that inherits the layout.
 
 이제 레이아웃은 정의했고, 이 레이아웃을 상속받을 자식 페이지를 정의해 보겠습니다.
 
+### 레이아웃 확장하기
 
-### 레이아웃 사용하기
+자식페이지를 정의할 때, 우리는 블레이드의 `@extends` 지시자를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 블레이드 레이아웃을 확장(`@extends`)하는 뷰들은 `@section` 지시자를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 주입된 그 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
 
-When defining a child page, you may use the Blade `@extends` directive to specify which layout the child page should "inherit". Views which `@extends` a Blade layout may inject content into the layout's sections using `@section` directives. Remember, as seen in the example above, the contents of these sections will be displayed in the layout using `@yield`:
+```html
+<!-- Stored in resources/views/child.blade.php -->
 
-    <!-- Stored in resources/views/child.blade.php -->
+@extends('layouts.master')
 
-    @extends('layouts.master')
+@section('title', 'Page Title')
 
-    @section('title', 'Page Title')
+@section('sidebar')
+    @@parent
 
-    @section('sidebar')
-        @@parent
+    <p>This is appended to the master sidebar.</p>
+@endsection
 
-        <p>This is appended to the master sidebar.</p>
-    @endsection
+@section('content')
+    <p>This is my body content.</p>
+@endsection
+```
 
-    @section('content')
-        <p>This is my body content.</p>
-    @endsection
+
 
 In this example, the `sidebar` section is utilizing the `@@parent` directive to append (rather than overwriting) content to the layout's sidebar. The `@@parent` directive will be replaced by the content of the layout when the view is rendered.
 
