@@ -13,9 +13,11 @@ Route::get('/', function()
 });
 ```
 
-#### 사용자 지정 Response 생성하기
+#### Response 사용의 제한
 
-대부분의 라우트나 컨트롤러 액션에서는 `Illuminate\Http\Response`의 인스턴스나 [뷰](/docs/5.0/views)를 반환합니다. `Response` 인스턴스를 반환하는 것은 여러분이 response의 HTTP 상태 코드나 헤더를 변경할 수 있도록 지원합니다. `Response`는 `Symfony\Component\HttpFoundation\Response` 클래스를 상속받고 있으며 HTTP response를 만들기 위한 다양한 메소드를 제공합니다.
+XE의 기본 프레임워크인 라라벨에서는 대부분의 라우트나 컨트롤러 액션에서 `Illuminate\Http\Response`의 인스턴스나 [뷰](/docs/5.0/views)를 반환하도록 합니다. 
+
+하지만 XE는 웹 브라우저로 html 형식의 응답을 보낼 때, 스킨과 테마를 적용한 후 보내야 합니다. 특별한 경우가 아니라면 컨트롤러에서 `Illuminate\Http\Response` 인스턴스나 뷰를 직접 반환(return)하지 마십시오. 대신, [프리젠터](presenter.md)를 사용하여 반환하십시오. 반드시 [프리젠터](presenter.md)를 사용해야만 테마와 스킨이 적용되고 위젯 또한 정상적으로 출력됩니다.
 
 ```php
 use Illuminate\Http\Response;
@@ -53,6 +55,11 @@ return response($content)->withCookie(cookie('name', 'value'));
 
 	return response()->view('hello')->header('Content-Type', $type)
                      ->withCookie(cookie('name', 'value'));
+
+
+#### 테마 및 스킨 적용하기
+
+XE의 웹 브라우저로 html 형식의 응답을 보낼 경우에는 스킨과, 테마를 적용한 후 보내야 합니다. 특별한 경우가 아니라면 컨트롤러에서 `Illuminate\Http\Response` 인스턴스나 뷰를 직접 반환(return)하지 마십시오.
 
 
 ## 리다이렉트
