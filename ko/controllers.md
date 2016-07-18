@@ -33,16 +33,16 @@ class UserController extends Controller {
 다음과 같이 컨트롤러의 액션에 라우트를 지정할 수 있습니다:
 
 ```php
-Route::get('user/{id}', 'UserController@showProfile');
+Route::get('user/{id}', 'App\Http\UserController@showProfile');
 ```
 
 #### 컨트롤러 & 네임스페이스
 
-한 가지 반드시 알고 있어야 할 부분은 컨트롤러의 네임스페이스를 지정할 때 전체 네임스페이스를 다 쓸 필요가 없다는 것입니다. 클래스의 이름은 `App\Http\Controllers` 네임스페이스를 “root”로 인식하게 됩니다. 기본적으로 `RouteServiceProvider`가 `routes.php` 파일의 라우트들을 로드할 때 자동으로 이 “root” 네임스페이스를 포함하는 것으로 인식합니다.
+한 가지 반드시 알고 있어야 할 부분은 컨트롤러의 네임스페이스를 지정할 때 전체 네임스페이스를 다 써주어야 합니다.
 
-만약 `App\Http\Controllers` 하위에 중첩된 디렉토리를 구성하여 네임스페이스를 부여할 경우에는 단순히 `App\Http\Controllers`를 루트 네임 스페이스를 기준으로 하여 특정 클래스 이름을 사용하면 됩니다. 따라서 만약 컨트롤러가 `App\Http\Controllers\Photos\AdminController`처럼 구성되어 있다면 다음처럼 라우트를 구성하면 됩니다.
-
-	Route::get('foo', 'Photos\AdminController@method');
+```php
+Route::get('foo', 'Photos\AdminController@method');
+```
 
 #### 이름이 지정된 컨트롤러 라우트
 
