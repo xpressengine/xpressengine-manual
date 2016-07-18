@@ -99,7 +99,7 @@ if ($request->has('name'))
 $input = $request->all();
 ```
 
-#### Request 입력중에서 몇개의 값만 가져오기
+#### Request 입력 중에서 몇개의 값만 가져오기
 
 ```php
 $input = $request->only('username', 'password');
