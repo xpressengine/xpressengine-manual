@@ -13,7 +13,7 @@ XE에서 제공하고 있는 블레이드는 심플하고 강력한 템플릿 �
 
 Two of the primary benefits of using Blade are _template inheritance_ and _sections_. To get started, let's take a look at a simple example. First, we will examine a "master" page layout. Since most web applications maintain the same general layout across various pages, it's convenient to define this layout as a single Blade view:
 
-블레이드를 사용하는 주된 장점 두가지는 _템플릿 상속_과 _섹션_입니다. 시작하기 전에 간단한 예제를 살펴봅시다. 첫번째로, 우리는 "master" 페이지 레이아웃을 보겠습니다. 대부분의 웹사이트는 여러 페이지에서 걸쳐 동일한 레이아웃을 사용하기 때문에, 이 레이아웃을 하나의 블레이드 뷰로 정의하는 것이 편합니다.
+블레이드를 사용하는 주된 장점 두가지는 _템플릿 상속_과 _섹션_입니다. 시작하기 전에 간단한 예제를 살펴보겠습니다. 첫번째로, 우리는 "master" 페이지 레이아웃을 보겠습니다. 대부분의 웹사이트는 여러 페이지에서 걸쳐 동일한 레이아웃을 사용하기 때문에, 이 레이아웃을 하나의 블레이드 뷰로 정의하는 것이 편합니다.
 
 ```html
 <!-- Stored in resources/views/layouts/master.blade.php -->
@@ -36,10 +36,14 @@ Two of the primary benefits of using Blade are _template inheritance_ and _secti
 
 As you can see, this file contains typical HTML mark-up. However, take note of the `@section` and `@yield` directives. The `@section` directive, as the name implies, defines a section of content, while the `@yield` directive is used to display the contents of a given section.
 
+보는 바와 같이, 이 파일은 일반적인 HTML 마크업을 가지고 있습니다. 그런데 `@section` 과 `@yield` 지시자에 주목해 주십시오. `@section` 지시자는 이름에서도 알 수 있듯이 컨텐츠의 섹션을 정의하고 있고. 반대로 `@yield` 지시자는 주어진 섹션의 컨텐츠를 출력하고 있습니다.
+
 Now that we have defined a layout for our application, let's define a child page that inherits the layout.
 
-<a name="extending-a-layout"></a>
-### Extending A Layout
+이제 레이아웃은 정의했고, 이 레이아웃을 상속받을 자식 페이지를 정의해 보겠습니다.
+
+
+### 레이아웃 사용하기
 
 When defining a child page, you may use the Blade `@extends` directive to specify which layout the child page should "inherit". Views which `@extends` a Blade layout may inject content into the layout's sections using `@section` directives. Remember, as seen in the example above, the contents of these sections will be displayed in the layout using `@yield`:
 
