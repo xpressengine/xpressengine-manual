@@ -9,9 +9,7 @@ XE에서 제공하고 있는 블레이드는 간결하고 강력한 템플릿 �
 
 ### 레이아웃 정의하기
 
-Two of the primary benefits of using Blade are _template inheritance_ and _sections_. To get started, let's take a look at a simple example. First, we will examine a "master" page layout. Since most web applications maintain the same general layout across various pages, it's convenient to define this layout as a single Blade view:
-
-블레이드를 사용하는 주된 장점 두가지는 _템플릿 상속_과 _섹션_입니다. 시작하기 전에 간단한 예제를 살펴보겠습니다. 첫번째로, 우리는 "master" 페이지 레이아웃을 보겠습니다. 대부분의 웹사이트는 여러 페이지에서 걸쳐 동일한 레이아웃을 사용하기 때문에, 이 레이아웃을 하나의 블레이드 뷰로 정의하는 것이 편합니다.
+블레이드를 사용할 때의 주된 장점 두가지는 _템플릿 상속_과 _섹션_입니다. 시작하기 전에 간단한 예제를 살펴보겠습니다. 첫번째로, 우리는 "master" 페이지 레이아웃을 보겠습니다. 대부분의 웹사이트는 여러 페이지에 걸쳐 동일한 레이아웃을 사용하기 때문에, 이 레이아웃을 하나의 블레이드 뷰로 정의하는 것이 편합니다.
 
 ```html
 <!-- Stored in resources/views/layouts/master.blade.php -->
