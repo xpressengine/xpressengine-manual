@@ -48,7 +48,9 @@ $view = view('greeting')->withName('Victoria');
 
 필요한 경우에 `view` 헬퍼함수에 두 번째 인자로 데이터 배열을 전달할 수도 있습니다:
 
-	$view = view('greetings', $data);
+```php
+$view = view('greetings', $data);
+```
 
 이러한 방식으로 정보를 전달할 때,`$data`는 키/값으로 구성된 배열이어야 합니다. 뷰 안에서 여러분은 `{{ $key }}`와 같이 각각의 키에 해당하는 값에 엑세스 할 수 있습니다. (`$data['$key']`는 존재한다고 가정합니다. )
 
