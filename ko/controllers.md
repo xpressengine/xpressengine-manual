@@ -36,8 +36,6 @@ class UserController extends Controller {
 Route::get('user/{id}', 'UserController@showProfile');
 ```
 
-> **주의:** 모든 컨트롤러는 base 컨트롤러를 상속받아야 합니다.
-
 #### 컨트롤러 & 네임스페이스
 
 한 가지 반드시 알고 있어야 할 부분은 컨트롤러의 네임스페이스를 지정할 때 전체 네임스페이스를 다 쓸 필요가 없다는 것입니다. 클래스의 이름은 `App\Http\Controllers` 네임스페이스를 “root”로 인식하게 됩니다. 기본적으로 `RouteServiceProvider`가 `routes.php` 파일의 라우트들을 로드할 때 자동으로 이 “root” 네임스페이스를 포함하는 것으로 인식합니다.
