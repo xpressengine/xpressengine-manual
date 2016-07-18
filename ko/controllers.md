@@ -44,8 +44,13 @@ Route::get('user/{id}', 'App\Http\UserController@showProfile');
 Route::get('foo', 'Photos\AdminController@method');
 ```
 
+`namespace`를 사용하면 반복되는 namespace를 생략할 수 있습니다.
+
 ```php
-Route::group('namespace'
+Route::group(['prefix' => 'photos', 'namespace' => 'Photos'], function()
+{
+    Route::get('admin', 'AdminController@method');
+});
 ```
 
 
