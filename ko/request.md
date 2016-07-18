@@ -162,29 +162,37 @@ $username = Request::old('username');
 
 #### 업로드한 파일 가져오기
 
+```php
 $file = Request::file('photo');
+```
 
 #### 파일이 업로드 되었는지 확인하기
 
+```php
 if (Request::hasFile('photo'))
 {
     //
 }
+```
 
 `file` 메소드는 `SplFileInfo` 클래스를 상속하고 있는 `Symfony\Component\HttpFoundation\File\UploadedFile`의 인스턴스를 반환하고 파일에 대한 처리를 할 수 있는 다양한 메소드를 제공합니다.
 
 #### 업로드한 파일이 유효한지 판단하기
 
+```php
 if (Request::file('photo')->isValid())
 {
     //
 }
+```
 
 #### 업로드한 파일 이동하기
 
+```php
 Request::file('photo')->move($destinationPath);
 
 Request::file('photo')->move($destinationPath, $fileName);
+```
 
 ### 기타 파일 메소드
 
@@ -196,31 +204,41 @@ Request::file('photo')->move($destinationPath, $fileName);
 
 #### Request URI 가져오기
 
+```php
 $uri = Request::path();
+```
 
 #### Request 가 AJAX 요청인지 확인
 
+```php
 if (Request::ajax())
 {
     //
 }
+```
 
 #### Request 메소드 확인하기
 
+```php
 $method = Request::method();
 
 if (Request::isMethod('post'))
 {
     //
 }
+```
 
 #### 현재 request가 패턴에 일치하는지 확인하기
 
+```php
 if (Request::is('admin/*'))
 {
     //
 }
+```
 
 #### 현재 request URL 가져오기
 
+```php
 $url = Request::url();
+```
