@@ -8,7 +8,6 @@
        * git 저장소 사용하기
        * 인스톨러로 설치하기
    * [서버 환경 설정](server-configuration.md)
-       * window
        * [apache](apache.md)
        * nginx
    * [업데이트](update.md)
