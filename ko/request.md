@@ -86,28 +86,33 @@ $name = $request->input('name', 'Sally');
 
 #### 입력값이 존재하는지 확인하기
 
-	if ($request->has('name'))
-	{
-		//
-	}
+```php
+if ($request->has('name'))
+{
+    //
+}
+```
 
 #### 전체 입력값 가져오기
 
-	$input = $request->all();
+```php
+$input = $request->all();
+```
 
 #### Request 입력중에서 몇개의 값만 가져오기
 
-	$input = $request->only('username', 'password');
+```php
+$input = $request->only('username', 'password');
 
-	$input = $request->except('credit_card');
+$input = $request->except('credit_card');
+```
 
 입력폼에 배열로 값이 전달된다면 ‘점’으로 구분하여 입력값에 엑세스 할 수 있습니다:
 
-	$input = $request->input('products.0.name');
+```php
+$input = $request->input('products.0.name');
+```
 
-<!--chak-comment-HTTP-Requests-입력값-검색하기-->
-
-<a name="old-input"></a>
 ## 이전 입력
 
 라라벨에서는 현재 request의 입력값을 다음 request까지 유지하는 방법을 제공합니다. 예를 들어, 폼의 입력값 체크에서 에러가 발생하면 작성한 값들을 다시 채워줘야 할 필요가 있을 수 있습니다.
