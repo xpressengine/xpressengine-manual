@@ -16,12 +16,14 @@ $name = Request::input('name');
 
 ### 의존성 주입을 통한 방법
 
-현재의 의존성 주입을 통해서 HTTP request을 획득하기 위해서는 여러분의 컨트롤러 생성자나 메소드에서 타입힌트를 지정해야 합니다. 현재의 request의 인스턴스는 서비스 컨테이너에 의해서 자동으로 주입될 것입니다:
+현재의 의존성 주입을 통해서 HTTP request을 획득하기 위해서는 여러분의 컨트롤러 생성자나 메소드에서 타입힌트를 지정해야 합니다. XE의 request 인스턴스는 `\Xpressengine\Http\Request` 클래스의 인스턴스입니다. 이 클래스는 `\Illuminate\Http\Request`를 상속받고 있습니다.
+
+현재의 request의 인스턴스는 서비스 컨테이너에 의해서 자동으로 주입될 것입니다:
 
 ```php
 <?php namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Xpressengine\Http\Request;
 use Illuminate\Routing\Controller;
 
 class UserController extends Controller {
