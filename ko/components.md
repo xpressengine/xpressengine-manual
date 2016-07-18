@@ -10,7 +10,7 @@
 
 ## 컴포넌트 인터페이스
 
-모든 컴포넌트는 `Xpressengine\Plugin\ComponentInterface` 인터페이스를 구현한 클래스를 가지고 있어야 합니다. 이 인터페이스는 컴포넌트를 XE에 등록할 때 필요한 규칙을 한정해주는 역할을 합니다.
+모든 컴포넌트는 `Xpressengine\Plugin\ComponentInterface` 인터페이스를 구현한 클래스 형태여야 합니다. 이 인터페이스는 컴포넌트를 XE에 등록할 때 필요한 규칙을 한정해주는 역할을 합니다.
 
 ## 컴포넌트 타입
 
