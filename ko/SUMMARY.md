@@ -25,7 +25,7 @@
    * [요청(Request) - 100%](request.md)
    * [응답(Response) - 100%](response.md)
    * [프리젠터(Presenter)](presenter.md)
-   * [뷰(View)](view.md)
+   * [뷰(View) - 100%](view.md)
    * [템플릿(Blade Template)](blade.md)
 * 플러그인
    * [플러그인 생성하기](plugin-generation.md)
