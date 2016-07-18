@@ -25,7 +25,7 @@
 * 기본 사용법
    * [라이프 사이클](lifecycle.md)
    * [라우팅(routing)](routing.md)
-   * 컨트롤러(Controllers)
+   * [컨트롤러(Controllers)](controller.md)
    * 요청(Request)
    * 응답(Response)
    * 프리젠터(Presenter)
