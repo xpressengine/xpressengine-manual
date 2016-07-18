@@ -40,7 +40,7 @@ Two of the primary benefits of using Blade are _template inheritance_ and _secti
 
 ### 레이아웃 확장하기
 
-자식페이지를 정의할 때, 우리는 블레이드의 `@extends` 지시자를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 블레이드 레이아웃을 확장(`@extends`)하는 뷰들은 `@section` 지시자를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 주입된 그 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
+자식페이지를 정의할 때, `@extends` 지시자를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 레이아웃을 상속(`@extends`)받는 뷰들은 `@section` 지시자를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 자식 페이지에서 주입한 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
 
 ```html
 <!-- Stored in resources/views/child.blade.php -->
