@@ -249,9 +249,9 @@ Route::group([
 
 ## CSRF 보호하기
 
-크로스 사이트 요청 위조([cross-site request forgeries](http://en.wikipedia.org/wiki/Cross-site_request_forgery))으로부터 응용 프로그램을 쉽게 보호할 수 있습니다. 크로스 사이트 요청 위조는 악의적인 공격의 하나이며 인증받은 사용자를 대신하여 허가 받지 않은 명령을 수행합니다.
+XE에서는 크로스 사이트 요청 위조([cross-site request forgeries](http://en.wikipedia.org/wiki/Cross-site_request_forgery))으로부터 응용 프로그램을 쉽게 보호할 수 있습니다. 크로스 사이트 요청 위조는 악의적인 공격의 하나이며 인증받은 사용자를 대신하여 허가 받지 않은 명령을 수행합니다.
 
-라라벨은 어플리케이션에 의해서 관리되고 있는 각각의 사용자별 CSRF "토큰"을 자동으로 생성합니다. 이 토큰은 인증된 사용자가 실제로 어플리케이션에 요청을 보내고 있는지 식별하는 데 사용됩니다.
+XE는 사용자별 CSRF "토큰"을 자동으로 생성합니다. 이 토큰은 인증된 사용자가 실제로 XE에 요청을 보내고 있는지 식별하는 데 사용됩니다.
 
 #### Form에 CSRF 토큰 삽입하기
 
@@ -265,37 +265,8 @@ Route::group([
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 ```
 
-일일이 수동으로 POST, PUT 또는 DELETE 요청에 대한 CSRF 토큰을 확인할 필요가 없습니다. `VerifyCsrfToken` [HTTP 미들웨어](/docs/5.0/middleware)가 요청중인 토큰을 세션에 저장되어 있는 토큰과 일치하는지 확인할 것입니다.
+일일이 수동으로 POST, PUT 또는 DELETE 요청에 대한 CSRF 토큰을 확인할 필요가 없습니다. XE가 자동으로 요청중인 토큰을 세션에 저장되어 있는 토큰과 일치하는지 확인할 것입니다.
 
-#### X-CSRF-TOKEN
-
-덧붙여 미들웨어는 "POST" 파라미터로 CSRF 토큰을 찾기 위해서 `X-CSRF-TOKEN` 요청 헤더(request header)도 확인합니다. 사용자는 예를 들어, "메타" 태그에 토큰을 저장하고 모든 요청 헤더(request header)에 추가하도록 jQuery를 설정 할 수 있습니다.
-
-```php
-<meta name="csrf-token" content="{{ csrf_token() }}" />
-```
-
-```php
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-```
-
-이제 모든 AJAX 요청은 자동으로 CSRF 토큰을 포함하게 됩니다.
-
-```php
-$.ajax({
-   url: "/foo/bar",
-})
-```
-
-#### X-XSRF-TOKEN
-
-또한, 라라벨은 CSRF 토큰을 `XSRF-TOKEN` 쿠키에 저장합니다. 이 쿠키값을 요청 헤더(request header)에 `X-XSRF-TOKEN`을 설정하는 데 사용할 수 있습니다. Angular와 같은 몇몇 자바스크립트 프레임워크는 자동으로 이 값을 사용합니다.
-
-> 참고: `X-CSRF-TOKEN`와 `X-XSRF-TOKEN`의 차이점은 전자는 일반적인 텍스트를 사용한다면 후자는 암호화된 값을 사용한다는 것인데, 이는 라라벨에서는 쿠키를 항상 암호화 된 값으로 사용하기 때문입니다. 여러분이 토큰 값을 제공하기 위해`csrf_token ()`함수를 사용하는 경우는, 아마 `X-CSRF-TOKEN` 헤더를 사용하게 되는 경우일것입니다.
 
 ## 메소드 Spoofing-속이기
 
