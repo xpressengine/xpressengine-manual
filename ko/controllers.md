@@ -4,28 +4,31 @@
 
 컨트롤러는 `App\Http\Controllers\Controller` 클래스를 상속받아 작성하십시오.
 
+
 ## 기본 컨트롤러
 
 다음은 기본적인 컨트롤러 클래스의 예제입니다:
 
-	<?php namespace App\Http\Controllers;
+```php
+<?php namespace App\Http\Controllers;
 
-	use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
-	class UserController extends Controller {
+class UserController extends Controller {
 
-		/**
-		 * Show the profile for the given user.
-		 *
-		 * @param  int  $id
-		 * @return Response
-		 */
-		public function showProfile($id)
-		{
-			return view('user.profile', ['user' => User::findOrFail($id)]);
-		}
+    /**
+     * Show the profile for the given user.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function showProfile($id)
+    {
+        return view('user.profile', ['user' => User::findOrFail($id)]);
+    }
 
-	}
+}
+```
 
 다음과 같이 컨트롤러의 액션에 라우트를 지정할 수 있습니다:
 
