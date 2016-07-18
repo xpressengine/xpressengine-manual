@@ -54,9 +54,7 @@ return response($content)->withCookie(cookie('name', 'value'));
 	return response()->view('hello')->header('Content-Type', $type)
                      ->withCookie(cookie('name', 'value'));
 
-<!--chak-comment-HTTP-Responses-기본적인-Responses-->
 
-<a name="redirects"></a>
 ## 리다이렉트
 
 일반적으로 리다이렉트 Response는 `Illuminate\Http\RedirectResponse` 클래스의 인스턴스이며, 사용자를 다른 URL로 리다이렉트하는 데 필요한 적절한 헤더를 포함하고 있습니다.
@@ -95,9 +93,6 @@ return response($content)->withCookie(cookie('name', 'value'));
 
 	return redirect()->route('profile', [1]);
 
-라우트에 “ID” 파라미터를 따라 Eloquent 모델을 획득하는 라우트로 리디렉션하는 경우, 모델 그 자신을 그대로 전달할 수도 있습니다. ID는 자동으로 추출되어 질것입니다:
-
-	return redirect()->route('profile', [$user]);
 
 #### 이름지 지정된 라우트로 파라미터 이름과 함께 리다이렉트 하기
 
@@ -121,9 +116,7 @@ return response($content)->withCookie(cookie('name', 'value'));
 
 	return redirect()->action('App\Http\Controllers\UserController@profile', ['user' => 1]);
 
-<!--chak-comment-HTTP-Responses-리다이렉트-->
 
-<a name="other-responses"></a>
 ## 기타 Response
 
 `response` 헬퍼 함수를 사용하여 편리하게 다른 타입의 response 인스턴스를 생성할 수도 있습니다. `response` 헬퍼함수를 인자없이 호출하게 되면 `Illuminate\Contracts\Routing\ResponseFactory` [contract](/docs/5.0/contracts)를 반환합니다. 이 contract는 response를 생성하기 위한 다양한 메소드를 제공합니다.
@@ -149,39 +142,3 @@ return response($content)->withCookie(cookie('name', 'value'));
 
 > **참고:** 파일 다운로드를 관리하는 Symfony의 HttpFoundation에서 다운로드 할 파일의 이름이 ASCII 파일 이름임을 필요로 하고 있습니다.
 
-<!--chak-comment-HTTP-Responses-기타-Response-->
-
-<a name="response-macros"></a>
-## Response 매크로
-
-다양한 라우트와 컨트롤러에서 재사용할 수 있는 사용자 정의 Response를 정의하려면 `Illuminate\Contracts\Routing\ResponseFactory` 구현 클래스의 `macro` 메소드를 사용할 수 있습니다.
-
-다음은 [service provider's](/docs/5.0/providers)의 `boot` 메소드에서 정의하는 예제입니다:
-
-	<?php namespace App\Providers;
-
-	use Response;
-	use Illuminate\Support\ServiceProvider;
-
-	class ResponseMacroServiceProvider extends ServiceProvider {
-
-		/**
-		 * Perform post-registration booting of services.
-		 *
-		 * @return void
-		 */
-		public function boot()
-		{
-			Response::macro('caps', function($value)
-			{
-				return Response::make(strtoupper($value));
-			});
-		}
-
-	}
-
-`macro` 메소드는 매크로로 지정할 이름을 첫 번째 인자로, 클로저를 두 번째 인자로 전달받습니다. 매크로로 등록된 클로저는 `response` 헬퍼 함수를 통해서 `ResponseFactory` 구현 객체에서 호출될것입니다.
-
-	return response()->caps('foo');
-
-<!--chak-comment-HTTP-Responses-Response-매크로-->
