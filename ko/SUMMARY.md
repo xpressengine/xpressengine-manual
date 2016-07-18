@@ -34,7 +34,7 @@
    * 관리페이지 추가
    * 컴포넌트 등록
 * 컴포넌트
-   * [테마](component-theme.md)
+   * [테마 - 100%](component-theme.md)
    * 스킨
    * 위젯
    * 모듈
