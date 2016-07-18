@@ -40,35 +40,29 @@ class UserController extends Controller {
 }
 ```
 
-`Request` 파사드는 컨테이너와 결합된 현재의 Request에 엑세스 할 수 있도록 해줍니다. 예를 들면:
-
-	$name = Request::input('name');
-
-만약 특정 네임스페이스 아래에서 `Request` 파사드를 사용하고자 한다면 클래스 상단부분에 `use Request;` 구문을 추가해야 된다는 것을 기억하십시오.
-
-
 만약 컨트롤러 메소드에서 라우터 파라미터로부터 입력값을 받아야 한다면 의존성을 지정한 뒤에 라우트 인자를 나열하면 됩니다:
 
-	<?php namespace App\Http\Controllers;
+```php
+<?php namespace App\Http\Controllers;
 
-	use Illuminate\Http\Request;
-	use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
-	class UserController extends Controller {
+class UserController extends Controller {
 
-		/**
-		 * Update the specified user.
-		 *
-		 * @param  Request  $request
-		 * @param  int  $id
-		 * @return Response
-		 */
-		public function update(Request $request, $id)
-		{
-			//
-		}
-
-	}
+    /**
+     * Update the specified user.
+     *
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+}
+```
 
 <!--chak-comment-HTTP-Requests-Request-인스턴스-획득하기-->
 
