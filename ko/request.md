@@ -122,7 +122,7 @@ XE는 현재 request의 입력값을 다음 request까지 유지하는 방법을
 `flash` 메소드는 현재의 입력들을 [세션](/docs/5.0/session)에 저장하여 사용자가 다음번에 request를 보내도 사용가능하게 만들어 줍니다.
 
 ```php
-Request::flash();
+$request->flash();
 ```
 
 #### 몇개의 입력값만 세션에 저장하기
