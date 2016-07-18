@@ -29,7 +29,7 @@
    * [템플릿(Blade Template) - 100%](blade.md)
 * 플러그인
    * [플러그인 생성하기 - 100%](plugin-generation.md)
-   * [플러그인 구조](plugin-structure.md)
+   * [플러그인 구조 - 100%](plugin-structure.md)
    * 다국어 지원
    * [버전 관리(install, update)](plugin-versions.md)
    * 관리페이지 추가
