@@ -160,7 +160,7 @@ $username = Request::old('username');
 
 ## 파일 처리
 
-
+Request 인스턴스의 `file` 메소드를 사용하면 사용자가 업로드한 파일을 엑세스할 수 있습니다. `file` 메소드에 의해 반환되는 값은 `Symfony\Component\HttpFoundation\File\UploadedFile` 클래스의 인스턴스입니다. 이 인스턴스의 다양한 메소드를 사용하여 업로드된 파일에 대한 정보를 참조할 수 있습니다.
 
 #### 업로드한 파일 가져오기
 
@@ -171,7 +171,7 @@ $file = $request->file('photo');
 #### 파일이 업로드 되었는지 확인하기
 
 ```php
-if (Request::hasFile('photo'))
+if ($request->hasFile('photo'))
 {
     //
 }
