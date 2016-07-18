@@ -146,28 +146,36 @@ Hello, {!! $name !!}.
 
 > ** 주의:** 사용자로부터 입력 된 내용을 표시 할 때에는 escape에 대한 매우 세심한 주의가 필요합니다. 컨텐츠의 HTML 엔티티를 escape 하기위해 항상 이중 중괄호 표기법을 사용하십시오.
 
-<a name="control-structures"></a>
-## Control Structures
+
+## 제어문
 
 In addition to template inheritance and displaying data, Blade also provides convenient short-cuts for common PHP control structures, such as conditional statements and loops. These short-cuts provide a very clean, terse way of working with PHP control structures, while also remaining familiar to their PHP counterparts.
 
-#### If Statements
+블레이드는 템플릿 상속 및 데이터 출력과 더불어, 조건문이나 반복문과 같이 일반적인 PHP 제어문의 실행을 위해 편리하고 간결한 구문을 제공합니다. 이 구문들은 매우 깔끔하고 간단하면서도, 대응되는 PHP 제어문들과 비슷한 모습을 띄고 있습니다.
+
+#### If문
 
 You may construct `if` statements using the `@if`, `@elseif`, `@else`, and `@endif` directives. These directives function identically to their PHP counterparts:
 
-    @if (count($records) === 1)
-        I have one record!
-    @elseif (count($records) > 1)
-        I have multiple records!
-    @else
-        I don't have any records!
-    @endif
+`if` 문은 `@if`, `@elseif`, `@else`와 `@endif` 지시자를 사용하여 구성할 수 있습니다. 이 지시자들은 각각 대응되는 PHP 구문과 동일하게 작동합니다.
 
-For convenience, Blade also provides an `@unless` directive:
+```php
+@if (count($records) === 1)
+    I have one record!
+@elseif (count($records) > 1)
+    I have multiple records!
+@else
+    I don't have any records!
+@endif
+```
 
-    @unless (Auth::check())
-        You are not signed in.
-    @endunless
+더 편한방법으로, 블레이드는 `@unless` 지시자를 제공합니다.
+
+```php
+@unless (Auth::check())
+    You are not signed in.
+@endunless
+```
 
 #### Loops
 
