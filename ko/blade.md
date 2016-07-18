@@ -7,10 +7,9 @@ Blade is the simple, yet powerful templating engine provided with Laravel. Unlik
 XE에서 제공하고 있는 블레이드는 심플하고 강력한 템플릿 엔진입니다. 다른 인기있는 PHP 템플릿 엔진들과는 다르게 블레이드는 여러분이 순수한 PHP 코드를 뷰에 사용하는 것을 제안하지 않습니다. 모든 블레이드 뷰는 순수한 PHP 코드로 컴파일된 후 캐싱됩니다. 파일이 수정되지 않을 때까지 캐싱된 파일을 사용합니다. 이는 블레이드가 본질적으로 성능상 부하가 없음을 의미합니다. 블레이드 뷰 파일은 확장자로 `.blade.php`를 사용합니다.
 
 
-## Template Inheritance
+## 템플릿 계층구조
 
-<a name="defining-a-layout"></a>
-### Defining A Layout
+### 레이아웃 정의하기
 
 Two of the primary benefits of using Blade are _template inheritance_ and _sections_. To get started, let's take a look at a simple example. First, we will examine a "master" page layout. Since most web applications maintain the same general layout across various pages, it's convenient to define this layout as a single Blade view:
 
