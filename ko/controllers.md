@@ -70,39 +70,43 @@ $url = action('FooController@method');
 
 실행중인 컨트롤러 액션의 이름을 찾고자 한다면 `currentRouteAction` 메소드를 사용하면 됩니다:
 
-	$action = Route::currentRouteAction();
-
+```php
+$action = Route::currentRouteAction();
+```
 
 ## 컨트롤러 미들웨어
 
 [미들웨어](/docs/5.0/middleware)는 다음과 같이 컨트롤러 라우트에 지정합니다.
 
-	Route::get('profile', [
-		'middleware' => 'auth',
-		'uses' => 'UserController@showProfile'
-	]);
+```php
+Route::get('profile', [
+    'middleware' => 'auth',
+    'uses' => 'UserController@showProfile'
+]);
+```
 
 덧붙여 미들웨어를 컨트롤러의 생성자에서 지정할수도 있습니다.
 
-	class UserController extends Controller {
+```php
+class UserController extends Controller {
 
-		/**
-		 * Instantiate a new UserController instance.
-		 */
-		public function __construct()
-		{
-			$this->middleware('auth');
+    /**
+     * Instantiate a new UserController instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
 
-			$this->middleware('log', ['only' => ['fooAction', 'barAction']]);
+        $this->middleware('log', ['only' => ['fooAction', 'barAction']]);
 
-			$this->middleware('subscribed', ['except' => ['fooAction', 'barAction']]);
-		}
-
-	}
+        $this->middleware('subscribed', ['except' => ['fooAction', 'barAction']]);
+    }
+}
+```
 
 ## 묵시적 컨트롤러
 
-라라벨에서는 한번의 라우팅 등록으로 컨트롤러를 통해 모든 액션들을 처리할 수 있는 손쉬운 방법을 제공합니다. 먼저 `Route::controller` 메소드를 사용하여 경로를 지정합니다:
+XE에서는 한번의 라우팅 등록으로 컨트롤러를 통해 모든 액션들을 처리할 수 있는 손쉬운 방법을 제공합니다. 먼저 `Route::controller` 메소드를 사용하여 경로를 지정합니다:
 
 	Route::controller('users', 'UserController');
 
