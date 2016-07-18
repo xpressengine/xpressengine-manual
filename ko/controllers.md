@@ -48,19 +48,25 @@ Route::get('foo', 'Photos\AdminController@method');
 
 클로저 라우트와 같이 컨트롤러 라우트에 이름을 지정할 수 있습니다.
 
-	Route::get('foo', ['uses' => 'FooController@method', 'as' => 'name']);
+```php
+Route::get('foo', ['uses' => 'FooController@method', 'as' => 'name']);
+```
 
 #### 컨트롤러 액션의 URL 구하기
 
 컨트롤러 액션에 대한 URL을 생성하기 위해서 `action` 헬퍼함수를 사용합니다:
 
-	$url = action('App\Http\Controllers\FooController@method');
+```php
+$url = action('App\Http\Controllers\FooController@method');
+```
 
 단순히 컨트롤러의 전체 네임스페이스의 대신 클래스명만으로 URL을 생성하고 싶은 경우에는 root 컨트롤러 네임스페이스를 URL 제너레이터에 등록하면 됩니다:
 
-	URL::setRootControllerNamespace('App\Http\Controllers');
+```php
+URL::setRootControllerNamespace('App\Http\Controllers');
 
-	$url = action('FooController@method');
+$url = action('FooController@method');
+```
 
 실행중인 컨트롤러 액션의 이름을 찾고자 한다면 `currentRouteAction` 메소드를 사용하면 됩니다:
 
