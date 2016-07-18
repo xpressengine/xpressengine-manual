@@ -12,36 +12,42 @@ $value = $request->cookie('name');
 
 `cookie` 헬퍼함수는 새로운 `Symfony\Component\HttpFoundation\Cookie` 인스턴스를 생성하기 위한 간단한 팩토리로 작동합니다. 쿠키를 `Response` 인스턴스에 추가하려면 `withCookie` 메소드를 사용하면 됩니다:
 
-	$response = new Illuminate\Http\Response('Hello World');
+```php
+$response = new Illuminate\Http\Response('Hello World');
 
-	$response->withCookie(cookie('name', 'value', $minutes));
+$response->withCookie(cookie('name', 'value', $minutes));
+```
 
 #### 영원히 남게되는 쿠키 생성하기
 
 _영원히는 실제로는 5년을 의미합니다._
 
-	$response->withCookie(cookie()->forever('name', 'value'));
+```php
+$response->withCookie(cookie()->forever('name', 'value'));
+```
 
 #### 쿠키 큐처리 하기
 
 해당 Response가 작성되기 전에 반환되는 Response에 추가할 쿠키를 “큐 처리”할 수 있습니다:
 
-	<?php namespace App\Http\Controllers;
+```php
+<?php namespace App\Http\Controllers;
 
-	use Cookie;
-	use Illuminate\Routing\Controller;
+use Cookie;
+use Illuminate\Routing\Controller;
 
-	class UserController extends Controller
-	{
-		/**
-		 * Update a resource
-		 *
-		 * @return Response
-		 */
-		 public function update()
-		 {
-		 	Cookie::queue('name', 'value');
+class UserController extends Controller
+{
+    /**
+     * Update a resource
+     *
+     * @return Response
+     */
+     public function update()
+     {
+        Cookie::queue('name', 'value');
 
-		 	return response('Hello World');
-		 }
-	}
+        return response('Hello World');
+     }
+}
+```
