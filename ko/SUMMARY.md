@@ -8,7 +8,6 @@
        * git 저장소 사용하기
        * 인스톨러로 설치하기
    * [서버 환경 설정](server-configuration.md)
-       * [apache](apache.md)
    * [업데이트](update.md)
 * 사이트 설정
    * [config 디렉토리](configurations.md)
