@@ -17,7 +17,7 @@
    * [디렉토리 구조 - 80%](structure.md)
    * [컴포넌트](components.md)
    * [플러그인 - 100%](plugin.md)
-   * [서비스](service.md)
+   * [서비스 - 70%](service.md)
 * 기본 사용법
    * [라이프 사이클 - 100%](lifecycle.md)
    * [라우팅(routing) - 100%](routing.md)
