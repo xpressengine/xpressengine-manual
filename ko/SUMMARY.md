@@ -14,7 +14,7 @@
    * [.env](env.md)
    * [디버깅](debugging.md)
 * XE 구조
-   * [디렉토리 구조](structure.md)
+   * [디렉토리 구조 - 80%](structure.md)
    * [컴포넌트](components.md)
    * [플러그인](plugin.md)
    * [서비스](service.md)
