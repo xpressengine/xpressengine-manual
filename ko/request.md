@@ -73,35 +73,35 @@ class UserController extends Controller {
 간단한 메소드를 통해서 `Illuminate\Http\Request` 인스턴스 모든 사용자 입력값에 엑세스 할 수 있습니다. request에서 어떤 HTTP 메소드를 사용했는지에 대해서는 걱정할 필요 없이 모든 HTTP 메소드에 대해서 같은 방법으로 입력값에 대해 엑세스가 가능합니다.
 
 ```php
-$name = Request::input('name');
+$name = $request->input('name');
 ```
 
 #### 입력값이 없을 때 기본값 가져오기
 
 ```php
-$name = Request::input('name', 'Sally');
+$name = $request->input('name', 'Sally');
 ```
 
 #### 입력값이 존재하는지 확인하기
 
-	if (Request::has('name'))
+	if ($request->has('name'))
 	{
 		//
 	}
 
 #### 전체 입력값 가져오기
 
-	$input = Request::all();
+	$input = $request->all();
 
 #### Request 입력중에서 몇개의 값만 가져오기
 
-	$input = Request::only('username', 'password');
+	$input = $request->only('username', 'password');
 
-	$input = Request::except('credit_card');
+	$input = $request->except('credit_card');
 
 입력폼에 배열로 값이 전달된다면 ‘점’으로 구분하여 입력값에 엑세스 할 수 있습니다:
 
-	$input = Request::input('products.0.name');
+	$input = $request->input('products.0.name');
 
 <!--chak-comment-HTTP-Requests-입력값-검색하기-->
 
