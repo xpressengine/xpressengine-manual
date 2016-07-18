@@ -72,9 +72,7 @@ $url = action('FooController@method');
 
 	$action = Route::currentRouteAction();
 
-<!--chak-comment-HTTP-컨트롤러(HTTP-Controllers)-기본-컨트롤러-->
 
-<a name="controller-middleware"></a>
 ## 컨트롤러 미들웨어
 
 [미들웨어](/docs/5.0/middleware)는 다음과 같이 컨트롤러 라우트에 지정합니다.
