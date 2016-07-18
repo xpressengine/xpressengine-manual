@@ -55,7 +55,7 @@
    * [카테고리(category)](service-category.md)
    * [데이터베이스(database)](service-database.md)
    * [메일(email)](service-email.md)
-   * 프론트엔드(frontend/assets)
+   * 프론트앤드(frontend/assets)
    * 이미지처리(Image)
    * [세션(Session)](service-session.md)
    * 헬퍼(helpers)
