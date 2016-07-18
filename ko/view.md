@@ -36,11 +36,13 @@ Route::get('/', function()
 
 #### 뷰에 데이터 전달하기
 
-    // Using conventional approach
-    $view = view('greeting')->with('name', 'Victoria');
+```php
+// Using conventional approach
+$view = view('greeting')->with('name', 'Victoria');
 
-    // Using Magic Methods
-    $view = view('greeting')->withName('Victoria');
+// Using Magic Methods
+$view = view('greeting')->withName('Victoria');
+```
 
 위 예제의 경우 뷰에서는 `$name` 변수에 `Victoria`라는 값을 확인할 수 있습니다.
 
