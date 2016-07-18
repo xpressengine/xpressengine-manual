@@ -28,7 +28,7 @@ $response->withCookie(cookie()->forever('name', 'value'));
 
 #### 쿠키 큐처리 하기
 
-해당 Response가 작성되기 전에 반환되는 Response에 추가할 쿠키를 “큐 처리”할 수 있습니다:
+플러그인 클래스의 `boot` 메소드는 XE의 라이프 사이클에서 매우 이른 시점에 실행됩니다. 이렇게 Response 인스턴스가 작성되기 전에 실행되는 코드에서는 반환되는 Response에 추가할 쿠키를 “큐 처리”할 수 있습니다:
 
 ```php
 <?php namespace App\Http\Controllers;
