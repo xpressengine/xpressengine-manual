@@ -1,6 +1,6 @@
 # 플러그인 구조
 
-각 플러그인은 하나의 디렉토리로 구성되며, 디렉토리 안에는 플러그인에 필요한 파일들이 포함돼 있습니다. 아래의 파일 목록은 각 플러그인이 포함해야 할 필수 파일들입니다.
+XE 플러그인은 하나의 디렉토리로 구성되며, 디렉토리 안에는 플러그인에 필요한 파일들이 포함돼 있습니다. 아래의 파일 목록은 각 플러그인이 포함해야 할 필수 파일들입니다.
 
 ```
 plugins/
@@ -15,11 +15,11 @@ plugins/
 
 #### composer.json
 
-플러그인은 하나의 composer 패키지이기도 합니다. 다른 플러그인이나 라이브러리 패키지에 대한 의존성 처리, 오토로드(autoload)와 같은 composer의 장점을 활용하기 위해, XE에서는 composer를 사용하여 플러그인을 관리합니다. `composer.json` 파일은 composer가 패키지의 정보를 담을 때 사용하는 파일입니다. XE에서는 composer에서 필요한 정보 이외에 XE가 자체적으로 필요로 하는 플러그인 정보를 담기 위해 이 파일을 같이 사용합니다.
+XE 플러그인은 하나의 composer 패키지이기도 합니다. 다른 플러그인이나 라이브러리 패키지에 대한 의존성 처리, 오토로드(autoload)와 같은 composer의 장점을 활용하기 위해, XE에서는 composer를 사용하여 플러그인을 관리합니다. `composer.json` 파일은 composer가 패키지의 정보를 담을 때 사용하는 파일입니다. 또한 XE는 XE가 자체적으로 필요로 하는 플러그인 정보를 담기 위해 이 파일을 같이 사용합니다.
 
-`alice` 번들 플러그인의 `composer.json` 파일입니다.
+아래 코드는 `alice` 번들 플러그인의 `composer.json` 파일입니다.
 
-```
+```json
 {
   "name": "xpressengine-plugin/alice",
   "description": "This Package is Xpressengine Plugin - Alice Theme.",
