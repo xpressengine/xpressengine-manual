@@ -63,25 +63,23 @@ public function install()
 플러그인 클래스는 업데이트와 관련된 두개의 메소드를 가지고 있습니다. `checkUpdated`와 `update` 메소드입니다. 두 메소드는 앞서 설명한 `checkInstalled`와 `install` 메소드와 비슷한 작동과정을 가집니다.
 
 ```php
-public function checkUpdated($installedVersion = null)
+<?php
+namespace MyPlugin;
+
+use Xpressengine\Plugin\AbstractPlugin;
+use Schema;
+
+class Plugin extends AbstractPlugin
 {
-    // 테이블이 존재하는지 검사, 없으면 false를 반환
-    return Schema::hasTable('table_name');
+  public function checkUpdated($installedVersion = null)
+  {
+      // 플러그인이 설치된 상태인지 체크하는 코드를 작성합니다.
+  }
+  
+  public function update()
+  {
+      // 플러그인이 설치될 때 필요한 코드를 작성합니다.
+  }
+  
 }
 ```
-
-XE는 `checkInstalled` 메소드의 리턴 값이 `false`일 경우, `install` 메소드를 호출합니다. 
-
-```php
-public function install()
-{
-    // 플러그인이 설치될 때 필요한 코드를 작성합니다.
-    Schema::create('table_name', function ($table) {
-      $table->engine = 'InnoDB';
-      $table->increments('id');
-      $table->string('name', 200);
-    });
-}
-```
-
-
