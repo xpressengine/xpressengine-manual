@@ -25,6 +25,7 @@ class Plugin extends AbstractPlugin
   public function boot()
   {
       // 사이트 관리 페이지 추가
+      // http://<domain>/settings/my_plugin url로 접근 가능
       Route::settings(static::getId(), function() {
         Route::get('/', function(){
           return Presenter::make(static::view('views.settings');
@@ -34,6 +35,9 @@ class Plugin extends AbstractPlugin
   
 }
 ```
+
+
+
 
 
 
