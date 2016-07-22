@@ -11,7 +11,8 @@ XE는 사이트 관리자 또는 관리 등급을 가진 회원만 접근할 수
 
 ```php
   Route::settings($uri, function() {
-    ...
+    Route::get('/', ...);
+    Route::post('/', ...);
   });
 ```
 
@@ -42,6 +43,7 @@ class Plugin extends AbstractPlugin
   
 }
 ```
+
 
 
 
