@@ -25,9 +25,9 @@ class Plugin extends AbstractPlugin
   public function boot()
   {
       // 사이트 관리 페이지 추가
-      Route::settings(, function() {
+      Route::settings(static::getId(), function() {
         Route::get('/', function(){
-          return Presenter::(
+          return Presenter::make('
         }
       });
 
