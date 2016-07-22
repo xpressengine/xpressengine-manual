@@ -145,7 +145,7 @@ Route::settings('user', function () {
 
 ### 사이트 관리 페이지에 권한 지정하기
 
-등록한 권한을 라우트와 연결하는 과정도 메뉴에서 사용한 방식과 유사합니다. `settings_permission` 필드에 권한의 아이디를 지정하십시오.
+등록한 권한을 관리 페이지(라우트)에 연결하는 과정도 사이트 관리 메뉴를 지정했던 방식과 유사합니다. `settings_permission` 필드에 권한의 아이디를 지정하십시오.
 
 ```php
 Route::settings('user', function () {
