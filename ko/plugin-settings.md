@@ -88,7 +88,7 @@ class Plugin extends AbstractPlugin
 
 ```php
 // member.create 등록
-\XeRegister::push('settings/menu', 'member.create', [
+\XeRegister::push('settings/menu', 'user.create', [
     'title' => '새 회원 추가',
     'description' => '신규회원을 추가합니다.',
     'display' => false,
@@ -101,7 +101,7 @@ Route::settings('user', function () {
     Route::get('create', [
            'as' => 'settings.member.create',
            'uses' => 'Member\Settings\UserController@create',
-           'settings_menu' => 'member.create'
+           'settings_menu' => 'user.create'
     ]);
 });
 ```
@@ -125,7 +125,7 @@ Route::settings('user', function () {
 \XeRegister::push('settings/permission', $permissionId, $permissionInfo);
 ```
 
-아래 코드는 '회원정보 보기'라는 권한을 등록하는 예제입니다.
+아래 코드는 '회원 생성'이라는 권한을 등록하는 예제입니다.
 
 ```php
 \XeRegister::push('settings/permission', 'user.create', [
@@ -153,8 +153,8 @@ Route::settings('user', function () {
     Route::get('create', [
            'as' => 'settings.member.create',
            'uses' => 'Member\Settings\UserController@create',
-           'settings_menu' => 'member.create',
-           'settings_permission' => 'user.list'
+           'settings_menu' => 'user.create',
+           'settings_permission' => 'user.create'
     ]);
 });
 ```
