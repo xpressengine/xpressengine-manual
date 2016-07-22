@@ -12,8 +12,23 @@ XE는 사이트 관리자 또는 관리 등급을 가진 회원만 접근할 수
 사이트 관리 영역에 속하는 모든 페이지의 URL은 모두 첫번째 세그먼트로 `settings`를 가지게 됩니다.
 
 ```php
+<?php
+namespace MyPlugin;
 
+use Xpressengine\Plugin\AbstractPlugin;
+use Schema;
 
+class Plugin extends AbstractPlugin
+{
+  public function boot()
+  {
+      // 사이트 관리 페이지 추가
+      
+  }
+  
+  
+}
+```
 
 
 
