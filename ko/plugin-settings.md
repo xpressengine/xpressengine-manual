@@ -44,7 +44,7 @@ class Plugin extends AbstractPlugin
 }
 ```
 
-
+사이트 관리 영역의 페이지들은 출력될 때, 사이트 관리 영역용 테마를 적용한 후 출력돼야 합니다. `Presenter`를 사용하여 결과를 반환하십시오.
 
 
 
