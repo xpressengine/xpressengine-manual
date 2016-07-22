@@ -158,3 +158,4 @@ Route::settings('user', function () {
 });
 ```
 
+위와 같이 라우트에 접근권한을 지정해 놓으면, 
