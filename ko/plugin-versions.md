@@ -39,15 +39,26 @@ class Plugin extends AbstractPlugin
 ```php
 public function checkInstalled($currentVersion = null)
 {
-    // 0.0.2
+    // 테이블이 존재하는지 검사, 없으면 false를 반환
     return Schema::hasTable('table_name');
 }
 ```
 
 
+XE는 `checkInstalled` 메소드의 리턴 값이 `false`일 경우, `install` 메소드를 호출합니다. 
 
+```php
+public function install()
+{
+    // 플러그인이 설치될 때 필요한 코드를 작성합니다.
+    Schema::create('table_name', function ($table) {
+      $table->engine = 'InnoDB';
+      $table->increments('id');
+      $table->string('name', 200);
+    });
+}
+```
 
-플러그인이 설치되지 않았다고 판단될 경우, XE는 `install` 메소드를 다시 호출합니다. `install` 메소드에 설치시 필요한 코드를 작성하십시오. 
 
 
 
