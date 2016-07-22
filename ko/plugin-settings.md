@@ -88,7 +88,19 @@ class Plugin extends AbstractPlugin
 
 ### 라우트에 메뉴 연결하기 
 
-메뉴를 등록할 때, `link` 정보를 직접 지정하는 대신 사이트 관리 페이지의 라우트를 등록할 때, 라우트에 메뉴를 지정할 수 있습니다.
+사이트 관리 페이지의 라우트를 등록할 때, 라우트에 메뉴를 지정할 수 있습니다.
+
+```php
+Route::settings('user', function () {
+
+  Route::get('/', [
+      'as' => 'settings.member.index',
+      'uses' => 'Member\Settings\UserController@index',
+      'settings_menu' => 'member.list',
+  ]);
+})
+```
+
 
 
 
