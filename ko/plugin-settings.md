@@ -85,6 +85,17 @@ class Plugin extends AbstractPlugin
 
 사이트 관리 페이지의 라우트를 등록할 때, 라우트에 메뉴를 지정할 수 있습니다. 아래 코드는 회원 추가 페이지에 메뉴를 지정하는 예제입니다.
 
+
+```php
+// member.create 등록
+\XeRegister::push('settings/menu', 'member.create', [
+    'title' => '새 회원 추가',
+    'description' => '신규회원을 추가합니다.',
+    'display' => false,
+    'ordering' => 200
+]);
+```
+
 ```php
 Route::settings('user', function () {
     Route::get('create', [
@@ -95,16 +106,7 @@ Route::settings('user', function () {
 });
 ```
 
-라우트를 등록할 때, 두번째 파라미터 배열의 `settings_menu` 필드에 메뉴아이디를 지정하면 됩니다. 위 예제의 경우 `member.create` 메뉴를 라우트와 연결하고 있습니다. `member.create` 메뉴는 이미 아래와 같이 등록된 상태여야 합니다.
-
-```php
-\XeRegister::push('settings/menu', 'member.create', [
-    'title' => '새 회원 추가',
-    'description' => '신규회원을 추가합니다.',
-    'display' => false,
-    'ordering' => 200
-]);
-```
+라우트를 등록할 때, 두번째 파라미터 배열의 `settings_menu` 필드에 메뉴아이디를 지정하면 됩니다. 위 예제의 경우 `member.create` 메뉴를 라우트와 연결하고 있습니다.
 
 
 
