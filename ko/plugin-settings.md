@@ -92,7 +92,6 @@ class Plugin extends AbstractPlugin
 
 ```php
 Route::settings('user', function () {
-
   Route::get('/', [
       'as' => 'settings.member.index',
       'uses' => 'Member\Settings\UserController@index',
