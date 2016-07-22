@@ -28,7 +28,7 @@
    * [뷰(View) - 100%](view.md)
    * [템플릿(Blade Template) - 100%](blade.md)
 * 플러그인
-   * [플러그인 생성하기 - 100%](plugin-generation.md)
+   * [플러그인 개발 시작하기 - 100%](plugin-generation.md)
    * [플러그인 구조 - 100%](plugin-structure.md)
    * 다국어 지원
    * [버전 관리(install, update)](plugin-versions.md)
