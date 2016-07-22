@@ -30,8 +30,6 @@ class Plugin extends AbstractPlugin
           return Presenter::make(static::view('settings');
         }
       });
-
-      
   }
   
   
