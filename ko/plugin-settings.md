@@ -22,7 +22,6 @@ XE는 사이트 관리자 또는 관리 등급을 가진 회원만 접근할 수
     'display' => true,
     'description' => '',
     'ordering' => 2000,
-    'link' => route('manage.board'),
 ]);
 ```
 
