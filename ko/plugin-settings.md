@@ -128,8 +128,8 @@ Route::settings('user', function () {
 아래 코드는 '회원정보 보기'라는 권한을 등록하는 예제입니다.
 
 ```php
-\XeRegister::push('settings/permission', 'user.list', [
-    'title' => '회원정보보기',
+\XeRegister::push('settings/permission', 'user.create', [
+    'title' => '회원 생성',
     'tab' => '회원관리'
 ]);
 ```
