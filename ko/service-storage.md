@@ -65,12 +65,39 @@ $file = File::find($id);
 XeStorage::download($file);
 ```
 
+### 관계와 재사용
 
+XE 스토리지는 파일과 파일을 이요하는 대상과의 관계를 필요로 합니다. 그래서 업로드 후 관계를 맺어주는 작업을 수행해야 합니다.
 
+```php
+$file = XeStorage::upload($request->file('attached'), 'path/to/dir');
+XeStorage::bind($targetId, $file);
+```
 
+그리고 이미 업로드 되어진 파일은 다른 대상과도 관계를 맺을 수 있습니다.
+```php
+$file = File::find($id);
+XeStorage::bind($otherTargetId, $file);
+```
 
+만약 파일을 사용하던 대상이 더 이상 해당 파일을 사용하지 않게된 겨우 관계를 끊을 수 있습니다.
+```php
+$file = File::find($id);
+XeStorage::unBind($targetId, $file);
+```
 
+이때 어떤 대상과도 연결되어지지 않게 될 경우 삭제할 수 있습니다.
+```php
+XeStorage::unBind($targetId, $file, true);
+```
 
-
-
+파일이 동시에 여러개 처리되는 경우 `sync` 메서드를 통해 파일을 사용하는 대상과 파일들의 관계를 간편하게 정의할 수 있습니다.
+```php
+$fileIds = [];
+foreach ($uploadedFiles as $uploadedFile) {
+  $file = XeStorage::upload($request->file('attached'), 'path/to/dir');
+  $fileIds[] = $file->id;
+}
+XeStorage::sync($targetId, $fileIds);
+```
 
