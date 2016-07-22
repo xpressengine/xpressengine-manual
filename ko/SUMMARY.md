@@ -30,8 +30,8 @@
 * 플러그인
    * [플러그인 개발 시작하기 - 100%](plugin-generation.md)
    * [플러그인 구조 - 100%](plugin-structure.md)
-   * 다국어 지원
    * [버전 관리(install, update)](plugin-versions.md)
+   * 다국어 지원
    * 관리페이지 추가
    * 컴포넌트 등록
 * 컴포넌트 만들기
