@@ -83,6 +83,8 @@ class Plugin extends AbstractPlugin
 
 - `link`는 메뉴를 클릭했을 때 이동하는 주소입니다. 링크가 없다면 적지 않아도 됩니다. 또, 여기에 직접 `link`를 지정하지 않는 것을 추천합니다.
 
+### 라우트에 메뉴 연결하기 
+
 
 
 
