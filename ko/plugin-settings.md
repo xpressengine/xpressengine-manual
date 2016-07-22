@@ -32,7 +32,6 @@ class Plugin extends AbstractPlugin
       });
   }
   
-  
 }
 ```
 
