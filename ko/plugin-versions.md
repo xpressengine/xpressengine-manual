@@ -62,7 +62,6 @@ public function install()
 
 플러그인 클래스는 업데이트와 관련된 두개의 메소드를 가지고 있습니다. `checkUpdated`와 `update` 메소드입니다. 두 메소드는 앞서 설명한 `checkInstalled`와 `install` 메소드와 비슷한 작동과정을 가집니다.
 
-
 ```php
 public function checkUpdated($installedVersion = null)
 {
