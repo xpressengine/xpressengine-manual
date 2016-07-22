@@ -9,7 +9,7 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 하지�
 
 ## composer.json을 사용하여 등록하기
 
-
+XE는 활성화 된 플러그인을 부팅할 때, 플러그인의 `composer.json` 파일을 
 
 
 ## Register를 사용하여 등록하기
