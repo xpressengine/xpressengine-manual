@@ -104,13 +104,12 @@ Route::settings('user', function () {
 
 ```php
 \XeRegister::push('settings/menu', 'member.create', [
-    'title' => 'xe::addMember',
+    'title' => '새 회원 추가',
     'description' => '신규회원을 추가합니다.',
     'display' => false,
     'ordering' => 200
 ]);
 ```
-
 
 사이트 관리 메뉴를 추가할 때, `link` 정보를 직접 지정하는 것을 추천하지 않습니다. 아래의 방법으로 라우트에 메뉴를 연결할
 
