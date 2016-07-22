@@ -157,3 +157,4 @@ Route::settings('user', function () {
     ]);
 });
 ```
+
