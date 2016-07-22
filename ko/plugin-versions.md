@@ -37,7 +37,7 @@ class Plugin extends AbstractPlugin
 만약 필요한 테이블이 생성되어 있는지 검사하고 싶다면 아래와 같이 작성하면 됩니다.
 
 ```php
-public function checkInstalled($currentVersion = null)
+public function checkInstalled($installedVersion = null)
 {
     // 테이블이 존재하는지 검사, 없으면 false를 반환
     return Schema::hasTable('table_name');
@@ -60,12 +60,29 @@ public function install()
 
 ## 플러그인 업데이트 과정
 
+플러그인 클래스는 업데이트와 관련된 두개의 메소드를 가지고 있습니다. `checkUpdated`와 `update` 메소드입니다. 두 메소드는 앞서 설명한 `checkInstalled`와 `install` 메소드와 비슷한 작동과정을 가집니다.
 
 
+```php
+public function checkUpdated($currentVersion = null)
+{
+    // 테이블이 존재하는지 검사, 없으면 false를 반환
+    return Schema::hasTable('table_name');
+}
+```
+
+XE는 `checkInstalled` 메소드의 리턴 값이 `false`일 경우, `install` 메소드를 호출합니다. 
+
+```php
+public function install()
+{
+    // 플러그인이 설치될 때 필요한 코드를 작성합니다.
+    Schema::create('table_name', function ($table) {
+      $table->engine = 'InnoDB';
+      $table->increments('id');
+      $table->string('name', 200);
+    });
+}
+```
 
 
-
-
-자신이 만든 플러그인을 XE에 설치하여 사용하거나 배포한 이후에, 새로운 기능을 플러그인에 추가하거나 오류를 개선하기 위해 플러그인을 업데이트하는 경우는 빈번히 발생합니다.
-
-간단한 오류를 수정하는 경우에는 소스코드를 변경하는 것만으로도 쉽게 업데이트를 할 수 있습니다. 하지만 새로운 기능을 추가하거나 구조를 변경하는 경우에는, 별도의 데이터베이스 테이블을 추가해야 할 수도 있습니다.
