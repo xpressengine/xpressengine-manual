@@ -106,7 +106,7 @@ Route::settings('user', function () {
 });
 ```
 
-라우트를 등록할 때, 두번째 파라미터 배열의 `settings_menu` 필드에 메뉴아이디를 지정하면 됩니다. 위 예제의 경우 `member.create` 메뉴를 라우트와 연결하고 있습니다.
+라우트를 등록할 때, 두번째 파라미터 배열의 `settings_menu` 필드에 메뉴 아이디를 지정하면 됩니다. 위 예제의 경우 `member.create` 메뉴를 라우트와 연결하고 있습니다.
 
 
 
