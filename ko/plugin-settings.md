@@ -13,16 +13,23 @@ XE는 사이트 관리자 또는 관리 등급을 가진 회원만 접근할 수
 
 ```php
 <?php
+// plugins/my_plugin/plugin.php
 namespace MyPlugin;
 
 use Xpressengine\Plugin\AbstractPlugin;
-use Schema;
+use Route;
 
 class Plugin extends AbstractPlugin
 {
   public function boot()
   {
       // 사이트 관리 페이지 추가
+      Route::settings(, function() {
+        Route::get('/', function(){
+          
+        }
+      });
+
       
   }
   
