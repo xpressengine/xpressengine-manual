@@ -28,7 +28,7 @@ XE의 스토리지는 라라벨이 제공하는 파일 시스템을 기반으로
 ##### 업로드
 파일을 서버로 업로드 하고자 할때는 간단하게 `upload` 메서드만 호출하면 됩니다.
 ```php
-use Storage;
+use XeStorage;
 use Xpressengine\Http\Request;
 use App\Http\Controllers\Controller;
 
