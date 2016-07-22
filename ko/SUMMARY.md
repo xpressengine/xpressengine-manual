@@ -48,7 +48,7 @@
    * 문서(document)
    * 댓글(comment)
    * [이벤트/인터셉션(event/interception)](service-interception.md)
-   * 파일/스토리지(storage, media)
+   * [파일/스토리지(storage, media)](service-storage.md)
    * [회원/인증(user/auth) - 100%](service-user.md)
    * 모바일(mobile)
    * [권한(permission)](service-permission.md)
