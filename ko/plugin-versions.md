@@ -64,7 +64,7 @@ public function install()
 
 
 ```php
-public function checkUpdated($currentVersion = null)
+public function checkUpdated($installedVersion = null)
 {
     // 테이블이 존재하는지 검사, 없으면 false를 반환
     return Schema::hasTable('table_name');
