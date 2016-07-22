@@ -73,12 +73,12 @@ class Plugin extends AbstractPlugin
 {
   public function checkUpdated($installedVersion = null)
   {
-      // 플러그인이 설치된 상태인지 체크하는 코드를 작성합니다.
+      // 최신버전이 적용된 상태인지 체크합니다.
   }
   
   public function update()
   {
-      // 플러그인이 설치될 때 필요한 코드를 작성합니다.
+      // 플러그인의 최신버전을 적용하기 위한 코드를 작성합니다.
   }
   
 }
