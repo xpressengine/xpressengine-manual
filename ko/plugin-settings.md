@@ -62,7 +62,8 @@ class Plugin extends AbstractPlugin
     'title' => '게시판',
     'display' => true,
     'description' => '',
-    'ordering' => 2000
+    'ordering' => 2000,
+    'link' => route('manage.board'),
 ]);
 ```
 
@@ -74,9 +75,13 @@ class Plugin extends AbstractPlugin
 
 - `title`은 메뉴가 출력될 때 사용하는 메뉴의 이름입니다.
 
-- `display`가 `true`이면 메뉴가 메뉴 트리에 출력됩니다. `false`의 경우 메뉴 트리에 출력되지 않습니다. 예를 들어 `회원 정보 수정`과 같은 메뉴는 메뉴 트리에는 출력되지 않지만, 메뉴로 등록되어 있습니다.
+- `display`가 `true`이면 메뉴가 메뉴 트리에 출력됩니다. `false`의 경우 메뉴 트리에 출력되지 않습니다. 예를 들어 `회원 정보 수정`과 같은 메뉴는 메뉴 트리에는 출력되지 않는 숨김 메뉴입니다. 사이트 관리페이지의 상단에는 빵조각(breadcrumb)으로 현재 관리페이지의 위치를 표시해주는데, 이때 숨김 메뉴를 등록해 놓으면 유용합니다.
 
+- `description`은 메뉴에 대한 설명입니다. 사이트 관리페이지의 상단에 출력됩니다.
 
+- `ordering`은 메뉴가 출력되는 순서를 지정할 때 사용됩니다. 같은 레벨의 메뉴들이 출력될 때 `ordering`이 작은 메뉴부터 출력됩니다.
+
+- `link`는 메뉴를 클릭했을 때 이동하는 주소입니다.
 
 
 ## 권한 추가
