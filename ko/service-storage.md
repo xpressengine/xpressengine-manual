@@ -86,7 +86,7 @@ $file = File::find($id);
 XeStorage::unBind($targetId, $file);
 ```
 
-이때 어떤 대상과도 연결되어지지 않게 될 경우 삭제할 수 있습니다.
+이때 어떤 대상과도 연결되어지지 않게 될 경우 해당 파일을 삭제할 수 있습니다.
 ```php
 XeStorage::unBind($targetId, $file, true);
 ```
@@ -101,3 +101,11 @@ foreach ($uploadedFiles as $uploadedFile) {
 XeStorage::sync($targetId, $fileIds);
 ```
 
+위와 같이 관계가 형성되면 대상의 아이디로 대상에 연결된 파일들을 조회하거나 관계를 끊을 수 있습니다.
+```php
+// 대상의 파일 목록 조회
+$files = File::getByFileable($targetId);
+
+// 대상의 삭제등의 처리시 파일들의 연결해제 처리
+XeStorage::unBindAll($targetId);
+```
