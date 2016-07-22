@@ -147,7 +147,6 @@ Route::settings('user', function () {
 
 등록한 접근권한을 라우트와 연결하는 과정도 메뉴에서 사용한 방식과 유사합니다.
 
-
 ```php
 Route::settings('user', function () {
     Route::get('create', [
