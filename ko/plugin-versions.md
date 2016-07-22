@@ -44,7 +44,6 @@ public function checkInstalled($currentVersion = null)
 }
 ```
 
-
 XE는 `checkInstalled` 메소드의 리턴 값이 `false`일 경우, `install` 메소드를 호출합니다. 
 
 ```php
