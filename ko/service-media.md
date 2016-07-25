@@ -1,2 +1,49 @@
-# 이미지처리(Image)
+# 이미지처리(Image, Media)
 
+XE에서는 사용자가 등록하는 이미지와 같은 미디어 파일들을 제어하기위한 `Media` 패키지가 있습니다. `Media` 는 `Intervention/image` 에서 제공하는 기능을 이용하여 설정에서 정의된 내용에 의해 섬네일을 어떤 형태로 생성할지 결정하고 사이즈별로 생성해줍니다. 또한 이미지외에도 오디오, 비디오 파일들을 간편하게 표현해주기 위한 인터페이스를 제공합니다.
+
+### 설정
+미디어의 설정은 `config/xe.php` 파일의 `media` 항목에서 지정합니다.
+섬네일 설정은 다음과 같이 작성되어있습니다.
+```php
+  'thumbnail' => [
+    'disk' => 'local',
+    'path' => 'public/thumbnails',
+    'type' => 'fit',
+    'dimensions' => [
+      'S' => ['width' => 200, 'height' => 200,],
+      'M' => ['width' => 400, 'height' => 400,],
+      'L' => ['width' => 800, 'height' => 800,],
+    ],
+  ],
+```
+
+- `disk`: 생성된 섬네일 이미지가 저장되어질 파일저장소를 지정합니다. 파일저장소는 `config/filesystems.php` 에서 정의합니다.
+- `path`: 섬네일 이미지가 위치할 경로를 지정합니다.
+- `type`: 어떤 형태로 섬네일 이미지를 생성할지 지정합니다. 지정할 수 있는 타입은 다음과 같습니다.
+> - `fit`: 지정된 사이즈에 꽉 차고, 넘치는 영역은 삭제
+> - `letter`: 지정된 사이즈안에 이미지가 모두 포함되면서 기존 비율과 같은 비율을 가지는 형태 
+> - `widen`: 가로 사이즈만을 기준으로 생성
+> - `heighten`: 세로 사이즈만을 기준으로 생성
+> - `stretch`: 비율을 무시하고 지정된 사이즈에 꽉 차게 생성
+> - `spill`: 지정된 사이즈에 꽉 차고, 넘치는 영역은 삭제하지 않는 형태
+- `dimensions`: 생성될 섬네일 이미지의 가로, 세로 사이즈를 지정합니다.
+
+`Media` 에서는 비디오 파일에서 이미지를 추출하기 위한 확장기능을 제공합니다. 
+```php
+  'videoExtensionDefault' => 'dummy',
+  'videoExtensions' => [
+    'ffmpeg' => [
+      'ffmpeg.binaries' => '/usr/local/bin/ffmpeg',
+      'ffprobe.binaries' => '/usr/local/bin/ffprobe',
+      'timeout' => 3600,
+      'ffmpeg.threads' => 4,
+    ]
+  ],
+  'videoSnapshotFromSec' => 10
+```
+기본으로 지정된 `dummy` 는 이미지추출 작업을 하지 않는 가상의 확장기능입니다. 비디오에서 이미지를 추출하도록 하고 싶다면 `ffmpeg` 로 변경하고 필요한 항목을 설정해야 합니다.
+`ffmpeg` 를 사용하기 위해선 서버에 [FFmpeg](https://ffmpeg.org/) 가 설치되어있어야 합니다. 그리고 컴포저를 통해 다음 패키지가 설치되어야 합니다.
+- php-ffmpeg/php-ffmpeg ~0.5
+
+> 비디오 확장기능은 현재 `ffmpeg` 만 지원합니다.
