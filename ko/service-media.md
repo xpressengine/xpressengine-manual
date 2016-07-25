@@ -47,3 +47,87 @@ XE에서는 사용자가 등록하는 이미지와 같은 미디어 파일들을
 - php-ffmpeg/php-ffmpeg ~0.5
 
 > 비디오 확장기능은 현재 `ffmpeg` 만 지원합니다.
+
+
+### 섬네일 생성
+섬네일을 생성하기 위해서는 우선 `File` 객채를 미디어 객체로 변환해야 합니다. `is`메서드를 통해 특정파일이 미디어파일인지 확인하고, 미디어파일인 경우 섬네일을 생성하도록 합니다.
+```php
+use XeStorage;
+use XeMedia;
+use Xpressengine\Http\Request;
+use App\Http\Controllers\Controller;
+
+class UserController extends Controller
+{
+  public function uploadFile(Request $request)
+  {
+    $file = XeStorage::upload($request->file('attached'), 'path/to/dir');
+    if (XeMedia::is($file)) {
+      $media = XeMedia::make($file);
+      $thumbnails = XeMedia::createThumbnails($media);
+    }
+  }
+}
+```
+
+특정페이지는 섬네일 이미지 생성시 별도의 형태로 하고자 하는 경우 직접 타입을 지정할 수 있습니다.
+```php
+$thumbnails = XeMedia::createThumbnails($media, 'widen');
+```
+
+#### 편집기능 특별하게 사용하기
+XE 에서 제공하는 이미지 편집 기능중에 `crop` 기능이 있습니다. `crop` 은 가로, 세로 사이즈뿐만 아니라 좌표값이 필요한 기능이므로 기본적인 섬네일 생성방식에서 제외되어 있습니다. 이 기능을 사용하기 위해서는 아래와 같이 조금 특별하게 코드가 작성되어야 합니다.
+```php
+use XeStorage;
+use Xpressengine\Media\Models\Image;
+use Xpressengine\Media\Commands\CropCommand;
+use Xpressengine\Media\Coordinators\Position;
+use Xpressengine\Media\Coordinators\Dimension;
+use Xpressengine\Media\Thumbnailer;
+use App\Http\Controllers\Controller;
+
+class UserController extends Controller
+{
+  public function editImage($id)
+  {
+    $image = Image::find($id);
+    
+    $cropCmd = new CropCommand();
+    $cropCmd->setPosition(new Position(50, 100));    // 시작 좌표 설정
+    $cropCmd->setDimension(new Dimension(300, 200)); // 시작 좌표로 부터 가로, 세로 사이즈 지정
+
+    $thumbnailer = new Thumbnailer();
+    $content = $thumbnailer->setOrigin($image->getContent())->addCommand($cropCmd)->generate();
+    
+    XeStorage::create($content, 'path/to/dir', 'crop_file_name');
+  }
+```
+`Thumbnailer` 는 처리할 명령을 순서대로 입력받을 수 있습니다. 만약 `crop` 한 이미지를 `letter` 타입으로 크기를 변환하려고 한다면 다음과 같이 할 수 있습니다.
+```php
+$letterCmd = new LetterCommand();
+$letterCmd->setDimension(new Dimension(100, 100));
+    
+$content = $thumbnailer->setOrigin($image->getContent())->addCommand($cropCmd)->addCommand($letterCmd)->generate();
+```
+
+### 미디어 표현
+미디어의 객체는 간편하게 화면에 표현할 수 있도록 인터페이스를 제공합니다. 이것은 사전에 정의된 html 태그를 반환합니다.
+```html
+<div>
+  {{ $image->render() }}
+</div>
+<div>
+  {{ $audio->render() }}
+</div>
+<div>
+  {{ $video->render() }}
+</div>
+```
+
+기본으로 제공하는 html 태그를 사용하지 않길 원할수도 있습니다. 이땐 단순히 파일의 url 을 반환받을 수 있으므로 별도의 태그를 직접 작성하여 해결할 수 있습니다.
+```html
+<object data="{{ $video->url() }}" width="300" height="200">
+  <param name="autoplay" value="true">
+  <param name="showcontrols" value="true">
+</object>
+```
