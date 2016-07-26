@@ -38,7 +38,7 @@ Generating autoload files
 Theme is created successfully.
 ```
 
-### 테마 아이디
+### 테마 등록
 
 테마 생성 커맨드를 사용할 경우 자동으로 테마 아이디가 생성됩니다. 위의 예시에서는 테마 아이디가 `theme/my_plugin@theme`로 지정되었습니다. 
 
