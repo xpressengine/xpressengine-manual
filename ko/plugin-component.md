@@ -14,7 +14,7 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 | 위젯 | `widget/<plugin_name>@<pure_id>` | `widget/xpressengine@content` |
 | 스킨 | `<skin_target_id>/skin/<plugin_name>@<pure_id>` | `user/profile/skin/social_login@default`<br> `module/xpressengine@board/skin/board@gallery`<br> `widget/xpressengine@content/skin/my_plugin@content` |
 | UI오브젝트 | `uiobject/<plugin_name>@<pure_id>` | `uiobject/xpressengine@formSelect` |
-
+| ... | ... | ... |
 
 
 
