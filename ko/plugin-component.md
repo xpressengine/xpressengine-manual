@@ -5,11 +5,15 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 
 ## 컴포넌트 아이디
 
-각각의 컴포넌트는 모두 고유의 아이디를 가지고 있어야 합니다. XE는 컴포넌트의 아이디를 통해, 등록된 컴포넌트를 효과적으로 관리합니다. 또, 컴포넌트 아이디는 컴포넌트 타입을 구분짓는 역할도 병행합니다. 각 컴포넌트 타입마다 아이디를 지정하는 규칙이 정해져있습니다.
+각각의 컴포넌트는 모두 고유의 아이디를 가지고 있어야 합니다. XE는 컴포넌트의 아이디를 통해 등록된 컴포넌트를 효과적으로 관리합니다. 또, 컴포넌트 아이디는 컴포넌트 타입을 구분짓는 역할도 병행합니다. 각 컴포넌트 타입마다 아이디를 지정하는 규칙이 아래와 같이 정해져있습니다.
 
 | 컴포넌트 타입 | 아이디 규칙 | 예제 |
 | -- | -- | -- |
 | 테마 | `theme/<plugin_name>@<pure_id>` | `theme/alice@alice` |
+| 모듈 | `module/<plugin_name>@<pure_id>` | `module/xpressengine@board` |
+| 위젯 | `widget/<plugin_name>@<pure_id>` | `widget/xpressengine@content` |
+| 스킨 | `<skin_target_id>/skin/<plugin_name>@<pure_id>` | `user/profile/skin/social_login@default`<br> `module/xpressengine@board/skin/board@gallery`<br> `widget/xpressengine@content/skin/my_plugin@content` |
+| UI오브젝트 | `uiobject/<plugin_name>@<pure_id>` | `uiobject/xpressengine@formSelect` |
 
 
 
