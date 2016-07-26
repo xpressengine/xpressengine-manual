@@ -185,11 +185,42 @@ header와 footer에 해당하는 파일은 `views` 디렉토리에 미리 추가
 테마의 템플릿 파일에서 뷰이름을 지정할 때에는 `$theme::view()` 메소드를 사용하십시오. 이 메소드는 `views` 디렉토리를 기준으로 하는 상대경로로 템플릿 파일의 경로를 지정할 수 있도록 도와줍니다.
 
 
+### asset 파일 로드하기
+
+#### 이미지 파일 로드하기
+
+이미지 파일을 로드하려면 `$theme::asset()` 메소드를 사용하십시오. `assets` 디렉토리를 기준으로 파일의 상대경로를 입력해주시면 됩니다.
+
+```html
+<!-- theme.blade.php -->
+
+<img src="{{ $theme::asset('img/logo.png') }}" alt="로고 이미지">
+```
+
+#### css, js 파일 로드하기
+
+css, js 파일은 `XeFrontend` 파사드(Frontend 서비스)를 사용하여 로드하십시오.
+
+```html
+<!-- theme.blade.php -->
+
+{{ XeFrontend::css(
+    $theme::asset('css/theme.css')
+)->load() }}
+```
+
+역시 `$theme::asset()` 메소드를 사용하면 상대경로로 파일경로를 입력할 수 있습니다.
+
+`XeFrontend` 파사드의 자세한 사용법은 [Frontend 서비스 문서]()를 참고하십시오.
+
+
 ### 테마 설정 변수 사용하기
 
 사이트 관리자가 테마 설정 페이지를 통해 지정한 설정들의 값은 테마를 출력할 때 `$config` 변수를 사용하여 참조할 수 있습니다.
 
 ```html
+<!-- theme.blade.php -->
+
 @if($config->get('use_sidebar', false))
 <div class="sidebar">
 ...
@@ -204,37 +235,11 @@ header와 footer에 해당하는 파일은 `views` 디렉토리에 미리 추가
 $config->get('use_sidebar', false);
 ```
 
-
-### asset 파일 로드하기
-
-#### 이미지 파일 로드하기
-
-이미지 파일을 로드하려면 `$theme::asset()` 메소드를 사용하십시오. `assets` 디렉토리를 기준으로 파일의 상대경로를 입력해주시면 됩니다.
-
-```html
-<img src="{{ $theme::asset('img/logo.png') }}" alt="로고 이미지">
-```
-
-#### css, js 파일 로드하기
-
-css, js 파일은 `XeFrontend` 파사드(Frontend 서비스)를 사용하여 로드하십시오.
-
-```php
-{{ XeFrontend::css(
-    $theme::asset('css/theme.css')
-)->load() }}
-```
-
-역시 `$theme::asset()` 메소드를 사용하면 상대경로로 파일경로를 입력할 수 있습니다.
-
-`XeFrontend` 파사드의 자세한 사용법은 [Frontend 서비스 문서]()를 참고하십시오.
-
-
-### 메뉴 출력하기
+#### 메뉴 출력하기
 
 ...
 
-### 업로드한 이미지 출력하기
+#### 업로드한 이미지 출력하기
 
 ...
 
