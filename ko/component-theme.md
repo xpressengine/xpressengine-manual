@@ -40,7 +40,28 @@ Theme is created successfully.
 
 ### 테마 등록
 
-테마 생성 커맨드를 사용할 경우 자동으로 테마 아이디가 생성됩니다. 위의 예시에서는 테마 아이디가 `theme/my_plugin@theme`로 지정되었습니다. 
+테마 생성 커맨드를 사용할 경우 자동으로 테마가 등록됩니다. 플러그인의 `composer.json` 파일에 아래와 같이 컴포넌트 정보가 등록됩니다.
+
+```json
+// plugins/my_plugin/composer.json
+...
+"extra": {
+    "xpressengine": {
+        "title": "my plugin",
+        "component": {
+            "theme/my_plugin@theme": {
+                "class": "SungbumHong\\MyPlugin\\Theme\\Theme",
+                "name": "First Theme",
+                "description": "The Theme supported by My_plugin plugin."
+            }
+        }
+    }
+},
+...
+```
+
+테마 아이디도 자동으로 생성됩니다. 위의 예시에서는 테마 아이디가 `theme/my_plugin@theme`로 생성되었습니다.
+
 
 ### 테마 디렉토리 구조
 
@@ -64,7 +85,7 @@ plugins/my_plugin/theme/
 
 #### views 디렉토리
 
-테마를 출력할 때 사용하는 템플릿 파일을 저장하는 디렉토리입니다. 템플릿 파일은 blade 템플릿 언어로 작성되어야 합니다. blade 템플릿 언어의 사용법은 [템플릿]() 문서에 자세히 기술되어 있습니다.
+테마를 출력할 때 사용하는 템플릿 파일을 저장하는 디렉토리입니다. 템플릿 파일은 blade 템플릿 언어로 작성되어야 합니다. blade 템플릿 언어의 사용법은 [템플릿 문서](blade.md)에 자세히 기술되어 있습니다.
 
 #### Theme.php 파일
 `Theme.php`는 테마클래스 파일입니다. 테마 생성 커맨드로 생성된 테마의 클래스는 `\Xpressengine\Theme\GenericTheme` 클래스를 상속받고 있습니다. 또, `GenericTheme` 클래스는 테마 컴포넌트의 추상클래스인 `\Xpressengine\Theme\AbstractTheme`를 상속받고 있습니다.
