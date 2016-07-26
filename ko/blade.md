@@ -84,6 +84,7 @@ Route::get('greeting', function () {
 });
 ```
 
+
 `name` 변수의 값을 다음과 같이 출력할 수 있습니다:
 
 ```html
