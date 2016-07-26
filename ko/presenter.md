@@ -59,3 +59,5 @@ return XePresenter::makeAll('index', $this->listDataImporter($request));
 
 `HtmlRenderer::render()`는 SEO, 스킨, 테마 순서로 처리되고 마지막에 `self::$commonHtmlWrapper`으로 감싸서 반환합니다. 
 `self::$commonHtmlWrapper`는 `app/Providers/PresenterServiceProvider.php`에서 `config/xe.php`의 `HtmlWrapper`로 설정합니다. 
+
+`base.blade.php`는 프론트엔드에 등록된 js, css등 여러 요소들을 어떤 위치에 출력할지 결정하고 있습니다.
