@@ -97,7 +97,7 @@ Hello, {{ $name }}.
 The current UNIX timestamp is {{ time() }}.
 ```
 
-> **주의:** `{{`와 `}}`로 감싼 구문은 자동으로 PHP의 `htmlentities` 함수로 감싼 후 출력합니다. XSS 공격을 방어하기 위함입니다.
+> **주의:** ```{{ c }}```로 감싼 구문은 자동으로 PHP의 `htmlentities` 함수로 감싼 후 출력합니다. XSS 공격을 방어하기 위함입니다.
 
 #### 블레이드 & 자바스크립트 프레임워크
 
