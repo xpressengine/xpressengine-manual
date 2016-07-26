@@ -47,7 +47,6 @@
    * 캡챠(captcha)
    * [설정(config)](service-config.md)
    * 문서(document)
-   * 댓글(comment)
    * 키생성기(keygen)
    * 메뉴(menu)
    * [이벤트/인터셉션(event/interception)](service-interception.md)
@@ -56,7 +55,7 @@
    * 모바일(mobile)
    * [권한(permission)](service-permission.md)
    * [카테고리(category)](service-category.md)
-   * [데이터베이스(database)](service-database.md)
+   * [데이터베이스(database)](service-database.md) - 100%
    * [메일(email)](service-email.md)
    * 프론트앤드(frontend/assets)
    * [이미지처리(Image, media)](service-media.md)
