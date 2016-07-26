@@ -3,11 +3,11 @@
 * [Introduction](README.md)
 * 시작하기
    * [설치하기](installation.md)
-       * [기본 설치하기](installation-basic.md)(파일 및 외부에 노출된 링크 정리)
-       * [웹 인스톨러로 설치하기](installation-web.md)(파일 및 외부에 노출된 링크 정리)
+       * [기본 설치하기](installation-basic.md)
+       * [웹 인스톨러로 설치하기](installation-web.md)
        * git 저장소 사용하기
        * 인스톨러로 설치하기
-   * [서버 환경 설정](server-configuration.md)(작성안함. 협의됨)
+   * [서버 환경 설정](server-configuration.md)
    * [업데이트](update.md)
 * 사이트 설정
    * [config 디렉토리](configurations.md)
@@ -24,7 +24,7 @@
    * [컨트롤러(Controllers) - 100%](controllers.md)
    * [요청(Request) - 100%](request.md)
    * [응답(Response) - 100%](response.md)
-   * [프리젠터(Presenter)](presenter.md) - 100%
+   * [프리젠터(Presenter)](presenter.md)
    * [뷰(View) - 100%](view.md)
    * [템플릿(Blade Template) - 100%](blade.md)
 * 플러그인
@@ -32,7 +32,7 @@
    * [플러그인 구조 - 100%](plugin-structure.md)
    * [버전 관리(install, update)](plugin-versions.md)
    * [사이트 관리페이지 추가](plugin-settings.md)
-   * [컴포넌트 등록](plugin-component.md)
+   * [컴포넌트 등록 - 50%](plugin-component.md)
    * 다국어 지원
 * 컴포넌트 만들기
    * [테마 - 70%](component-theme.md)
