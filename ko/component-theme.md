@@ -40,7 +40,7 @@ Theme is created successfully.
 
 ### 테마 등록
 
-테마 생성 커맨드를 사용할 경우 자동으로 테마가 등록됩니다. 플러그인의 `composer.json` 파일에 아래와 같이 컴포넌트 정보가 등록됩니다.
+테마 생성 커맨드를 사용할 경우, 자동으로 테마를 등록해 줍니다. 플러그인의 `composer.json` 파일에 아래와 같이 컴포넌트 정보가 등록되어 있습니다.
 
 ```json
 // plugins/my_plugin/composer.json
