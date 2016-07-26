@@ -46,7 +46,7 @@
 * 서비스
    * 캡챠(captcha)
    * [설정(config)](service-config.md)
-   * [문서(document)](service_document.md)
+   * [문서(document)](service-document.md)
    * 키생성기(keygen)
    * 메뉴(menu)
    * [이벤트/인터셉션(event/interception)](service-interception.md)
