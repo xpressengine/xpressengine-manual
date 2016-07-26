@@ -36,7 +36,7 @@
    * 다국어 지원
 * 컴포넌트 만들기
    * [테마 - 70%](component-theme.md)
-   * 스킨
+   * [스킨](component-skin.md)
    * 위젯
    * 모듈
    * UI오브젝트
