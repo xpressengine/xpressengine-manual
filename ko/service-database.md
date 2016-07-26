@@ -22,15 +22,17 @@ Illuminate\Database 와 Xpressengine\Database 를 연결시킵니다. XE3 의 �
 DatabaseHandler 는 Laravel의 DatabaseManager(\Illuminate\Database\DatabaseManager)를 대체합니다. 
 
 ### ProxyManager
+insert, select, update, delete 할 때 추가적인 처리를 할 Proxy를 관리합니다. XE에는 `\Xpressengine\DynamicField\DatabaseProxy` 가 있습니다.
 
 ### TransactionHandler
 가상연결로 처리되는 하나 이상의 데이터베이스 연결에 대해서 트랜젝션 을 처리합니다. 
 DB1, DB2 에 insert 처리 할 때 물리적으로 다른 두개의 데이터베이스에 트랜젝션이 처리될 수 있도록 지원합니다.
 
 ### DynamicQuery
+Database Proxy를 처리하기 위해 `\Illuminate\Database\Query\Builder`를 확장해서 사용합니다. 질의할 때 Proxy사용 유무를 설정할 수 있도록 기능을 제공하며 Proxy를 사용할 경우 ProxyManager를 사용해 처리합니다.
 
 ### DynamicBuilder
-
+`\Illuminate\Database\Eloquent\Model`을 확장해서 Model이 DynamicQuery를 사용할 수 있도록 합니다.
 
 ## 설정
 config/xe.php 의 `database` 설정에 가상연결 설정이 정의되어 있습니다.
@@ -86,4 +88,18 @@ XE3 데이터베이스는 여러개의 연결에 대해서 트랜잭션을 처�
 
 XE3 의 데이터베이스를 사용하기 위해서 Laravel `DB` 파사드를 대신해서 `XeDB`를 사용하면 됩니다.
 `XeDB`는 Laravel 에서 제공하는 `table()` 방식과 `dynamic()` 두가지 방식의 처리를 지원합니다.
+
+
+#### 기본적인 쿼리
+```php
+XeDB::table('documents')->find(1);
+```
+
+#### 다이나믹 쿼리
+```php
+XeDB::dynamic('documents')->find(1);
+```
+
+다이나믹 쿼리의 사용은 다이나믹 필드에서 자세히 다룹니다.
+
 
