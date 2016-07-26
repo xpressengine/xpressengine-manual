@@ -1,12 +1,14 @@
 # 프리젠터(Presenter)
 웹 브라우저로 응답을 보낼 때 라라벨의 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 대신해서 프리젠터를 사용합니다.
 
-프리젠터는 일반적인 Html 응답뿐만 아니라 API 요청에 대한 Json 응답을 하나의 메소드로 처리할 수 있습니다. 요청 정보에 포함된 응답 포멧을 참고해서 Html 이 아닐경우 해당 포멧에 맞는 반환을 합니다. 
+프리젠터는 일반적인 Html 응답뿐만 아니라 API 요청에 대한 Json 응답을 하나의 메소드로 처리할 수 있습니다. 
+
+요청 정보에 포함된 응답 포멧을 참고해서 Html 이 아닐경우 해당 포멧에 맞는 반환을 합니다. 
 XE 설계 과정에서 하나의 라우팅을 담당하는 컨트롤러를 이용해서 Html 과 API 모두를 처리하고자 하는 요구사항이 발생했으며 이런 기능을 통해서 유지보수의 비용을 줄일수 있기를 기대했습니다. 
 
 프리젠터는 응답 포멧에 따라 렌더러를 선택해서 사용하며 XE 프리젠터 패키지에는 HtmlRenderer, JsonRenderer 두개의 렌더러가 포함되어 있습니다. 만약 API 요청의 응답을 Json이 아닌 XML 형식으로 받고싶다면 플러그인으로 렌더러를 추가하고 요청에서 반환 포멧을 xml로 하면 됩니다.
 
-Html 응답을 처리할 경우 HtmlRenderer는 테마, 스킨을 처리합니다. HtmlRenderer는 테마 핸들러를 사용해서 처리하는 응답의 테마를 설정합니다. 스킨은 `XePresenter::setSkinTargetId()`으로 외부에서 타겟 컴포넌트 아이디를 입력받아 스킨 핸들러를 사용해 설정된 스킨을 사용합니다.
+Html 응답을 처리할 경우 HtmlRenderer는 테마, 스킨을 처리합니다. HtmlRenderer는 테마 핸들러에게 테마 컴포넌트를 받아 처리합니다. 스킨은 `XePresenter::setSkinTargetId()`으로 외부에서 타겟 컴포넌트 아이디를 입력받아 스킨 핸들러를 사용해 설정된 스킨을 사용합니다.
 
 프리젠터는 XePresenter 파사드를 제공합니다.
 
