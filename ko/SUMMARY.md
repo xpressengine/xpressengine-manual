@@ -3,11 +3,11 @@
 * [Introduction](README.md)
 * 시작하기
    * [설치하기](installation.md)
-       * [기본 설치하기](installation-basic.md)
-       * [웹 인스톨러로 설치하기](installation-web.md)
+       * [기본 설치하기](installation-basic.md)(파일 및 외부에 노출된 링크 정리)
+       * [웹 인스톨러로 설치하기](installation-web.md)(파일 및 외부에 노출된 링크 정리)
        * git 저장소 사용하기
        * 인스톨러로 설치하기
-   * [서버 환경 설정](server-configuration.md)
+   * [서버 환경 설정](server-configuration.md)(작성안함. 협의됨)
    * [업데이트](update.md)
 * 사이트 설정
    * [config 디렉토리](configurations.md)
