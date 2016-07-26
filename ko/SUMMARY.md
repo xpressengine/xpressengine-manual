@@ -44,9 +44,12 @@
    * [토글메뉴](component-togglemenu.md)
    * ...
 * 서비스
+   * 캡챠(captcha)
    * [설정(config)](service-config.md)
    * 문서(document)
    * 댓글(comment)
+   * 키생성기(keygen)
+   * 메뉴(menu)
    * [이벤트/인터셉션(event/interception)](service-interception.md)
    * [파일/스토리지(file, storage)](service-storage.md)
    * [회원/인증(user/auth) - 100%](service-user.md)
@@ -61,6 +64,9 @@
    * 헬퍼(helpers)
    * [쿠키(cookie) - 100%](service-cookie.md)
    * 폼 출력
+   * 카운터(counter)
+   * 휴지통(trash)
+   * ...
 * 콘솔명령
    * 명령어 목록
    * ...
