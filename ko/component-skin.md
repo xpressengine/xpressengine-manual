@@ -88,20 +88,20 @@ Skin is created successfully.
 `autoload` 항목에 스킨 클래스가 등록돼 있는 것도 볼 수 있습니다.
 
 
-### 테마 디렉토리 구조
+### 스킨 디렉토리 구조
 
 생성된 테마는 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/skins/profile` 디렉토리는 스킨의 모든 파일이 담겨 있는 '스킨 디렉토리'입니다. 
 
 ```
-plugins/my_plugin/theme/
-├── Theme.php
-├── assets/
-│   └── css/
-│       └── theme.css
-├── info.php
-└── views/
-    ├── gnb.blade.php
-    └── theme.blade.php
+
+└── profile
+    ├── assets
+    │   └── css
+    │       └── skin.css
+    ├── views
+    │   └── index.blade.php
+    ├── ProfileSkin.php
+    └── info.php
 ```
 
 
