@@ -88,7 +88,6 @@ Skin is created successfully.
 `autoload` 항목에 스킨 클래스가 등록돼 있는 것도 볼 수 있습니다.
 
 
-
 ## 템플릿 파일
 
 
