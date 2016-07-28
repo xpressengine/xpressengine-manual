@@ -45,8 +45,6 @@ Generating autoload files
 Skin is created successfully.
 ```
 
-
-
 ## 스킨 컴포넌트 아이디
 
 스킨도 [컴포넌트](components.md)이므로 컴포넌트 아이디를 가지고 있어야 합니다. 스킨의 컴포넌트 아이디는 아래 규칙을 따라야 합니다.
