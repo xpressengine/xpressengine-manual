@@ -55,9 +55,27 @@ Skin is created successfully.
 
 위에서 커맨드를 사용하여 생성한 스킨의 아이디는 `member/profile/skin/my_plugin@profileskin`입니다.
 
-
 ## 스킨 등록
 
+스킨 생성 커맨드를 사용할 경우, 자동으로 스킨을 등록해 줍니다. 플러그인의 `composer.json` 파일에 아래와 같이 컴포넌트 정보가 등록되어 있습니다.
+
+```json
+// plugins/my_plugin/composer.json
+...
+"extra": {
+        "xpressengine": {
+            "title": "my plugin",
+            "component": {
+                "member/profile/skin/my_plugin@profileskin": {
+                    "class": "SungbumHong\\MyPlugin\\Skin\\ProfileSkin",
+                    "name": "나만의 프로필 스킨",
+                    "description": "The Skin supported by My_plugin plugin."
+                }
+            }
+        }
+    },
+...
+```
 
 
 ## 템플릿 파일
