@@ -136,33 +136,25 @@ PHP 개발자가 아닌 스킨 제작자가 스킨 클래스를 직접 작성하
 ```php
 <?php
 return [
-    'view' => 'theme',
     'setting' => [
-        ...
+        'sample_text' => [
+            '_type' => 'text',
+            '_section' => '기본설정',
+            'label' => '샘플 문구',
+            'placeholder' => '샘플용 설정 필드입니다.',
+            'description' => '샘플용 설정 필드입니다.',
+        ],
     ],
     'support' => [
         'mobile' => true,
         'desktop' => true
-    ],
-    'editable' => [
-        'views' => [
-            'theme.blade.php',
-            'gnb.blade.php',
-        ],
-        'assets' => [
-            'css/theme.css'
-        ]
     ]
 ];
 ```
 
-`view` 필드는 스킨을 출력할 때 사용할 템플릿 파일을 지정하는 필드입니다. 위 설정의 경우 `theme`로 지정되어 있습니다. 이는 `views` 디렉토리에 들어있는 `theme.blade.php`을 지정한 것입니다.
-
 `setting` 필드에는 스킨 설정 페이지에서 사용할 설정 항목에 대한 정보를 지정합니다.
 
 `support` 필드에는 이 스킨이 데스크탑 버전과 모바일 버전을 지원하는지를 지정합니다.
-
-`editable` 필드에는 스킨 편집 페이지에서 편집할 수 있는 파일의 목록을 지정합니다.
 
 
 
