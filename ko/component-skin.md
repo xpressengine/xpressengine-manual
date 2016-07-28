@@ -90,6 +90,19 @@ Skin is created successfully.
 
 ### 테마 디렉토리 구조
 
+생성된 테마는 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/theme/` 디렉토리는 테마의 모든 파일이 담겨 있는 '테마 디렉토리'입니다. 
+
+```
+plugins/my_plugin/theme/
+├── Theme.php
+├── assets/
+│   └── css/
+│       └── theme.css
+├── info.php
+└── views/
+    ├── gnb.blade.php
+    └── theme.blade.php
+```
 
 
 
