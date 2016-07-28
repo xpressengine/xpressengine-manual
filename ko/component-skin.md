@@ -62,7 +62,7 @@ Skin is created successfully.
 ```json
 // plugins/my_plugin/composer.json
 ...
-"extra": {
+  "extra": {
         "xpressengine": {
             "title": "my plugin",
             "component": {
@@ -74,8 +74,18 @@ Skin is created successfully.
             }
         }
     },
-...
+
+    ...
+
+    "autoload": {
+        "classmap": [
+            "skins/profile/ProfileSkin.php"
+        ]
+    }
+
 ```
+
+
 
 
 ## 템플릿 파일
