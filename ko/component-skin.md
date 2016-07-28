@@ -26,7 +26,24 @@ $ php artisan make:skin <path> <skin_target_id> <title>
 
 만약 `my_plugin` 플러그인에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다.
 
+```
+$ php artisan make:skin my_plugin/skins/profile member/profile "나만의 프로필 스킨"
 
+[New skin info]
+  plugin:        my_plugin
+  path:          my_plugin/skins/profile
+  class file:    my_plugin/skins/profile/ProfileSkin.php
+  class name:    SungbumHong\MyPlugin\ProfileSkin
+  id:            member/profile/skin/my_plugin@profileskin
+  title:         나만의 프로필 스킨
+  description:   The Skin supported by My_plugin plugin.
+
+ Do you want to add skin? [yes|no]:
+ > yes
+
+Generating autoload files
+Skin is created successfully.
+```
 
 
 
