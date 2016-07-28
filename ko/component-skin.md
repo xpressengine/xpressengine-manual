@@ -24,7 +24,7 @@ $ php artisan make:skin <path> <skin_target_id> <title>
 
 `title`에는 스킨의 제목을 지정해 주십시오. 지정한 스킨 제목은 스킨 선택시 스킨의 이름으로 표시됩니다.
 
-만약 `my_plugin` 플러그인에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다.
+만약 `my_plugin` 플러그인에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다. 회원 프로필 컨트롤러의 스킨 타겟 아이디는 `member/profile`입니다.
 
 ```
 $ php artisan make:skin my_plugin/skins/profile member/profile "나만의 프로필 스킨"
@@ -53,8 +53,7 @@ Skin is created successfully.
 <skin_target_id>/skin/<plugin_id>@<pure_id>
 ```
 
-`skin_target_id`는 
-
+위에서 커맨드를 사용하여 생성한 스킨의 아이디는 `member/profile/skin/my_plugin@profileskin`입니다.
 
 
 ## 스킨 등록
