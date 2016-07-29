@@ -66,7 +66,7 @@
    * 헬퍼(helpers)
    * [쿠키(cookie) - 100%](service-cookie.md)
    * 폼 출력
-   * 카운터(counter)
+   * [카운터(counter)](service-counter.md)
    * 휴지통(trash)
    * ...
 * 콘솔명령
