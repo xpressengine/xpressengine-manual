@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * 시작하기
-   * [설치하기](installation.md)
+   * [설치하기](installation.md) - 100%
        * [기본 설치하기](installation-basic.md)
        * [웹 인스톨러로 설치하기](installation-web.md)
        * git 저장소 사용하기
