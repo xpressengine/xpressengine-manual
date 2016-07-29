@@ -53,7 +53,7 @@ Skin is created successfully.
 <skin_target_id>/skin/<plugin_id>@<pure_id>
 ```
 
-위에서 커맨드를 사용하여 생성한 스킨의 아이디는 `member/profile/skin/my_plugin@profileskin`입니다.
+위의 예시에서 생성한 스킨의 아이디는 `member/profile/skin/my_plugin@profileskin`입니다.
 
 ## 스킨 등록
 
