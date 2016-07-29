@@ -49,7 +49,7 @@
 * 서비스
    * 캡챠(captcha)
    * [설정(config)](service-config.md)
-   * [문서(document)](service-document.md)
+   * [문서(document)](service-document.md) - 40%
    * 키생성기(keygen)
    * [메뉴(menu)](service-menu.md)
    * [이벤트/인터셉션(event/interception)](service-interception.md)
@@ -58,7 +58,7 @@
    * [모바일(mobile)](service-mobile.md)
    * [권한(permission)](service-permission.md)
    * [카테고리(category)](service-category.md)
-   * [데이터베이스(database)](service-database.md)
+   * [데이터베이스(database)](service-database.md) - 70%
    * [메일(email)](service-email.md)
    * 프론트앤드(frontend/assets)
    * [이미지처리(Image, media)](service-media.md)
@@ -66,7 +66,7 @@
    * 헬퍼(helpers)
    * [쿠키(cookie) - 100%](service-cookie.md)
    * 폼 출력
-   * [카운터(counter)](service-counter.md)
+   * [카운터(counter)](service-counter.md) - 40%
    * 휴지통(trash)
    * ...
 * 콘솔명령
