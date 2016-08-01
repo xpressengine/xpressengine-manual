@@ -61,12 +61,16 @@ class ImageUIObject extends AbstractUIObject
 
 등록 방법은 [컴포넌트 등록](plugin-component.md) 문서를 참고하시기 바랍니다.
 
+성공적으로 등록되었다면, 아래 코드로 테스트해 볼 수 있습니다.
+
+```php
+uio('uiobject/myplugin@image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
+```
 
 
 ## alias 등록
 
-
-
+...
 `XeUIObject::setAlias($alias, $id)`
 
 
