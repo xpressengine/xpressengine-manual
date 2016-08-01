@@ -11,6 +11,22 @@ UI오브젝트는 아래와 매우 간단한 구조로 작동합니다.
 
 ## 클래스 생성
 
+이 문서에서는 UI오브젝트의 작성법을 쉽게 이해할 수 있도록 '이미지 UI오브젝트'를 예로 들어 설명하겠습니다. 이미지 UI오브젝트는 이미지 파일 주소를 입력받아 `<img src="이미지 파일 주소">` 형태로 출력합니다.
+```php
+<?php
+namespace MyPlugin\UIObjects;
+
+class ImageUIObject extends AbstractUIObject
+{
+    public function render()
+    {
+      // implement code
+      
+      return parent::render();
+    }
+}
+```
+
 
 
 ## 출력
