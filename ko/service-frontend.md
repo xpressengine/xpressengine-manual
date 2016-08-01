@@ -26,6 +26,7 @@ Frontend 서비스는 아래와 같은 역할을 합니다.
 ```php
 XeFrontend::title('브라우저 타이틀입니다');
 ```
+
 ## body 태그의 class 지정하기
 
 `bodyClass` 메소드를 사용하십시오.
@@ -39,10 +40,13 @@ XeFrontend::bodyClass('profile');
 
 ### 기본 사용법
 
-`js` 메소드를 사용하여 스크립트 파일을 로드할 수 있습니다.
-이때, `appendTo`, `prependTo` 메소드를 사용하면, 로드하는 위치를
-`<head>`, `<body>` 태그 내에 위치시킬 수 있습니다.
-반드시 마지막에는 `load` 메소드를 사용해야 합니다.
+`js` 메소드를 사용하여 스크립트 파일을 로드할 수 있습니다. 반드시 마지막에는 `load` 메소드를 사용해야 합니다.
+
+```php
+// xe.js파일을 body의 하단에 로드함.
+XeFrontend::js('assets/core/common/js/xe.js')->load();
+```
+이때, `appendTo`, `prependTo` 메소드를 사용하면, html 상에 js 파일이 로드되는 위치를 지정할 수 있습니다. 지정하지 않을 경우 `<body>` 태그 하단에 로드합니다.
 
 ```php
 // xe.js파일을 head의 하단에 로드함.
