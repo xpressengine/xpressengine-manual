@@ -62,6 +62,7 @@ class ImageUIObject extends AbstractUIObject
 [컴포넌트 등록](plugin-component.md) 방법을 참고하여 등록하십시오.
 
 
+
 ## alias 등록
 
 
