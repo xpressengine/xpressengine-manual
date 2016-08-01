@@ -46,7 +46,7 @@ XeFrontend::bodyClass('profile');
 // xe.js파일을 body의 하단에 로드함.
 XeFrontend::js('assets/core/common/js/xe.js')->load();
 ```
-이때, `appendTo`, `prependTo` 메소드를 사용하면, html 상에 js 파일이 로드되는 위치를 지정할 수 있습니다. 지정하지 않을 경우 `<body>` 태그 하단에 로드합니다.
+이때, `appendTo`, `prependTo` 메소드를 사용하면, html 상에 스크립트 파일이 로드되는 위치를 지정할 수 있습니다. 지정하지 않을 경우 `<body>` 태그 하단에 로드합니다.
 
 ```php
 // xe.js파일을 head의 하단에 로드함.
