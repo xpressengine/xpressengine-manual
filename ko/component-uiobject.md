@@ -53,8 +53,7 @@ class ImageUIObject extends AbstractUIObject
     }
 ```
 
-마지막으로는 반드시 `return parent::render()`를 해주어야 합니다.
-
+마지막으로는 반드시 `return parent::render()`를 해주어야 합니다. `parent::render()` 메소드는 `$callback` 입력이 있는지 검사하고, `$callback`를 자동으로 실행해주는 역할을 합니다.
 
 ## UI오브젝트 등록
 
