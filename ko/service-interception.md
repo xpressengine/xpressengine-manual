@@ -203,8 +203,13 @@ $proxyClass = XeInterception::proxy('\Xpressengine\User\UserHandler', 'XeUser');
 $userHandler = new $proxyClass();
 ```
 
-위 코드에서는 원본 클래스인 `\Xpressengine\User\UserHandler` 클래스의 프록시 클래스를 생성합니다. 그리고 원본 클래스 대신 프록시 클래스의 인스턴스를 생성하여 사용합니다. `UserHandler` 클래스는 `XeUser` 파사드를 통해 많이 사용됩니다. 원본 클래스에 지정된 파사드가 있다면 마지막 파라미터에 파사드명을 기입하시면 됩니다.
+위 코드에서는 원본 클래스인 `\Xpressengine\User\UserHandler` 클래스의 프록시 클래스를 생성합니다. 그리고 원본 클래스 대신 프록시 클래스의 인스턴스를 생성하여 사용합니다. 마지막 파라미터에는 원본 클래스의 별칭(alias)를 지정할 수 있습니다.  `UserHandler` 클래스는 `XeUser` 파사드를 통해 많이 사용됩니다. 위의 경우 파사드명을 별칭으로 등록했습니다. `intercept` 함수를 사용할 때, 원본클래스명 뿐만 아니라 별칭을 사용할 수도 있습니다. 
 
+아래의 두 코드 모두 사용할 수 있습니다.
+```php
+// 별칭을 사용
+intercept('XeUser@create', ...);
 
-
-
+// 원본클래스명을 그대로 사용
+intercept('Xpressengine\User\UserHandler@create', ...);
+```
