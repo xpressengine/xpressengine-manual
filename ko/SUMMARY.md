@@ -39,7 +39,7 @@
    * [스킨](component-skin.md)
    * 위젯
    * 모듈
-   * UI오브젝트
+   * [UI오브젝트](component-uiobject.md)
    * [에디터](component-editor.md)
    * [토글메뉴](component-togglemenu.md)
    * ...
