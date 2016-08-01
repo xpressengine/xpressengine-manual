@@ -11,9 +11,11 @@ UI오브젝트는 아래와 매우 간단한 구조로 작동합니다.
 
 ## 클래스 생성
 
-이 문서에서는 UI오브젝트의 작성법을 쉽게 이해할 수 있도록 '이미지 UI오브젝트'를 예로 들어 설명하겠습니다. 이미지 UI오브젝트는 이미지 파일 주소를 입력받아 `<img src="이미지 파일 주소">` 형태로 출력합니다.
+이 문서에서는 UI오브젝트의 작성법을 쉽게 이해할 수 있도록 '이미지 UI오브젝트'를 예로 들어 설명하겠습니다. 이미지 UI오브젝트는 이미지 파일 주소를 입력받아 `<img src="이미지 파일 주소">` 형태로 출력하는 간단한 역할을 합니다.
+
 ```php
 <?php
+// plugins/myplugin/src/UIObjects/ImageUIObject.php
 namespace MyPlugin\UIObjects;
 
 class ImageUIObject extends AbstractUIObject
@@ -27,6 +29,7 @@ class ImageUIObject extends AbstractUIObject
 }
 ```
 
+위와 같은 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/UIObjects/ImageUIObject.php`에 생성하는 것을 권장합니다. 
 
 
 ## 출력
