@@ -1,6 +1,6 @@
 # UI오브젝트
 
-UI오브젝트는 매우 간단한 구조로 되어 있습니다.
+UI오브젝트는 매우 간단한 구조로 작동합니다.
 
 `\Xpressengine\UIObject\AbstractUIObject`를 구현해야 합니다.
 
