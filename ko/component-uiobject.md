@@ -57,7 +57,7 @@ class ImageUIObject extends AbstractUIObject
 
 ## UI오브젝트 등록
 
-
+작성한 UI오브젝트 클래스는 다른 컴포넌트와 마찬가지로 
 `uiobject/<plugin_name>@<pure_id>`
 
 
