@@ -9,7 +9,7 @@ UI오브젝트는 아래와 매우 간단한 구조로 작동합니다.
 
 가장 먼저 해야할 작업은 다른 컴포넌트와 마찬가지로 추상클래스인 `\Xpressengine\UIObject\AbstractUIObject`를 상속받는 클래스를 구현해야 합니다. 그 다음 구현한 클래스를 XE에 등록해 주면 됩니다.
 
-## 클래스 생성
+## 클래스 생성하기
 
 이 문서에서는 UI오브젝트의 작성법을 쉽게 이해할 수 있도록 '이미지 UI오브젝트'를 예로 들어 설명하겠습니다. 이미지 UI오브젝트는 이미지 파일 주소를 입력받아 `<img src="이미지 파일 주소">` 형태로 출력하는 간단한 역할을 합니다.
 
@@ -32,7 +32,7 @@ class ImageUIObject extends AbstractUIObject
 위와 같은 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/UIObjects/ImageUIObject.php`에 생성하는 것을 권장합니다. 
 
 
-## 출력
+## 출력코드 작성하기
 
 클래스를 생성하였다면, `render` 메소드를 구현합니다. 
 
@@ -55,7 +55,7 @@ class ImageUIObject extends AbstractUIObject
 
 마지막으로는 반드시 `return parent::render()`를 해주어야 합니다. `parent::render()` 메소드는 `$callback` 입력이 있는지 검사하고, `$callback`를 자동으로 실행해주는 역할을 합니다.
 
-## UI오브젝트 등록
+## UI오브젝트 등록하기
 
 작성한 UI오브젝트 클래스는 다른 컴포넌트와 마찬가지로 XE에 등록해야 합니다. UI오브젝트는 `uiobject/<plugin_name>@<pure_id>` 형식의 컴포넌트 아이디를 지정해야 합니다. 여기에서는 `uiobject/myplugin@image`를 아이디로 사용하겠습니다.
 
@@ -68,7 +68,7 @@ uio('uiobject/myplugin@image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']
 ```
 
 
-## alias 등록
+## alias 등록하기
 
 ...
 
