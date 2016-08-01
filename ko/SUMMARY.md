@@ -52,7 +52,7 @@
    * [이벤트/인터셉션(event/interception)](service-interception.md)
    * [파일/스토리지(file, storage)](service-storage.md)
    * [회원/인증(user/auth) - 100%](service-user.md)
-   * [모바일(mobile)](ko/service-mobile.md)
+   * [모바일(mobile)](service-mobile.md)
    * [권한(permission)](service-permission.md)
    * [카테고리(category)](service-category.md)
    * [데이터베이스(database)](service-database.md)
