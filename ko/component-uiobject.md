@@ -64,6 +64,8 @@ class ImageUIObject extends AbstractUIObject
 
 ## alias 등록
 
+
+
 `XeUIObject::setAlias($alias, $id)`
 
 
