@@ -57,9 +57,9 @@ class ImageUIObject extends AbstractUIObject
 
 ## UI오브젝트 등록
 
-작성한 UI오브젝트 클래스는 다른 컴포넌트와 마찬가지로 XE에 등록해야 합니다. UI오브젝트는 `uiobject/<plugin_name>@<pure_id>` 형식의 컴포넌트 아이디를 지정해야 합니다.
+작성한 UI오브젝트 클래스는 다른 컴포넌트와 마찬가지로 XE에 등록해야 합니다. UI오브젝트는 `uiobject/<plugin_name>@<pure_id>` 형식의 컴포넌트 아이디를 지정해야 합니다. 여기에서는 `uiobject/myplugin@image`를 아이디로 사용하겠습니다.
 
-[컴포넌트 등록](plugin-component.md) 방법을 참고하여 등록하십시오.
+등록방법은 [컴포넌트 등록](plugin-component.md) 문서를 참고하십시오.
 
 
 
