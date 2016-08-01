@@ -56,11 +56,20 @@ XeFrontend::js('assets/core/common/js/xe.js')->appendTo('head')->load();
 XeFrontend::js('assets/core/common/js/xe.js')->prependTo('body')->load();
 ```
 
+배열을 사용하여 다수의 파일을 동시에 로드할 수도 있습니다.
+
+```php
+XeFrontend::js([
+  'assets/vendor/jquery/jquery.min.js',
+  'assets/core/common/js/xe.js',
+  'plugin/board/assets/js/my.js'
+)->load();
+```
+
+
 ### 우선순위 지정
 
-만약 스크립트 파일을 로드할 때, 반드시 먼저 로드돼야 하는
-다른 스크립트 파일이 있다면 `before` 메소드를 사용하여 지정할 수 있습니다.
-반대의 경우, `after` 메소드를 사용하십시오.
+만약 스크립트 파일을 로드할 때, 반드시 먼저 로드돼야 하는 다른 스크립트 파일이 있다면 `before` 메소드를 사용하여 지정할 수 있습니다. 반대의 경우, `after` 메소드를 사용하십시오.
 
 ```php
 // bootstrap.js이 로드된 이후에 xe.js파일이 로드되도록 우선순위 지정
@@ -68,6 +77,19 @@ XeFrontend::js('assets/core/common/js/xe.js')
 ->before('assets/vendor/bootstrap/js/bootstrap.js')
 ->appendTo('body')->load();
 ```
+
+다수의 파일을 동시에 로드한다면, 배열에 기입된 순서대로 우선순위가 정해집니다.
+
+```php
+// 3 파일의 우선순위가 자동으로 지정됨
+XeFrontend::js([
+  'assets/vendor/jquery/jquery.min.js',
+  'assets/core/common/js/xe.js',
+  'plugin/board/assets/js/my.js'
+)->load();
+```
+
+
 
 ### 언로드
 
