@@ -2,7 +2,7 @@
 
 플러그인 개발자가 플러그인에서 필요한 기능을 구현하기 위해서는 XE가 실행되는 여러 시점에 플러그인이 끼어들어 XE의 행동을 바꾸거나 추가적인 행동을 할 수 있어야 합니다.
 
-예를 들어, 사이트에 새로운 회원이 가입할 때, 가입한 회원에게 가입축하 메일을 보내는 기능을 플러그인으로 만들 수 있습니다. 코어가 회원가입을 처리할 때, 플러그인이 끼어들어 메일을 전송해야 합니다.
+예를 들어, 사이트에 새로운 회원이 가입할 때, 가입한 회원에게 가입축하 메일을 보내는 기능을 플러그인으로 만들 수 있습니다. 이 기능을 구현하려면 코어가 회원가입을 처리할 때, 플러그인이 끼어들어 메일을 전송 코드를 실행할 수 있어야 합니다.
 
 이러한 '끼어들기'를 일반적으로 'hook' 또는 'event'라고 칭합니다. XE에서는 라라벨에서 기본적으로 제공하는 'event' 방식과 XE에서 새롭게 제공하는 'interception' 방식으로 '끼어들기'를 지원합니다.
 
@@ -143,7 +143,7 @@ xe.editor.compile' | $editor
 
 XE3는 인터셉션을 구현하기 위하여 AOP를 사용하였습니다. AOP는 Aspect Oriented Programming의 약어입니다.
 
-### 기본 사용법
+### 어드바이저(리스너) 등록
 
 만약 사이트에 회원이 가입할 때, 메일 전송 코드가 실행되도록 하려면 `intercept` 함수를 사용할 수 있습니다.
 
@@ -186,6 +186,49 @@ function($createUser, array $data) {
   return $member;
 }
 ```
+
+### 어드바이저 간의 우선순위 지정
+
+다수의 어드바이저가 등록돼 있다면, 어드바이저 간의 실행순서가 중요할 수 있습니다. `intercept` 함수를 호출시 다른 어드바이저와의 우선순위를 지정할 수 있습니다.
+
+```php
+// email_checker::check가 실행된 후 실행.
+intercept('XeUser@create', ['welcome_mail::send_mail' => 'foo@bar'], $closure);
+```
+
+우선순위는 두번째 파라미터에 배열형태로 지정할 수 있습니다. 위의 `intercept` 함수는 배열의 키 이름인 `welcome_mail::send_mail` 어드바이저를 등록하고 있습니다. 동시에 배열의 값(value)을 이용해여 선행되어야 하는 어드바이저 `foo@bar`를 지정하고 있습니다.
+
+위 코드에서 우선순위 관계 더욱더 명시적으로 작성할 수 있습니다. 중첩된 배열의 키에 'before'를 사용하십시오.
+
+```php
+// 명시적으로 before 사용
+intercept(
+  'XeUser@create', 
+  ['welcome_mail::send_mail' => ['before' => 'foo@bar'], 
+  $closure
+);
+
+// 다수의 어드바이저와 우선순위 지정
+intercept(
+  'XeUser@create', 
+  ['welcome_mail::send_mail' => ['before' => ['foo@bar', 'foo@baz']], 
+  $closure
+);
+```
+
+반대로 `after`를 사용하면, 현재 어드바이저보다 나중에 실행되어야 할 어드바이저를 등록할 수도 있습니다.
+
+```php
+// after 사용
+intercept(
+  'XeUser@create', 
+  ['welcome_mail::send_mail' => ['after' => ['foo@bar']], 
+  $closure
+);
+```
+
+인터셉션 서비스는 `intercept` 함수를 통해 등록받은 어드바이저들의 우선순위를 파악한 후, 순서대로 호출해 줍니다. 어드바이저들과 타겟메소드는 데코레이션 패턴으로 실행됩니다. 이는 미들웨어
+
 
 ### 프록시 생성
 
