@@ -57,6 +57,7 @@ class ImageUIObject extends AbstractUIObject
 
 ## UI오브젝트 등록
 
+
 `uiobject/<plugin_name>@<pure_id>`
 
 
