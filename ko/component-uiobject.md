@@ -71,6 +71,7 @@ uio('uiobject/myplugin@image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']
 ## alias 등록
 
 ...
+
 `XeUIObject::setAlias($alias, $id)`
 
 
