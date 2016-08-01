@@ -34,7 +34,26 @@ class ImageUIObject extends AbstractUIObject
 
 ## 출력
 
-`render`메소드에 구현합니다. 반드시 `return parent::render()`를 해주어야 합니다.
+클래스를 생성하였다면, `render` 메소드를 구현합니다. 
+
+`render` 메소드에서는 입력된 파라미터를 사용하여 출력할 html 스트링을 생성한 다음, `$this->template` 변수에 저장합니다.
+
+```php
+    public function render()
+    {
+      // 입력값 가져오기
+      $src = $this->arguments['src'];
+      $alt = $this->arguments['alt'];
+      
+      // 이미지 태그 생성
+      $this->template = '<img src="'.$src.'" alt="'.$alt.'">';
+      
+      // 출력
+      return parent::render();
+    }
+```
+
+마지막으로는 반드시 `return parent::render()`를 해주어야 합니다.
 
 
 ## UI오브젝트 등록
