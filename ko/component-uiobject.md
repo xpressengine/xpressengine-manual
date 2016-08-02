@@ -121,7 +121,7 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 
 폼 UI오브젝트로 등록되는 UI오브젝트는 몇가지 규칙이 준수해야 합니다.
 
-- 아래의 마크업 형식으로 출력해야 합니다. (이 형식은 [bootstrap](http://getbootstrap.com/) 형식을 따르고 있습니다.)
+- 아래의 마크업 형식으로 출력해야 합니다. (이 마크업 형식은 [bootstrap](http://getbootstrap.com/) 형식을 따르고 있습니다.)
   ```html
   <div class="form-group">
       <label for=""></label>
