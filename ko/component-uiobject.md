@@ -70,13 +70,73 @@ uio('uiobject/myplugin@image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']
 
 ## alias 등록하기
 
-...
+위 예제에서 생성한 UI오브젝트의 아이디는 `uiobject/myplugin@image`로 꽤 복잡합니다. XE에서는 UI오브젝트에 별칭(alias)를 지정할 수 있습니다. 별칭이 지정된 UI오브젝트는 실제 아이디 대신 별칭을 사용할 수 있습니다. UI오브젝트의 별칭은 사이트 관리자가 `config/xe.php`의 `uiobject > aliases` 항목에 지정할 수 있으며, 코드상에서는 아래의 방법으로 지정할 수 있습니다.
 
-`XeUIObject::setAlias($alias, $id)`
+```php
+XeUIObject::setAlias($alias, $id);
+```
+
+위 예제에서 제작한 UI오브젝트에 `image`라는 별칭을 아래와 같이 지정할 수 있습니다.
+
+```php
+XeUIObject::setAlias('image', 'uiobject/myplugin@image');
+```
+
+위와 같이 지정한 이후부터는 별칭을 사용할 수 있습니다.
+
+```php
+uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
+```
 
 
 ## 폼 UI오브젝트
 
-`form*`의 형태로 등록된 alias에 등록된 UI오브젝트를 폼 UI오브젝트라 합니다.
+`config/xe.php`에 지정된 UI오브젝트의 별칭 목록입니다.
 
-반드시 `label`, `values`를 인자로 받아서 출력해야 합니다.
+```
+'uiobject' => [
+    'aliases' => [
+        'form' => 'uiobject/xpressengine@form',
+        'formText' => 'uiobject/xpressengine@formText',
+        'formPassword' => 'uiobject/xpressengine@formPassword',
+        'formTextarea' => 'uiobject/xpressengine@formTextArea',
+        'formSelect' => 'uiobject/xpressengine@formSelect',
+        'formCheckbox' => 'uiobject/xpressengine@formCheckbox',
+        'formFile' => 'uiobject/xpressengine@formFile',
+        'formImage' => 'uiobject/xpressengine@formImage',
+        'formMenu' => 'uiobject/xpressengine@menuSelect',
+        'formLangText' => 'uiobject/xpressengine@formLangText',
+        'formLangTextarea' => 'uiobject/xpressengine@formLangTextArea',
+        'langText' => 'uiobject/xpressengine@langText',
+        'langTextArea' => 'uiobject/xpressengine@langTextArea',
+        'menuType' => 'uiobject/xpressengine@menuType',
+        'permission' => 'uiobject/xpressengine@permission',
+        'themeSelect' => 'uiobject/xpressengine@themeSelect',
+        'captcha' => 'uiobject/xpressengine@captcha',
+    ]
+],
+```
+
+위 별칭 목록 중에 `form*`의 형태로 등록된 UI오브젝트를 폼 UI오브젝트라 합니다. 폼 UI오브젝트는 말 그대로 폼을 구성할 때 사용할 수 있는 UI오브젝트들입니다. 폼 UI오브젝트는 테마나 스킨, 위젯와 같은 컴포넌트가 사이트 관리자에게 설정 폼을 출력할 때 사용됩니다. 폼 UI오브젝트의 사용법은 [폼 출력](service-form.md) 문서에서 자세히 설명합니다.
+
+폼 UI오브젝트로 등록되는 UI오브젝트는 몇가지 규칙이 준수해야 합니다.
+
+- 아래의 마크업 형식으로 출력해야 합니다. (이 형식은 [bootstrap](http://getbootstrap.com/) 형식을 따르고 있습니다.)
+  ```html
+  <div class="form-group">
+      <label for=""></label>
+      <!-- 실제 폼 요소를 여기에 작성 -->
+      <p class="help-block"></p>
+  </div>
+  ```
+
+- `label`, `description`, `values` 파라미터를 받아서 처리할 수 있어야 합니다. `label`은 폼요소의 라벨 문자열입니다. `<label for=""></label>`에 출력되어야 합니다. `description`은 `<p class="help-block"></p>`에 출력될 폼 요소에 대한 설명입니다. `values`는 폼 요소에 지정할 값(value)입니다. `values`의 형식은 각 폼요소마다 다릅니다.
+
+
+
+
+
+
+
+
+
