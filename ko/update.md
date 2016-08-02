@@ -14,6 +14,12 @@ XE 업데이트는 3.0.0-beta 버전부터 지원합니다. 만약 현재 설치
 아래 콘솔 커맨드를 사용하여 업데이트된 소스코드를 적용합니다.
 
 ```
+php artisan xe:update --skip-download
+```
+
+실제 구동화면입니다.
+
+```
 $ php artisan xe:update --skip-download
 
  Update Xpressengine.
