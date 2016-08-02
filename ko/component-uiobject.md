@@ -139,6 +139,3 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 
 
 
-
-
-
