@@ -5,7 +5,6 @@
    * [설치하기](installation.md)
        * [기본 설치하기](installation-basic.md)
        * [웹 인스톨러로 설치하기](installation-web.md)
-       * 인스톨러로 설치하기
    * [서버 환경 설정](server-configuration.md)
    * [업데이트](update.md)
 * 사이트 설정
