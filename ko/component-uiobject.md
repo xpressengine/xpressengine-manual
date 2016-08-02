@@ -130,9 +130,11 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
   </div>
   ```
 
-- `label`, `description`, `values` 파라미터를 받아서 처리할 수 있어야 합니다. `label`은 폼요소의 라벨 문자열입니다. `<label for=""></label>`에 출력되어야 합니다. `description`은 `<p class="help-block"></p>`에 출력될 폼 요소에 대한 설명입니다. `values`는 폼 요소에 지정할 값(value)입니다. `values`의 형식은 각 폼요소마다 다릅니다.
+- `label`, `description` 파라미터를 받아서 처리할 수 있어야 합니다. `label`은 폼요소의 라벨 문자열입니다. `<label for=""></label>`에 출력되어야 합니다. `description`은 `<p class="help-block"></p>`에 출력될 폼 요소에 대한 설명입니다. 
 
+- `id`, `name` 필드를 파라미터로 받아서 처리할 수 있어야 합니다. 이 두 필드는 실제 폼 요소의 애트리뷰트로 지정됩니다. `id` 필드는 `label`의 `for` 애트리뷰트의 값으로도 지정해주어야 합니다.
 
+- `values` 파라미터를 받아서 처리할 수 있어야 합니다. `values`는 폼 요소에 지정할 값(value)입니다. `values`의 형식은 각 폼요소마다 다릅니다.
 
 
 
