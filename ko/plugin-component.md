@@ -14,10 +14,10 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 | 위젯 | `widget/<plugin_name>@<pure_id>` | `widget/xpressengine@content` |
 | 스킨 | `<skin_target_id>/skin/<plugin_name>@<pure_id>` | `user/profile/skin/social_login@default`<br> `module/xpressengine@board/skin/board@gallery`<br> `widget/xpressengine@content/skin/my_plugin@content` |
 | UI오브젝트 | `uiobject/<plugin_name>@<pure_id>` | `uiobject/xpressengine@formSelect` |
-| ... | ... | ... |
-
-
-
+| 다이나믹필드 | ... | ... |
+| 다이나믹필드스킨 | ... | ... |
+| 에디터 | ... | ... |
+| 에디터툴 | ... | ... |
 
 
 ## composer.json을 사용하여 등록하기
@@ -76,6 +76,14 @@ Alice 플러그인의 `composer.json` 파일입니다.
 }
 ```
 
+## plugin.php를 사용하여 등록하기
+
+`component.json`을 사용하지 않고, PHP 코드를 사용하여 컴포넌트를 등록할 수도 있습니다. 만약 컴포넌트가 항상 등록될 필요가 없다면, 즉, 특정 조건에 의해 동적으로 등록하고 싶다면 이 방법을 사용할 수 있습니다.
+
+활성화 된 플러그인는 XE가 실행될 때마다 그 플러그인의 플러그인 클래스(`plugin.php` 파일에 존재)의 `boot`메소드가 실행됩니다. `boot`메소드에서 플러그인이 가지고 있는 컴포넌트를 등록시킬 수 있습니다. 아래 코드를 사용하십시오.
+
+```php
+XeRegister
 
 
-## Register를 사용하여 등록하기
+
