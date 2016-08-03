@@ -37,6 +37,7 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 }
 ```
 
+
 Alice 플러그인의 `composer.json` 파일입니다.
 ```json
 {
