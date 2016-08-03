@@ -24,7 +24,30 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 
 플러그인의 필수 구성 파일인 `composer.json`을 통해 컴포넌트를 등록할 수 있습니다.
 
-
+```json
+{
+  "name": "xpressengine-plugin/alice",
+  "description": "This Package is Xpressengine Plugin - Alice Theme.",
+  
+  ...
+  
+  "extra": {
+    "xpressengine": {
+      "title": "Alice Theme",
+      "icon": "icon.png",
+      "component": {
+        "theme/alice@alice": {
+          "class": "Xpressengine\\Plugins\\Alice\\Theme\\Alice",
+          "name": "Alice",
+          "description": "The First Theme for XpressEngine3",
+          "screenshot": "/plugins/alice/screenshots/main.png",
+        }
+      }
+    }
+  },
+  
+}
+```
 
 
 
