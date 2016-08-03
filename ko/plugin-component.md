@@ -78,7 +78,4 @@ Alice 플러그인의 `composer.json` 파일입니다.
 
 
 
-
-
-
 ## Register를 사용하여 등록하기
