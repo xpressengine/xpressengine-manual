@@ -89,7 +89,7 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 ```
 
 
-## 폼 UI오브젝트
+## 폼 관련 UI오브젝트
 
 `config/xe.php`에 지정된 UI오브젝트의 별칭 목록입니다.
 
