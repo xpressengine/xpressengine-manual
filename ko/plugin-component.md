@@ -10,12 +10,12 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 | 컴포넌트 타입 | 아이디 규칙 | 예제 |
 | -- | -- | -- |
 | 테마 | `theme/<plugin_name>@<pure_id>` | `theme/alice@alice` |
-| 모듈 | `module/<plugin_name>@<pure_id>` | `module/xpressengine@board` |
-| 위젯 | `widget/<plugin_name>@<pure_id>` | `widget/xpressengine@content` |
-| 스킨 | `<skin_target_id>/skin/<plugin_name>@<pure_id>` | `user/profile/skin/social_login@default`<br> `module/xpressengine@board/skin/board@gallery`<br> `widget/xpressengine@content/skin/my_plugin@content` |
-| UI오브젝트 | `uiobject/<plugin_name>@<pure_id>` | `uiobject/xpressengine@formSelect` |
-| 다이나믹필드 | ... | ... |
-| 다이나믹필드스킨 | ... | ... |
+| 모듈 | `module/<plugin_name>@<pure_id>` | `module/myplugin@board` |
+| 위젯 | `widget/<plugin_name>@<pure_id>` | `widget/myplugin@content` |
+| 스킨 | `<skin_target_id>/skin/<plugin_name>@<pure_id>` | `user/profile/skin/social_login@default`<br> `module/myplugin@board/skin/board@gallery`<br> `widget/xpressengine@content/skin/myplugin@content` |
+| UI오브젝트 | `uiobject/<plugin_name>@<pure_id>` | `uiobject/myplugin@formSelect` |
+| 다이나믹필드 | `FieldType/<plugin_name>@<pure_id>` | `FieldType/myplugin@Text` |
+| 다이나믹필드스킨 | `<dynamic_field_id>/FieldSkin/<plugin_name>@<pure_id>` | `FieldType/myplugin@Text/FieldSkin/fooplugin@TextDefault` |
 | 에디터 | ... | ... |
 | 에디터툴 | ... | ... |
 
