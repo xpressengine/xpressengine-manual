@@ -21,13 +21,13 @@ config 디렉토리는 위와 같은 구조를 가지고 있습니다.
 같은 이름을 가지는 `config/app.php` 와 `config/production/app.php` 파일을 열어보면 아래와 같은 내용을 확인할 수 있습니다.
 
 ```
-// config/app.php
+// in config/app.php
 return [
     'debug' => env('APP_DEBUG', false),
     ...
 ```
 ```
-// config/production/app.php
+// in config/production/app.php
 return [
     'debug' => false,
     ...
@@ -40,7 +40,7 @@ return [
 환경변수는 웹 애플리케이션 root 위치에 `.env` 파일에서 지정할 수 있습니다.
 
 ```
-// .env
+// in .env file
 APP_ENV=production
 ```
 
