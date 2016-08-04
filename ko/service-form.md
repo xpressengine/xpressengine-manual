@@ -16,7 +16,7 @@ uio($id, $args = [], $callback = null)
 
 세번째 파라미터 `$callback`를 사용하면 폼 UI오브젝트가 출력하는 html을 커스터마이징할 수 있습니다.
 
-만약 텍스트 인풋을 출력하려면 아래와 같이 작성할 수 있습니다.
+만약 한줄 텍스트를 입력받으려면 아래와 같이 작성할 수 있습니다.
 
 ```php
 // in blade template file
@@ -34,9 +34,8 @@ uio($id, $args = [], $callback = null)
 </div>
 ```
 
-폼 UI오브젝트는 모두 `<div class="form-group"></div>` 태그로 감싸서 출력됩니다. 이 스타일은 [bootstrap](http://getbootstrap.com/)을 따르고 있습니다. 폼 UI오브젝트는 사이트 관리 페이지에 최적화되어 있습니다. 만약 사이트 관리 페이지가 아닌 곳에서 폼 UI오브젝트를 사용할 경우, bootstrap의 스타일시트 및 스크립트 파일을 직접 로드하고 사용하는 것을 권장합니다.
+폼 UI오브젝트는 모두 `<div class="form-group"></div>` 태그로 감싸서 출력됩니다. 이 스타일은 [bootstrap](http://getbootstrap.com/)을 따르고 있는데, 폼 UI오브젝트는 사이트 관리 페이지에 최적화되어 있기 때문입니다. 만약 사이트 관리 페이지가 아닌 페이지에서 폼 UI오브젝트를 사용할 경우, bootstrap의 스타일시트 및 스크립트 파일을 직접 로드하고 사용하는 것을 권장합니다.
 
-각각의  vha 
 
 ## 폼 UI오브젝트 종류
 
