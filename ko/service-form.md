@@ -31,6 +31,8 @@ XE는 아래 목록과 같이 이미 다양한 UI오브젝트를 제공하고 �
 
 `uio()` 함수를 사용하여 UI오브젝트를 출력하십시오. 선택된 UI오브젝트는 알아서 html 마크업을 출력하고, 스타일시트와 스크립트 파일도 자동으로 로드합니다.
 
+### uio 함수
+
 `uio` 함수의 원형입니다.
 
 ```php
@@ -44,13 +46,35 @@ uio($id, $args = [], $callback = null)
 세번째 파라미터 `$callback`를 사용하면 UI오브젝트가 출력하는 html을 커스터마이징할 수 있습니다.
 
 
+
+만약 한줄 텍스트 폼 필드를 출력하려면 아래와 같이 작성할 수 있습니다.
+
+```php
+// in blade template file
+{{ uio('formText', ['label'=>'전화번호', 'name'=>'phone', 'id'=>'inputPhone', 'class'=>'input-phone', 'placeholder'=>'전화번호를 입력하세요', 'description'=> '휴대폰 사용하여 입력하세요', 'value'=>'010-000-0000']) }}
+```
+위 코드는 실제로 아래와 같이 변환되어 출력됩니다.
+
+```html
+<div class="form-group">
+  <label for="inputPhone">전화번호</label>
+  <input type="text" class="form-control input-phone" 
+         id="inputPhone" placeholder="전화번호를 입력하세요" 
+         name="phone" value="010-000-0000">
+   <p class="help-block">휴대폰 사용하여 입력하세요</p>
+</div>
+```
+
+폼 필드는 모두 `<div class="form-group"></div>` 태그로 감싸서 출력됩니다. 이 스타일은 [bootstrap](http://getbootstrap.com/)을 따르고 있는데,  사이트 관리 페이지에 최적화되어 있기 때문입니다. 만약 사이트 관리 페이지가 아닌 페이지에서 폼 필드를 사용할 경우, bootstrap의 스타일시트 및 스크립트 파일을 직접 로드하고 사용하는 것을 권장합니다.
+
+
 ## 폼 빌더(폼 UI오브젝트)
 
 폼은 웹페이지에서 사용자에게 입력을 받기 위해 매우 빈번히 사용됩니다. 특히 테마나 위젯, 스킨과 같은 컴포넌트는 사이트 관리자에게 폼으로 구성되어 있는 설정 페이지를 제공합니다. 
 
-폼은 다양한 `text`, `textarea`, `checkbox`와 같은 다양한 폼 필드들로 구성됩니다. UI오브젝트 중 아이디가 `form*` 형식인 UI오브젝트를 폼필드 UI오브젝트라고 합니다. 폼필드 UI오브젝트를 사용하면 손쉽게 폼필드를 출력할 수 있습니다.
+폼은 다양한 `text`, `textarea`, `checkbox`와 같은 다양한 폼 필드들로 구성됩니다. UI오브젝트 중 아이디가 `form*` 형식인 UI오브젝트를 폼 필드 UI오브젝트라고 합니다. 폼필드 UI오브젝트를 사용하면 손쉽게 폼 필드를 출력할 수 있습니다.
 
-또, UI오브젝트 중에 별칭(alias)이 `form`인 UI오브젝트가 있습니다. 이 UI오브젝트는 조금 특별합니다. 이 UI오브젝트는 폼에 대한 기본정보(action, method 등)와 폼을 구성하는 다양한 폼필드의 목록을 전달받아 하나의 완성된 폼을 출력합니다.
+또, UI오브젝트 중에 별칭(alias)이 `form`인 UI오브젝트가 있는데, 이 UI오브젝트는 조금 특별합니다. 이 UI오브젝트는 폼에 대한 기본정보(action, method 등)와 폼을 구성하는 다양한 폼필드의 목록을 전달받아 하나의 완성된 폼을 출력합니다.
 
 아래와 같이 사용할 수 있습니다.
 
@@ -63,7 +87,8 @@ $formData = [
     ...
   ],
   'action' => '...',
-  'method' => 'POST'
+  'method' => 'POST',
+  ...
 ];
 ```
 
@@ -111,25 +136,6 @@ uio($id, $args = [], $callback = null)
 
 세번째 파라미터 `$callback`를 사용하면 폼 필드가 출력하는 html을 커스터마이징할 수 있습니다.
 
-만약 한줄 텍스트 필드를 입력받으려면 아래와 같이 작성할 수 있습니다.
-
-```php
-// in blade template file
-{{ uio('formText', ['label'=>'전화번호', 'name'=>'phone', 'id'=>'inputPhone', 'class'=>'input-phone', 'placeholder'=>'전화번호를 입력하세요', 'description'=> '휴대폰 사용하여 입력하세요', 'value'=>'010-000-0000']) }}
-```
-위 코드는 실제로 아래와 같이 변환되어 출력됩니다.
-
-```html
-<div class="form-group">
-  <label for="inputPhone">전화번호</label>
-  <input type="text" class="form-control input-phone" 
-         id="inputPhone" placeholder="전화번호를 입력하세요" 
-         name="phone" value="010-000-0000">
-   <p class="help-block">휴대폰 사용하여 입력하세요</p>
-</div>
-```
-
-폼 필드는 모두 `<div class="form-group"></div>` 태그로 감싸서 출력됩니다. 이 스타일은 [bootstrap](http://getbootstrap.com/)을 따르고 있는데,  사이트 관리 페이지에 최적화되어 있기 때문입니다. 만약 사이트 관리 페이지가 아닌 페이지에서 폼 필드를 사용할 경우, bootstrap의 스타일시트 및 스크립트 파일을 직접 로드하고 사용하는 것을 권장합니다.
 
 
 ## 필드 종류
