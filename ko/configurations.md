@@ -16,27 +16,31 @@ config/
   |- database.php
   ...
 ```
+
 config 디렉토리는 위와 같은 구조를 가지고 있습니다. 
 같은 이름을 가지는 `config/app.php` 와 `config/production/app.php` 파일을 열어보면 아래와 같은 내용을 확인할 수 있습니다.
-* config/app.php
+
 ```
+// config/app.php
 return [
     'debug' => env('APP_DEBUG', false),
     ...
 ```
-* config/production/app.php
 ```
+// config/production/app.php
 return [
     'debug' => false,
     ...
 ```
+
 `config/app.php` 파일에서는 debug 값을 env함수에 의해 환경변수 `APP_DEBUG` 가 정의 되어있는 경우 해당 값을, 그렇지 않은경우 `false` 가 지정되도록 되어있습니다. 그리고 `config/production/app.php` 파일에서는 debug 값이 `false` 로 지정되어 있습니다.
 이 상황에서 만약 사용자의 환경이 `production` 이고 `config/production/app.php` 의 debug 값을 `true` 로 지정했다면 해당 웹 애플리케이션에서 설정된 debug 값은 `config/app.php` 의 값을 무시하고 `true` 로 지정되는 것입니다.
 
 #### 환경변수의 지정
 환경변수는 웹 애플리케이션 root 위치에 `.env` 파일에서 지정할 수 있습니다.
-* .env
+
 ```
+// .env
 APP_ENV=production
 ```
 
