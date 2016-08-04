@@ -41,7 +41,8 @@ $formData = [
   'value' => [
     ...
   ],
-  'action' => 
+  'action' => '...',
+  'method' => 'POST'
 ];
 ```
 
