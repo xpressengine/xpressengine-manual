@@ -5,15 +5,47 @@
 
 ## 폼 구성 요소
 
-XE에서 제공하는 기본적인 폼 요소입니다. `uio`함수를 사용하여 출력할 수 있습니다. 
+UI오브젝트는 자주 사용되는 UI 요소를 개발자들이 쉽게 출력할 수 있는 기능입니다. XE에서는 기본적인 폼 요소를 출력할 수 있는 폼 UI오브젝트를 제공하고 있습니다. 
 
-formText
-formPassword
-formTextarea
-formSelect
-formCheckbox
-formFile
-formImage
-formMenu
-formLangText
-formLangTextarea
+- `formText` - `<input type="text">`를 출력
+
+- `formPassword` - `<input type="password">`를 출력
+
+- `formTextarea` - `<textarea>`를 출력
+
+- `formSelect` - `<select>`를 출력, 사용자로부터 단일 선택을 받을 때 사용하십시오.
+
+- `formCheckbox` - `<input type="checkbox">`를 출력 사용자로부터 다중 선택을 받을 때 사용하십시오.
+
+- `formFile` - `<input type="file">` 출력, 파일을 업로드 받을 때 사용하십시오. 이 UI오브젝트는 [jQueryFileUpload](https://blueimp.github.io/jQuery-File-Upload/)를 사용합니다.
+
+- `formImage` - `formFile`과 같이 파일 업로드를 출력합니다. 하지만 이 UI오브젝트를 사용하면 사용자가 선택한 이미지 파일을 미리보기할 수 있습니다.
+
+- `formMenu` - XE에 등록된 메뉴 목록을 `<select>` 형식으로 출력합니다.
+
+- `formLangText` - `formText`와 같이 한줄 텍스트 박스를 출력합니다. 하지만 이 UI오브젝트는 다국어를 입력받을 수 있습니다.
+
+- `formLangTextarea` - 여러줄의 다국어를 출력합니다.
+
+## 폼 구성 요소의 출력
+
+폼 UI오브젝트를 웹페이지에 출력할 때에는 `uio`함수를 사용하면 됩니다.
+
+```php
+uio($uiobject, $argument, $callback);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
