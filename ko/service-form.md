@@ -4,7 +4,28 @@ XE에서는 화면에 자주 출력되는 UI 요소들이 있습니다. 텍스�
 
 XE는 아래 목록과 같이 이미 다양한 UI오브젝트를 제공하고 있습니다. XE에서 기본으로 제공하는 UI오브젝트 이외에 여러 플러그인이 등록한 UI오브젝트를 사용할 수도 있습니다.
 
-.....
+
+- `formText` - `<input type="text">`를 출력
+
+- `formPassword` - `<input type="password">`를 출력
+
+- `formTextarea` - `<textarea>`를 출력
+
+- `formSelect` - `<select>`를 출력, 사용자로부터 단일 선택을 받을 때 사용하십시오.
+
+- `formCheckbox` - `<input type="checkbox">`를 출력 사용자로부터 다중 선택을 받을 때 사용하십시오.
+
+- `formFile` - `<input type="file">` 출력, 파일을 업로드 받을 때 사용하십시오. 이 UI오브젝트는 [jQueryFileUpload](https://blueimp.github.io/jQuery-File-Upload/)를 사용합니다.
+
+- `formImage` - `formFile`과 같이 파일 업로드를 출력합니다. 하지만 이 UI오브젝트를 사용하면 사용자가 선택한 이미지 파일을 미리보기할 수 있습니다.
+
+- `formMenu` - XE에 등록된 메뉴 목록을 `<select>` 형식으로 출력합니다.
+
+- `formLangText` - `formText`와 같이 한줄 텍스트 박스를 출력합니다. 하지만 이 UI오브젝트는 다국어를 입력받을 수 있습니다.
+
+- `formLangTextarea` - 여러줄의 다국어를 출력합니다.
+
+
 
 ## UI오브젝트의 출력
 
@@ -117,25 +138,7 @@ UI오브젝트는 자주 사용되는 UI 요소를 개발자들이 쉽게 출력
 
 XE에서 다양한 폼 필드를 담당하고 있는 
 
-- `formText` - `<input type="text">`를 출력
 
-- `formPassword` - `<input type="password">`를 출력
-
-- `formTextarea` - `<textarea>`를 출력
-
-- `formSelect` - `<select>`를 출력, 사용자로부터 단일 선택을 받을 때 사용하십시오.
-
-- `formCheckbox` - `<input type="checkbox">`를 출력 사용자로부터 다중 선택을 받을 때 사용하십시오.
-
-- `formFile` - `<input type="file">` 출력, 파일을 업로드 받을 때 사용하십시오. 이 UI오브젝트는 [jQueryFileUpload](https://blueimp.github.io/jQuery-File-Upload/)를 사용합니다.
-
-- `formImage` - `formFile`과 같이 파일 업로드를 출력합니다. 하지만 이 UI오브젝트를 사용하면 사용자가 선택한 이미지 파일을 미리보기할 수 있습니다.
-
-- `formMenu` - XE에 등록된 메뉴 목록을 `<select>` 형식으로 출력합니다.
-
-- `formLangText` - `formText`와 같이 한줄 텍스트 박스를 출력합니다. 하지만 이 UI오브젝트는 다국어를 입력받을 수 있습니다.
-
-- `formLangTextarea` - 여러줄의 다국어를 출력합니다.
 
 
 ## 폼 빌더
