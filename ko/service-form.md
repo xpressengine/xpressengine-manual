@@ -14,22 +14,24 @@ UI오브젝트는 자주 사용되는 UI 요소를 개발자들이 쉽게 출력
 만약 텍스트 인풋을 출력하려면 아래와 같이 작성할 수 있습니다.
 
 ```php
-{{ uio('formText', ['label'=>'전화번호', 'name'=>'phone', 'id'=>'inputPhone', 'class'=>'input-phone', 'placeholder'=>'전화번호를 입력하세요', 'description'=> '휴대폰 사용하여 입력하세요', 'value'=>'010-000-0000') }}
+{{ uio('formText', ['label'=>'전화번호', 'name'=>'phone', 'id'=>'inputPhone', 'class'=>'input-phone', 'placeholder'=>'전화번호를 입력하세요', 'description'=> '휴대폰 사용하여 입력하세요', 'value'=>'010-000-0000']) }}
 ```
 위 코드는 실제로 아래와 같이 변환되어 출력됩니다.
 
 ```html
 <div class="form-group">
-    <label for="" class="hidden"></label>
-    <input type="text" class="form-control" id="" placeholder="">
-    <p class="help-block"></p>
+  <label for="inputPhone">전화번호</label>
+  <input type="text" class="form-control input-phone" 
+         id="inputPhone" placeholder="전화번호를 입력하세요" 
+         name="phone" value="010-000-0000">
+   <p class="help-block">휴대폰 사용하여 입력하세요</p>
 </div>
-
 ```
 
 
 
-## 폼 UI오브젝트 출력
+
+## 폼 UI오브젝트 종류
 
 UI오브젝트는 자주 사용되는 UI 요소를 개발자들이 쉽게 출력할 수 있는 기능입니다. XE에서는 기본적인 폼 요소를 출력할 수 있는 폼 UI오브젝트를 제공하고 있습니다. 
 
