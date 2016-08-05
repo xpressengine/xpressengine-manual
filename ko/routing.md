@@ -262,14 +262,18 @@ Route::fixed(<plugin_id>, function() {
 });
 ```
 
-`Route::fixed` 메소드의 첫번째 파라미터는 플러그인의 아이디를 지정하면 됩니다. `Route::fixed`를 사용할 경우 주소 `/plugins/<plugin_id>/`
+`Route::fixed` 메소드의 첫번째 파라미터는 플러그인의 아이디를 지정하면 됩니다. `Route::fixed`를 사용할 경우, 접두어(prefix)가 `/plugins/<plugin_id>`으로 자동으로 지정됩니다. 따라서 위의 코드는 아래의 `Route::group`과 동일합니다.
 
-`Route::fixed`는 내부적으로 `Route::group`로 변환되어 
+```php
+Route::group(['prefix'=>'plugins/<plugin_id>'], function() {
+    
+    // Define Routes Here
+    Route::get('/', ...);
+    
+});
+```
 
-
-
-
-
+하지만, 접두어에 자동으로 추가되는 `plugins`는 사이트 관리자가 설정에서 변경할 수 있는 값이므로 반드시 `Route::fixed`를 사용하십시오.
 
 
 
