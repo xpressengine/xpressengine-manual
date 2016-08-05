@@ -277,8 +277,6 @@ Route::group(['prefix'=>'plugins/<plugin_id>'], function() {
 
 
 
-
-
 ## CSRF 보호하기
 
 XE에서는 크로스 사이트 요청 위조([cross-site request forgeries](http://en.wikipedia.org/wiki/Cross-site_request_forgery))으로부터 응용 프로그램을 쉽게 보호할 수 있습니다. 크로스 사이트 요청 위조는 악의적인 공격의 하나이며 인증받은 사용자를 대신하여 허가 받지 않은 명령을 수행합니다.
