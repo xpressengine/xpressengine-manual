@@ -209,7 +209,7 @@ Route::group(['namespace' => 'Admin'], function()
 
 ### 라우트 접두어 지정하기
 
-라우트 그룹의 접두어는 그룹의 속성 배열에 `prefix` 옵션을 사용하여 지정합니다:
+라우트 그룹의 접두어(prefix)는 그룹의 속성 배열에 `prefix` 옵션을 사용하여 지정합니다:
 
 ```php
 Route::group(['prefix' => 'admin'], function()
@@ -254,11 +254,21 @@ Route::group([
 각 플러그인에게 할당된 라우트 규칙을 사용하려면 `Route::fixed` 메소드를 사용하십시오.
 
 ```php
-Route::fixed('my_plugin', function() {
+Route::fixed(<plugin_id>, function() {
+    
     // Define Routes Here
     Route::get('/', ...);
+    
 });
 ```
+
+`Route::fixed` 메소드의 첫번째 파라미터는 플러그인의 아이디를 지정하면 됩니다. `Route::fixed`를 사용할 경우 주소 `/plugins/<plugin_id>/`
+
+`Route::fixed`는 내부적으로 `Route::group`로 변환되어 
+
+
+
+
 
 
 
