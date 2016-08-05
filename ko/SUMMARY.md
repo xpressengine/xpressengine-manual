@@ -53,7 +53,7 @@
    * 카운터(counter)
    * 휴지통(trash)
    * ...
-* 컴포넌트 만들기
+* 컴포넌트 제작 가이드
    * [테마 - 70%](component-theme.md)
    * [스킨](component-skin.md)
    * 위젯
