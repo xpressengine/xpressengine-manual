@@ -241,6 +241,9 @@ $config->get('use_sidebar', false);
 
 XE에 등록된 메뉴도 테마 설정 변수로 사용할 수 있습니다.
 
+만약 설정변수에 'mainMenu'로 
+
+
 
 
 #### 업로드한 이미지 출력하기
