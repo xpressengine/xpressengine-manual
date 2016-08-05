@@ -61,7 +61,7 @@
    * [세션(Session) - 100%](service-session.md)
    * 헬퍼(helpers)
    * [쿠키(cookie) - 100%](service-cookie.md)
-   * [폼 출력](service-form.md)
+   * [UI오브젝트/폼빌더](service-form.md)
    * 카운터(counter)
    * 휴지통(trash)
    * ...
