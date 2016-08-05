@@ -30,18 +30,6 @@
    * [사이트 관리페이지 추가](plugin-settings.md)
    * [컴포넌트 등록 - 100%](plugin-component.md)
    * 다국어 지원
-* 컴포넌트 만들기
-   * [테마 - 70%](component-theme.md)
-   * [스킨](component-skin.md)
-   * 위젯
-   * 모듈
-   * [UI오브젝트](component-uiobject.md)
-   * [에디터](component-editor.md)
-   * [토글메뉴](component-togglemenu.md)
-   * 다이나믹 필드
-   * 다이나믹 필드 스킨
-   * 에디터
-   * 에디터툴
 * 서비스
    * 캡챠(captcha)
    * [설정(config)](service-config.md)
@@ -65,6 +53,18 @@
    * 카운터(counter)
    * 휴지통(trash)
    * ...
+* 컴포넌트 만들기
+   * [테마 - 70%](component-theme.md)
+   * [스킨](component-skin.md)
+   * 위젯
+   * 모듈
+   * [UI오브젝트](component-uiobject.md)
+   * [에디터](component-editor.md)
+   * [토글메뉴](component-togglemenu.md)
+   * 다이나믹 필드
+   * 다이나믹 필드 스킨
+   * 에디터
+   * 에디터툴
 * 콘솔명령
    * 명령어 목록
    * ...
