@@ -239,9 +239,15 @@ $config->get('use_sidebar', false);
 
 #### 메뉴 출력하기
 
-XE에 등록된 메뉴도 테마 설정 변수로 사용할 수 있습니다.
+XE에 등록된 메뉴도 테마 설정 변수로 저장할 수 있습니다.
 
-만약 설정변수에 'mainMenu'로 
+만약 설정변수에 'mainMenu'라는 이름으로 메뉴가 저장되어 있다면, `menu_list` 함수를 사용하여 메뉴 정보를 가져올 수 있습니다.
+
+```php
+@foreach(menu_list($config->get('mainMenu')) as $menu)
+  ...
+@endforeach
+```
 
 
 
