@@ -54,7 +54,7 @@
    * 휴지통(trash)
    * ...
 * 컴포넌트 제작 가이드
-   * [테마 - 70%](component-theme.md)
+   * [테마 - 100%](component-theme.md)
    * [스킨](component-skin.md)
    * 위젯
    * 모듈
