@@ -251,6 +251,8 @@ $config->get('use_sidebar', false);
 
 ### 폼빌더로 작성하기
 
+`info.php` 파일의 `setting` 항목에 폼에서 사용할 필드의 정보를 담은 배열을 추가합니다. `setting` 항목을를 작성하는 규칙은 [폼 빌더](service-uiobject.md) 문서의 `fields` 항목을 참고하시기 바랍니다.
+
 
 
 
