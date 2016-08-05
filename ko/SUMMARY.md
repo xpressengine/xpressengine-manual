@@ -52,6 +52,7 @@
    * [UI오브젝트/폼빌더](service-uiobject.md)
    * 카운터(counter)
    * 휴지통(trash)
+   * 유효성검사(validataion)
    * ...
 * 컴포넌트 제작 가이드
    * [테마 - 100%](component-theme.md)
