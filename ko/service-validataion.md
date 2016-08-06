@@ -117,38 +117,40 @@ $this->validate($request, [
 
 컨트롤러에서 제공하는 `validate` 메소드를 사용하고 싶지 않다면 `Validator` 파사드를 사용하여 validator 인스턴스를 수동으로 생성할 수 있습니다. 파사드에 `make` 메소드를 사용하면 새로운 validator 인스턴스가 생성됩니다:
 
-    <?php
+```php
+<?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
-    use Validator;
-    use Illuminate\Http\Request;
-    use App\Http\Controllers\Controller;
+use Validator;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-    class PostController extends Controller
+class PostController extends Controller
+{
+    /**
+     * Store a new blog post.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function store(Request $request)
     {
-        /**
-         * Store a new blog post.
-         *
-         * @param  Request  $request
-         * @return Response
-         */
-        public function store(Request $request)
-        {
-            $validator = Validator::make($request->all(), [
-                'title' => 'required|unique:posts|max:255',
-                'body' => 'required',
-            ]);
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+        ]);
 
-            if ($validator->fails()) {
-                return redirect('post/create')
-                            ->withErrors($validator)
-                            ->withInput();
-            }
-
-            // Store the blog post...
+        if ($validator->fails()) {
+            return redirect('post/create')
+                        ->withErrors($validator)
+                        ->withInput();
         }
+
+        // Store the blog post...
     }
+}
+```
 
 `make` 메소드로 전달되는 첫번째 인자는 유효성 검사를 받을 데이터입니다. 두번째 인자는 데이터에 적용되어야 하는 유효성 검사 규칙들입니다. 
 
