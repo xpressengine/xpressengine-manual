@@ -180,43 +180,54 @@ return redirect('register')
 
 특정 필드에 대한 첫번째 에러 메세지를 조회하려면 `first` 메소드를 사용하면 됩니다: 
 
-    $messages = $validator->errors();
+```php
+$messages = $validator->errors();
 
-    echo $messages->first('email');
+echo $messages->first('email');
+```
 
 #### 하나의 필드에 대한 모든 에러 메세지 조회하기
 
 간단하게 하나의 필드에 대한 모든 에러 메세지를 조회하고 싶다면 `get` 메소드를 사용하면 됩니다:
 
-    foreach ($messages->get('email') as $message) {
-        //
-    }
+```php
+foreach ($messages->get('email') as $message) {
+    //
+}
+```
 
 #### 모든 필드에 대한 모든 에러 메세지 조회하기
 
 모든 필드에 대한 모든 에러 메세지를 조회하기 위해서는 `all` 메소들 사용하면 됩니다: 
 
-    foreach ($messages->all() as $message) {
-        //
-    }
+```php
+foreach ($messages->all() as $message) {
+    //
+}
+```
 
 #### 하나의 필드에 대하여 에러 메시지가 존재하는지 검사하기
 
-    if ($messages->has('email')) {
-        //
-    }
+```php
+if ($messages->has('email')) {
+    //
+}
+```
 
 #### 특정 형식으로 에러 메시지 획득하기
 
-    echo $messages->first('email', '<p>:message</p>');
+```php
+echo $messages->first('email', '<p>:message</p>');
+```
 
 #### 특정 형식으로 모든 에러 메시지 획득하기
 
-    foreach ($messages->all('<li>:message</li>') as $message) {
-        //
-    }
+```php
+foreach ($messages->all('<li>:message</li>') as $message) {
+    //
+}
+```
 
-<a name="custom-error-messages"></a>
 ### 사용자 지정(커스텀) 에러 메세지
 
 필요하다면 기본적인 에얼 메세지 대신에 커스텀 에러 메세지를 유효성 검사에 사용할 수 있습니다. 커스텀 메세지를 지정하는 데에는 여러가지 방법이 있습니다. 먼저 `Validator::make` 메소드에 커스텀 메세지를 세번째 인자로 전달할 수 있습니다: 
