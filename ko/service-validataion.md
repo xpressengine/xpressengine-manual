@@ -266,7 +266,6 @@ foreach ($messages->all('<li>:message</li>') as $message) {
         ],
     ],
 
-<a name="available-validation-rules"></a>
 ## 사용가능한 유효성 검사 규칙들
 
 다음은 모든 유효성 검사 규칙과 그들의 함수 목록입니다.
