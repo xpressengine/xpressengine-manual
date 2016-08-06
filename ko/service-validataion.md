@@ -27,36 +27,38 @@ Route::post('post', 'PostController@store');
 
 다음으로, 이 라우트들을 다루는 간단한 컨트롤러를 살펴보겠습니다. 지금은 `store` 메소드를 비어있는 채로 둘 것입니다: 
 
-    <?php
+```php
+<?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
-    use Illuminate\Http\Request;
-    use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-    class PostController extends Controller
+class PostController extends Controller
+{
+    /**
+     * Show the form the create a new blog post.
+     *
+     * @return Response
+     */
+    public function create()
     {
-        /**
-         * Show the form the create a new blog post.
-         *
-         * @return Response
-         */
-        public function create()
-        {
-            return view('post.create');
-        }
-
-        /**
-         * Store a new blog post.
-         *
-         * @param  Request  $request
-         * @return Response
-         */
-        public function store(Request $request)
-        {
-            // Validate and store the blog post...
-        }
+        return view('post.create');
     }
+
+    /**
+     * Store a new blog post.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        // Validate and store the blog post...
+    }
+}
+```
 
 <a name="quick-writing-the-validation-logic"></a>
 ### Validation-유효성검사 로직 작성하기
