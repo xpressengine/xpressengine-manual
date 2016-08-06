@@ -22,7 +22,6 @@ Route::post('post', 'PostController@store');
 
 `GET` 라우트는 사용자가 새로운 블로그 포스트를 생성하기 위한 form을 나타낼 것이고, `POST` 라우트는 데이터베이스에 새로운 블로그 포스트를 저장할 것입니다. 
 
-<a name="quick-creating-the-controller"></a>
 ### 컨트롤러 생성하기
 
 다음으로, 이 라우트들을 다루는 간단한 컨트롤러를 살펴보겠습니다. 지금은 `store` 메소드를 비어있는 채로 둘 것입니다: 
@@ -60,8 +59,7 @@ class PostController extends Controller
 }
 ```
 
-<a name="quick-writing-the-validation-logic"></a>
-### Validation-유효성검사 로직 작성하기
+### 유효성검사 로직 작성하기
 
 이제 새로운 블로그 포스트에 대해 유효성을 검사하는 로직을 `store` 메소드에 채워넣을 준비가 되었습니다. 어플리케이션의 베이스 컨트롤러(`App\Http\Controllers\Controller`) 클래스를 살펴보면 클래스가 `ValidatesRequests` 트레이트-trait을 사용한다는 것을 알 수 있습니다. 이 트레이트-trait은 모든 컨트롤러에 편리하게 사용할 수 있는 `validate` 메소드를 제공합니다. 
 
