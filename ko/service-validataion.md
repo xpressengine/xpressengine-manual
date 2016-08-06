@@ -270,61 +270,49 @@ foreach ($messages->all('<li>:message</li>') as $message) {
 
 다음은 모든 유효성 검사 규칙과 그들의 함수 목록입니다.
 
-<style>
-    .collection-method-list > p {
-        column-count: 3; -moz-column-count: 3; -webkit-column-count: 3;
-        column-gap: 2em; -moz-column-gap: 2em; -webkit-column-gap: 2em;
-    }
 
-    .collection-method-list a {
-        display: block;
-    }
-</style>
-
-<div class="collection-method-list" markdown="1">
-[Accepted](#rule-accepted)
-[Active URL](#rule-active-url)
-[After (Date)](#rule-after)
-[Alpha](#rule-alpha)
-[Alpha Dash](#rule-alpha-dash)
-[Alpha Numeric](#rule-alpha-num)
-[Array](#rule-array)
-[Before (Date)](#rule-before)
-[Between](#rule-between)
-[Boolean](#rule-boolean)
-[Confirmed](#rule-confirmed)
-[Date](#rule-date)
-[Date Format](#rule-date-format)
-[Different](#rule-different)
-[Digits](#rule-digits)
-[Digits Between](#rule-digits-between)
-[E-Mail](#rule-email)
-[Exists (Database)](#rule-exists)
-[Image (File)](#rule-image)
-[In](#rule-in)
-[Integer](#rule-integer)
-[IP Address](#rule-ip)
-[JSON](#rule-json)
-[Max](#rule-max)
-[MIME Types (File)](#rule-mimes)
-[Min](#rule-min)
-[Not In](#rule-not-in)
-[Numeric](#rule-numeric)
-[Regular Expression](#rule-regex)
-[Required](#rule-required)
-[Required If](#rule-required-if)
-[Required Unless](#rule-required-unless)
-[Required With](#rule-required-with)
-[Required With All](#rule-required-with-all)
-[Required Without](#rule-required-without)
-[Required Without All](#rule-required-without-all)
-[Same](#rule-same)
-[Size](#rule-size)
-[String](#rule-string)
-[Timezone](#rule-timezone)
-[Unique (Database)](#rule-unique)
-[URL](#rule-url)
-</div>
+- [Accepted](#rule-accepted)
+- [Active URL](#rule-active-url)
+- [After (Date)](#rule-after)
+- [Alpha](#rule-alpha)
+- [Alpha Dash](#rule-alpha-dash)
+- [Alpha Numeric](#rule-alpha-num)
+- [Array](#rule-array)
+- [Before (Date)](#rule-before)
+- [Between](#rule-between)
+- [Boolean](#rule-boolean)
+- [Confirmed](#rule-confirmed)
+- [Date](#rule-date)
+- [Date Format](#rule-date-format)
+- [Different](#rule-different)
+- [Digits](#rule-digits)
+- [Digits Between](#rule-digits-between)
+- [E-Mail](#rule-email)
+- [Exists (Database)](#rule-exists)
+- [Image (File)](#rule-image)
+- [In](#rule-in)
+- [Integer](#rule-integer)
+- [IP Address](#rule-ip)
+- [JSON](#rule-json)
+- [Max](#rule-max)
+- [MIME Types (File)](#rule-mimes)
+- [Min](#rule-min)
+- [Not In](#rule-not-in)
+- [Numeric](#rule-numeric)
+- [Regular Expression](#rule-regex)
+- [Required](#rule-required)
+- [Required If](#rule-required-if)
+- [Required Unless](#rule-required-unless)
+- [Required With](#rule-required-with)
+- [Required With All](#rule-required-with-all)
+- [Required Without](#rule-required-without)
+- [Required Without All](#rule-required-without-all)
+- [Same](#rule-same)
+- [Size](#rule-size)
+- [String](#rule-string)
+- [Timezone](#rule-timezone)
+- [Unique (Database)](#rule-unique)
+- [URL](#rule-url)
 
 <a name="rule-accepted"></a>
 #### accepted
@@ -605,123 +593,3 @@ _anotherfield_가 어떤 _value_와 동일하지 않은 이상 필드가 존재�
 
 필드는 반드시 PHP  `filter_var` 함수에 따라 유효한 URL이어야 합니다. 
 
-<a name="conditionally-adding-rules"></a>
-## 조건부로 룰 추가하기
-
-어떤 상황에서는 필드가 입력 배열에 존재할 때에만 그 필드의 유효성 검사를 실행하고 싶을수도 있습니다. 이를 위해서는 룰의 목록에 `sometimes`를 추가하기만 하면 됩니다:
-
-    $v = Validator::make($data, [
-        'email' => 'sometimes|required|email',
-    ]);
-
-이 예제에서는 `$data` 배열에 `email` 필드가 존재할 경우에만 그 필드의 유효성 검사가 실행됩니다.
-
-#### 복잡한 조건부 유효성 검사
-
-때때로 여러분은 한가지 이상의 복잡한 로직에 대해서 유효성 규칙을 추가하고자 할 수도 있습니다. 예를 들어, 어떤 다른 필드가 100 이상의 값을 가질때에만 주어진 필드가 반드시 존재하길 바랄 수도 있습니다. 또는 다른 필드가 존재할 때에만 두개의 필드가 주어진 값을 가질 필요가 있을수도 있습니다. 이러한 유효성 검사 룰을 추가하는 것이 어렵지 않을 수 있습니다. 우선 _고정 룰_을 변경할 필요 없이 그대로 사용하여 `Validator` 인스턴스를 생성합니다:
-
-    $v = Validator::make($data, [
-        'email' => 'required|email',
-        'games' => 'required|numeric',
-    ]);
-
-여러분의 웹 어플리케이션이 게임 수집가들을 위한 사이트라고 가정해보겠습니다. 만약 100개 이상의 게임을 소유하고 있는 게임 수집가가 우리 사이트에 가입을 한다면, 우리는 그들이 왜 그렇게 많은 게임을 소유하고 있는지 설명을 듣고 싶을수 있습니다. 예를 들어, 아마 그들이 중고게임 판매점을 운영하거나, 단순히 수집을 취미로 할 수도 있습니다. 이런 요구사항을 조건부로 추가하기 위하여 `Validator` 인스턴스의 `sometimes` 메소드를 사용할 수 있습니다.
-
-    $v->sometimes('reason', 'required|max:500', function($input) {
-        return $input->games >= 100;
-    });
-
-`sometimes` 메소드에 전달되는 첫번째 인자는 필드의 이름입니다. 두번째 인자는 추가하려는 룰입니다. 만약 세번째 파라메터로 전달된 `Closure`가 `true`를 리턴한다면 그 룰은 유효성 검사에 추가될 것입니다. 이 메소드는 복잡한 조건부 유효성 검사의 구성을 손쉽게 만들어 주며, 한번에 여러개의 필드에 대한 조건부 유효성 검사를 추가할 수도 있습니다.
-
-    $v->sometimes(['reason', 'cost'], 'required', function($input) {
-        return $input->games >= 100;
-    });
-
-> **참고:** `Closure`로 전달된 `$input` 파라메터는 `Illuminate\Support\Fluent`의 인스턴스입니다. 그리고 입력된 데이터와 파일에 접근하기 위해 이 오브젝트가 사용할 수 있습니다.
-
-<a name="custom-validation-rules"></a>
-## 사용자 정의 유효성 검사 룰
-
-라라벨은 다양하고 유용한 유효성 검사 룰을 제공합니다; 하지만, 여러분은 여러분만의 유효성 검사 룰을 정의하길 바랄수도 있습니다. 커스텀 유효성 검사 룰을 등록하는 방법중 하나는 `Validator` [파사드](/docs/{{version}}/facades)에 `extend` 메소드를 사용하는 것입니다. 이 메소드를 [서비스 프로바이더](/docs/{{version}}/providers) 내에서 사용하여 커스텀 유효성 검사 룰을 등록합니다:
-
-    <?php
-
-    namespace App\Providers;
-
-    use Validator;
-    use Illuminate\Support\ServiceProvider;
-
-    class AppServiceProvider extends ServiceProvider
-    {
-        /**
-         * Bootstrap any application services.
-         *
-         * @return void
-         */
-        public function boot()
-        {
-            Validator::extend('foo', function($attribute, $value, $parameters, $validator) {
-                return $value == 'foo';
-            });
-        }
-
-        /**
-         * Register the service provider.
-         *
-         * @return void
-         */
-        public function register()
-        {
-            //
-        }
-    }
-
-커스텀 유효성 검사 클로저는 4개의 인자를 받습니다: 유효성 검사를 할 필드(`$attribute`)의 이름, 필드의 값(`$value`), 그리고 룰에 전달될 파라미터들(`$parameters`)의 배열, 그리고 `Validator` 인스턴스 입니다.  
-
-또한 클로저 대신 클래스명과 메소드명을 `extend` 메소드로 전달할 수도 있습니다.
-
-    Validator::extend('foo', 'FooValidator@validate');
-
-#### 에러 메세지 정의하기
-
-커스텀 룰을 위한 에러 메세지 또한 정의해야 합니다. 인라인 커스텀 메세지 배열을 사용하거나 유효 검사 언어 파일에 엔트리를 추가하면 됩니다. 이 메세지는 `custom` 배열 안이 아닌 배열의 첫번째 레벨에 놓여야 합니다. `custom` 배열은 특정 속성에 따른 에러 메세지를 담당합니다:
-
-    "foo" => "Your input was invalid!",
-
-    "accepted" => "The :attribute must be accepted.",
-
-    // The rest of the validation error messages...
-
-커스텀 유효 검사 룰을 생성할 때 종종 에러 메세지를 위한 커스텀 플레이스 홀더 대체제를 정의해야 할 수도 있습니다. 이전의 설명에 따라 커스텀 Validator를 생성하고 `Validator` 파사드에 `replacer` 메소드를 호출하십시오. 이는 [서비스 프로바이더](/docs/{{version}}/providers)의 `boot` 메소드 안에서 할 수 있습니다:
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        Validator::extend(...);
-
-        Validator::replacer('foo', function($message, $attribute, $rule, $parameters) {
-            return str_replace(...);
-        });
-    }
-
-#### 묵시적 확장
-
-기본적으로 유효성 검사를 받는 속성이 존재하지 않거나 [`required`](#rule-required) 룰의 정의에 따라 빈 값을 가지고 있다면, 커스텀 확장을 포함한 정상적인 유효성 검사 룰은 실행되지 않을 것입니다. 예를 들어 `null` 값에는  [`integer`](#rule-integer) 룰이 실행되지 않을 것입니다: 
-
-    $rules = ['count' => 'integer'];
-
-    $input = ['count' => null];
-
-    Validator::make($input, $rules)->passes(); // true
-
-속성이 비었을 때도 룰이 실행되기 위해서는 룰에 속성이 필요하다는 것이 내포되어 있어야 합니다. 이런 "묵시적"인 확장을 만드려면 `Validator::extendImplicit()` 메소드를 사용하세요: 
-
-    Validator::extendImplicit('foo', function($attribute, $value, $parameters, $validator) {
-        return $value == 'foo';
-    });
-
-> **주의:** "묵시적" 확장은 단지 속성이 필요하다는 것을 _암시(내포)_합니다. 없거나 빈 속성의 유효성을 실제로 부정하는지는 여러분이 결정합니다.
