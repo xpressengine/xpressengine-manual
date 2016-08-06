@@ -113,7 +113,7 @@ HTTP 요청이 "중첩된" 파라미터를 가지고 있다면 ".(점)" 문법�
 
 ### 수동으로 Validator 생성하기
 
-`ValidatesRequests` 트레이트-trait의 `validate` 메소드를 사용하고 싶지 않다면 `Validator` [파사드](/docs/{{version}}/facades)를 사용하여 validator 인스턴스를 수동으로 생성할 수 있습니다. 파사드에 `make` 메소드를 사용하면 새로운 validator 인스턴스가 생성됩니다:
+`ValidatesRequests` 트레이트(trait)의 `validate` 메소드를 사용하고 싶지 않다면 `Validator` [파사드](/docs/{{version}}/facades)를 사용하여 validator 인스턴스를 수동으로 생성할 수 있습니다. 파사드에 `make` 메소드를 사용하면 새로운 validator 인스턴스가 생성됩니다:
 
     <?php
 
