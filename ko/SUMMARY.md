@@ -53,8 +53,8 @@
    * 카운터(counter)
    * 휴지통(trash)
    * [유효성검사(validataion)](service-validataion.md)
-   * ...
    * 오류처리
+   * ...
 * 컴포넌트 제작 가이드
    * [테마 - 100%](component-theme.md)
    * [스킨](component-skin.md)
