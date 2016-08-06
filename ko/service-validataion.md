@@ -101,52 +101,9 @@ HTTP 요청이 "중첩된" 파라미터를 가지고 있다면 ".(점)" 문법�
 
 그럼 입력되는 요청(request)의 파라미터들이 유효성 검사를 통과하지 못하는 경우에는 어떻게 될까요? 이 경우 앞서 언급한대로, 자동으로 사용자를 이전의 위치로 리다이렉트합니다. 또한 모든 유효성 확인 에러는 자동으로 세션에 임시 저장될 것입니다. 
 
-`GET` 라우트에서도 에러 메세지를 뷰와 명시적으로 출력하지 않아도 됩니다. 왜냐하면, XE가 항상 세션 데이터에서 에러가 있는지 확인하고, 에러가 있다면 뷰에 자동으로 연결해 주기 때문입니다.  따라서 여러분은 `$errors` 변수가 항상 정의되어 있으며 사용 가능하다고 마음 편하게 가정할 수 있습니다. `$errors` 변수는 `Illuminate\Support\MessageBag`의 인스턴스일 것입니다. 이 객체를 다루는 법에 대해 더 알아보고 싶다면 [문서을 확인해보시기 바랍니다](#working-with-error-messages).
+`GET` 라우트에서도 에러 메세지를 뷰와 명시적으로 출력하지 않아도 됩니다. 왜냐하면, 기본적으로 세션에 저장된 유효성 확인 에러를 출력합니다.
 
-따라서, 이 예제에서, 유효성 검사를 통과하지 못할 경우 사용자는 컨트롤러의 `create` 메소드로 리다이렉트 될것이고, 뷰에서는 에러 메세지가 표시됩니다: 
-
-    <!-- /resources/views/post/create.blade.php -->
-
-    <h1>Create Post</h1>
-
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <!-- Create Post Form -->
-
-<a name="quick-customizing-the-flashed-error-format"></a>
-#### 임시저장된 에러의 포맷을 임의로 지정하기
-
-만약 유효성 검사가 실패했을 때 세션에 저장되는 에러의 형식을 커스터마이징하고 싶다면, 베이스 컨트롤러 클래스의 `formatErrors` 메소드를 오버라이딩하면 됩니다. 이때, 파일 상단에서 `Illuminate\Validation\Validator`를 임포트하는 것을 잊지 마십시오:
-
-    <?php
-
-    namespace App\Http\Controllers;
-
-    use Illuminate\Foundation\Bus\DispatchesJobs;
-    use Illuminate\Contracts\Validation\Validator;
-    use Illuminate\Routing\Controller as BaseController;
-    use Illuminate\Foundation\Validation\ValidatesRequests;
-
-    abstract class Controller extends BaseController
-    {
-        use DispatchesJobs, ValidatesRequests;
-
-        /**
-         * {@inheritdoc}
-         */
-        protected function formatValidationErrors(Validator $validator)
-        {
-            return $validator->errors()->all();
-        }
-    }
+이 예제에서, 유효성 검사를 통과하지 못할 경우 사용자는 컨트롤러의 `create` 메소드로 리다이렉트 될것이고, XE는 세션에 저장된 유효성 확인 에러를 확인한 후, 토스트 팝업(팝업레이어 형식)으로 오류 메시지를 출력합니다.
 
 ### AJAX 요청과 유효성 검사
 
