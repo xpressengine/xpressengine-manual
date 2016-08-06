@@ -67,21 +67,23 @@ class PostController extends Controller
 
 `validate` 메소드에 대해 더 잘 이해하기 위해, 다시 `store` 메소드로 돌아가 보겠습니다: 
 
-    /**
-     * Store a new blog post.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
-        ]);
+```php
+/**
+ * Store a new blog post.
+ *
+ * @param  Request  $request
+ * @return Response
+ */
+public function store(Request $request)
+{
+    $this->validate($request, [
+        'title' => 'required|unique:posts|max:255',
+        'body' => 'required',
+    ]);
 
-        // The blog post is valid, store in database...
-    }
+    // The blog post is valid, store in database...
+}
+```
 
 위에서 볼 수 있듯이, 간단하게 유입되는 HTTP 요청과 유효성 검사 룰들을 `validate` 메소드로 전달하면 됩니다. 이 때에도 유효 확인이 실패하면 적절한 응답이 생성될 것입니다. 유효성 검사를 통과하면 컨트롤러는 계속해서 정상적으로 수행합니다.
 
