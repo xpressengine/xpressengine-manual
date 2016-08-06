@@ -89,7 +89,7 @@ public function store(Request $request)
 
 #### 중첩된 속성에 대한 유의사항
 
-HTTP 요청이 "중첩된" 파라미터를 가지고 있다면 ".(점)" 문법을 사용하여 유효성 확인 규칙을 지정할 수 있습니다:
+HTTP 요청이 "중첩된" 파라미터를 가지고 있다면 ".(점)" 문법을 사용하여 유효성 검사 규칙을 지정할 수 있습니다:
 
 ```php
 $this->validate($request, [
