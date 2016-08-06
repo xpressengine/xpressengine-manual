@@ -171,23 +171,6 @@ return redirect('register')
 {{ $errors->login->first('email') }}
 ```
 
-#### 유효성 검사 이후에 후킹하기
-
-유효성 검사가 완료된 후에 실행하고자 하는 콜백함수를 validator에 추가할 수 있습니다. 이를 통하면, 손쉽게 더 많은 유효성 검사를 실행할 수 있도록 하고, 에러 메시지 컬렉션에 에러 메시지를 더 추가할 수도 있습니다. 다음처럼 validator 인스턴스의 `after` 메소드를 사용하면 됩니다:
-
-    $validator = Validator::make(...);
-
-    $validator->after(function($validator) {
-        if ($this->somethingElseIsInvalid()) {
-            $validator->errors()->add('field', 'Something is wrong with this field!');
-        }
-    });
-
-    if ($validator->fails()) {
-        //
-    }
-
-<a name="form-request-validation"></a>
 ### Form request-요청 validation-유효성 검사
 
 보다 복잡한 유효성 검사 시나리오를 고려해보면, "폼 요청(form request)" 클래스를 만들고자 할 수도 있습니다. form reqeust는 유효성검사 로직을 내장하고 있는 사용자 정의 request-요청 클래스입니다. 하나의 form request-요청 클래스를 만드려면, `make:request` 아티즌 명령을 사용하면 됩니다.
