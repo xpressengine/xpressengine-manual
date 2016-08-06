@@ -160,12 +160,16 @@ class PostController extends Controller
 
 한 페이지 안에서 여러개의 form을 가지고 있다면 에러들의 `MessageBag`에 이름을 붙여 지정한 form에 맞는 에러 메세지를 조회할 수 있도록 할 수 있습니다. 단순히 `withErrors`에 이름을 두번째 인자로 전달하면 됩니다:
 
-    return redirect('register')
-                ->withErrors($validator, 'login');
+```php
+return redirect('register')
+            ->withErrors($validator, 'login');
+```
 
 그러면 `$errors` 변수에서 지정된 `MessageBag` 인스턴스에 접근할 수 있습니다. 
 
-    {{ $errors->login->first('email') }}
+```php
+{{ $errors->login->first('email') }}
+```
 
 #### 유효성 검사 이후에 후킹하기
 
