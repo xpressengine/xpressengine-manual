@@ -21,6 +21,8 @@ XE에서 HTML 형식으로 응답할 때에는, 항상 컨트롤러가 생성한
 `XePresenter::make()`는 HTML 형식만 지원합니다.
 
 ```php
+// in app/Html/Controllers/ProfileController.php
+
 // 스킨 타겟 지정
 XePresenter::setSkinTargetId('member/profile');
 
@@ -29,8 +31,6 @@ XePresenter::setSkinTargetId('member/profile');
 // HTML 형식으로 반환
 return XePresenter::make('index', compact('user', 'grant'));
 ```
-
-> `app/Html/Controllers/ProfileController.php` 예시 코드입니다.
 
 
 스킨없이 뷰 블레이드 파일을 바로 사용할 수 있습니다. 
