@@ -53,7 +53,7 @@ XE는 json 형식을 지원하며 `JsonRenderer`가 사용됩니다.
   
 ```
 
-#### 모든 형식 지원
+## 모든 형식 지원
 
 Html, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 사용합니다.
 
