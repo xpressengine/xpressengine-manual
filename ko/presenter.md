@@ -30,6 +30,7 @@ return XePresenter::make('index', compact('user', 'grant'));
 
 
 스킨없이 뷰 블레이드 파일을 바로 사용할 수 있습니다. 
+
 ```php
 return XePresenter::make('seo.setting');
 ```
