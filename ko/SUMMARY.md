@@ -61,10 +61,10 @@
    * 위젯
    * 모듈
    * [UI오브젝트](component-uiobject.md)
-   * [에디터](component-editor.md)
    * [토글메뉴](component-togglemenu.md)
    * 다이나믹 필드
    * 다이나믹 필드 스킨
+   * [에디터](component-editor.md)
    * 에디터툴
 * 콘솔명령
    * 명령어 목록
