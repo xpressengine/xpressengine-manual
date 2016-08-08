@@ -26,7 +26,7 @@ XePresenter::setSkinTargetId('member/profile');
 
 ...
 
-// HTML 형식으로 반환
+// HTML 형식으로 반환, 'index' 뷰를 사용
 return XePresenter::make('index', compact('user', 'grant'));
 ```
 
@@ -38,6 +38,22 @@ return XePresenter::make('index', compact('user', 'grant'));
 // 뷰 이름을 직접 지정
 return XePresenter::make('seo.setting');
 ```
+
+#### HtmlRenderer
+
+프리젠터에서 Html 응답처리할 `XePresenter::make()` 할 경우 기본으로 `/resources/views/`를 참고합니다.
+이것은 `HtmlRenderer::renderSkin()`에서 스킨의 타겟 아이디가 지정되지 않았을 경우 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 직접 사용하기 때문입니다.
+
+정상적인 사용 과정으로 스킨의 타겟 아이디를 프리젠터에게 전달한 경우 HtmlRenderer는 사용될 스킨을 찾아 Renderable 인터페이스의 `render()`를 실행시키며 스킨 컴포넌트는 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 사용해서 블레이드 파일을 처리합니다.
+
+#### 전체 프레임 구성 파일
+`resources/views/common/base.blade.php`으로 전체 프레임을 구성하며 `$content`에 테마를 전달받아 출력합니다.
+
+`HtmlRenderer::render()`는 SEO, 스킨, 테마 순서로 처리되고 마지막에 `self::$commonHtmlWrapper`으로 감싸서 반환합니다. 
+`self::$commonHtmlWrapper`는 `app/Providers/PresenterServiceProvider.php`에서 `config/xe.php`의 `HtmlWrapper`로 설정합니다. 
+
+`base.blade.php`는 프론트엔드에 등록된 js, css등 여러 요소들을 어떤 위치에 출력할지 결정하고 있습니다.
+
 
 ## API 형식으로 응답하기
 
@@ -70,25 +86,5 @@ HTML, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 �
 
 > XE의 API를 이용한 개발 케이스가 많지 않아 API 지원에 대한 부분은 계속 개선해야 합니다.
 
-## 스킨 타겟 아이디
-스킨은 특정 컴포넌트나 집단 밑에 하나의 그룹을 형성합니다.
 
-코어에서 제공하는 프로필 컨트롤러는 `member/profile` 아이디를 스킨 타겟 아이디로 사용하고 있습니다. 플러그인으로 프로필 스킨을 만드려고 할 때 제작되는 스킨 컴포넌트는 `member/profile`를 대상 아이디로 컴포넌트 아이디를 생성해야 하며 스킨 패키지는 이를 기준으로 스킨을 설정할 수 있는 관리자를 제공합니다.
 
-다른 예로 Board 플러그의 Board 모듈 컴포너트는 `module/board@board` 스킨 타겟 아이디를 사용합니다.
-
-스킨을 사용하는 컨트롤러는 `XePresenter::setSkinTargetId()`에 지정된 스킨 타겟 아이디를 설정하여 `HtmlRenderer::render()`가 처리될 때 설정된 스킨을 찾아 처리할 수 있도록 합니다.
-
-## HtmlRenderer
-프리젠터에서 Html 응답처리할 `XePresenter::make()` 할 경우 기본으로 `/resources/views/`를 참고합니다.
-이것은 `HtmlRenderer::renderSkin()`에서 스킨의 타겟 아이디가 지정되지 않았을 경우 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 직접 사용하기 때문입니다.
-
-정상적인 사용 과정으로 스킨의 타겟 아이디를 프리젠터에게 전달한 경우 HtmlRenderer는 사용될 스킨을 찾아 Renderable 인터페이스의 `render()`를 실행시키며 스킨 컴포넌트는 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 사용해서 블레이드 파일을 처리합니다.
-
-#### 전체 프레임 구성 파일
-`resources/views/common/base.blade.php`으로 전체 프레임을 구성하며 `$content`에 테마를 전달받아 출력합니다.
-
-`HtmlRenderer::render()`는 SEO, 스킨, 테마 순서로 처리되고 마지막에 `self::$commonHtmlWrapper`으로 감싸서 반환합니다. 
-`self::$commonHtmlWrapper`는 `app/Providers/PresenterServiceProvider.php`에서 `config/xe.php`의 `HtmlWrapper`로 설정합니다. 
-
-`base.blade.php`는 프론트엔드에 등록된 js, css등 여러 요소들을 어떤 위치에 출력할지 결정하고 있습니다.
