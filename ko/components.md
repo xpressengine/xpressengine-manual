@@ -23,7 +23,7 @@ XE는 기본적으로 11개 타입의 컴포넌트를 가지고 있습니다. �
   ├── 테마 - \Xpressengine\Theme\AbstractTheme
   ├── 모듈 - \Xpressengine\Module\AbstractModule
   ├── 스킨 - \Xpressengine\Skin\AbstractSkin
-  ├── 다이나믹필드 타입 - \Xpressengine\DynamicField\AbstractType
+  ├── 다이나믹필드 - \Xpressengine\DynamicField\AbstractType
   ├── 다이나믹필드 스킨 - \Xpressengine\DynamicField\AbstractSkin
   ├── 토글메뉴 - \Xpressengine\ToggleMenu\AbstractToggleMenu
   ├── UI오브젝트 - \Xpressengine\UIObject\AbstractUIObject
