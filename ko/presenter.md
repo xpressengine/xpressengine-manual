@@ -23,7 +23,9 @@ XE에서 HTML 형식으로 응답할 때에는, 항상 컨트롤러가 생성한
 ```php
 // 스킨 타겟 지정
 XePresenter::setSkinTargetId('member/profile');
+
 ...
+
 // HTML 형식으로 반환
 return XePresenter::make('index', compact('user', 'grant'));
 ```
