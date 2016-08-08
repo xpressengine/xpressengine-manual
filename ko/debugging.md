@@ -24,20 +24,11 @@ XE를 디버깅모드로 설정하면 브라우저를 통해 오류를 확인할
   ...
 ```
 
-위와 같이 `config/production/app.php` 파일을 설정하고, 아래와 같이 XE의 루트디렉토리에 위치한 `.env` 파일에 값을 지정합니다.
+위와 같이 `config/production/app.php` 파일을 설정하고, XE의 루트디렉토리의 `.env` 파일에 아래와 같이 지정합니다.
 
 ```
 // in .env file
 APP_DEBUG=true
-```
-
-##### 주의!
-cascading config 와 env 사용상에서 우선순위에 주의하셔야 합니다.
-현재 환경에 맞는 config 내 하위 디렉토리가 존재하고 `debug` 값이 지정되어 있는 경우 해당 값이 가장 높은 우선순위를 가져 웹 애플리케이션에 반영됩니다.
-만약 .env 에 의해 설정이 지정되길 원한다면, 현재 환경이름의 디렉토리내에 `debug` 항목을 제거하거나 해당 값을 `env` 함수를 통해 지정되어야 합니다.
-* config/production/app.php
-```
-    'debug' => env('APP_DEBUG', true)
 ```
 
 #### 정보확인 하기
