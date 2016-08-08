@@ -26,7 +26,7 @@ XePresenter::setSkinTargetId('member/profile');
 return XePresenter::make('index', compact('user', 'grant'));
 ```
 
-> `app/Html/Controllers/ProfileController.php` 예시 코드 입니다.
+> `app/Html/Controllers/ProfileController.php` 예시 코드입니다.
 
 
 스킨없이 뷰 블레이드 파일을 바로 사용할 수 있습니다. 
