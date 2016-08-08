@@ -106,6 +106,7 @@ class Plugin extends AbstractPlugin
 ```
 
 ```php
+// settings_menu 지정
 Route::settings('user', function () {
     Route::get('create', [
            'as' => 'settings.member.create',
