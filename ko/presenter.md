@@ -35,9 +35,11 @@ return XePresenter::make('index', compact('user', 'grant'));
 스킨없이 뷰 블레이드 파일을 바로 사용할 수 있습니다. 
 
 ```php
+// in app/Html/Controllers/SeoController.php
+
+// 
 return XePresenter::make('seo.setting');
 ```
-> `app/Html/Controllers/SeoController.php`에서 스킨을 사용하지 않고 Html을 반환하는 코드입니다.
 
 #### API 응답
 XE는 json 형식을 지원하며 JsonRenderer가 사용됩니다. 
