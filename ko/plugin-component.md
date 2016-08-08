@@ -48,7 +48,8 @@ XE는 다양한 타입의 [컴포넌트](components.md)가 있습니다. 여러�
 `screenshot`에는 컴포넌트의 스크린샷 이미지 경로를 적습니다. 스크린샷 이미지는 이미 플러그인 디렉토리 안에 저장되어 있어야 합니다.
 
 
-Alice 플러그인의 `composer.json` 파일 예제입니다.
+Alice 플러그인의 `composer.json` 파일 예제입니다. Alice 플러그인은 하나의 테마 컴포넌트를 등록하고 있습니다.
+
 ```json
 {
   "name": "xpressengine-plugin/alice",
