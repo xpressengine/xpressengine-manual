@@ -39,7 +39,7 @@ return XePresenter::make('index', compact('user', 'grant'));
 return XePresenter::make('seo.setting');
 ```
 
-## API 응답
+## API 형식으로 응답하기
 
 XE는 json 형식을 지원하며 `JsonRenderer`가 사용됩니다. 
 
@@ -55,7 +55,7 @@ XE는 json 형식을 지원하며 `JsonRenderer`가 사용됩니다.
 
 ## 모든 형식 지원
 
-Html, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 사용합니다.
+HTML, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 사용합니다.
 
 ```php
 // in src/Controllers/UserController.php
