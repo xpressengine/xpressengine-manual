@@ -56,11 +56,17 @@ XE는 json 형식을 지원하며 `JsonRenderer`가 사용됩니다.
 
 #### 모든 형식 지원
 
-Html, API 모든 형식을 지원하기 위해서 `XePresenter::all()`을 사용합니다.
+Html, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 사용합니다.
 
 ```php
-return XePresenter::makeAll('index', $this->listDataImporter($request));
+// in src/Controllers/UserController.php
+
+  ...
+  
+  return XePresenter::makeAll('index', $this->listDataImporter($request));
+  
 ```
+
 > Board 플러그인의 `src/Controllers/UserController.php` 예시 코드 입니다.
 > XE의 API를 이용한 개발 케이스가 많지 않아 API 지원에 대한 부분은 계속 개선해야 합니다.
 
