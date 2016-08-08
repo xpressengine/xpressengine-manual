@@ -1,6 +1,6 @@
 # 프리젠터(Presenter)
 
-웹 브라우저로 응답을 보낼 때 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 대신해서 프리젠터를 사용합니다.
+XE에서는 웹 브라우저로 응답을 보낼 때 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 대신해서 프리젠터를 사용합니다.
 
 프리젠터는 일반적인 Html 응답뿐만 아니라 API 요청에 대한 Json 응답을 하나의 메소드로 처리할 수 있습니다. 프리젠터는 요청(Request) 정보에 포함된 응답 포멧을 검사하고, 데이터를 해당 포멧에 맞게 반환합니다. 
 
@@ -16,7 +16,7 @@ Html 응답을 처리할 경우, `HtmlRenderer`는 테마, 스킨을 처리합�
 
 #### Html 응답
 
-XE에서 Html 형식으로 응답할 때에는, 항상 컨트롤러가 생성한 데이터를 스킨에 사용해 HTML로 변환하고, 변환된 HTML에 테마를 적용하여 응답합니다. 프리젠터에서 스킨을 선택할 수 있도록 응답할 때 어떤 종류의 스킨을 사용해야 하는지 설정하고 사용해야 합니다.
+XE에서 Html 형식으로 응답할 때에는, 항상 컨트롤러가 생성한 데이터를 HTML로 변환할 때 스킨을 사용하고, 변환된 HTML에 테마를 적용하여 응답합니다. 프리젠터에서 스킨을 선택할 수 있도록 응답할 때 어떤 종류의 스킨을 사용해야 하는지 설정하고 사용해야 합니다.
 
 `XePresenter::make()`는 html 형식만 지원합니다.
 
