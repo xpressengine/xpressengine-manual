@@ -67,7 +67,6 @@ Html, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 �
   
 ```
 
-> Board 플러그인의 `src/Controllers/UserController.php` 예시 코드 입니다.
 > XE의 API를 이용한 개발 케이스가 많지 않아 API 지원에 대한 부분은 계속 개선해야 합니다.
 
 ## 스킨 타겟 아이디
