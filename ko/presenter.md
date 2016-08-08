@@ -63,7 +63,9 @@ Html, API 모든 형식을 지원하기 위해서 `XePresenter::makeAll()`을 �
 
   ...
   
-  return XePresenter::makeAll('index', $this->listDataImporter($request));
+  // $data를 json 형식으로 반환하거나, 
+  // $data를 index 템플릿(스킨)에 적용한 후 HTML형식으로 반환
+  return XePresenter::makeAll('index', $data);
   
 ```
 
