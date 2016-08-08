@@ -41,7 +41,7 @@ return XePresenter::make('seo.setting');
 
 #### 스킨의 사용
 
-프리젠터는 HTML형식으로 응답을 처리할 때, 스킨을 사용할지에 대한
+프리젠터는 HTML 형식의 응답을 생성할 때, 스킨을 사용여부를 
 
 
 이것은 `HtmlRenderer::renderSkin()`에서 스킨의 타겟 아이디가 지정되지 않았을 경우 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 직접 사용하기 때문입니다.
