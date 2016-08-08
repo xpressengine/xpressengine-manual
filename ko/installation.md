@@ -56,7 +56,7 @@ $ php artisan xe:install
 
 #### 1. 데이터베이스, 사이트 정보 입력
 *인스톨러 캡쳐 이미지*(database, site 정보 입력 / 엔터)
-인스톨러가 Database 및 기본 설정 파일을 생성합니다. 이 작업은 시간이 오래 걸릴 수 있습니다.
+인스톨러는 Database에 필요한 테이블을 생성하고, 기본적인 설정 파일을 생성합니다. 이 작업은 시간이 오래 걸릴 수 있습니다.
 
 * Host [localhost] : Database 주소. 기본 `localhost`
 * Port [3306] : Database prot. 기본 `3306`
@@ -64,7 +64,7 @@ $ php artisan xe:install
 * UserId [root] : Database user id. 기본 `root`
 * Password [] : Database user password
 * site url [http://mysite.com] : 홈페이지 주소 입력.
-  > 하위 디렉토리에 설치 할 경우 하위 디렉토리 까지 입력해야합니다.
+  > 하위 디렉토리에 설치 할 경우 하위 디렉토리까지 입력해야 합니다.
 * Timezone [Asia/Seoul] : 타임존 정보를 입력합니다. 기본 `Asia/Seoul`
   > [타임존](http://php.net/manual/kr/timezones.php) 에서 원하는 지역의 시간대를 입력하세요.
 * locale [] : 언어를 입력합니다. 영여, 한국어 두가지 언어를 지원합니다. 
