@@ -48,12 +48,11 @@ XE는 json 형식을 지원하며 `JsonRenderer`가 사용됩니다.
 // in app/Html/Controllers/DynamicFieldController.php
 
   ...
+  
   // $list를 json 형식으로 변환하여 반환
   return XePresenter::makeApi(['list' => $list]);
   
 ```
-
-> `` 예시 코드 입니다.
 
 #### 모든 형식 지원
 Html, API 모든 형식을 지원하기 위해서 `XePresenter::all()`을 사용합니다.
