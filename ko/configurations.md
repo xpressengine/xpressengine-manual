@@ -53,8 +53,10 @@ APP_ENV=production
 `.env` 에 대한 내용은 [다음 문서](env.md)에서 자세히 확인하실 수 있습니다.
 
 #### config caching
-config 파일에는 `env`, `storage_path`와 같은 함수들을 사용하여 값을 지정하고 있습니다.
-이는 config 로 부터 값을 얻고자 할때 해당 함수가 실행되어야 함을 의미합니다. 그래서 laravel 에서는 좀 더 빠르게 설정값을 불러올 수 있도록 cache 파일을 생성할 수 있는 command 를 제공하고 있습니다.
+
+`config` 파일에는 `env`, `storage_path`와 같은 함수들을 사용하여 값을 지정하고 있습니다.
+이는 config 로 부터 값을 얻고자 할 때, 해당 함수가 실행되어야 함을 의미합니다. 그래서 XE에서는 좀 더 빠르게 설정값을 불러올 수 있도록 cache 파일을 생성할 수 있는 커맨드를 제공하고 있습니다.
+
 ```
 $ php artisan config:cache
 ```
