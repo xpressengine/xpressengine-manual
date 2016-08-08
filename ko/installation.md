@@ -111,7 +111,6 @@ $ php installer install --config=.xe_install_config.yaml --no-interact
 
 Composer나 Console 접속을 어려워하는 사용자를 위해 웹 브라우져에서 설치할 수 있도록 웹 인스톨러를 제공합니다.
 
-웹 인스톨러로 설치는 추천하지 않습니다.
 웹 인스톨러로 설치 후 사이트 운영에서 권한관련 문제가 발생할 수 있습니다.
 
 #### 설치 동영상
