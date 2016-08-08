@@ -1,6 +1,6 @@
 # 프리젠터(Presenter)
 
-웹 브라우저로 응답을 보낼 때 라라벨의 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 대신해서 프리젠터를 사용합니다.
+웹 브라우저로 응답을 보낼 때 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 대신해서 프리젠터를 사용합니다.
 
 프리젠터는 일반적인 Html 응답뿐만 아니라 API 요청에 대한 Json 응답을 하나의 메소드로 처리할 수 있습니다. 
 
