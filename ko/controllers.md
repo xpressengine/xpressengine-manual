@@ -38,7 +38,7 @@ Route::get('user/{id}', 'App\Http\UserController@showProfile');
 
 #### 컨트롤러 & 네임스페이스
 
-한 가지 반드시 알고 있어야 할 부분은 컨트롤러의 네임스페이스를 지정할 때 전체 네임스페이스를 다 써주어야 합니다.
+컨트롤러의 네임스페이스를 지정할 때에는 반드시 전체 네임스페이스를 다 써주어야 합니다.
 
 ```php
 Route::get('foo', 'Photos\AdminController@method');
