@@ -42,13 +42,14 @@ APP_DEBUG=true
 
 XE는 `dump` 와 `dd` 함수를 제공하고 있습니다. `dump`는 php 의 내장함수인 `var_dump` 와 유사하지만 브라우저 상에서 좀 더 보기 좋은 형태로 표현해 줍니다. `dd` 는 dump & die 의 약어로 dump 처리 후 라이프사이클을 중단시킵니다.
 
-```
+```php
 dump($var);
 dd($var);
 ```
 
 여러가지 값을 동시에 확인하고자 한다면 해당 변수들을 인자로 나열하면 됩니다.
-```
+
+```php
 dump($foo, $bar, $baz);
 dd($foo, $bar, $baz);
 ```
