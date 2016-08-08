@@ -1,23 +1,24 @@
 # config 디렉토리
 
-conifg 디렉토리에는 XE에서 필요한 다양한 설정 정보가 포함된 파일들이 위치합니다. XE는 사용자들이 XE 코어 업데이트로부터 자유로워질 수 있도록 Cascading 방식의 config 확장 기능을 지원합니다.
+`conifg` 디렉토리에는 XE에서 필요한 다양한 설정 정보가 포함된 파일들이 위치합니다. XE는 사용자들이 XE 코어 업데이트로부터 자유로워질 수 있도록 Cascading 방식의 `config` 확장 기능을 지원합니다.
 
 #### Cascading config
-이것은 사용자의 웹 애플리케이션에 지정된 환경변수에 따라 서로 다른 설정을 사용할 수 있도록 하는 방법중 하나입니다. 이 방식은 지정된 환경변수와 같은 이름의 config 디렉토리 내 하위 디렉토리에 정의된 설정 값을 사용하도록 하고 있습니다.
+이것은 사용자의 XE에 지정된 환경변수에 따라 서로 다른 설정을 사용할 수 있도록 하는 방법중 하나입니다. 이 방식은 지정된 환경변수와 같은 이름의 `config` 디렉토리 내 하위 디렉토리에 정의된 설정 값을 사용하도록 하고 있습니다.
 
 ```
 config/
-  |- production/
-       |- app.php
-       |- database.php
-       |- mail.php
-  |- app.php
-  |- auth.php
-  |- database.php
-  ...
+├── production
+│   ├── app.php
+│   ├── database.php
+│   └── mail.php
+├── app.php
+├── auth.php
+├── database.php
+...
+└── xe.php
 ```
 
-config 디렉토리는 위와 같은 구조를 가지고 있습니다. 
+`config` 디렉토리는 위와 같은 구조를 가지고 있습니다.
 같은 이름을 가지는 `config/app.php` 와 `config/production/app.php` 파일을 열어보면 아래와 같은 내용을 확인할 수 있습니다.
 
 ```
@@ -33,11 +34,13 @@ return [
     ...
 ```
 
-`config/app.php` 파일에서는 debug 값을 env함수에 의해 환경변수 `APP_DEBUG` 가 정의 되어있는 경우 해당 값을, 그렇지 않은경우 `false` 가 지정되도록 되어있습니다. 그리고 `config/production/app.php` 파일에서는 debug 값이 `false` 로 지정되어 있습니다.
-이 상황에서 만약 사용자의 환경이 `production` 이고 `config/production/app.php` 의 debug 값을 `true` 로 지정했다면 해당 웹 애플리케이션에서 설정된 debug 값은 `config/app.php` 의 값을 무시하고 `true` 로 지정되는 것입니다.
+`config/app.php` 파일에서는 `env` 함수를 사용하여 `debug` 설정을 하고 있습니다. 환경변수 `APP_DEBUG` 가 정의되어 있는 경우 해당 값을, 그렇지 않은경우 `false` 가 지정되도록 되어있습니다. 그리고 `config/production/app.php` 파일에서는 `debug`를 `false`로 설정하고 있습니다.
+
+이 상황에서 만약 사용자의 환경이 `production`이고 `config/production/app.php` 의 `debug` 값을 `true` 로 지정했다면, XE는 `config/app.php`의 설정을 무시하고 `true`를 `debug` 설정으로 사용합니다.
 
 #### 환경변수의 지정
-환경변수는 웹 애플리케이션 root 위치에 `.env` 파일에서 지정할 수 있습니다.
+
+환경변수는 XE 루트 디렉토리에 위치하고 있는 `.env` 파일에서 지정할 수 있습니다.
 
 ```
 // in .env file
