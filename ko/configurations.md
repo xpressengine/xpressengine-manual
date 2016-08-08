@@ -60,9 +60,9 @@ APP_ENV=production
 ```
 $ php artisan config:cache
 ```
-console 화면에서 위 명령어를 실행하면 config 디렉토리내에 설정된 모든 값이 cache 파일로 생성되어집니다.
+콘솔에서 위 커맨드를 실행하면 `config` 디렉토리 내에 설정된 모든 값이 cache 파일로 생성되어집니다.
 
-이미 생성된 config cache 파일을 제거하고 싶은 경우 아래 명령어를 통해 제거가 가능합니다.
+이미 생성된 config cache 파일을 제거하고 싶은 경우 아래 커맨드를 통해 제거할 수 있습니다.
 ```
 $ php artisan config:clear
 ```
