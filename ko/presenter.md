@@ -30,7 +30,7 @@ XePresenter::setSkinTargetId('member/profile');
 return XePresenter::make('index', compact('user', 'grant'));
 ```
 
-스킨 없이 템플릿 파일의 뷰 이름을 바로 지정할 수 있습니다.
+스킨을 사용하지 않고, 템플릿 파일의 뷰 이름을 바로 지정할 수 있습니다.
 
 ```php
 // in app/Html/Controllers/SeoController.php
