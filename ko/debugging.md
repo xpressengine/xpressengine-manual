@@ -28,6 +28,8 @@ XE를 디버깅모드로 설정하면 오류가 발생한 경우, 브라우저�
 
 ```
 // in .env file
+
+
 APP_DEBUG=true
 ```
 
