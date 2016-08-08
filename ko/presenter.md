@@ -40,6 +40,7 @@ return XePresenter::make('seo.setting');
 ```
 
 ## API 응답
+
 XE는 json 형식을 지원하며 `JsonRenderer`가 사용됩니다. 
 
 ```php
