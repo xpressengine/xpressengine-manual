@@ -41,7 +41,9 @@ return XePresenter::make('seo.setting');
 
 #### 스킨의 사용
 
-프리젠터에서 Html 응답처리할 `XePresenter::make()` 할 경우 기본으로 `/resources/views/`를 참고합니다.
+프리젠터는 HTML형식으로 응답을 처리할 때, 스킨을 사용할지에 대한
+
+
 이것은 `HtmlRenderer::renderSkin()`에서 스킨의 타겟 아이디가 지정되지 않았을 경우 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 직접 사용하기 때문입니다.
 
 정상적인 사용 과정으로 스킨의 타겟 아이디를 프리젠터에게 전달한 경우 HtmlRenderer는 사용될 스킨을 찾아 Renderable 인터페이스의 `render()`를 실행시키며 스킨 컴포넌트는 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 사용해서 블레이드 파일을 처리합니다.
