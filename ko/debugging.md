@@ -27,7 +27,7 @@ XE를 디버깅모드로 설정하면 오류가 발생한 경우, 브라우저�
 위와 같이 `config/production/app.php` 파일을 설정하고, XE의 루트디렉토리의 `.env` 파일에는 아래와 같이 작성합니다.
 
 ```
-// in .env file
+# in .env file
 APP_DEBUG=true
 ```
 
