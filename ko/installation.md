@@ -17,6 +17,7 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 ## 인스톨러를 이용한 설치
 
 ### Linux
+
 터미널에서 아래와 같이 명령어를 실행합니다.
 ```
 $ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
@@ -31,7 +32,7 @@ Git-Bash를 실행하고 아래와 같이 명령어를 실행합니다.
 $ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
 ```
 
-위 명령어 실행하면 인스톨이 시작되면 설치 정보를 입력합니다.
+위 명령어를 실행하면 설치가 시작됩니다. 안내에 따라 설치 정보를 입력하십시오.
 
 ## Git 을 이용한 설치
 > Git을 사용하면 업데이트및 현재 개발중인 코드를 손쉽게 적용할 수 있습니다.
