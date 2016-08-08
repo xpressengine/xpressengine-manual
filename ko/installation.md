@@ -4,7 +4,11 @@
 
 - 웹서버(apache, nginx 등)
 - PHP 5.5.9 이상
-- MariaDB or MySQL 5.1
+  - OpenSSL PHP Extension
+  - PDO PHP Extension
+  - Mbstring PHP Extension
+  - Tokenizer PHP Extension
+- MariaDB or MySQL 5.1 이상
 - 터미널 접속 환경
 
 
