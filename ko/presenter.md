@@ -39,11 +39,18 @@ return XePresenter::make('index', compact('user', 'grant'));
 return XePresenter::make('seo.setting');
 ```
 
-#### 스킨의 사용
+### 스킨 타겟 아이디
 
-프리젠터는 HTML 형식의 응답을 생성할 때, 스킨을 사용합니다. 하지만 사용할 스킨 타겟이 지정되지 ㅇ
+스킨은 특정 컴포넌트나 집단 밑에 하나의 그룹을 형성합니다.
 
+코어에서 제공하는 프로필 컨트롤러는 `member/profile` 아이디를 스킨 타겟 아이디로 사용하고 있습니다. 플러그인으로 프로필 스킨을 만드려고 할 때 제작되는 스킨 컴포넌트는 `member/profile`를 대상 아이디로 컴포넌트 아이디를 생성해야 하며 스킨 패키지는 이를 기준으로 스킨을 설정할 수 있는 관리자를 제공합니다.
 
+다른 예로 Board 플러그의 Board 모듈 컴포너트는 `module/board@board` 스킨 타겟 아이디를 사용합니다.
+
+스킨을 사용하는 컨트롤러는 `XePresenter::setSkinTargetId()`에 지정된 스킨 타겟 아이디를 설정하여 `HtmlRenderer::render()`가 처리될 때 설정된 스킨을 찾아 처리할 수 있도록 합니다.
+
+### HtmlRenderer
+프리젠터에서 Html 응답처리할 `XePresenter::make()` 할 경우 기본으로 `/resources/views/`를 참고합니다.
 이것은 `HtmlRenderer::renderSkin()`에서 스킨의 타겟 아이디가 지정되지 않았을 경우 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 직접 사용하기 때문입니다.
 
 정상적인 사용 과정으로 스킨의 타겟 아이디를 프리젠터에게 전달한 경우 HtmlRenderer는 사용될 스킨을 찾아 Renderable 인터페이스의 `render()`를 실행시키며 스킨 컴포넌트는 [뷰](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/docs/5.0/views)를 사용해서 블레이드 파일을 처리합니다.
