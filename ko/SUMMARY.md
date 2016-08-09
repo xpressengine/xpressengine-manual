@@ -61,7 +61,7 @@
    * [테마 - 100%](component-theme.md)
    * [스킨](component-skin.md)
    * 위젯
-   * 모듈
+   * [모듈](component-module.md)
    * [UI오브젝트](component-uiobject.md)
    * [토글메뉴](component-togglemenu.md)
    * 다이나믹 필드
