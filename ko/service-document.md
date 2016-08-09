@@ -30,12 +30,14 @@ XeDocument::createInstance('newInstanceId');
 ```
 
 #### 문서 등록
+
 ```php
 $inputs = ['id'=>$id', 'instanceId'=>'instance-id', 'title'=>'title', 'content'=>'content' ...];
 XeDocument::add($inputs);
 ```
 
 #### 문서 수정
+
 ```php
 $model = XeDocument::getModel('instance-id');
 $doc = $model->find('document-id');
@@ -46,6 +48,7 @@ XeDocument::update($doc);
 ```
 
 #### 문서 삭제
+
 ```php
 $model = XeDocument::getModel('instance-id');
 $doc = $model->find('document-id');
@@ -54,6 +57,7 @@ XeDocument::remove($doc);
 ```
 
 #### 문서 조회
+
 ```php
 $model = XeDocument::getModel('instance-id');
 $doc = $model->find('document-id');
@@ -65,6 +69,7 @@ $doc = XeDocument::get('document-id');
 ```
 
 #### 문서 수 조회
+
 ```php
 // 전체 문서 수 조회회
 $count = Document::count();
@@ -75,6 +80,7 @@ $count = $model->count('instance-id');
 ```
 
 #### 문서 목록 조회
+
 ```php
 $perPage = 10;
 
