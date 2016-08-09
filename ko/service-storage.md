@@ -98,11 +98,13 @@ XeStorage::unBind($targetId, $file);
 ```
 
 이때 어떤 대상과도 연결되어지지 않게 될 경우 해당 파일을 삭제할 수 있습니다.
+
 ```php
 XeStorage::unBind($targetId, $file, true);
 ```
 
-파일이 동시에 여러개 처리되는 경우 `sync` 메서드를 통해 파일을 사용하는 대상과 파일들의 관계를 간편하게 정의할 수 있습니다.
+여러개의 파일을 동시에 처리하는 경우 `sync` 메서드를 사용하면 파일을 사용하는 대상과 파일들의 관계를 간편하게 정의할 수 있습니다.
+
 ```php
 $fileIds = [];
 foreach ($uploadedFiles as $uploadedFile) {
