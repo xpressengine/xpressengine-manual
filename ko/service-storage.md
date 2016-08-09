@@ -76,20 +76,21 @@ XeStorage::download($file);
 
 ### 관계와 재사용
 
-XE 스토리지는 파일과 파일을 이요하는 대상과의 관계를 필요로 합니다. 그래서 업로드 후 관계를 맺어주는 작업을 수행해야 합니다.
+XE 스토리지는 파일과 파일을 이용하는 대상과의 관계를 필요로 합니다. 그래서 업로드 후 관계를 맺어주는 작업을 수행해야 합니다.
 
 ```php
 $file = XeStorage::upload($request->file('attached'), 'path/to/dir');
 XeStorage::bind($targetId, $file);
 ```
 
-그리고 이미 업로드 되어진 파일은 다른 대상과도 관계를 맺을 수 있습니다.
+그리고 이미 업로드되어진 파일은 다른 대상과도 관계를 맺을 수 있습니다.
+
 ```php
 $file = File::find($id);
 XeStorage::bind($otherTargetId, $file);
 ```
 
-만약 파일을 사용하던 대상이 더 이상 해당 파일을 사용하지 않게된 겨우 관계를 끊을 수 있습니다.
+만약 파일을 사용하던 대상이 더 이상 해당 파일을 사용하지 않게 된 경우 관계를 끊을 수 있습니다.
 ```php
 $file = File::find($id);
 XeStorage::unBind($targetId, $file);
