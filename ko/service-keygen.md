@@ -17,15 +17,20 @@ XE는 단순하고 유추하기 쉬운 기존의 데이터베이스를 이용한
 > 각 버전의 차이는 [위키](https://en.wikipedia.org/wiki/Universally_unique_identifier)등에서 확인하실 수 있습니다.
 
 ### 사용
+
 키의 생성은 `generate` 메서드를 통해 이루어 집니다.
+
 ```php
 $keygen = app('xe.keygen');
 $id = $keygen->generate();
 ```
+
 생성된 키는 `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` 와 같은 형식을 가집니다.
 
 ### 모델
+
 XE 에서는 `Illuminate\Database\Eloquent\Model` 을 상속한 `DynamicModel` 모델을 이용하는 경우 키생성기를 통해 고유키를 제공합니다. 키생성기에서 제공하는 키를 사용하고자 한다면 해당 모델의 `incrementnig` 을 비활성해야 합니다.
+
 ```php
 use Xpressengine\Database\Eloquent\DynamicModel;
 
