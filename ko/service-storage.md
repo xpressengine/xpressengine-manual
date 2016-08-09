@@ -115,6 +115,7 @@ XeStorage::sync($targetId, $fileIds);
 ```
 
 위와 같이 관계가 형성되면 대상의 아이디로 대상에 연결된 파일들을 조회하거나 관계를 끊을 수 있습니다.
+
 ```php
 // 대상의 파일 목록 조회
 $files = File::getByFileable($targetId);
