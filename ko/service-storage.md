@@ -91,6 +91,7 @@ XeStorage::bind($otherTargetId, $file);
 ```
 
 만약 파일을 사용하던 대상이 더 이상 해당 파일을 사용하지 않게 된 경우 관계를 끊을 수 있습니다.
+
 ```php
 $file = File::find($id);
 XeStorage::unBind($targetId, $file);
