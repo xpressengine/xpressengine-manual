@@ -80,7 +80,7 @@ foreach($users as $user) {
 }
 ```
 
-다양하고 복잡한 조건으로 회원을 조회할 수도 있습니다. 자세한 사용법은 [라라벨 문서](https://laravel.com/docs/5.2/eloquent)를 참조하십시오.
+다양하고 복잡한 조건(쿼리)으로 회원을 조회할 수도 있습니다. 자세한 사용법은 [라라벨 문서](https://laravel.com/docs/5.2/eloquent)를 참조하십시오.
 
 ```php
 // displayName이 'foo'인 회원 조회
