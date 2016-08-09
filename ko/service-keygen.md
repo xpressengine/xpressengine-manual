@@ -29,7 +29,7 @@ $id = $keygen->generate();
 
 ### 모델
 
-XE 에서는 `Illuminate\Database\Eloquent\Model` 을 상속한 `DynamicModel` 모델을 이용하는 경우 키생성기를 통해 고유키를 제공합니다. 키생성기에서 제공하는 키를 사용하고자 한다면 해당 모델의 `incrementnig` 을 비활성해야 합니다.
+XE에서는 `Illuminate\Database\Eloquent\Model`을 상속한 `DynamicModel` 모델을 이용하는 경우 키생성기를 통해 고유키를 제공합니다. 키생성기에서 제공하는 키를 사용하고자 한다면 해당 모델의 `incrementnig`을 비활성해야 합니다.
 
 ```php
 use Xpressengine\Database\Eloquent\DynamicModel;
