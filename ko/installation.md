@@ -23,6 +23,11 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 $ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
 ```
 
+> **NOTE:** 일부 호스팅 환경에서 작동이 안 될 수 있습니다. 작동이 안 될 경우, 아래 명령어를 실행해보시기 바랍니다.
+```
+$ php -r "ini_set('display_errors', 1);error_reporting(-1);ini_set('allow_url_fopen', 1);copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
+```
+
 ### Window
 > Git 설치
 > 터미널 환경을 위해 Git을 설치합니다. Git(준비중) 다운로드 및 설치를 참고하세요
