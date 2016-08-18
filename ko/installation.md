@@ -25,7 +25,7 @@ $ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php i
 
 > **NOTE:** 일부 호스팅 환경에서 작동이 안 될 수 있습니다. 작동이 안 될 경우, 아래 명령어를 실행해보시기 바랍니다.
 ```
-$ php -r "ini_set('display_errors', 1);error_reporting(-1);ini_set('allow_url_fopen', 1);copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
+$ php -d display_errors=1 -d error_reporting=-1 -d allow_url_fopen=1 -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
 ```
 
 ### Window
