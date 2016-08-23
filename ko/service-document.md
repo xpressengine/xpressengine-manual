@@ -146,3 +146,6 @@ XeDocument::add($params);
 테이블 분리 기능을 처리하기 위해 Document 모델은 문서 등록, 수정, 삭제할 때 설정 값을 확인하고 추가적인 처리를 진행합니다.
 `Illuminate\Database\Eloquent\Model` 에서 제공하는 `performInsert()`, `performUpdate()`, `performDeleteOnModel()` 기능을 이용해 데이터베이스에 처리될 때 추가적인 코드를 처리합니다.
 
+
+#### 관계
+Document 모델은 User(회원)에 대한 관계만 제공합니다. 더 많은 릴레이션은 제공하지 않습니다. 더 많은 모델의 릴레이션을 사용하기 위해서는 게시판 플러그인의 Board 모델과 같이 Document 모델을 확장해서 사용하는것을 권장합니다.
