@@ -87,14 +87,14 @@ XeDocument::remove($doc);
 ```php
 $params['revision'] = false;
 $params['division'] = true;
-XeDocument::createInstance('createInstanceId', $params);
+XeDocument::createInstance($instanceId, $params);
 ```
 
 Document 에 설정 요소를 `$params`로 전달합니다.
 
 #### 인스턴스 제거
 ```php
-XeDocument::destroyInstance('destroyInstanceId');
+XeDocument::destroyInstance($instanceId);
 ```
 
 생성된 인스턴스를 제거하며 인스턴스 아이디로 저장된 문서를 삭제합니다. 이것은 게시판 삭제와 같은 처리를 할 때 사용됩니다.
