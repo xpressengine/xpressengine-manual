@@ -18,12 +18,12 @@ $doc = Document::all();
 
 #### Primary Key를 통해서 하나의 레코드 가져오기
 ```php
-$doc = Document::find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+$doc = Document::find($documentId);
 var_dump($doc->content);
 ```
 
-#### 인스턴스가 등록된 문서 가져오기
-메뉴를 통해 인스턴스가 생성되었거나 또는 어떤 방식으로든 `InstanceManager` 를 이용해 인스턴스를 만들어 설정을 사용하는 경우는 모델을 직접사용하지 않고 `DocumentHandler`를 이용해 모델을 획득해서 사용하도록 행합니다.
+#### 인스턴스 생성을 통해 등록된 문서 가져오기
+메뉴를 통해 인스턴스가 생성되었거나 또는 어떤 방식으로든 `InstanceManager` 를 이용해 인스턴스를 만들어 설정을 사용하는 경우에는 모델을 직접 사용하지 말고 `DocumentHandler`를 통해 획득한 모델을 사용하도록 해야합니다.
 
 ```php
 $model = XeDocument::getModel($instanceId);
@@ -35,7 +35,7 @@ $model->paginate(10);
 
 #### 문서 등록
 ```php
-$params['instanceId'] = '937c2ec7';
+$params['instanceId'] = $instanceId;
 $params['title'] = '제목';
 $params['content'] = '내용';
 $inputs['userId'] = Auth::user()->getId();
@@ -49,7 +49,7 @@ XeDocument::add($params);
 #### 수정하기
 Document를 통해 문서를 직접가져오는 경우는 아래와 같이 `XeDocument::setModelConfig()`를 이용해서 모델에 설정을 삽입해야 `DocumentHandler` 에서 설정에 따른 처리를 이상없이 수행할 수 있습니다.
 ```php
-$doc = Document::find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+$doc = Document::find($documentId);
 $doc->title = '제목 수정';
 
 // Document 모델($doc)에 설정 삽입
@@ -59,8 +59,7 @@ XeDocument::put($doc);
 
 일반적인 상태에서 문서를 찾을 때 라이프 사이클 상에서 instanceId 를 확보할 수 있다고 가정한다면 아래 형식의 코드를 사용할 수 있습니다.
 ```php
-// '937c2ec7' 은 인스턴스 아이디
-$doc = XeDocument::getModel('937c2ec7')->find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+$doc = XeDocument::getModel('937c2ec7')->find($documentId);
 $doc->title = '제목 수정';
 
 XeDocument::put($doc);
@@ -68,7 +67,7 @@ XeDocument::put($doc);
 
 #### 삭제하기
 ```php
-$doc = Document::find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+$doc = Document::find($documentId);
 
 // Document 모델($doc)에 설정 삽입
 XeDocument::setModelConfig($doc, $doc->instanceId);
@@ -77,7 +76,7 @@ XeDocument::remove($doc);
 
 ```php
 // '937c2ec7' 은 인스턴스 아이디
-$doc = XeDocument::getModel('937c2ec7')->find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+$doc = XeDocument::getModel($instanceId)->find($documentId);
 XeDocument::remove($doc);
 ```
 
@@ -127,7 +126,7 @@ XeDocument::destroyInstance('destroyInstanceId');
 #### reply
 ```php
 // 상위 글
-$doc = XeDocument::getModel('937c2ec7')->find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+$doc = XeDocument::getModel($instanceId)->find($documentId);
 
 // parentId 등록
 $params['parentId'] = $doc->id;
