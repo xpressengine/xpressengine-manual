@@ -1,13 +1,38 @@
 # 문서(document)
 
-#### 개요
+사이트에서 생산되는 게시판, 블로그, 댓글등 다양한 형태의 컨텐츠를 저장할 저장소를 제공합니다. 
+DocumentHandler 는 Document, Revision 모델을 이용해서 컨텐츠 변경이력을 관리할 수 있는 기능을 제공하고 저장소의 부하분산을 위한 Division(저장소 분할) 저장소를 제공하합니다. 이러한 기능은 instanceId 에 따라 설정을 추가해서 관리할 수 있습니다.
 
-Document는 사이트에서 발생하는 컨텐츠를 저장할 저장소를 제공합니다. 컨텐츠 변경이력을 관리하기 위한 Revision 저장소와 컨텐츠 저장소의 부하분산을 위한 Division(저장소 분할) 저장소를 제공합니다.
+또한 Document 모델은 DynamicField 를 지원합니다.
 
-#### 목적
+DocumentHandler, InstanceManager, ConfigHandler 는 Interception Proxy로 만들어 사용되므로 인터셉트 할 수 있습니다. (인터셉트하기)
 
-XE에서 사용되는 게시판, 블로그와 같은 컨텐츠를 다루는 플러그인이 사용하기 위한 컨텐츠 저장소를 제공합니다. 컨텐츠 변경 이력 관리자와 컨텐츠 저장소 분할을 Config로 제어할 수 있습니다.
+## 기본 사용법
+`XeDocument`파사드로 DocumentHandler 를 사용합니다. 문서 등록, 수정, 삭제는 DocumentHandler를 이용해서 처리하고 문서 조회는 Document 모델을 직적 사용합니다. 
+단, 인스턴스를 생성해 사용할 경우 Document 모델에 대한 설정을 모델에 포함시키기 위해  `XeDocument::getModel($instnaceId)` 를 사용하기를 권장합니다.
 
+#### 모든 문서 가져오기
+```php
+$doc = Document::all();
+```
+
+#### Primary Key를 통해서 하나의 레코드 가져오기
+```php
+$doc = Document::find('073eb138-30ea-4f2b-bd22-cc7709f59e76');
+var_dump($doc->content);
+```
+
+#### 인스턴스가 등록된 문서 가져오기
+메뉴를 통해 인스턴스가 생성되었거나 또는 어떤 방식으로든 `InstanceManager` 를 이용해 인스턴스를 만들어 설정을 사용하는 경우는 모델을 직접사용하지 않고 `DocumentHandler`를 이용해 모델을 획득해서 사용하도록 행합니다.
+
+```php
+$model = XeDocument::getModel($instanceId);
+```
+이렇게 획득한 모델은 설정에 대한 정보를 포함하고 있으며 `revision`, `division` 에 대한 처리 및 Database Proxy를 이용하는 기능인 DynamiField 에 대한 처리가 가능합니다.
+
+
+#### 문서 등록
+문서의 등록은 Document
 
 #### DocumentHandler
 
