@@ -13,7 +13,7 @@ Composer나 Console 접속을 어려워하는 사용자를 위해 웹 브라우�
 FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용이 가능한 프로그램 입니다. [다운로드](https://filezilla-project.org/download.php?type=client)
 
 ## 설치 파일 다운로드
-* http://xpressengine.io/lastest.zip 을 [다운로](http://xpressengine.io/lastest.zip)드 합니다.
+* http://start.xpressengine.io/latest.zip 을 [다운로드](http://start.xpressengine.io/latest.zip) 합니다.
 * 다운로드 받은 zip 파일의 압축을 풀고 서버에 업로드 합니다. (약 100MB)
 
 
