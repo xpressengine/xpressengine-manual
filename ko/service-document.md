@@ -59,7 +59,7 @@ XeDocument::put($doc);
 
 일반적인 상태에서 문서를 찾을 때 라이프 사이클 상에서 instanceId 를 확보할 수 있다고 가정한다면 아래 형식의 코드를 사용할 수 있습니다.
 ```php
-$doc = XeDocument::getModel('937c2ec7')->find($documentId);
+$doc = XeDocument::getModel($instanceId)->find($documentId);
 $doc->title = '제목 수정';
 
 XeDocument::put($doc);
