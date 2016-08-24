@@ -84,7 +84,7 @@ XE는 PHP 패키지 관리툴인 composer를 사용합니다. 이 파일은 comp
 
 #### composer.user.json.example
 
-XE에서는 `composer.json`파일을 직접 수정하는 것을 금지합니다. `composer.json` 파일은 XE의 소스코드에 포함된 파일이므로 XE를 업데이트할 때 덮어씌워집니다. `composer`json`을 수정하는 대신 `composer.user.json` 파일을 사용하여 패키지를 관리할 수 있습니다. `composer.user.json.example` 파일 이름을 `composer.user.json`로 바꿔서 사용하시면 됩니다.
+XE에서는 `composer.json`파일을 직접 수정하는 것을 금지합니다. `composer.json` 파일은 XE의 소스코드에 포함된 파일이므로 XE를 업데이트할 때 덮어씌워집니다. `composer.json`을 수정하는 대신 `composer.user.json` 파일을 사용하여 패키지를 관리할 수 있습니다. `composer.user.json.example` 파일 이름을 `composer.user.json`로 바꿔서 사용하시면 됩니다.
 
 
 #### index.php
