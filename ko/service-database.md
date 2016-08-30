@@ -8,7 +8,7 @@ XE가 자체적으로 부하분산을 처리할 수 있을까?
 기본적인 사용 방법은 Laravel 과 같으며 단지 `XeDB` 파사드를 사용하면 됩니다.
 
 > [기본적인 데이터베이스 사용](http://xpressengine.github.io/laravel-korean-docs/docs/5.0/database/), [쿼리빌더](http://xpressengine.github.io/laravel-korean-docs/docs/5.0/queries/)  의 내용을 숙지하시기 바랍니다.
-> 
+
 ## 설정
 config/xe.php 의 `database`에 가상 연결 설정을 등록합니다.
 ```php
