@@ -140,7 +140,7 @@ XeDocument::add($params);
 ```
 
 답글 처리를 위해 `Document::setReply()`를 제공합니다. 어떤 문서의 하위로 글을 작성하려고 한다면 해당 모델에 `parentId`를 놓고 저장하면 됩니다.
-`Document::setReply()`의 실행한 `/app/Providers/DocumentServiceProvider.php` 의 `boot()`에서 `Illuminate\Database\Eloquent\Model` 의 `creating` 이벤트를 이용해 처리합니다.
+`Document::setReply()`의 실행은 `/app/Providers/DocumentServiceProvider.php` 의 `boot()`에서 `Illuminate\Database\Eloquent\Model` 의 `creating` 이벤트 리스너를 등록해서 자동으로 처리됩니다.
 
 #### Division 지원
 테이블 분리 기능을 처리하기 위해 Document 모델은 문서 등록, 수정, 삭제할 때 설정 값을 확인하고 추가적인 처리를 진행합니다.
