@@ -50,7 +50,7 @@
    * [헬퍼(helpers)](service-helpers.md)
    * [쿠키(cookie) - 100%](service-cookie.md)
    * [UI오브젝트/폼빌더](service-uiobject.md)
-   * 카운터(counter)
+   * [카운터(counter)](ko/service-counter.md)
    * 휴지통(trash)
    * [유효성검사(validataion)](service-validataion.md)
    * 오류처리
