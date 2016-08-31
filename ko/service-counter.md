@@ -69,3 +69,13 @@ $doc->save();
 ```
 
 #### 투표 로그
+투표에 참여한 사용자 로그를 확인합니다.
+```php
+$doc = Document::find('id');
+
+// 투표는 회원에 대해서만 동작합니다.
+$voteCounter = XeCounter::make($request, 'vote', ['assent', 'dissent']);
+
+// 찬선에 투표한 회원 목록을 가져옵니다.
+$users = $voteCounter->getUsers($doc->id, 'assent');
+```
