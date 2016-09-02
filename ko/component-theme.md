@@ -81,7 +81,7 @@ plugins/my_plugin/theme/
 ```
 
 
-#### assets 파일
+#### assets 디렉토리
 
 테마에 필요한 `.js`나 `.css` 파일 그리고 이미지 파일과 같은 asset 파일을 담는 디렉토리입니다.
 
