@@ -97,7 +97,7 @@ $ php artisan xe:install
 ## 설정 파일을 이용한 설치
 설정파일을 사용하면 더욱 쉽게 설치할 수 있습니다. 설치하기 전에 아래와 같이 커맨드를 실행하여 설정파일을 생성합니다.
 ```
-$ copy('http://start.xpressengine.io/installer', 'installer');" && php installer make
+$ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer make
 ```
 
 xe_install_config.yaml 파일이 생성됩니다. 파일을 열고 설치 정보를 입력하세요.
