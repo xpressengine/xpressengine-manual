@@ -58,7 +58,7 @@
    * 테마(theme)
    * 스킨(skin)
 * 컴포넌트 제작 가이드
-   * [테마 - 100%](component-theme.md)
+   * [테마](component-theme.md)
    * [스킨](component-skin.md)
    * 위젯
    * [모듈](component-module.md)
