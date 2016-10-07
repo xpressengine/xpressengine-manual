@@ -28,7 +28,7 @@ XE는 개발자들이 원하는 기능을 쉽게 구현할 수 있도록 많은 
 - Validation
 - View
 
-XE는 라라벨이 제공하는 위 서비스 이외에도 문서(document), 댓글(comment), 파일(storage), 회원(user) 관리와 같은 CMS 어플리케이션 레벨의 서비스를 많이 제공합니다. XE에서 제공하는 서비스은 아래 목록과 같습니다.
+XE는 라라벨이 제공하는 위 서비스 이외에도 문서(document), 파일(storage), 회원(user) 관리와 같은 CMS 어플리케이션 레벨의 서비스를 많이 제공합니다. XE에서 제공하는 서비스은 아래 목록과 같습니다.
 
 - Captcha
 - Category
