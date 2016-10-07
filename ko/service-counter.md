@@ -1,7 +1,7 @@
 # 카운터(counter)
 
-수를 세는 일은 중요하지도 않고 복잡하지도 않으며 어느곳 에서나 필요로 하는 기능입니다.
-글 조회수를 세거나 투표, 신고등 여러가지 기능을 구현할 때 로그를 남기고 그 수를 세려고 합니다.
+수를 세는 일은 중요하지도 않고 복잡하지도 않으며 자주 사용되는 기능입니다.
+우리는 글 조회수를 세거나 투표, 신고등 여러가지 기능을 구현할 때 로그를 남기고 그 수를 세려고 합니다.
 
 수를 세는 기능들은 어떤 대상을 기준(이하 targetId)으로 인터넷 주소(IP)나 회원 아이디로 구분하여 처리합니다.
 
@@ -19,9 +19,9 @@ $readCounter = XeCounter::make($request, 'read');
 두번째 방식은 투표수를 셀 때 사용하는 방식입니다. 투표는 targetId에 대해서 몇개의 옵션을 설정하고 각 옵션별 수를 셉니다. 그리고 IP, 회원 아이디는 targetId에 한번만 처리 되어야 합니다. 이러한 카운터의 인스턴스를 획득하는 코드는 아래와 같습니다.
 ```php
 // 투표(찬성, 반대)에 사용할 카운터 반환
-$voteCounter = XeCounter::make($request, 'vote', ['accent', diccent']);
+$voteCounter = XeCounter::make($request, 'vote', ['assent', dissent']);
 ```
-세번째 인자 `['accent', diccent']`를 추가해서 사용가능합니다. 
+세번째 인자 `['assent', dissent']`를 추가해서 사용가능합니다. 
 
 `XeCounter::make()` 로 반환된 카운터 인스턴스는 Interception Proxy 인스턴스로 intercept 할 수 있습니다.
 
