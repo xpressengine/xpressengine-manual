@@ -9,6 +9,27 @@ Trash 서비스는 휴지통을 관리하며 휴지통에 포함된 아이템을
 XeTrash 파사드로 TrashManager를 사용합니다.
 > 휴지통의 기능은 휴지통에 포함된 요약 정보와 그것을 비우는 역할이므로 코드 보다는 명령어 기준으로 설명합니다. 아래 나열된 사용법은 터미널에서 입력하는 명령어 사용 방법입니다.
 
+### 휴지통 등록
+휴지통 구현체를 TrashManager를 통해 등록합니다. artisan 명령어로 휴지통을 제어하기 위해서 휴지통을 등록해야하 합니다.
+```php
+XeTrash::register(NAME_SPACE\CLASS_NAME::class);
+``` 
+
+### 요약 정보 확인
+```php
+$bins = XeTrash::gets();
+foreach ($bins as $bin) {
+    echo $bin::summary();
+}
+```
+
+### 전체 휴지통 비우기
+```php
+XeTrash::clean();
+```
+
+## 명령어 사용
+
 ### 휴지통 목록
 터미널에서 아래와 같이 명령어를 실행합니다.
 
