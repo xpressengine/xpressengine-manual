@@ -29,43 +29,36 @@ XeTrash::clean();
 ```
 
 ## 명령어 사용
-
-### 휴지통 목록
 터미널에서 아래와 같이 명령어를 실행합니다.
 
+### 전체 휴지통 요약 정보
 ```
-$ php artisan trash:list
+$ php artisan trash
 ```
 
-### 휴지통 요약 정보
-아래의 명령어를 이용해 게시판 휴지통의 요약 정보를 확인합니다.
+### 게시판 휴지통 정보 보기
 ```
 $ php artisan trash board
 ```
 
-한개 이상의 휴지통 요약 정보를 확인하고자 할 경우에는 `--names` 옵션을 사용합니다.
+### 댓글, 게시판의 요약 정보
+한개 이상의 휴지통 요약 정보를 확인하고자 할 경우에는 콤마(,)로 구분해서 입력합니다.
 ```
-$ php artisan trash --names=board,bin-foo
-```
-
-`--all` 옵션으로 모든 휴지통의 정보를 볼 수 있습니다.
-```
-$ php artisan trash --all
+$ php artisan trash board,comment
 ```
 
 
-### 휴지통 비우기
-게시판 휴지통을 비웁니다.
+### 전체 휴지통 비우기
+```
+$ php artisan trash:clean
+```
+
+### 게시판 휴지통 비우기
 ```
 $ php artisan trash:clean board
 ```
 
-`--names` 옵션에 휴지통 이름을 붙여서 하나이상의 휴지통을 비울 수 있습니다.
+### 댓글, 게시판 비우기
 ```
-$ php artisan trash:clean --names=board,bin-foo
-```
-
-`--all` 옵션으로 모든 휴지통을 비울 수 있습니다.
-```
-$ php artisan trash:clean --all
+$ php artisan trash:clean board,comment
 ```
