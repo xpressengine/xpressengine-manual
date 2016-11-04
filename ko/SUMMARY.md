@@ -60,7 +60,7 @@
 * 컴포넌트 제작 가이드
    * [테마](component-theme.md)
    * [스킨](component-skin.md)
-   * 위젯
+   * [위젯](component-widget.md)
    * [모듈](component-module.md)
    * [UI오브젝트](component-uiobject.md)
    * [토글메뉴](component-togglemenu.md)
