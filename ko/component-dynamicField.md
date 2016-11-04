@@ -43,7 +43,7 @@ fieldType/<plugin_id>@<pure_id>
         "xpressengine": {
             "title": "my plugin",
             "component": {
-                "fieldType/my_plugin@my_filed": {
+                "fieldType/my_plugin@my_field": {
                     "class": "Sample\\MyPlugin\\MyField",
                     "name": "나의 다이나믹 필드",
                     "description": "나의 다이나믹 필드"
