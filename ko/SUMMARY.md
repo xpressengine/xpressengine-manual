@@ -65,7 +65,7 @@
    * [UI오브젝트](component-uiobject.md)
    * [토글메뉴](component-togglemenu.md)
    * [다이나믹 필드](component-dynamicField.md)
-   * 다이나믹 필드 스킨
+   * [다이나믹 필드 스킨](component-dynamicField-skin.md)
    * [에디터](component-editor.md)
    * 에디터툴
 * 콘솔명령
