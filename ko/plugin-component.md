@@ -98,4 +98,10 @@ Alice 플러그인의 `composer.json` 파일 예제입니다. Alice 플러그인
   ...
 ```
 
+`component.json`을 사용하지 않고 직접 컴포넌트를 등록하는 경우, 컴포넌트 클래스는 반드시 컴포넌트 아이디를 직접 지정하고 있어야 합니다. 아래와 같이 `$id` 프로퍼티를 직접 지정하십시오.
+
+```
+public static $id = 'component_type/my@component';
+```
+
 
