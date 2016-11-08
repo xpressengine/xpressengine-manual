@@ -83,7 +83,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
         'isLogged' => auth()->check(),
         'user' => auth()->user()
       ];
-      $this->renderSkin($data);
+      return $this->renderSkin($data);
     }
 
 ```
