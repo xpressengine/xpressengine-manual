@@ -41,6 +41,8 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ## 위젯 출력하기
 
+### 기본적인 방법으로 출력하기
+
 앞서 말한바와 같이, 위젯이 출력될 때에는 `render` 메소드가 사용됩니다.
 
 ```php
@@ -52,15 +54,49 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 {
     public function render()
     {
-      
-    }
-
-    public function renderSetting(array $args = [])
-    {
-    }
-
-    public function resolveSetting(array $inputs = [])
-    {
+      // 로그인 상태일 경우, 로그인 회원의 이름이 출력
+      if(auth()->check()) {
+        return auth()->user()->getDisplayName();
+      } else {
+        return '로그인 상태가 아닙니다'
+      }
     }
 }
 ```
+
+로그인 회원의 이름을 출력하거나 '로그인 상태가 아닙니다' 메시지를 출력하도록 작성된 코드입니다. 이 예제에서는 간단히 문자열을 반환했습니다. 좀 더 복잡한 위젯일 경우 블레이드 템플릿을 사용할 수도 있습니다.
+
+
+### 위젯 스킨을 사용하여 출력하기
+
+위젯은 스킨시스템을 기본적으로 지원합니다. 동일한 컨텐츠를 출력하는 위젯이라고 해도, 사이트의 디자인이나 테마에 따라 다른 스킨을 선택하여 출력할 수 있습니다.
+
+```php
+<?php
+// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+
+    ...
+    
+    public function render()
+    {
+      $data = [
+        'isLogged' => auth()->check(),
+        'user' => auth()->user()
+      ];
+      $this->renderSkin($data);
+    }
+
+```
+
+위 코드에서와 같이 `renderSkin`을 사용하면 됩니다. `renderSkin` 메소드는 위젯코드에 지정된 스킨정보를 자동으로 가져온 다음, 스킨을 적용하여 출력합니다.
+
+
+
+
+
+
+
+
+
+
+
