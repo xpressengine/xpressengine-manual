@@ -149,12 +149,12 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
     
     public function render()
     {
-      // 로그인 상태일 경우, 로그인 회원의 이름이 출력
-      if(auth()->check()) {
-        return auth()->user()->getDisplayName().array_get($this->config, 'postfix');
-      } else {
-        return '로그인 상태가 아닙니다'
-      }
+        // 로그인 상태일 경우, 로그인 회원의 이름이 출력
+        if(auth()->check()) {
+          return auth()->user()->getDisplayName().array_get($this->config, 'postfix');
+        } else {
+          return '로그인 상태가 아닙니다'
+        }
     }
 }
 ```
