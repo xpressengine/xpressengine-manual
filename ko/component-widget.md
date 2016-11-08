@@ -162,9 +162,3 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 
 
-
-
-
-
-
-
