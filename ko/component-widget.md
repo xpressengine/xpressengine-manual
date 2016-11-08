@@ -116,7 +116,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ### 입력된 설정 정보 처리
 
-사이트 관리자가 위젯변수 입력폼에 입력한 내용을 위젯코드로 변환하기 전에 한번 더 재가공할 수 있습니다. `resolveSetting` 메소드를 사용하십시오. 위젯시스템은 위젯코드를 생성하기 전에 이 메소드를 실행합니다. 만약 사용자가 입력한 값의 유효성 검사나 재처리가 필요하다면 이 메소드에 구현하면 됩니다.
+사이트 관리자가 위젯 변수 입력폼에 입력한 내용을 위젯코드로 변환하기 전에 한번 더 재가공할 수 있습니다. `resolveSetting` 메소드를 사용하십시오. 위젯시스템은 위젯코드를 생성하기 전에 이 메소드를 실행합니다. 만약 사용자가 입력한 위젯 변수의 유효성 검사나 재처리가 필요하다면 이 메소드에 구현하면 됩니다.
 
 ```php
 <?php
@@ -137,8 +137,34 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 ```
 
 
-### 입력된 설정 정보를 위젯 출력할 때 사용하기
+### 위젯을 출력할 때 위젯 변수 사용하기
 
-사이트 관리자가 입력된 설정 정보
+사이트 관리자가 입력한 위젯 변수는 `render` 메소드에서 바로 사용할 수 있습니다. 위젯변수는 `$this->config` 배열에 저장되어 있습니다.
+
+```php
+<?php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
+
+    ...
+    
+    public function render()
+    {
+      // 로그인 상태일 경우, 로그인 회원의 이름이 출력
+      if(auth()->check()) {
+        return auth()->user()->getDisplayName().array_get($this->config, 'postfix');
+      } else {
+        return '로그인 상태가 아닙니다'
+      }
+    }
+}
+```
+
+
+
+
+
+
+
+
 
 
