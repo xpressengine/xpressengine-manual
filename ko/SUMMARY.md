@@ -57,7 +57,7 @@
    * ...
    * 테마(theme)
    * 스킨(skin)
-   * 위젯박스
+   * [위젯박스](service-widgetbox.md)
 * 컴포넌트 제작 가이드
    * [테마](component-theme.md)
    * [스킨](component-skin.md)
