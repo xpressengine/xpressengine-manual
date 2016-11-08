@@ -9,10 +9,10 @@
 
 ```php
 <?php
-// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
 namespace MyPlugin\Widgets;
 
-class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
+class UserInfoWidget extends \Xpressengine\Widget\AbstractWidget
 {
     public function render()
     {
@@ -28,7 +28,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 }
 ```
 
-위와 같이 작성한 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/Widgets/LoginInfoWidget.php`에 생성하는 것을 권장합니다. 
+위와 같이 작성한 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/Widgets/UserInfoWidget.php`에 생성하는 것을 권장합니다. 
 
 위젯 클래스는 기본적으로 작성해야 할 메소드가 있습니다.
 
@@ -47,7 +47,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ```php
 <?php
-// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
 namespace MyPlugin\Widgets;
 
 class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
@@ -73,7 +73,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ```php
 <?php
-// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
 
     ...
     
@@ -98,7 +98,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ```php
 <?php
-// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
 
     ...
     
@@ -117,7 +117,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ```php
 <?php
-// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
 
     ...
     
