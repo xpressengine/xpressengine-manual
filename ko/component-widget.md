@@ -132,3 +132,8 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
     }
     
 ```
+
+
+
+
+### 입력된 설정 정보 저장
