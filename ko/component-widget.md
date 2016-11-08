@@ -111,7 +111,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 위 코드의 경우, 위젯 생성기에 하나의 텍스트박스가 출력됩니다.
 
-### 설정 폼 처리
+### 입력된 설정 정보 처리
 
 사이트 관리자가 설정 폼에 입력한 내용을 위젯코드로 변환하기 전에 한번 더 재가공할 수 있습니다. `resolveSetting` 메소드를 사용하십시오. 위젯시스템은 위젯코드를 생성하기 전에 이 메소드를 실행합니다. 만약 사용자가 입력한 값의 유효성 검사나 재처리가 필요하다면 이 메소드에 구현하면 됩니다.
 
@@ -123,7 +123,12 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
     
     public function resolveSetting(array $inputs = [])
     {
+      if(!array_get($inputs, 'postfix'))
+      {
+        throw new ValidationException();
+      }
       
+      return $input;
     }
     
 ```
