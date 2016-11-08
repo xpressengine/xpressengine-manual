@@ -28,7 +28,6 @@
 XeWidgetbox::create(['id'=>'sidebar', 'title'=>'사이드바', 'content'=>'');
 ```
 
-
 ## 위젯박스 삭제하기
 
 생성된 위젯박스는 `XeWidgetBox` 파사드의 `delete` 메소드를 사용하여 삭제할 수 있습니다.
