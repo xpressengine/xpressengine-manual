@@ -29,7 +29,7 @@ class ImageUIObject extends AbstractUIObject
 }
 ```
 
-위와 같은 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/UIObjects/ImageUIObject.php`에 생성하는 것을 권장합니다. 
+위와 같이 작성한 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/UIObjects/ImageUIObject.php`에 생성하는 것을 권장합니다. 
 
 
 ## 출력코드 작성하기
@@ -61,7 +61,7 @@ class ImageUIObject extends AbstractUIObject
 
 등록 방법은 [컴포넌트 등록](plugin-component.md) 문서를 참고하시기 바랍니다.
 
-성공적으로 등록되었다면, 아래 코드로 테스트해 볼 수 있습니다.
+성공적으로 등록되었는지 아래 코드로 테스트해 볼 수 있습니다.
 
 ```php
 uio('uiobject/myplugin@image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
