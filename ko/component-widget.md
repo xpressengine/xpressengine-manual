@@ -94,7 +94,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 위젯을 출력할 때 필요로 하는 설정 정보를 사이트 관리자로부터 입력받을 수 있습니다. 사이트 관리자는 위젯 생성기에서 출력할 위젯을 선택한 다음, 각 위젯의 설정 폼에 위젯 설정 정보를 입력합니다. 위젯의 설정 폼은 `renderSetting` 메소드에서 반환하는 내용으로 출력됩니다.
 
-### 설정폼
+### 위젯 설정폼 구현
 
 ```php
 <?php
