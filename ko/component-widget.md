@@ -55,7 +55,7 @@ class UserInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ### 기본적인 방법으로 출력하기
 
-앞서 말한바와 같이, 위젯이 출력될 때에는 `render` 메소드가 사용됩니다.
+앞서 말한 바와 같이, 위젯이 출력될 때에는 `render` 메소드가 사용됩니다.
 
 ```php
 <?php
