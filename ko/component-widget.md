@@ -39,6 +39,13 @@ class UserInfoWidget extends \Xpressengine\Widget\AbstractWidget
 `resolveSetting` - 사이트 관리자가 위젯 생성기에서 입력한 위젯 변수를 조합하여 위젯코드를 생성합니다. 이 메소드는 입력받은 위젯 변수를 파라미터로 전달 받은 다음, 위젯 변수를 한번 재가공하여 반환합니다.
 
 
+## 위젯 등록하기
+
+작성한 위젯 클래스는 다른 컴포넌트와 마찬가지로 XE에 등록해야 합니다. 위젯은 `widget/<plugin_name>@<pure_id>` 형식의 컴포넌트 아이디를 지정해야 합니다. 여기에서는 `widget/myplugin@userinfo`를 아이디로 사용하겠습니다.
+
+등록 방법은 [컴포넌트 등록](plugin-component.md) 문서를 참고하시기 바랍니다.
+
+
 ## 위젯 출력하기
 
 ### 기본적인 방법으로 출력하기
