@@ -32,7 +32,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 위젯 클래스는 기본적으로 작성해야 할 메소드가 있습니다.
 
-`render` - 위젯을 출력할 때 호출되는 메소드입니다. 
+`render` - 위젯을 출력할 때 호출되는 메소드입니다.
 
 `renderSetting` - 사이트 관리자는 위젯 생성기를 통해 위젯(위젯코드)을 생성하게 됩니다. 위젯 생성기에서는 선택된 위젯이 필요로 하는 위젯 설정 폼이 출력되는데, 이 메소드에서 반환되는 내용이 위젯 설정 폼으로 출력됩니다.
 
