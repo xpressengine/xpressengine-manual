@@ -34,9 +34,9 @@ class UserInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 `render` - 위젯을 출력할 때 호출되는 메소드입니다.
 
-`renderSetting` - 사이트 관리자는 위젯 생성기를 통해 위젯(위젯코드)을 생성하게 됩니다. 위젯 생성기에서는 선택된 위젯이 필요로 하는 위젯 설정 폼이 출력되는데, 이 메소드에서 반환되는 내용이 위젯 설정 폼으로 출력됩니다.
+`renderSetting` - 위젯변수를 입력받기 위한 폼을 출력합니다. 위젯변수는 위젯을 출력할 때 필요한 컨텐츠에 대하여 사이트 관리자로부터 입력받는 값을 말합니다. 사이트 관리자가 위젯 생성기를 통해 위젯(위젯코드)을 생성할 때, 위젯 생성기는 이 메소드를 실행하여 위젯 변수 입력 폼을 출력합니다.
 
-`resolveSetting` - 위젯시스템은 사이트 관리자가 위젯 생성기에서 입력한 위젯의 설정 정보를 사용하여 위젯코드를 생성합니다. 위젯코드를 생성하기 전에 이 메소드는 사이트 관리자가 입력한 설정 정보를 건내 받고 재가공한 다음 반환합니다.
+`resolveSetting` - 사이트 관리자가 위젯 생성기에서 입력한 위젯 변수를 조합하여 위젯코드를 생성합니다. 이 메소드는 입력받은 위젯 변수를 파라미터로 전달 받은 다음, 위젯 변수를 한번 재가공하여 반환합니다.
 
 
 ## 위젯 출력하기
@@ -91,11 +91,13 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 위 코드에서와 같이 `renderSkin`을 사용하면 됩니다. `renderSkin` 메소드는 위젯코드에 지정된 스킨정보를 자동으로 가져온 다음, 스킨을 적용하여 출력합니다.
 
 
-## 위젯 설정 사용하기
+## 위젯 변수 사용하기
 
-위젯을 출력할 때 필요로 하는 설정 정보를 사이트 관리자로부터 입력받을 수 있습니다. 사이트 관리자는 위젯 생성기에서 출력할 위젯을 선택한 다음, 각 위젯의 설정 폼에 위젯 설정 정보를 입력합니다. 위젯의 설정 폼은 `renderSetting` 메소드에서 반환하는 내용으로 출력됩니다.
+사이트 관리자로부터 위젯 변수를 입력받기 위해 위젯 생성기는 위젯 변수 입력 폼을 출력합니다. 위젯 변수를 사용하려면 위젯 변수 입력 폼을 먼저 작성해야 합니다.
 
 ### 위젯 설정폼 구현
+
+위젯 클래스의 `renderSetting` 메소드가 위젯 변수 입력 폼을 출력하도록 하십시오.
 
 ```php
 <?php
@@ -106,11 +108,11 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
     public function renderSetting(array $args = [])
     {
       // 회원이름 뒤에 나오는 호칭(예: xxx님)
-      return '<input type="text" name="postfix" value="'.array_get($args, 'postfix', '').'">';
+      return uio('formText', ['name'=>'postfix', 'value'=>array_get($args, 'postfix'), 'label'=>'호칭', 'description'=>'회원이름 뒤에 출력될 호칭을 적어주세요']);
     }
 ```
 
-위 코드의 경우, 위젯 생성기에 하나의 텍스트박스가 출력됩니다.
+위 코드의 경우, 위젯 생성기에 하나의 텍스트박스가 출력됩니다. 텍스트박스를 출력하기 위해 UI오브젝트를 사용하고 있습니다.
 
 ### 입력된 설정 정보 처리
 
@@ -137,6 +139,6 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 ### 입력된 설정 정보를 위젯 출력할 때 사용하기
 
-
+사이트 관리자가 입력된 설정 정보
 
 
