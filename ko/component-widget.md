@@ -94,6 +94,7 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 
 위젯을 출력할 때 필요로 하는 설정 정보를 사이트 관리자로부터 입력받을 수 있습니다. 사이트 관리자는 위젯 생성기에서 출력할 위젯을 선택한 다음, 각 위젯의 설정 폼에 위젯 설정 정보를 입력합니다. 위젯의 설정 폼은 `renderSetting` 메소드에서 반환하는 내용으로 출력됩니다.
 
+### 설정 폼 출력하기
 
 ```php
 <?php
@@ -103,10 +104,24 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
     
     public function renderSetting(array $args = [])
     {
-      
+      // 회원이름 뒤에 나오는 호칭(예: xxx님)
+      return '<input type="text" name="postfix" value="'.array_get($args, 'postfix', '').'">';
     }
-
 ```
 
+### 설정 폼 처리
 
+사이트 관리자가 설정 폼에 입력한 내용을 위젯코드로 변환하기 전에 한번 더 재가공할 수 있습니다. `resolveSetting` 메소드를 사용하십시오. 위젯시스템은 위젯코드를 생성하기 전에 이 메소드를 실행하여 위젯에게 설정폼 입력값을 재가공할 기회를 줍니다.
 
+```php
+<?php
+// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+
+    ...
+    
+    public function resolveSetting(array $inputs = [])
+    {
+      
+    }
+    
+```
