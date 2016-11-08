@@ -39,4 +39,28 @@ class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
 `resolveSetting` - 위젯시스템은 사이트 관리자가 위젯 생성기에서 입력한 위젯의 설정 정보를 사용하여 위젯코드를 생성합니다. 위젯코드를 생성하기 전에 이 메소드는 사이트 관리자가 입력한 설정 정보를 건내 받고 재가공한 다음 반환합니다.
 
 
+## 위젯 출력하기
 
+앞서 말한바와 같이, 위젯이 출력될 때에는 `render` 메소드가 사용됩니다.
+
+```php
+<?php
+// plugins/myplugin/src/Widgets/LoginInfoWidget.php
+namespace MyPlugin\Widgets;
+
+class LoginInfoWidget extends \Xpressengine\Widget\AbstractWidget
+{
+    public function render()
+    {
+      
+    }
+
+    public function renderSetting(array $args = [])
+    {
+    }
+
+    public function resolveSetting(array $inputs = [])
+    {
+    }
+}
+```
