@@ -5,9 +5,9 @@ XE가 자체적으로 부하분산을 처리할 수 있을까?
 
 이 고민에서 시작이었습니다. 이미 Laravel은 훌륭한 데이터베이스 처리 방식을 제안하고 있습니다. 다만 우리는 앞서 얘기한 고민을 해결하기 위해 새로운 데이터베이스를 만들기 보다 우리가 하고자 하는 일을 해결할 수 있는 기능을 추가한 전혀 새롭지 않은(Laravel 의 데이터베이스와 같은) 데이터베이스를 만들고 싶었습니다.
 
-기본적인 사용 방법은 Laravel 과 같으며 단지 `XeDB` 파사드를 사용하면 됩니다.
+**기본적인 사용 방법은 Laravel 과 같으며 단지 `XeDB` 파사드를 사용하면 됩니다.**
 
-> [기본적인 데이터베이스 사용](http://xpressengine.github.io/laravel-korean-docs/docs/5.0/database/), [쿼리빌더](http://xpressengine.github.io/laravel-korean-docs/docs/5.0/queries/)  의 내용을 숙지하시기 바랍니다.
+> [기본적인 데이터베이스 사용](http://xpressengine.github.io/laravel-korean-docs/docs/5.2/database/), [쿼리빌더](http://xpressengine.github.io/laravel-korean-docs/docs/5.2/queries/)  의 내용을 숙지하시기 바랍니다.
 
 ## 설정
 config/xe.php 의 `database`에 가상 연결 설정을 등록합니다.
