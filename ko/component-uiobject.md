@@ -3,9 +3,9 @@
 UI오브젝트는 아래와 같이 매우 간단한 절차로 작동합니다.
 
 1. PHP코드나 블레이드 파일에서 `uio($id, $arguments, $callback)` 함수 호출
-2. `uio` 함수는 `$id`에 해당하는 UI오브젝트의 인스턴스를 생성(생성시 `$arguments` 와 `$callback`을 파라미터로 전달)
+2. `uio` 함수는 `$id`에 해당하는 UI오브젝트의 인스턴스를 생성\(생성시 `$arguments` 와 `$callback`을 파라미터로 전달\)
 3. 생성된 인스턴스의 `render` 메소드를 호출
-3. `render` 메소드가 반환하는 결과값을 출력
+4. `render` 메소드가 반환하는 결과값을 출력
 
 가장 먼저 해야할 작업은 다른 컴포넌트와 마찬가지로 추상클래스인 `\Xpressengine\UIObject\AbstractUIObject`를 상속받는 클래스를 구현해야 합니다. 그 다음 구현한 클래스를 XE에 등록해 주면 됩니다.
 
@@ -23,18 +23,17 @@ class ImageUIObject extends AbstractUIObject
     public function render()
     {
       // implement code
-      
+
       return parent::render();
     }
 }
 ```
 
-위와 같이 작성한 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/UIObjects/ImageUIObject.php`에 생성하는 것을 권장합니다. 
-
+위와 같이 작성한 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/UIObjects/ImageUIObject.php`에 생성하는 것을 권장합니다.
 
 ## 출력코드 작성하기
 
-클래스를 생성하였다면, `render` 메소드를 구현합니다. 
+클래스를 생성하였다면, `render` 메소드를 구현합니다.
 
 `render` 메소드에서는 입력된 파라미터를 사용하여 출력할 html 스트링을 생성한 다음, `$this->template` 변수에 저장합니다.
 
@@ -44,10 +43,10 @@ class ImageUIObject extends AbstractUIObject
       // 입력값 가져오기
       $src = $this->arguments['src'];
       $alt = $this->arguments['alt'];
-      
+
       // 이미지 태그 생성
       $this->template = '<img src="'.$src.'" alt="'.$alt.'">';
-      
+
       // 출력
       return parent::render();
     }
@@ -67,10 +66,9 @@ class ImageUIObject extends AbstractUIObject
 uio('uiobject/myplugin@image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 ```
 
-
 ## alias 등록하기
 
-위 예제에서 생성한 UI오브젝트의 아이디는 `uiobject/myplugin@image`로 꽤 복잡합니다. XE에서는 UI오브젝트에 별칭(alias)를 지정할 수 있습니다. 별칭이 지정된 UI오브젝트는 실제 아이디 대신 별칭을 사용할 수 있습니다. UI오브젝트의 별칭은 사이트 관리자가 `config/xe.php`의 `uiobject > aliases` 항목에 지정할 수 있으며, 코드상에서는 아래의 방법으로 지정할 수 있습니다.
+위 예제에서 생성한 UI오브젝트의 아이디는 `uiobject/myplugin@image`로 꽤 복잡합니다. XE에서는 UI오브젝트에 별칭\(alias\)를 지정할 수 있습니다. 별칭이 지정된 UI오브젝트는 실제 아이디 대신 별칭을 사용할 수 있습니다. UI오브젝트의 별칭은 사이트 관리자가 `config/xe.php`의 `uiobject > aliases` 항목에 지정할 수 있으며, 코드상에서는 아래의 방법으로 지정할 수 있습니다.
 
 ```php
 XeUIObject::setAlias($alias, $id);
@@ -87,7 +85,6 @@ XeUIObject::setAlias('image', 'uiobject/myplugin@image');
 ```php
 uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 ```
-
 
 ## 폼 관련 UI오브젝트
 
@@ -117,11 +114,12 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 ],
 ```
 
-위 별칭 목록 중에 `form*`의 형식으로 등록된 UI오브젝트가 있습니다. 이 UI오브젝트들은 의미 그대로 폼을 구성할 때 사용할 수 있는 UI오브젝트들입니다. 이 UI오브젝트들은 테마나 스킨, 위젯와 같은 컴포넌트가 사이트 관리자에게 설정 폼을 출력할 때 사용됩니다. 폼 관련 UI오브젝트의 사용법은 [폼 출력](service-form.md) 문서에서 자세히 설명합니다.
+위 별칭 목록 중에 `form*`의 형식으로 등록된 UI오브젝트가 있습니다. 이 UI오브젝트들은 의미 그대로 폼을 구성할 때 사용할 수 있는 UI오브젝트들입니다. 이 UI오브젝트들은 테마나 스킨, 위젯와 같은 컴포넌트가 사이트 관리자에게 설정 폼을 출력할 때 사용됩니다. 폼 관련 UI오브젝트의 사용법은 [폼 출력](/ko/service-uiobject.md) 문서에서 자세히 설명합니다.
 
 폼 관련 UI오브젝트로 등록되는 UI오브젝트는 몇가지 규칙이 준수해야 합니다.
 
-- 아래의 마크업 형식으로 출력해야 합니다. (이 마크업 형식은 [bootstrap](http://getbootstrap.com/) 형식을 따르고 있습니다.)
+* 아래의 마크업 형식으로 출력해야 합니다. \(이 마크업 형식은 [bootstrap](http://getbootstrap.com/) 형식을 따르고 있습니다.\)
+
   ```html
   <div class="form-group">
       <label for=""></label>
@@ -130,12 +128,11 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
   </div>
   ```
 
-- `label`, `description` 파라미터를 받아서 처리할 수 있어야 합니다. `label`은 폼요소의 라벨 문자열입니다. `<label for=""></label>`에 출력되어야 합니다. `description`은 `<p class="help-block"></p>`에 출력될 폼 요소에 대한 설명입니다. 
+* `label`, `description` 파라미터를 받아서 처리할 수 있어야 합니다. `label`은 폼요소의 라벨 문자열입니다. `<label for=""></label>`에 출력되어야 합니다. `description`은 `<p class="help-block"></p>`에 출력될 폼 요소에 대한 설명입니다.
 
-- `id`, `name` 필드를 파라미터로 받아서 처리할 수 있어야 합니다. 이 두 필드는 실제 폼 요소의 애트리뷰트로 지정됩니다. `id` 필드는 `label`의 `for` 애트리뷰트의 값으로도 지정해주어야 합니다.
+* `id`, `name` 필드를 파라미터로 받아서 처리할 수 있어야 합니다. 이 두 필드는 실제 폼 요소의 애트리뷰트로 지정됩니다. `id` 필드는 `label`의 `for` 애트리뷰트의 값으로도 지정해주어야 합니다.
 
-- `values` 파라미터를 받아서 처리할 수 있어야 합니다. `values`는 폼 요소에 지정할 값(value)입니다. `values`의 형식은 각 폼요소마다 다릅니다.
-
+* `values` 파라미터를 받아서 처리할 수 있어야 합니다. `values`는 폼 요소에 지정할 값\(value\)입니다. `values`의 형식은 각 폼요소마다 다릅니다.
 
 
 
