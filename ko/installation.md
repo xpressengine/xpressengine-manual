@@ -30,8 +30,6 @@ ServerEncoding UTF-8
 </IfModule>
 ```
 
-
-
 ## 인스톨러를 이용한 설치
 
 ### Linux
@@ -39,13 +37,13 @@ ServerEncoding UTF-8
 터미널에서 아래와 같이 명령어를 실행합니다.
 
 ```
-$ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
+$ php -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer install
 ```
 
 > **NOTE:** 일부 호스팅 환경에서 작동이 안 될 수 있습니다. 작동이 안 될 경우, 아래 명령어를 실행해보시기 바랍니다.
 >
 > ```
-> $ php -d display_errors=1 -d error_reporting=-1 -d allow_url_fopen=1 -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
+> $ php -d display_errors=1 -d error_reporting=-1 -d allow_url_fopen=1 -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer install
 > ```
 
 ### Window
@@ -56,7 +54,7 @@ $ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php i
 Git-Bash를 실행하고 아래와 같이 명령어를 실행합니다.
 
 ```
-$ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
+$ php -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer install
 ```
 
 위 명령어를 실행하면 설치가 시작됩니다. 안내에 따라 설치 정보를 입력하십시오.
@@ -121,7 +119,7 @@ _인스톨러 캡쳐 이미지_\(설정\)
 설정파일을 사용하면 더욱 쉽게 설치할 수 있습니다. 설치하기 전에 아래와 같이 커맨드를 실행하여 설정파일을 생성합니다.
 
 ```
-$ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer make
+$ php -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer make
 ```
 
 xe\_install\_config.yaml 파일이 생성됩니다. 파일을 열고 설치 정보를 입력하세요.  
@@ -180,7 +178,7 @@ FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용�
 * FTP의 파일 업로드 오류
 
   > 파일 업로드 및 디렉토리 설정을 완료하고 웹 인스톨러 접근할 때 오류가 발생하는 경우가 있습니다. 이 문제는 FTP 파일 업로드 중 누락된 있어 발생할 수 있는 문제 입니다.  
-  > 해결하기 위해서 FTP로 다시 업로드 해야합니다. 동일 조건을 업로드할 경우 비슷한 오류가 계속해서 발생할 수 잇으므로 중복파일 `건너뛰기` 옵션으로 업로드 해보는걸 권장합니다.   
+  > 해결하기 위해서 FTP로 다시 업로드 해야합니다. 동일 조건을 업로드할 경우 비슷한 오류가 계속해서 발생할 수 잇으므로 중복파일 `건너뛰기` 옵션으로 업로드 해보는걸 권장합니다.  
   > _이미지_
 
 * 웹 서버 타임아웃
