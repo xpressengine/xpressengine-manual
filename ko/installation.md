@@ -151,7 +151,7 @@ FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용�
 
 #### 설치 파일 다운로드
 
-* [http://start.xpressengine.io/download/latest.zip](http://start.xpressengine.io/latest.zip) 을 [다운로드](http://start.xpressengine.io/latest.zip) 합니다.
+* [http://start.xpressengine.io/download/latest.zip](http://start.xpressengine.io/download/latest.zip) 을 [다운로드](http://start.xpressengine.io/download/latest.zip) 합니다.
 * 다운로드 받은 zip 파일의 압축을 풀고 서버에 업로드 합니다. \(약 100MB\)
 
 #### 디렉토리 권한 설정
