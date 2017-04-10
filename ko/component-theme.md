@@ -151,7 +151,7 @@ return [
 
 ### 레이아웃 구성하기
 
-테마에서 출력할 내용이 많아지면 `theme.blade.php`이 너무 복잡해집니다. 이럴 때 블레이드 문법의 `@extends`, `@section`, `@yield` `@include` 키워드를 사용하면 템플릿 파일을 분리할 수 있습니다.
+테마에서 출력할 내용이 많아지면 `theme.blade.php`이 너무 복잡해집니다. 이럴 때 블레이드 문법의 `@extends`, `@section`, `@yield` `@include` 키워드를 사용하면 템플릿 파일을 분리할 수 있습니다. 레이아웃을 구성하는 블레이드 문법의 사용법은 [템플릿 문서](/blade.md)에 자세히 설명되어 있습니다.
 
 `theme.blade.php`에서 `@include`를 사용하여 header와 footer 영역을 분리해보았습니다.
 
