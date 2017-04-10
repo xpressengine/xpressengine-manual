@@ -54,7 +54,7 @@
   * [유효성검사\(validataion\)](service-validataion.md)
   * 오류처리
   * ...
-  * 테마\(theme\)
+  * [테마\(theme\)](d14c-b9c828-theme.md)
   * 스킨\(skin\)
   * 위젯\(widget\)
   * [위젯박스\(widgetbox\)](service-widgetbox.md)
