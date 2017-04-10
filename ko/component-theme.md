@@ -117,13 +117,8 @@ return [
         'desktop' => true
     ],
     'editable' => [
-        'views' => [
-            'theme.blade.php',
-            'gnb.blade.php',
-        ],
-        'assets' => [
-            'css/theme.css'
-        ]
+        'theme.blade.php',
+        'gnb.blade.php',
     ]
 ];
 ```
@@ -298,5 +293,5 @@ return [
 
 사이트 관리자는 테마의 템플릿을 직접 편집하여 테마를 커스터마이징 할 수 있습니다. 테마 제작자는 사이트관리자가 편집할 수 있는 파일 목록을 지정해주어야 합니다.
 
-`info.php` 파일의 `editable` 필드에 편집할 수 있는 파일 목록을 지정해주십시오.
+`info.php` 파일의 `editable` 필드에 편집할 수 있는 템플릿 파일 목록을 지정해주십시오.
 
