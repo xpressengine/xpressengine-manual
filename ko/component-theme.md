@@ -112,6 +112,10 @@ return [
     'setting' => [
         ...
     ],
+    'setting.assets' => [
+        'js' => ['js/theme.js'],
+        'css' => ['css/theme.css']
+    ],
     'support' => [
         'mobile' => true,
         'desktop' => true
@@ -126,6 +130,8 @@ return [
 `view` 필드는 테마를 출력할 때 사용할 템플릿 파일을 지정하는 필드입니다. 위 설정의 경우 `theme`로 지정되어 있습니다. 이는 `views` 디렉토리에 들어있는 `theme.blade.php`을 지정한 것입니다.
 
 `setting` 필드에는 테마 설정 페이지에서 사용할 설정 항목에 대한 정보를 지정합니다.
+
+`setting.assets` 필드에는 테마 설정 페이지에서 로드할 javascript, css파일을 지정합니다. 경로는 assets 하위 디렉토리부터 지정합니다.
 
 `support` 필드에는 이 테마가 데스크탑 버전과 모바일 버전을 지원하는지를 지정합니다.
 
