@@ -4,7 +4,7 @@
 * 시작하기
   * [설치하기](installation.md)
   * [업데이트](update.md)
-* 사이트 설정
+* [사이트 설정](c0ac-c774-d2b8-c124-c815.md)
   * [config 디렉토리](configurations.md)
   * [.env](env.md)
   * [디버깅](debugging.md)

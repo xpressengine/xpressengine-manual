@@ -64,8 +64,128 @@ XE는 아래 목록과 같이 UI오브젝트를 기본으로 제공하고 있습
 | `permission` | 권한설정 UI를 출력합니다. |
 | `themeSelect` | 테마 선택 UI를 출력합니다. |
 | `captcha` | 캡챠 입력 UI를 출력합니다. |
-
 이 UI오브젝트들 이외에 여러 플러그인이 등록한 UI오브젝트를 사용할 수도 있습니다.
+
+
+### UI오브젝트 두번째 파라미터 사용 예제
+
+#### formText, formLangText 
+```php
+$args = [
+    'label'=>'전화번호', 
+    'name'=>'phone', 
+    'id'=>'inputPhone', 
+    'description'=> '휴대폰 사용하여 입력하세요', 
+    'value'=>'010-000-0000'
+]
+```
+
+#### formPassword
+```php
+$args = [
+    'label'=>'비밀번호', 
+    'name'=>'password', 
+    'id'=>'password', 
+    'description'=> '영문 + 숫자 조합 8자리 이상 입력하세요.', 
+]
+```
+
+#### formTextarea, formLangTextarea 
+```php
+$args = [
+    'label'=>'Copyright', 
+    'name'=>'copyright', 
+    'id'=>'footer_copyright', 
+    'description'=> '푸터하단 문구를 입력하세요.', 
+]
+```
+
+#### formSelect
+```php
+$args = [
+    'label'=>'Colorset', 
+    'name'=>'layout_colorset', 
+    'id'=>'layout_colorset', 
+    'class'=>'layout_colorset',
+    'description'=> '색상을 선택하세요.', 
+    'options' => [
+        'blue' => '파랑색',
+        'red' => '붉은색',
+        'green' => '초록색'
+    ]
+]
+```
+options는 3가지의 형태로 사용할 수 있습니다.
+```php
+'options' => [
+    'blue' => '파랑색',
+    'red' => '붉은색',
+    'green' => '초록색'
+]
+```
+```php
+//key의 값이 value의 값과 같음
+'options' => [
+    'blue',
+    'red',
+    'green'
+]
+```
+```php
+//
+'options' => [
+    ['text' => '파랑색', value => 'blue', selected => true],
+    ['text' => '붉은색', value => 'red'],
+    ['text' => '초록색', value => 'green']
+]
+```
+
+#### formCheckbox
+```php
+$args = [
+    'label'=>'취미',
+    'name'=>'hobby',
+    'id'=>'hobby',
+    'class'=>'hobby',
+    'description'=> '취미를 선택하세요.',
+    'options' => [
+        'basketball' => '농구',
+        'baseball' => '야구',
+        'football' => '축구'
+    ]
+]
+```
+options는 checkboxes라는 프로퍼티명으로도 사용가능하며 formSelect와 같이  3가지의 형태로 사용할 수 있습니다.
+```php
+'options' => [
+    'basketball' => '농구',
+    'baseball' => '야구',
+    'football' => '축구'
+]
+```
+```php
+'options' => [
+    'basketball',
+    'baseball',
+    'football'
+]
+```
+```php
+'options' => [
+    ['text' => '농구', value => 'basketball', checked => true],
+    ['text' => '야구', value => 'baseball'],
+    ['text' => '축구', value => 'football']
+]
+```
+
+#### formMenu
+```php
+$args = [
+    'label'=>'메인 메뉴',   
+]
+```
+
+
 
 ## 폼 빌더\(폼 UI오브젝트\)
 
