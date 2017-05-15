@@ -30,7 +30,7 @@
   * [컴포넌트 등록](plugin-component.md)
   * 다국어 지원
 * 서비스
-  * 캡챠\(captcha\)
+  * [캡챠\(captcha\)](cea1-cc6028-captcha.md)
   * [설정\(config\)](service-config.md)
   * [문서\(document\)](service-document.md)
   * [키생성기\(keygen\)](service-keygen.md)
