@@ -36,6 +36,6 @@ public function render()
 > 에디터를 정의한 스크립트 파일은 반드시 XE의 `xe.editor.core.js` 를 필요로 합니다. 그러므로 XE core 의 스크립트가 해당 에디터 스크립트보다 먼저 불러질 수 있도록 하여야 합니다.
 
 
-
+### Frontend
 > frontend 관련 내용 추가요망
 > @blueng
