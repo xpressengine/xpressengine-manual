@@ -146,3 +146,12 @@ reset: function() {
   this.setContents("");
 }
 ```
+
+#### 에디터 생성
+##### XEeditor.getEditor('에디터명').create(selector, options, editorOptions, toolInfoList)
+* selector (string)
+* options (object)
+* editorOptions (object)
+* toolInfoList (array)
+
+정의된 에디터를 생성하기 위해서는 XEeditor.getEditor('에디터명').create를 통해 생성할 수 있습니다.
