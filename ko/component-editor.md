@@ -147,6 +147,13 @@ reset: function() {
 }
 ```
 
+##### addTools(toolsMap, toolInfoList)
+* toolsMap (object) 정의된 툴의 정보
+* toolInfoList (array) 에디터가 create될때 4번째 인자로 받은 값
+
+툴정보가 있을 경우 에디터 Core에서 등록된 툴정보들을 addTools인터페이스를 통해 전달합니다.
+정의된 에디터에서는 addTools 인터페이스를 통해 넘겨 받은 tool정보로 툴들을 등록하는 코드를 구현해야 합니다.
+
 #### 에디터 생성
 ##### XEeditor.getEditor('에디터명').create(selector, options, editorOptions, toolInfoList)
 * selector (string) - 생성되는 에디터의 selector
