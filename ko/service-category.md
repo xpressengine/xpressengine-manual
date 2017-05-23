@@ -8,7 +8,7 @@
 
 ```php
 // 신규 카테고리 그룹 생성
-$category = XeCategory::create();
+$category = XeCategory::createCate();
 // 카테고리 그룹에 아이템 추가
 $item = XeCategory::createItem($category, ['word' => 'foo']);
 ```
@@ -24,7 +24,7 @@ $item = XeCategory::createItem($category, ['word' => 'foo', 'parentId' => '{pare
 카테고리는 트리구조를 가지고 있습니다. 그래서 특정 카테고리 아이템의 부모 또는 자식에 해당하는 아이템들을 조회할 수 있습니다.
 
 ```php
-$item = XeCategory::itemFind($id);
+$item = XeCategory::items()->find($id);
 // 자식에 해당하는 아이템
 $children = $item->getChildren();
 // 부모 아이템
@@ -34,10 +34,10 @@ $parent = $item->getParent();
 또한 트리형태로 아이템들을 얻을 수 있습니다.
 
 ```php
-$category = XeCagetory::find($id);
+$category = XeCagetory::cates()->find($id);
 $tree = $category->getTree();     // 카테고리 전체 트리
 
-$item = XeCategory::itemFind($id);
+$item = XeCategory::items()->find($id);
 $tree = $item->getDescendantTree();  // 특정 아이템의 자손들로 이루어진 트리
 ```
 

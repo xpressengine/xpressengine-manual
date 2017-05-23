@@ -28,7 +28,7 @@
   * [버전 관리\(install, update\)](plugin-versions.md)
   * [사이트 관리페이지 추가](plugin-settings.md)
   * [컴포넌트 등록](plugin-component.md)
-  * 다국어 지원
+  * [다국어 지원](b2e4-ad6d-c5b4-c9c0-c6d0.md)
 * 서비스
   * [캡챠\(captcha\)](cea1-cc6028-captcha.md)
   * [설정\(config\)](service-config.md)
