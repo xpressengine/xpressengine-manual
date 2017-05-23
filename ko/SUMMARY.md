@@ -69,6 +69,6 @@
   * [다이나믹 필드 스킨](component-dynamicField-skin.md)
   * [에디터](component-editor.md)
   * [에디터툴](c5d0-b514-d130-d234.md)
-* 콘솔명령
+* [콘솔명령](cf58-c194-ba85-b839.md)
   * ...
 
