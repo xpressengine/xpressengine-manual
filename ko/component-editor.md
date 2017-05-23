@@ -37,5 +37,10 @@ public function render()
 
 
 ### Frontend
-> frontend 관련 내용 추가요망
-> @blueng
+#### XEeditor
+프론트엔드에서는 기본적으로 에디터 Core가 있고 인터페이스 구현을 통해 에디터기능을 추가할 수 있습니다.
+에디터 Core의 정의는 `xpressengine/assets/core/common/js/xe.editor.core.js`에서 확인할 수 있습니다. 
+
+##### XEeditor.define(object)
+xe.editor.core.js에서는 에디터의 인터페이스가 존재하며 에디터를 정의하기 위해 아래의 형식과 같이 필수적으로 구현해야하는 인터페이스들이 존재합니다.
+xe.editor.core.js에서는 에디터의 인터페이스가 존재하며 에디터를 정의하기 위해 아래의 형식과 같이 필수적으로 구현해야하는 인터페이스들이 존재합니다
