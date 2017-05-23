@@ -38,9 +38,39 @@ public function render()
 
 ### Frontend
 #### XEeditor
-프론트엔드에서는 기본적으로 에디터 Core가 있고 인터페이스 구현을 통해 에디터기능을 추가할 수 있습니다.
-에디터 Core의 정의는 `xpressengine/assets/core/common/js/xe.editor.core.js`에서 확인할 수 있습니다. 
+프론트엔드에서는 기본적으로 에디터 Core가 있고 인터페이스 구현을 통해 에디터기능을 추가할 수 있습니다. XEeditor에서는 구현되는 에디터들의 인터페이스를 정의하고 생성된 에디터 인스턴스들을 관리합니다.
+에디터 Core의 코드는 `xpressengine/assets/core/common/js/xe.editor.core.js`에서 확인할 수 있습니다. 
 
 ##### XEeditor.define(object)
-xe.editor.core.js에서는 에디터의 인터페이스가 존재하며 에디터를 정의하기 위해 아래의 형식과 같이 필수적으로 구현해야하는 인터페이스들이 존재합니다.
-xe.editor.core.js에서는 에디터의 인터페이스가 존재하며 에디터를 정의하기 위해 아래의 형식과 같이 필수적으로 구현해야하는 인터페이스들이 존재합니다
+xe.editor.core.js에서는 에디터의 인터페이스가 존재하며 에디터를 정의하기 위해 아래의 형식과 같이 XEeditor.define을 통해 아래의 형식들을 구현하여 에디터를 정의합니다.
+
+```javascript
+XEeditor.define({
+  editorSettings: {
+    name: "",
+    configs: {},
+  },
+  interfaces: {
+    initialize: function (selector, options) {},
+    getContents: function () {},
+    setContents: function (text) {},
+    addContents: function (text) {},
+    on: function (eventName, callback) {},
+    reset: function () {},
+  },
+});
+```
+
+##### editorSettings
+###### name (string)
+에디터의 명칭을 정의합니다. 추후 에디터 사용시 XEeditor.getEditor('에디터명')으로 정의된 에디터를 가져올때 사용됩니다. 
+
+###### configs (object)
+에디터 생성시 사용되는 공통 config들을 정의합니다.
+
+##### interfaces
+에디터 Core에서 정의된 인터페이스들로 일부 인터페이스들은 필수로 구현되어야 합니다.
+
+###### initialize (selector, options)
+에디터 생성시 호출되며 selector와 configs에서 정의된 옵션을 인자로 받을 수 있습니다.
+ckeditor기준으로 ```CKEDITOR.replace(selector)``` 와 같이 정의될 수 있습니다.
