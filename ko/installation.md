@@ -11,6 +11,7 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
   * Mbstring PHP Extension
   * Tokenizer PHP Extension
   * GD PHP Extension
+  * FileInfo PHP Extension
 * MariaDB or MySQL 5.1 이상
 * 터미널 접속 환경
 * 디스크 300M 이상의 여유 공간
