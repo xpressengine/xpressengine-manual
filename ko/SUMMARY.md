@@ -27,7 +27,9 @@
   * [플러그인 구조](plugin-structure.md)
   * [버전 관리\(install, update\)](plugin-versions.md)
   * [사이트 관리페이지 추가](plugin-settings.md)
-  * [컴포넌트 등록](plugin-component.md)
+  * [컴포넌트 추가](plugin-component.md)
+  * 개인설정 페이지 추가
+  * [회원가입 인증/입력폼 추가](d68c-c6d0-c778-c99d-bc29-c2dd-cd94-ac00.md)
   * [다국어 지원](b2e4-ad6d-c5b4-c9c0-c6d0.md)
 * [서비스](c11c-be44-c2a4.md)
   * [캡챠\(captcha\)](cea1-cc6028-captcha.md)
@@ -51,14 +53,14 @@
   * [UI오브젝트/폼빌더](service-uiobject.md)
   * [카운터\(counter\)](service-counter.md)
   * [휴지통\(trash\)](service-trash.md)
-  * [유효성검사\(validataion\)](service-validataion.md)
-  * 오류처리
+  * [유효성검사\(validation\)](service-validataion.md)
+  * [오류처리](c624-b958-cc98-b9ac.md)
   * ...
   * [테마\(theme\)](d14c-b9c828-theme.md)
   * 스킨\(skin\)
   * 위젯\(widget\)
   * [위젯박스\(widgetbox\)](service-widgetbox.md)
-* 컴포넌트 제작 가이드
+* [컴포넌트 제작 가이드](cef4-d3ec-b10c-d2b8-c81c-c791-ac00-c774-b4dc.md)
   * [테마](component-theme.md)
   * [스킨](component-skin.md)
   * [위젯](component-widget.md)
