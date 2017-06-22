@@ -22,14 +22,14 @@
   * [프리젠터\(Presenter\)](presenter.md)
   * [뷰\(View\)](view.md)
   * [템플릿\(Blade Template\)](blade.md)
-* 플러그인
+* [플러그인 제작하기](d50c-b7ec-adf8-c778.md)
   * [플러그인 개발 시작하기](plugin-generation.md)
   * [플러그인 구조](plugin-structure.md)
   * [버전 관리\(install, update\)](plugin-versions.md)
   * [사이트 관리페이지 추가](plugin-settings.md)
   * [컴포넌트 등록](plugin-component.md)
   * [다국어 지원](b2e4-ad6d-c5b4-c9c0-c6d0.md)
-* 서비스
+* [서비스](c11c-be44-c2a4.md)
   * [캡챠\(captcha\)](cea1-cc6028-captcha.md)
   * [설정\(config\)](service-config.md)
   * [문서\(document\)](service-document.md)
