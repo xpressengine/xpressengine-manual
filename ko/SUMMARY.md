@@ -28,7 +28,7 @@
   * [버전 관리\(install, update\)](plugin-versions.md)
   * [사이트 관리페이지 추가](plugin-settings.md)
   * [컴포넌트 추가](plugin-component.md)
-  * 개인설정 페이지 추가
+  * [개인설정 페이지 추가](ac1c-c778-c124-c815-d398-c774-c9c0-cd94-ac00.md)
   * [회원가입 인증/입력폼 추가](d68c-c6d0-c778-c99d-bc29-c2dd-cd94-ac00.md)
   * [다국어 지원](b2e4-ad6d-c5b4-c9c0-c6d0.md)
 * [서비스](c11c-be44-c2a4.md)
