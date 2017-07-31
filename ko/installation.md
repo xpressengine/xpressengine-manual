@@ -21,7 +21,9 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 
 * [Cafe24](https://www.cafe24.com/) **10G 광아우토반 FullSSD** 웹 호스팅 서비스에서 **UTF-8 \(PHP7.0, mariadb-10.0.x\)** 옵션만 지원합니다. **10G 광아우토반 FullSSD**의 다른 옵션을 신청했을 경우 XE3는 정상 동작하지 않을 수 있습니다.
 
-> Cafe24의 경우 /usr/loca/bin/php composer.phar update 처럼 컴포저를 사용가능할 수도 있습니다.
+```
+Cafe24의 경우 /usr/loca/bin/php composer.phar update 처럼 컴포저를 사용가능할 수도 있습니다.
+```
 
 * [닷홈](http://www.dothome.co.kr) **무제한 웹호스팅** 서비스에서 **PHP7.0** 만 지원합니다. 그 외의 버전은 지원하지 않습니다.
 * [고도 호스팅](http://hosting.godo.co.kr/) **리눅스 웹 호스팅** 서비스에서 **UTF8\(Mysql5.5\) PHP7.0**에 테스트 었으며 Apache 설정 이슈로 정상동작 되지 않습니다. 문제 해결을 위해서 배포되는 **.htaccess** 파일의 하단에 아래 내용을 추가해야 합니다.
