@@ -5,7 +5,7 @@
 XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니다.
 
 * 웹서버\(apache, nginx 등\)
-* PHP 5.5.9 이상
+* PHP 7 이상\(XE3.0.0-beta.24 부터\) ~~PHP 5.5.9 이상~~
   * OpenSSL PHP Extension
   * PDO PHP Extension
   * Mbstring PHP Extension
