@@ -21,7 +21,7 @@ $ php artisan make:theme <path> <title>
 만약 `my_plugin` 플러그인에 테마를 넣고, 테마 이름을 `First Theme`로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 테마의 개략적인 정보를 터미널에서 볼 수 있습니다.
 
 ```
-$ php artisan make:theme my_plugin/theme 'First Theme'
+$ php artisan make:theme plugins/my_plugin/theme 'First Theme'
 
 [New theme info]
   plugin:        my_plugin
