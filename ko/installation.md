@@ -90,6 +90,7 @@ $ php artisan xe:install
 _인스톨러 캡쳐 이미지_\(database, site 정보 입력 / 엔터\)  
 인스톨러는 Database에 필요한 테이블을 생성하고, 기본적인 설정 파일을 생성합니다. 이 작업은 시간이 오래 걸릴 수 있습니다.
 
+* Driver\[driver\] : Database 드라이버 선택 . 기본 `mysql` \(mysql, cubrid 가능\)
 * Host \[localhost\] : Database 주소. 기본 `localhost`
 * Port \[3306\] : Database prot. 기본 `3306`
 * Database name : Database name
