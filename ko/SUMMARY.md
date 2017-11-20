@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* 시작하기
+* [시작하기](c2dc-c791-d558-ae30.md)
   * [설치하기](installation.md)
   * [업데이트](update.md)
 * [사이트 설정](c0ac-c774-d2b8-c124-c815.md)

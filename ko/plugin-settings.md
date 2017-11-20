@@ -163,7 +163,7 @@ Route::settings('user', function () {
            'as' => 'settings.member.create',
            'uses' => 'Member\Settings\UserController@create',
            'settings_menu' => 'user.create',
-           'settings_permission' => 'user.create'
+           'permission' => 'user.create'
     ]);
 });
 ```
