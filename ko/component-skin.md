@@ -12,7 +12,7 @@ XE의 구성요소중 HTML을 출력하는 모든 구성요소는 스킨 타겟�
 
 ## 빈 스킨 생성
 
-스킨 생성 커맨드를 사용하려면 우선 스킨이 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 생성하기](plugin-generation.md) 문서를 참고하여 플러그인을 생성하길 바랍니다. 또, 스킨 타겟의 아이디를 미리 알고 있어야 합니다.
+스킨 생성 커맨드를 사용하려면 우선 스킨이 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 생성하기](plugin-generation.md) 문서를 참고하여 플러그인을 생성하길 바랍니다. 또, 스킨 타겟의 아이디를 미리 알고 있어야 합니다. 스킨 타겟의 아이디는 타겟 플러그인의 `composer.json`에서 찾을 수 있습니다.
 
 소속될 플러그인과 스킨 타겟 아이디가 준비되었다면 아래 커맨드를 사용하여 빈 스킨을 생성합니다.
 
@@ -29,7 +29,7 @@ $ php artisan make:skin <path> <skin_target_id> <title>
 만약 `my_plugin` 플러그인에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다. 회원 프로필 컨트롤러의 스킨 타겟 아이디는 `member/profile`입니다.
 
 ```
-$ php artisan make:skin my_plugin/skins/profile member/profile "나만의 프로필 스킨"
+$ php artisan make:skin plugins/my_plugin/skins/profile member/profile "나만의 프로필 스킨"
 
 [New skin info]
   plugin:        my_plugin
