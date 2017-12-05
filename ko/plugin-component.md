@@ -104,4 +104,6 @@ Alice 플러그인의 `composer.json` 파일 예제입니다. Alice 플러그인
 public static $id = 'component_type/my@component';
 ```
 
+## 커맨드를 사용하여 등록하기
 
+커맨드를 사용하여 컴포넌트를 추가할 수 있습니다. 자세한 방법은 `컴포넌트 제작 가이드`를 참고하여 주십시오.
