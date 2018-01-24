@@ -12,16 +12,13 @@ XE는 오픈소스프로그램으로 자유롭게 코어 소스코드를 수정�
 XE는 사용자들이 자주 사용할 만한 플러그인을 XE에 포함하여 배포하고 있습니다.
 
 * alice
-* google_analytics
-* orientator
-* page
 * board
-* comment
 * ckeditor
 * claim
-* external_page
-* social_login
+* comment
 * news_client
+* page
+* widget_page
 
 
 
