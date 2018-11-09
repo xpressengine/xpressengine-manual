@@ -1,4 +1,4 @@
-# 요청(Request)
+# 요청\(Request\)
 
 XE는 웹브라우저로부터 요청을 받으면, 제일 먼저 `index.php`가 실행되고 `index.php`는 현재 요청에 대한 정보를 담고 있는 `Request` 인스턴스를 생성합니다. 이 `Request` 인스턴스는 XE가 실행되는 동안 매우 많은 곳에서 로드되어 현재 요청에 대한 정보를 참조할 수 있도록 합니다.
 
@@ -119,7 +119,7 @@ XE는 현재 request의 입력값을 다음 request까지 유지하는 방법을
 
 #### 입력값들 세션에 저장하기
 
-`flash` 메소드는 현재의 입력들을 [세션](/docs/5.0/session)에 저장하여 사용자가 다음번에 request를 보내도 사용가능하게 만들어 줍니다.
+`flash` 메소드는 현재의 입력들을 [세션](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/session/README.md)에 저장하여 사용자가 다음번에 request를 보내도 사용가능하게 만들어 줍니다.
 
 ```php
 $request->flash();
@@ -156,7 +156,6 @@ $username = Request::old('username');
 ```php
 {{ old('username') }}
 ```
-
 
 ## 파일 처리
 
@@ -242,3 +241,4 @@ if ($request->is('admin/*'))
 ```php
 $url = $request->url();
 ```
+

@@ -1,9 +1,8 @@
-# Http 컨트롤러(Http Controllers)
+# 컨트롤러\(Controllers\)
 
-플러그인은 플러그인 클래스의 `boot` 메소드를 통해 라우트를 등록할 수 있습니다. 라우트를 등록할 때, 특정 URL의 요청을 처리할 로직을 클로저로 작성하는 대신, 별도의 컨트롤러 클래스에 작성할 수 있습니다. 성격이 비슷한 요청을 처리하기 위한 컨트롤러 클래스를 정의하십시오. 
+플러그인은 플러그인 클래스의 `boot` 메소드를 통해 라우트를 등록할 수 있습니다. 라우트를 등록할 때, 특정 URL의 요청을 처리할 로직을 클로저로 작성하는 대신, 별도의 컨트롤러 클래스에 작성할 수 있습니다. 성격이 비슷한 요청을 처리하기 위한 컨트롤러 클래스를 정의하십시오.
 
 컨트롤러는 `App\Http\Controllers\Controller` 클래스를 상속받아 작성하십시오.
-
 
 ## 기본 컨트롤러
 
@@ -36,7 +35,7 @@ class UserController extends Controller {
 Route::get('user/{id}', 'App\Http\UserController@showProfile');
 ```
 
-#### 컨트롤러 & 네임스페이스
+### 컨트롤러 & 네임스페이스
 
 컨트롤러의 네임스페이스를 지정할 때에는 반드시 전체 네임스페이스를 다 써주어야 합니다.
 
@@ -53,8 +52,7 @@ Route::group(['prefix' => 'photos', 'namespace' => 'Photos'], function()
 });
 ```
 
-
-#### 이름이 지정된 컨트롤러 라우트
+### 이름이 지정된 컨트롤러 라우트
 
 클로저 라우트와 같이 컨트롤러 라우트에 이름을 지정할 수 있습니다.
 
@@ -62,7 +60,7 @@ Route::group(['prefix' => 'photos', 'namespace' => 'Photos'], function()
 Route::get('foo', ['uses' => 'FooController@method', 'as' => 'name']);
 ```
 
-#### 컨트롤러 액션의 URL 구하기
+### 컨트롤러 액션의 URL 구하기
 
 컨트롤러 액션에 대한 URL을 생성하기 위해서 `action` 헬퍼함수를 사용합니다:
 
@@ -86,7 +84,7 @@ $action = Route::currentRouteAction();
 
 ## 컨트롤러 미들웨어
 
-[미들웨어](/docs/5.0/middleware)는 다음과 같이 컨트롤러 라우트에 지정합니다.
+[미들웨어](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/middleware/README.md)는 다음과 같이 컨트롤러 라우트에 지정합니다.
 
 ```php
 Route::get('profile', [
@@ -122,7 +120,7 @@ XE에서는 한번의 라우팅 등록으로 컨트롤러를 통해 모든 액�
 Route::controller('users', 'UserController');
 ```
 
-`controller` 메소드는 두 개의 인자를 넘겨 받도록 되어 있습니다. 첫 번째 인자는 컨트롤러로 제어할 URI이고, 두 번째는 컨트롤러의 클래스명을 의미합니다. 이어서 해당하는 HTTP 메소드 이름을 접두어로 (get, post..) 사용하는 형태로 컨트롤러의 메소드를 추가합니다:
+`controller` 메소드는 두 개의 인자를 넘겨 받도록 되어 있습니다. 첫 번째 인자는 컨트롤러로 제어할 URI이고, 두 번째는 컨트롤러의 클래스명을 의미합니다. 이어서 해당하는 HTTP 메소드 이름을 접두어로 \(get, post..\) 사용하는 형태로 컨트롤러의 메소드를 추가합니다:
 
 ```php
 class UserController extends Controller {
@@ -153,7 +151,7 @@ class UserController extends Controller {
 public function getAdminProfile() {}
 ```
 
-#### 라우트에 이름 지정하기
+### 라우트에 이름 지정하기
 
 컨트롤러 라우트에 어떤 “이름”을 지정하고자 한다면 `controller` 메소드의 세 번째 인자를 통해서 지정할 수 있습니다:
 
@@ -165,7 +163,7 @@ Route::controller('users', 'UserController', [
 
 ## 의존성 주입 & 컨트롤러
 
-#### 생성자 주입
+### 생성자 주입
 
 XE의 서비스 컨테이너는 모든 컨트롤러의 의존성을 해결하기 위해서 사용됩니다. 그 결과 컨트롤러가 필요로 하는 의존 객체들에 대해서 생성자에서 타입힌트로 지정할 수 있게 됩니다:
 
@@ -198,7 +196,7 @@ class UserController extends Controller {
 
 서비스 컨테이너가 의존성을 해결을 할 수 있다면 타입 힌트에 지정할 수는 있습니다.
 
-#### 메소드 인젝션-주입
+### 메소드 인젝션-주입
 
 생성자 주입과 더불어 컨트롤러의 메소드에서도 타입힌트를 통한 의존성 주입을 할 수 있습니다. 예를 들어, 메소드에서 `Request` 인스턴스를 타입힌트를 통해서 주입할 수 있습니다:
 
@@ -250,3 +248,4 @@ class UserController extends Controller {
 
 }
 ```
+

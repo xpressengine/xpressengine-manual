@@ -1,8 +1,6 @@
-# 라우팅(routing)
-
+# 라우팅\(routing\)
 
 라우터는 `Request`의 URI를 판단하여 `Request`를 처리할 담당 컨트롤러를 찾는 역할을 합니다. 이 장에서는 라우트를 정의하는 방법에 대하여 설명합니다.
-
 
 ## 기본적인 라우팅
 
@@ -39,7 +37,6 @@ Route::delete('foo/bar', function()
 
 `Closure` 대신 컨트롤러를 사용할 수도 있습니다.
 
-
 ```php
 Route::get('user/profile', 'UserController@showProfile');
 ```
@@ -54,6 +51,7 @@ Route::match(['get', 'post'], '/', function()
 ```
 
 `any` 메소드를 사용하면 모든 http 메소드에 응답하는 라우트를 등록할 수도 있습니다.
+
 ```php
 Route::any('foo', function()
 {
@@ -80,7 +78,7 @@ Route::get('user/{id}', function($id)
 });
 ```
 
-> **주의:** 라우트 파라미터는 `-` 문자를 포함하면 안됩니다. (`_`)를 사용하십시오.
+> **주의:** 라우트 파라미터는 `-` 문자를 포함하면 안됩니다. \(`_`\)를 사용하십시오.
 
 #### 선택적인 라우트 파라미터
 
@@ -97,7 +95,6 @@ Route::get('user/{name?}', function($name = 'John')
 ```
 
 `name` 파라미터는 옵션입니다. `name` 파라미터가 URL에 포함되어 있지 않아도 위 라우트가 작동됩니다.
-
 
 #### 정규표현식으로 파라미터 제약하기
 
@@ -170,9 +167,7 @@ $url = route('profile', ['id' => 1]);
 
 라우트 그룹에 지정하는 배열의 `middleware` 값에 미들웨어의 목록을 정의함으로써 그룹 내의 모든 라우트에 미들웨어가 적용됩니다. 라우트 미들웨어는 배열에 정의된 순서대로 실행될것입니다:
 
-> 주의!
-> 라우트 미들웨어는 Http 커널의 미들웨어와는 다른 별개의 기능입니다.
-
+> 주의! 라우트 미들웨어는 Http 커널의 미들웨어와는 다른 별개의 기능입니다.
 
 ```php
 Route::group(['middleware' => ['foo','bar']], function()
@@ -207,10 +202,9 @@ Route::group(['namespace' => 'Admin'], function()
 
 > **참고:** 기본적으로 `RouteServiceProvider`에서 포함하고 있는 `routes.php` 파일에는 라우트 컨트롤들을 위해서 네임스페이스가 지정되어 있습니다. 따라서 `App\Http\Controllers`의 전체 네임스페이스를 따로 지정할 필요는 없습니다.
 
-
 ### 라우트 접두어 지정하기
 
-라우트 그룹의 접두어(prefix)는 그룹의 속성 배열에 `prefix` 옵션을 사용하여 지정합니다:
+라우트 그룹의 접두어\(prefix\)는 그룹의 속성 배열에 `prefix` 옵션을 사용하여 지정합니다:
 
 ```php
 Route::group(['prefix' => 'admin'], function()
@@ -250,37 +244,35 @@ Route::group([
 
 ## Fixed 라우트
 
-각 플러그인들은 자유롭게 라우트를 추가하여 사용할 수 있습니다. 하지만 서로 다른 플러그인들이 동일한 규칙의 라우트를 등록하면 문제가 발생할 수 있습니다. XE는 플러그인간 라우트의 충돌을 방지하기 위하여 각 플러그인에게 별도의 라우트 공간(url 세그먼트)을 할당합니다.
+각 플러그인들은 자유롭게 라우트를 추가하여 사용할 수 있습니다. 하지만 서로 다른 플러그인들이 동일한 규칙의 라우트를 등록하면 문제가 발생할 수 있습니다. XE는 플러그인간 라우트의 충돌을 방지하기 위하여 각 플러그인에게 별도의 라우트 공간\(url 세그먼트\)을 할당합니다.
 
 각 플러그인에게 할당된 라우트 규칙을 사용하려면 `Route::fixed` 메소드를 사용하십시오.
 
 ```php
 Route::fixed(<plugin_id>, function() {
-    
+
     // Define Routes Here
     Route::get('/', ...);
-    
+
 });
 ```
 
-`Route::fixed` 메소드의 첫번째 파라미터는 플러그인의 아이디를 지정하면 됩니다. `Route::fixed`를 사용할 경우, 접두어(prefix)가 `/plugin/<plugin_id>`으로 자동으로 지정됩니다. 따라서 위의 코드는 아래의 `Route::group`을 사용한 코드와 동일합니다.
+`Route::fixed` 메소드의 첫번째 파라미터는 플러그인의 아이디를 지정하면 됩니다. `Route::fixed`를 사용할 경우, 접두어\(prefix\)가 `/plugin/<plugin_id>`으로 자동으로 지정됩니다. 따라서 위의 코드는 아래의 `Route::group`을 사용한 코드와 동일합니다.
 
 ```php
 Route::group(['prefix'=>'plugin/<plugin_id>'], function() {
-    
+
     // Define Routes Here
     Route::get('/', ...);
-    
+
 });
 ```
 
 하지만, 접두어에 자동으로 추가되는 `plugin`은 사이트 관리자가 설정에서 변경할 수 있는 값이므로 반드시 `Route::fixed`를 사용하십시오.
 
-
-
 ## CSRF 보호하기
 
-XE에서는 크로스 사이트 요청 위조([cross-site request forgeries](http://en.wikipedia.org/wiki/Cross-site_request_forgery))으로부터 응용 프로그램을 쉽게 보호할 수 있습니다. 크로스 사이트 요청 위조는 악의적인 공격의 하나이며 인증받은 사용자를 대신하여 허가 받지 않은 명령을 수행합니다.
+XE에서는 크로스 사이트 요청 위조\([cross-site request forgeries](http://en.wikipedia.org/wiki/Cross-site_request_forgery)\)으로부터 응용 프로그램을 쉽게 보호할 수 있습니다. 크로스 사이트 요청 위조는 악의적인 공격의 하나이며 인증받은 사용자를 대신하여 허가 받지 않은 명령을 수행합니다.
 
 XE는 사용자별 CSRF "토큰"을 자동으로 생성합니다. 이 토큰은 인증된 사용자가 실제로 XE에 요청을 보내고 있는지 식별하는 데 사용됩니다.
 
@@ -297,7 +289,6 @@ XE는 사용자별 CSRF "토큰"을 자동으로 생성합니다. 이 토큰은 
 ```
 
 일일이 수동으로 POST, PUT 또는 DELETE 요청에 대한 CSRF 토큰을 확인할 필요가 없습니다. XE가 자동으로 요청중인 토큰을 세션에 저장되어 있는 토큰과 일치하는지 확인할 것입니다.
-
 
 ## 메소드 Spoofing-속이기
 

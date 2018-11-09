@@ -1,9 +1,8 @@
-# 템플릿(Blade Template)
+# 템플릿\(Blade Template\)
 
 ## 소개
 
 XE에서 제공하고 있는 블레이드는 간결하고 강력한 템플릿 엔진입니다. 다른 인기있는 PHP 템플릿 엔진들과는 다르게, 블레이드는 여러분이 순수한 PHP 코드를 뷰에 사용하는 것을 제한하지 않습니다. 모든 블레이드 뷰는 순수한 PHP 코드로 컴파일된 후 캐싱되고, 파일이 수정되지 않을 때까지 캐싱된 파일을 사용합니다. 이는 블레이드가 본질적으로 성능상의 부담이 없음을 의미합니다. 블레이드 뷰 파일은 확장자로 `.blade.php`를 사용합니다.
-
 
 ## 템플릿의 상속
 
@@ -11,7 +10,7 @@ XE에서 제공하고 있는 블레이드는 간결하고 강력한 템플릿 �
 
 블레이드를 사용할 때의 주된 장점 두가지는 _템플릿 상속_과 _섹션_입니다. 시작하기 전에 간단한 예제를 살펴보겠습니다. 첫번째로, 우리는 "master" 페이지 레이아웃을 보겠습니다. 대부분의 웹사이트는 여러 페이지에 걸쳐 동일한 레이아웃을 사용하기 때문에, 이 레이아웃을 하나의 블레이드 뷰로 정의하는 것이 편합니다.
 
-```html
+```markup
 <!-- Stored in resources/views/layouts/master.blade.php -->
 
 <html>
@@ -36,9 +35,9 @@ XE에서 제공하고 있는 블레이드는 간결하고 강력한 템플릿 �
 
 ### 레이아웃 확장하기
 
-자식페이지를 정의할 때, `@extends` 지시어를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 레이아웃을 상속(`@extends`)받는 뷰들은 `@section` 지시어를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 자식 페이지에서 주입한 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
+자식페이지를 정의할 때, `@extends` 지시어를 사용하여 자식 페이지에서 "상속"받을 레이아웃을 지정할 수 있습니다. 레이아웃을 상속\(`@extends`\)받는 뷰들은 `@section` 지시어를 사용해서 그 레이아웃의 섹션에 들어갈 컨텐츠를 주입해야 합니다. 앞의 예에서 보았듯이, 자식 페이지에서 주입한 섹션의 컨텐츠는 레이아웃의 `@yield` 부분에 출력될 것입니다.
 
-```html
+```markup
 <!-- Stored in resources/views/child.blade.php -->
 
 @extends('layouts.master')
@@ -56,9 +55,7 @@ XE에서 제공하고 있는 블레이드는 간결하고 강력한 템플릿 �
 @endsection
 ```
 
-
-
-In this example, the `sidebar` section is utilizing the `@@parent` directive to append (rather than overwriting) content to the layout's sidebar. The `@@parent` directive will be replaced by the content of the layout when the view is rendered.
+In this example, the `sidebar` section is utilizing the `@@parent` directive to append \(rather than overwriting\) content to the layout's sidebar. The `@@parent` directive will be replaced by the content of the layout when the view is rendered.
 
 위의 예에서, `sidebar` 섹션은 레이아웃의 사이드바에 컨텐츠를 붙이기 위해 `@@parent` 지시어를 사용하고 있습니다. `@@parent` 지시어는 뷰가 렌더링 될 때, 그 레이아웃의 `sidebar` 섹션이 가지고 있는 컨텐츠로 대체될 것입니다.
 
@@ -76,7 +73,7 @@ Route::get('blade', function () {
 
 You may display data passed to your Blade views by wrapping the variable in "curly" braces. For example, given the following route:
 
-중괄호(culry brace)로 변수를 감싸면, 블레이드 뷰로 전달된 데이터를 출력할 수 있습니다. 예를 들어, 주어진 라우트가 있을 때:
+중괄호\(culry brace\)로 변수를 감싸면, 블레이드 뷰로 전달된 데이터를 출력할 수 있습니다. 예를 들어, 주어진 라우트가 있을 때:
 
 ```php
 Route::get('greeting', function () {
@@ -84,16 +81,15 @@ Route::get('greeting', function () {
 });
 ```
 
-
 `name` 변수의 값을 다음과 같이 출력할 수 있습니다:
 
-```html
+```markup
 Hello, {{ $name }}.
 ```
 
 뷰로 전달된 변수들의 값을 출력하는 것에 별다른 제한은 없습니다. PHP 함수의 결과 값을 출력할 수도 있습니다. 블레이드의 데이터 출력 구문 안에는 어떤 PHP 코드도 들어갈 수 있습니다.
 
-```html
+```markup
 The current UNIX timestamp is {{ time() }}.
 ```
 
@@ -103,7 +99,7 @@ The current UNIX timestamp is {{ time() }}.
 
 Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the `@` symbol to inform the Blade rendering engine an expression should remain untouched. For example:
 
-많은 자바스크립트 프레임웍에서도 브라우저에 출력되어야 할 데이터를 표시하기 위해 중괄호("curly" braces)를 사용하고 있습니다. 이럴 경우, `@` 기호를 사용하면 블레이드 랜더링 엔진은 이 구문을 변환하지 않고 그대로 출력할 것입니다. 예를 들어:
+많은 자바스크립트 프레임웍에서도 브라우저에 출력되어야 할 데이터를 표시하기 위해 중괄호\("curly" braces\)를 사용하고 있습니다. 이럴 경우, `@` 기호를 사용하면 블레이드 랜더링 엔진은 이 구문을 변환하지 않고 그대로 출력할 것입니다. 예를 들어:
 
 ```php
 <h1>Laravel</h1>
@@ -141,8 +137,7 @@ By default, Blade `{{ }}` statements are automatically sent through PHP's `htmle
 Hello, {!! $name !!}.
 ```
 
-> ** 주의:** 사용자로부터 입력 된 내용을 표시 할 때에는 escape에 대한 매우 세심한 주의가 필요합니다. 컨텐츠의 HTML 엔티티를 escape 하기위해 항상 이중 중괄호 표기법을 사용하십시오.
-
+> **주의:** 사용자로부터 입력 된 내용을 표시 할 때에는 escape에 대한 매우 세심한 주의가 필요합니다. 컨텐츠의 HTML 엔티티를 escape 하기위해 항상 이중 중괄호 표기법을 사용하십시오.
 
 ## 제어문
 
@@ -198,7 +193,7 @@ In addition to conditional statements, Blade provides simple directives for work
 
 #### 서브 뷰 포함하기
 
-`@include` 지시어는 손쉽게 블레이드 뷰를 현재의 뷰에 포함(include)시킬수 있도록 도와줍니다. 부모 뷰에서 사용할 수 있는 모든 변수는 포함된 서브 뷰에서도 사용할 수 있습니다.
+`@include` 지시어는 손쉽게 블레이드 뷰를 현재의 뷰에 포함\(include\)시킬수 있도록 도와줍니다. 부모 뷰에서 사용할 수 있는 모든 변수는 포함된 서브 뷰에서도 사용할 수 있습니다.
 
 ```php
 <div>
@@ -220,10 +215,9 @@ Even though the included view will inherit all data available in the parent view
 
 > **주의:** 블레이드 뷰 안에서 `__DIR__`과 `__FILE__`과 같은 상수를 사용하지 마십시오. 블레이드 뷰는 캐싱된 뷰의 위치를 참조하기 때문입니다.
 
-
 #### 컬렉션을 뷰에서 렌더링하기
 
-블레이드의 `@each` 지시어를 사용하면 반복문(loop)과 `include` 구문을 한 줄로 합칠 수 있습니다.
+블레이드의 `@each` 지시어를 사용하면 반복문\(loop\)과 `include` 구문을 한 줄로 합칠 수 있습니다.
 
 ```php
 @each('view.name', $jobs, 'job')
@@ -245,13 +239,13 @@ Blade also allows you to define comments in your views. However, unlike HTML com
 
 블레이드는 또한 뷰에 주석을 정의할 수 있습니다. 하지만 HTML 주석과는 다르게, 블레이드 주석은 브라우저로 전송되는 HTML에 포함되어 있지 않습니다:
 
-```
+```text
 {{-- This comment will not be present in the rendered HTML --}}
 ```
 
 ## 서비스 주입하기
 
-The `@inject` directive may be used to retrieve a service from the Laravel [service container](/docs/{{version}}/container). The first argument passed to `@inject` is the name of the variable the service will be placed into, while the second argument is the class / interface name of the service you wish to resolve:
+The `@inject` directive may be used to retrieve a service from the Laravel [service container](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/%7B%7Bversion%7D%7D/container/README.md). The first argument passed to `@inject` is the name of the variable the service will be placed into, while the second argument is the class / interface name of the service you wish to resolve:
 
 `@inject` 지시어는 서비스 컨테이너로부터 서비스를 조회하는 데에 사용될 수 있습니다. `@inject`에 전달된 첫번째 인자는 서비스가 할당될 변수의 이름이며 두번째 인자는 주입하려는 서비스의 클래스/인터페이스의 이름입니다:
 
@@ -262,3 +256,4 @@ The `@inject` directive may be used to retrieve a service from the Laravel [serv
     Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
 </div>
 ```
+
