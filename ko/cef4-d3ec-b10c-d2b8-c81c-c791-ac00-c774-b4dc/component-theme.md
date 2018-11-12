@@ -6,7 +6,7 @@
 
 ## 빈 테마 생성
 
-테마 생성 커맨드를 사용하려면 우선 테마가 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 개발 시작하기](https://xpressengine.gitbook.io/xpressengine-manual/~/drafts/-LQrmpwayKt3jzijdJXh/primary/ko/d50c-b7ec-adf8-c778/plugin-generation) 문서를 참고하여 플러그인을 생성하길 바랍니다.
+테마 생성 커맨드를 사용하려면 우선 테마가 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 개발 시작하기](../d50c-b7ec-adf8-c778/plugin-generation.md) 문서를 참고하여 플러그인을 생성하길 바랍니다.
 
 플러그인이 준비되었다면 아래 커맨드를 사용하여 빈 테마를 생성합니다.
 
@@ -18,7 +18,7 @@ $ php artisan make:theme <plugin> <name>
 
 `name`에는 테마의 제목을 지정해 주십시오. 지정한 테마 제목은 사이트 관리자에서 테마의 이름으로 표시됩니다.
 
-만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](https://xpressengine.gitbook.io/xpressengine-manual/~/drafts/-LQrmpwayKt3jzijdJXh/primary/ko/d50c-b7ec-adf8-c778/plugin-generation)의 예제를 그대로 사용합니다.\)에 테마를 넣고, 테마 이름을 `First Theme`로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 테마의 개략적인 정보를 터미널에서 볼 수 있습니다.
+만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](../d50c-b7ec-adf8-c778/plugin-generation.md)의 예제를 그대로 사용합니다.\)에 테마를 넣고, 테마 이름을 `First Theme`로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 테마의 개략적인 정보를 터미널에서 볼 수 있습니다.
 
 ```text
 $ php artisan make:theme my_plugin 'First Theme'

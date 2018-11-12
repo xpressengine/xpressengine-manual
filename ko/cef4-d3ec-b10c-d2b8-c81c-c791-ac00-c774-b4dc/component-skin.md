@@ -26,7 +26,7 @@ $ php artisan make:skin <plugin> <name> <target>
 
 `target`는 스킨 타겟 아이디를 지정해주십시오.
 
-만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](https://xpressengine.gitbook.io/xpressengine-manual/~/drafts/-LQrmpwayKt3jzijdJXh/primary/ko/d50c-b7ec-adf8-c778/plugin-generation)의 예제를 그대로 사용합니다.\)에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다. 회원 프로필 컨트롤러의 스킨 타겟 아이디는 `member/profile`입니다.
+만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](../d50c-b7ec-adf8-c778/plugin-generation.md)의 예제를 그대로 사용합니다.\)에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다. 회원 프로필 컨트롤러의 스킨 타겟 아이디는 `member/profile`입니다.
 
 ```text
 $ php artisan make:skin my_plugin Profile member/profile
