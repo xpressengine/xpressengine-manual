@@ -6,30 +6,30 @@
 
 ## 빈 테마 생성
 
-테마 생성 커맨드를 사용하려면 우선 테마가 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 생성하기](../d50c-b7ec-adf8-c778/plugin-generation.md) 문서를 참고하여 플러그인을 생성하길 바랍니다.
+테마 생성 커맨드를 사용하려면 우선 테마가 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 개발 시작하기](https://xpressengine.gitbook.io/xpressengine-manual/~/drafts/-LQrmpwayKt3jzijdJXh/primary/ko/d50c-b7ec-adf8-c778/plugin-generation) 문서를 참고하여 플러그인을 생성하길 바랍니다.
 
 플러그인이 준비되었다면 아래 커맨드를 사용하여 빈 테마를 생성합니다.
 
 ```php
-$ php artisan make:theme <path> <title>
+$ php artisan make:theme <plugin> <name>
 ```
 
-`path`는 테마가 위치할 디렉토리의 경로입니다. 플러그인의 디렉토리 이름을 포함한 경로를 입력해줍니다.
+`plugin` 은 테마가 소속될 플러그인입니다. 플러그인이 위치한 디렉토리 이름을 입력해줍니다.
 
-`title`에는 테마의 제목을 지정해 주십시오. 지정한 테마 제목은 사이트 관리자에서 테마의 이름으로 표시됩니다.
+`name`에는 테마의 제목을 지정해 주십시오. 지정한 테마 제목은 사이트 관리자에서 테마의 이름으로 표시됩니다.
 
-만약 `my_plugin` 플러그인에 테마를 넣고, 테마 이름을 `First Theme`로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 테마의 개략적인 정보를 터미널에서 볼 수 있습니다.
+만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](https://xpressengine.gitbook.io/xpressengine-manual/~/drafts/-LQrmpwayKt3jzijdJXh/primary/ko/d50c-b7ec-adf8-c778/plugin-generation)의 예제를 그대로 사용합니다.\)에 테마를 넣고, 테마 이름을 `First Theme`로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 테마의 개략적인 정보를 터미널에서 볼 수 있습니다.
 
 ```text
-$ php artisan make:theme plugins/my_plugin/theme 'First Theme'
+$ php artisan make:theme my_plugin 'First Theme'
 
 [New theme info]
   plugin:        my_plugin
-  path:          my_plugin/theme
-  class file:    my_plugin/theme/Theme.php
-  class name:    SungbumHong\MyPlugin\Theme
-  id:            theme/my_plugin@theme
-  title:         First Theme
+  path:          src/Themes/FirstTheme
+  class file:    src/Themes/FirstTheme/FirstThemeTheme.php
+  class name:    GilDongHong\XePlugin\MyPlugin\Themes\FirstTheme\FirstThemeTheme
+  id:            theme/my_plugin@first theme
+  title:         FirstTheme theme
   description:   The Theme supported by My_plugin plugin.
 
  Do you want to add theme? [yes|no]:
@@ -50,33 +50,34 @@ Theme is created successfully.
     "xpressengine": {
         "title": "my plugin",
         "component": {
-            "theme/my_plugin@theme": {
-                "class": "SungbumHong\\MyPlugin\\Theme\\Theme",
-                "name": "First Theme",
-                "description": "The Theme supported by My_plugin plugin."
-            }
+                "theme/my_plugin@first theme": {
+                    "name": "FirstTheme theme",
+                    "description": "The theme supported by My_plugin plugin.",
+                    "class": "GilDongHong\\XePlugin\\MyPlugin\\Themes\\FirstTheme\\FirstThemeTheme"
+                }
         }
     }
 },
 ...
 ```
 
-테마 아이디도 자동으로 생성됩니다. 위의 예시에서는 테마 아이디가 `theme/my_plugin@theme`로 생성되었습니다.
+테마 아이디도 자동으로 생성됩니다. 위의 예시에서는 테마 아이디가 `theme/my_plugin@first theme`로 생성되었습니다.
 
 ### 테마 디렉토리 구조
 
-생성된 테마는 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/theme/` 디렉토리는 테마의 모든 파일이 담겨 있는 '테마 디렉토리'입니다.
+생성된 테마는 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/src/Themes/{ThemeName}` 디렉토리는 테마의 모든 파일이 담겨 있는 '테마 디렉토리'입니다.
 
 ```text
-plugins/my_plugin/theme/
-├── Theme.php
-├── assets/
-│   └── css/
-│       └── theme.css
-├── info.php
-└── views/
-    ├── gnb.blade.php
-    └── theme.blade.php
+plugins/my_plugin/src/Themes
+├── {ThemeName}
+    ├── {ThemeName}Theme.php
+    ├── assets/
+    │   └── css/
+    │       └── theme.css
+    ├── info.php
+    └── views/
+        ├── gnb.blade.php
+        └── theme.blade.php
 ```
 
 #### assets 디렉토리
@@ -89,7 +90,7 @@ plugins/my_plugin/theme/
 
 #### Theme.php 파일
 
-`Theme.php`는 테마클래스 파일입니다. 테마 생성 커맨드로 생성된 테마의 클래스는 `\Xpressengine\Theme\GenericTheme` 클래스를 상속받고 있습니다. 또, `GenericTheme` 클래스는 테마 컴포넌트의 추상클래스인 `\Xpressengine\Theme\AbstractTheme`를 상속받고 있습니다.
+`Theme.php`는 테마클래스 파일\(위의 예에서는 `FirstThemeTheme.php` 파일\)입니다. 테마 생성 커맨드로 생성된 테마의 클래스는 `\Xpressengine\Theme\GenericTheme` 클래스를 상속받고 있습니다. 또, `GenericTheme` 클래스는 테마 컴포넌트의 추상클래스인 `\Xpressengine\Theme\AbstractTheme`를 상속받고 있습니다.
 
 ```text
 \Xpressengine\Theme\AbstractTheme

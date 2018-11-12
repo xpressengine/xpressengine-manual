@@ -1,6 +1,6 @@
 # 문서\(document\)
 
-사이트에서 생산되는 게시판, 블로그, 댓글등 다양한 형태의 컨텐츠를 저장할 저장소를 제공합니다. DocumentHandler 는 Document, Revision 모델을 이용해서 컨텐츠 변경이력을 관리할 수 있는 기능을 제공하고 저장소의 부하분산을 위한 Division\(저장소 분할\) 저장소를 제공하합니다. 이러한 기능은 instanceId 에 따라 설정을 추가해서 관리할 수 있습니다.
+사이트에서 생산되는 게시판, 블로그, 댓글등 다양한 형태의 컨텐츠를 저장할 저장소를 제공합니다. DocumentHandler 는 Document, Revision 모델을 이용해서 컨텐츠 변경이력을 관리할 수 있는 기능을 제공하고 저장소의 부하분산을 위한 Division\(저장소 분할\) 저장소를 제공합니다. 이러한 기능은 instanceId 에 따라 설정을 추가해서 관리할 수 있습니다.
 
 또한 Document 모델은 DynamicField 를 지원합니다.
 
@@ -8,7 +8,7 @@ DocumentHandler, InstanceManager, ConfigHandler 는 Interception Proxy로 만들
 
 ## 기본 사용법
 
-`XeDocument`파사드로 DocumentHandler 를 사용합니다. 문서 등록, 수정, 삭제는 DocumentHandler를 이용해서 처리하고 문서 조회는 Document 모델을 직적 사용합니다. 단, 인스턴스를 생성해 사용할 경우 Document 모델에 대한 설정을 모델에 포함시키기 위해 `XeDocument::getModel($instnaceId)` 를 사용하기를 권장합니다.
+`XeDocument`파사드로 DocumentHandler 를 사용합니다. 문서 등록, 수정, 삭제는 DocumentHandler를 이용해서 처리하고 문서 조회는 Document 모델을 직접 사용합니다. 단, 인스턴스를 생성해 사용할 경우 Document 모델에 대한 설정을 모델에 포함시키기 위해 `XeDocument::getModel($instnaceId)` 를 사용하기를 권장합니다.
 
 ### 모든 문서 가져오기
 

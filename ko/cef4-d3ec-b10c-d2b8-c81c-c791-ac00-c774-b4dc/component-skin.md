@@ -12,32 +12,32 @@ XE의 구성요소중 HTML을 출력하는 모든 구성요소는 스킨 타겟�
 
 ## 빈 스킨 생성
 
-스킨 생성 커맨드를 사용하려면 우선 스킨이 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 생성하기](../d50c-b7ec-adf8-c778/plugin-generation.md) 문서를 참고하여 플러그인을 생성하길 바랍니다. 또, 스킨 타겟의 아이디를 미리 알고 있어야 합니다.
+스킨 생성 커맨드를 사용하려면 우선 스킨이 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 개발 시작하기](../d50c-b7ec-adf8-c778/plugin-generation.md) 문서를 참고하여 플러그인을 생성하길 바랍니다. 또, 스킨 타겟의 아이디를 미리 알고 있어야 합니다.
 
 소속될 플러그인과 스킨 타겟 아이디가 준비되었다면 아래 커맨드를 사용하여 빈 스킨을 생성합니다.
 
 ```php
-$ php artisan make:skin <path> <skin_target_id> <title>
+$ php artisan make:skin <plugin> <name> <target>
 ```
 
-`path`는 스킨이 위치할 디렉토리의 경로입니다. 플러그인의 디렉토리 이름을 포함한 경로를 입력해줍니다.
+`plugin`는 스킨 소속될 플러그인입니다. 플러그인이 위치한 디렉토리 이름을 입력해줍니다.
 
-`skin_target_id`는 스킨 타겟 아이디를 지정해주십시오.
+`name`에는 스킨의 제목을 지정해 주십시오. 지정한 스킨 제목은 스킨 선택시 스킨의 이름으로 표시됩니다.
 
-`title`에는 스킨의 제목을 지정해 주십시오. 지정한 스킨 제목은 스킨 선택시 스킨의 이름으로 표시됩니다.
+`target`는 스킨 타겟 아이디를 지정해주십시오.
 
-만약 `my_plugin` 플러그인에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다. 회원 프로필 컨트롤러의 스킨 타겟 아이디는 `member/profile`입니다.
+만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](https://xpressengine.gitbook.io/xpressengine-manual/~/drafts/-LQrmpwayKt3jzijdJXh/primary/ko/d50c-b7ec-adf8-c778/plugin-generation)의 예제를 그대로 사용합니다.\)에 스킨을 넣고, 스킨 이름을 `나만의 프로필 스킨`으로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 스킨의 개략적인 정보를 터미널에서 볼 수 있습니다. 회원 프로필 컨트롤러의 스킨 타겟 아이디는 `member/profile`입니다.
 
 ```text
-$ php artisan make:skin my_plugin/skins/profile member/profile "나만의 프로필 스킨"
+$ php artisan make:skin my_plugin Profile member/profile
 
 [New skin info]
   plugin:        my_plugin
-  path:          my_plugin/skins/profile
-  class file:    my_plugin/skins/profile/ProfileSkin.php
-  class name:    SungbumHong\MyPlugin\ProfileSkin
-  id:            member/profile/skin/my_plugin@profileskin
-  title:         나만의 프로필 스킨
+  path:          src/Skins/Profile
+  class file:    src/Skins/Profile/ProfileSkin.php
+  class name:    GilDongHong\XePlugin\MyPlugin\Skins\Profile\ProfileSkin
+  id:            member/profile/skin/my_plugin@profile
+  title:         Profile Skin
   description:   The Skin supported by My_plugin plugin.
 
  Do you want to add skin? [yes|no]:
@@ -55,7 +55,7 @@ Skin is created successfully.
 <skin_target_id>/skin/<plugin_id>@<pure_id>
 ```
 
-위의 예시에서 생성한 스킨의 아이디는 `member/profile/skin/my_plugin@profileskin`입니다.
+위의 예시에서 생성한 스킨의 아이디는 `member/profile/skin/my_plugin@profile`입니다.
 
 ## 스킨 등록
 
@@ -68,39 +68,31 @@ Skin is created successfully.
         "xpressengine": {
             "title": "my plugin",
             "component": {
-                "member/profile/skin/my_plugin@profileskin": {
-                    "class": "SungbumHong\\MyPlugin\\Skin\\ProfileSkin",
-                    "name": "나만의 프로필 스킨",
-                    "description": "The Skin supported by My_plugin plugin."
+                "member/profile/skin/my_plugin@profile": {
+                    "name": "Profile skin",
+                    "description": "The skin supported by My_plugin plugin.",
+                    "class": "GilDongHong\\XePlugin\\MyPlugin\\Skins\\Profile\\ProfileSkin"
                 }
             }
         }
-    },
-
-    ...
-
-    "autoload": {
-        "classmap": [
-            "skins/profile/ProfileSkin.php"
-        ]
     }
 ```
 
-`autoload` 항목에 스킨 클래스가 등록돼 있는 것도 볼 수 있습니다.
+`autoload` 항목을 생성하지 않아도 src폴더안에  skin이 배치되어있기 때문 플러그인에서 자동으로 class를 로드합니다.
 
 ### 스킨 디렉토리 구조
 
-생성된 스킨은 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/skins/profile` 디렉토리는 스킨의 모든 파일이 담겨 있는 '스킨 디렉토리'입니다.
+생성된 스킨은 아래의 디렉토리 구조를 가집니다. `plugins/my_plugin/src/Skins/{skinName}` 디렉토리는 스킨의 모든 파일이 담겨 있는 '스킨 디렉토리'입니다.
 
 ```text
-plugins/my_plugin/skins/
-└── profile/
+plugins/my_plugin/src/Skins
+└── {skinName}/
     ├── assets/
     │   └── css/
     │       └── skin.css
     ├── views/
     │   └── index.blade.php
-    ├── ProfileSkin.php
+    ├── {skinName}Skin.php
     └── info.php
 ```
 

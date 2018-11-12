@@ -32,13 +32,13 @@ XE는 계정정보를 `\Xpressengine\User\Models\UserAccount` 엘로퀀트 모�
 
 다수의 이메일 중 하나는 회원의 대표 이메일로 지정됩니다. 대표 이메일은 회원에게 이메일을 전송하거나 외부에 공개될 때 사용되는 이메일입니다.
 
-XE는 이메일 정보를 `\Xpressengine\User\Models\UserAccount` 엘로퀀트 모델로 표현하며 `user_email` 테이블에 저장합니다.
+XE는 이메일 정보를 `\Xpressengine\User\Models\UserEmail` 엘로퀀트 모델로 표현하며 `user_email` 테이블에 저장합니다.
 
 **승인대기 이메일**
 
 회원은 하나의 '승인대기 이메일'을 가질 수 있습니다. 신규회원이 가입할 때 입력한 이메일은 승인대기 이메일로 등록됩니다. 승인대기 이메일은 승인된 이메일과 별도의 테이블에 저장되며, 이메일 인증과정을 거친 후에 승인된 이메일로 등록됩니다.
 
-XE는 승인대기 이메일 정보를 `\Xpressengine\User\Models\UserAccount` 엘로퀀트 모델로 표현하며 `user_pending_email` 테이블에 저장합니다.
+XE는 승인대기 이메일 정보를 `\Xpressengine\User\Models\PendingEmail` 엘로퀀트 모델로 표현하며 `user_pending_email` 테이블에 저장합니다.
 
 > 사이트 관리자가 '이메일 인증' 기능을 사용하도록 설정했을 경우, 가입시 등록한 이메일 승인대기 이메일에 등록됩니다. 만약 이메일 인증 기능을 사용하지 않는다면, 가입과 동시에 일반 이메일로 등록됩니다.
 
