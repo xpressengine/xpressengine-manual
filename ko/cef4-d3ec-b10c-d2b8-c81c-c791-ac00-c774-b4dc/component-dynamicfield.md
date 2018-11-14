@@ -18,25 +18,26 @@ class Category extends AbstractType {}
 
 ## 빈 다이나믹 필드 생성 \(draft\)
 
-다이나믹 필드 생성 커맨드를 사용하려면 우선 플러그인이 마련되어 있어야 합니다. 플러그인 생성은 [플러그인 개발 시작하기](https://xpressengine.gitbooks.io/xpressengine-manual/content/ko/plugin-generation.html)를 참고 바랍니다.
+다이나믹 필드 생성 커맨드를 사용하려면 우선 플러그인이 마련되어 있어야 합니다. 플러그인 생성은 [플러그인 개발 시작하기](../d50c-b7ec-adf8-c778/plugin-generation.md)를 참고 바랍니다.
 
 아래 커맨드로 빈 다이나믹 필드를 만들 수 있습니다.
 
 ```text
-$ php artisan make:dyanmicField <path> <component_id> <title>
+$ php artisan make:field <plugin> <name>
 ```
 
-`path`는 다이나믹 필드가 위치할 디렉토리 경로입니다. 플러그인 디렉토리 이름을 포함한 경로를 입력합니다. `component_id`에는 다이나믹 필드의 아이디를 입력합니다. `title`에는 관리자 사이트에서 표시 할 이름입니다.
+`plugin`은 다이나믹 필드가 위치할 플러그인 이름입니다. 플러그인 디렉토리 명을 입력합니다.  
+`name`에는 다이나믹 필드의 아이디를 입력합니다.
 
 ### 컴포넌트 아이디
 
 컴포넌트 아이디는 아래와 같은 규칙으로 작성합니다.
 
 ```text
-fieldType/<plugin_id>@<pure_id>
+fieldType/<plugin>@<name>
 ```
 
-`plugin_id`는 플러그인 디렉토리 이름이고 `pure_id`는 다이나믹 필드의 아이디 입니다.
+`plugin`은 플러그인 디렉토리 이름이고 `name`는 다이나믹 필드의 아이디 입니다.
 
 ## 다이나믹 필드 등록
 
@@ -50,9 +51,9 @@ fieldType/<plugin_id>@<pure_id>
             "title": "my plugin",
             "component": {
                 "fieldType/my_plugin@my_field": {
-                    "class": "Sample\\MyPlugin\\MyField",
-                    "name": "나의 다이나믹 필드",
-                    "description": "나의 다이나믹 필드"
+                    "class": "GilDongHong\\XePlugin\\MyPlugin\\DynamicFields\\MyField\\MyFieldField",
+                    "name": "my_field fieldType",
+                    "description": "The fieldType supported by My_plugin plugin."
                 }
             }
         }

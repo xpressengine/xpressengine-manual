@@ -19,28 +19,28 @@ class DefaultSkin extends AbstractSkin {}
 아래 커맨드로 스킨을 만들 수 있습니다.
 
 ```text
-$ php artisan make:dyanmicFieldSkin <path> <component_id> <title>
+$ php artisan make:fieldSkin <plugin> <name> <dynamic_field_id>
 ```
 
-`path`는 스킨이 위치할 디렉토리 경로입니다. 플러그인 디렉토리 이름을 포함한 경로를 입력합니다.
+`plugin`는 스킨이 위치할 플러그 경로입니다. 플러그인 디렉토리 명을 입력합니다.
 
-`component_id`에는 스킨의 아이디를 입력합니다.
+`name`에는 스킨의 아이디를 입력합니다.
 
-`title`에는 관리자 사이트에서 표시 할 이름입니다.
+`dynamic_field_id`에는 스킨이 사용될 대상의 다이나믹필드아이디를 입력합니다. `SampleType::getId()`를 통해 확인합니다. 해당 다이나믹필드가 있는 플러그인의 `composer.json`파일을 통해서도 확인할 수 있습니다.
 
 ### 컴포넌트 아이디
 
 컴포넌트 아이디는 아래와 같은 규칙으로 작성합니다.
 
 ```text
-<field_type>/fieldSkin/<plugin_id>@<pure_id>
+<dynamic_field_id>/fieldSkin/<plugin>@<name>
 ```
 
-`field_type` 스킨이 사용될 대상 다이나믹 필드 아이디 입니다. 아이디는 대상 클래스에 `dd(SampleType:getId())` 로 확인할 수 있습니다.
+`dynamic_field_id` 스킨이 사용될 대상 다이나믹 필드 아이디 입니다. 
 
-`plugin_id`는 플러그인 디렉토리 이름입니다.
+`plugin`는 플러그인 디렉토리 이름입니다.
 
-`pure_id는` 스킨의 아이디 입니다.
+`name` 스킨의 id입니다.
 
 ## 스킨 등록
 
@@ -54,9 +54,9 @@ $ php artisan make:dyanmicFieldSkin <path> <component_id> <title>
             "title": "my plugin",
             "component": {
                 "fieldType/my_plugin@my_field/fieldSkin/my_plugin@my_skin": {
-                    "class": "Sample\\MyPlugin\\MySkin",
-                    "name": "나의 다이나믹 필드 스킨",
-                    "description": "나의 다이나믹 필드 스킨"
+                    "class": "GilDongHong\\XePlugin\\MyPlugin\\DynamicFieldSkins\\MySkin\\MySkin",
+                    "name": "MySkin fieldSkin",
+                    "description": "The fieldSkin supported by My_plugin plugin."
                 }
             }
         }
@@ -67,7 +67,7 @@ $ php artisan make:dyanmicFieldSkin <path> <component_id> <title>
 
 ## 디자인 파일 처리
 
-AbstractSkin 추상 클래스는 제작자가 스킨구현에 집중할 수 있도록 blade 템플릿 파일에서 사용할 데이터를 처리하여 제공합니다. 제작자가 구현체 클래스에 `getPath()`를 구현하여 블레이드 템플릿 파일이 있는 디렉토리 경로를 설정하면 이 추상 클래스는 스킨에서 사용해야할 설정과 데이터베이스 데이터를 전달합니다.
+AbstractSkin 추상 클래스는 제작자가 스킨구현에 집중할 수 있도록 blade 템플릿 파일에서 사용할 데이터를 처리하여 제공합니다. 제작자가 구현체 클래스에 `getPath()`를 구현하여 블레이드 템플릿 파일이 있는 디렉토리 경로를 설정하면 이 추상 클래스는 스킨에서 사용해야할 설정과 데이터베이스 데이터를 전달합니다. 커맨드를 이용해 생성할 경우 자동으로 생성된 블레이드파일의 경로를 지정하고 있습니다.
 
 ### 전달 데이터
 
@@ -77,7 +77,7 @@ AbstractSkin 이 View 로 전달하는 데이터는 아래와 같습니다.
 * `$data` 데이터베이스 테이블에 등록된 정보 입니다.
 * `$key` 다이나믹 필드에서 정의한 데이터베이스 컬럼 이름과 실제 사용하는 입력 필드 이름의 정보입니다.
 
-스킨에서 만들어야 하는 템플릿 파일은 아래와 같습니다.
+스킨에서 만들어야 하는 템플릿 파일은 아래와 같습니다. 커맨드를 이용해 생성할 경우 자동으로 비어있는 블레이드파일이 `views` 디렉토리안에 생성되어있습니다.
 
 * `create.blade.php` 회원 등록, 새글 작성에 사용합니다. 
 * `edit.blade.php` 회원 정보 수정, 글 수정에 사용합니다.
