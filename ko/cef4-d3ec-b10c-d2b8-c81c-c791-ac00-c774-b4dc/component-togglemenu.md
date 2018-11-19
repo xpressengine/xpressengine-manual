@@ -147,14 +147,16 @@ app('xe.toggleMenu')->getItems('user');
 //]
 ```
 
-해당 함수는 user를 type으로 삼은 ToggleMenu 아이템들을 리턴합니다.   
-타입에 따라서 모듈과 같이 instance\_route를 사용하는 경우 두번째 파라미터로 $instanceId,   
-User 모델과 같이 고유한 키값을 가지는 경우세번째 파라미터로 $identifier를 받습니다.  
+해당 함수는 user를 `$type`으로 삼은 ToggleMenu 아이템들을 리턴합니다.   
+타입에 따라서 모듈과 같이 instance를 사용하는 경우 두 번째 파라미터로 `$instanceId`,   
+User 모델과 같이 고유한 키값을 가지는 경우 세 번째 파라미터로 `$identifier`를 받습니다.  
 각 파라미터는 ToggleMenu의 getAction에서 받아서 처리합니다.
 
 ### Frontend
 
-XE는 Frontend에서 ToggleMenu 아이템들을 로드할 수 있는 방법을 이미 준비했습니다. &lt;a&gt;태그 안에 몇 가지 속성을 주는 것만으로 해당 type에서 필요한 ToggleMenu를 &lt;li&gt;태그에 담아 렌더링할 수 있습니다. 
+XE는 Frontend에서 ToggleMenu 아이템들을 로드할 수 있는 방법을 이미 준비했습니다.   
+`<a>`태그 안에 몇 가지 속성을 주는 것만으로 해당 type에서 필요한 ToggleMenu를   
+`<li>...</li>`태그에 담아 렌더링할 수 있습니다. 
 
 `data-toggle` "xe-page-toggle-menu"를 삽입합니다.  
 `data-url` {{route\('toggleMenuPage'\)}}를 넣어 toggleMenu 리스트를 동적으로 호출할 url을 삽입합니다.  

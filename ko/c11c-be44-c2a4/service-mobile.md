@@ -25,7 +25,7 @@ $isMobile = request()->isMobile();
 
 `isMobile` 메소드를 사용하면, 현재 설정된 기기의 타입이 모바일인지 검사할 수 있습니다. 만약 접근한 기기 타입이 강제로 지정돼 있다면, 강제로 지정된 타입을 반환합니다.
 
-강제로 지정된 타입과 관계없이 순수하게 브라우저의 user-agent 정보만으로 판단된 기기 타입을 알고싶다면 대신 `isMobileByAgent` 메소드를 사용하십시오.
+강제로 지정된 타입과 관계없이 순수하게 브라우저의 user-agent 정보만으로 판단된 기기 타입을 알고싶다면 대신 `isMobileByAgent` 메소드를 사용하십시오. \(또는 `isMobile(true)`을 사용하십시오. 같은 응답을 합니다.\)
 
 ```php
 $isMobile = request()->isMobileByAgent();

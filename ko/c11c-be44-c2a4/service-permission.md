@@ -52,7 +52,7 @@ $grant->set('create', [
 ```php
 array(
   'mode' => 'manual', // manual or inherit
-  'grant' => [],      // 특정 행위에 해당하는 Grant 객체 등록 값
+  'grant' => $grant_object? : new Grant(),      // 특정 행위에 해당하는 Grant 객체 등록 값
   'title' => 'create' // 특정 행위를 나타내는 키워드
   'groups' => []      // 전체 그룹
 );
