@@ -105,7 +105,7 @@ css 파일도 js 스크립트 파일과 사용법이 동일합니다. 단 `appen
 
 ```php
 // xe.css파일을 로드함. 반드시 bootstrap.css가 로드된 다음에 로드되도록 우선순위를 지정
-XeFrontend::js('assets/core/common/css/xe.css')->appendTo('body')->before('assets/vendor/bootstrap.css')->load();
+XeFrontend::js('assets/core/common/css/xe.css')->before('assets/vendor/bootstrap.css')->load();
 ```
 
 ## meta 태그 추가
