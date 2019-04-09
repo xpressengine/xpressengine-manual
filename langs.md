@@ -1,5 +1,0 @@
-# LANGS
-
-* [Korean](ko/)
-* [English]()
-
