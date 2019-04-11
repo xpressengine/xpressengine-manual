@@ -1,3 +1,4 @@
+
 # 설치하기
 
 ## 최신버전 다운로드
@@ -7,12 +8,12 @@
 만약 최신버전 바로 이전의 버전을 설치하여 사용하고 계셨다면, 최신버전에서 변경된 파일만 덮어씌우셔도 됩니다. 변경된 파일은 XE3의 [Github 릴리즈 페이지](https://github.com/xpressengine/xpressengine/releases)에서 다운로드 받을 수 있습니다. 변경된 파일 모음은 각 릴리즈마다 `changed.xxx.zip`의 형식으로 첨부되어 있습니다.
 
 > 주의!  
->  만약, XE소스코드나 플러그인 소스코드를 수정했다면 미리 백업해두시길 바랍니다.
+만약, XE소스코드나 플러그인 소스코드를 수정했다면 미리 백업해두시길 바랍니다.
 
 ### 설치 파일 다운로드
 
-* [http://start.xpressengine.io/latest.zip](http://start.xpressengine.io/latest.zip) 을 [다운로드](http://start.xpressengine.io/latest.zip) 합니다.
-* 다운로드 받은 zip 파일의 압축을 풀고 서버에 업로드 합니다. \(약 100MB\)
+> [http://start.xpressengine.io/download/latest.zip](http://start.xpressengine.io/download/latest.zip) 을 [다운로드](http://start.xpressengine.io/download/latest.zip) 합니다.
+ 다운로드 받은 zip 파일의 압축을 풀고 서버에 업로드 합니다. \(약 100MB\)
 
 #### 설치 동영상
 
@@ -43,9 +44,8 @@ FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용�
 
 #### 설치 진행하기
 
-{% hint style="warning" %}
-DB 접속 정보를 모르거나, 정확히 입력해도 진행되지 않는다면, 사용하고 있는 호스팅 회사에 접속 방법을 문의하시기 바라며, 기본 포트와 호스트, DB 이름과 사용자 계정명이 다를 수 있습니다. 
-{% endhint %}
+> DB 접속 정보를 모르거나, 정확히 입력해도 진행되지 않는다면, 사용하고 있는 호스팅 회사에 접속 방법을 문의하시기 바라며, 기본 포트와 호스트, DB 이름과 사용자 계정명이 다를 수 있습니다. 
+
 
 ### 알려진 문제점
 
