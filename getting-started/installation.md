@@ -27,7 +27,7 @@ FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용�
 
 #### 디렉토리 권한 설정
 
-**bootstrap/cache, config/production, storage 폴더 설정**
+**bootstrap/cache, config/production, storage, vendor, plugins 폴더 설정**
 
 상단의 폴더들을 707 권한으로 변경해주세요.
 
