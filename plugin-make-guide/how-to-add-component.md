@@ -1,6 +1,6 @@
 # 컴포넌트 추가 방법
 
-XE는 다양한 타입의 [컴포넌트](https://xpressengine.gitbook.io/xpressengine-manual/ko/xe/components)가 있습니다. 여러분이 컴포넌트를 가지는 플러그인 개발을 시작한다면, 먼저 뼈대만 갖춘 컴포넌트를 작성하고, 플러그인을 통해 작성한 컴포넌트를 XE에 등록해야 합니다. 타입이 다른 컴포넌트라도 XE에 등록하는 방법은 모두 동일합니다.
+XE는 다양한 타입의 [컴포넌트](https://www.xpressengine.io/manual/xe-architecture/component)가 있습니다. 여러분이 컴포넌트를 가지는 플러그인 개발을 시작한다면, 먼저 뼈대만 갖춘 컴포넌트를 작성하고, 플러그인을 통해 작성한 컴포넌트를 XE에 등록해야 합니다. 타입이 다른 컴포넌트라도 XE에 등록하는 방법은 모두 동일합니다.
 
 ## 컴포넌트 아이디 <a id="undefined"></a>
 
@@ -59,7 +59,3 @@ Alice 플러그인의 `composer.json` 파일 예제입니다. Alice 플러그인
 ```text
 public static $id = 'component_type/my@component';
 ```
-
-[  
-](https://xpressengine.gitbook.io/xpressengine-manual/ko/d50c-b7ec-adf8-c778/plugin-settings)
-
