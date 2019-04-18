@@ -185,4 +185,3 @@ XE는 Frontend에서 ToggleMenu 아이템들을 로드할 수 있는 방법을 �
 ```
 
 위 예제는 $type을 사용하는 토글메뉴들의 리스트를 on/off할 수 있는 토글버튼과 함께 렌더링합니다. 저장 버튼을 누르면 ToggleMenuHandler를 통해 config에 설정정보를 저장합니다.
-
