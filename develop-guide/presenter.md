@@ -8,7 +8,7 @@
 
   > 프리젠터의 본래 목적인 html, api 형식의 유연한 처리를 위해서 XePresenter::make\(\) 을 변경합니다. 이전에는 make\(\) 가 html에 대한 지원만 처리하였지만 이후 부터 make 를 사용할 경우 html, api 모두를 지원하도록 변경합니다.
 
-XE에서는 웹 브라우저로 응답을 보낼 때 [뷰](https://www.xpressengine.io/manual/develop-guide/view)를 대신해서 프리젠터를 사용합니다.
+XE에서는 웹 브라우저로 응답을 보낼 때 [뷰](./view.md)를 대신해서 프리젠터를 사용합니다.
 
 프리젠터는 일반적인 HTML 응답뿐만 아니라 API 요청에 대한 Json 응답을 하나의 메소드로 처리할 수 있습니다. 프리젠터는 요청\(Request\) 정보에 포함된 응답 포멧을 검사하고, 데이터를 해당 포멧에 맞게 반환합니다.
 
@@ -48,7 +48,7 @@ return XePresenter::makeHtml('seo.setting');
 
 ```
 
-### 스킨 타겟 아이디 <a id="undefined-1"></a>
+### 스킨 타겟 아이디
 
 스킨은 특정 컴포넌트나 집단 밑에 하나의 그룹을 형성합니다.
 
@@ -58,13 +58,13 @@ return XePresenter::makeHtml('seo.setting');
 
 스킨을 사용하는 컨트롤러는 `XePresenter::setSkinTargetId()`에 지정된 스킨 타겟 아이디를 설정하여 `HtmlRenderer::render()`가 처리될 때 설정된 스킨을 찾아 처리할 수 있도록 합니다.
 
-### HtmlPresenter <a id="htmlpresenter"></a>
+### HtmlPresenter
 
 프리젠터에서 Html 응답처리할 `XePresenter::make()` 할 경우 기본으로 `/resources/views/`를 참고합니다. 이것은 `HtmlPresenter::renderSkin()`에서 스킨의 타겟 아이디가 지정되지 않았을 경우 [뷰](https://www.xpressengine.io/manual/develop-guide/view)를 직접 사용하기 때문입니다.
 
 정상적인 사용 과정으로 스킨의 타겟 아이디를 프리젠터에게 전달한 경우 HtmlPresenter는 사용될 스킨을 찾아 Renderable 인터페이스의 `render()`를 실행시키며 스킨 컴포넌트는 [뷰](https://www.xpressengine.io/manual/develop-guide/view)를 사용해서 블레이드 파일을 처리합니다.
 
-#### 전체 프레임 구성 파일 <a id="undefined-2"></a>
+#### 전체 프레임 구성 파일
 
 `resources/views/common/base.blade.php`으로 전체 프레임을 구성하며 `$content`에 테마를 전달받아 출력합니다.
 
@@ -72,7 +72,7 @@ return XePresenter::makeHtml('seo.setting');
 
 `base.blade.php`는 프론트엔드에 등록된 js, css등 여러 요소들을 어떤 위치에 출력할지 결정하고 있습니다.
 
-## API 형식으로 응답하기 <a id="api"></a>
+## API 형식으로 응답하기
 
 XE는 json 형식을 지원하며 `JsonPresenter`가 사용됩니다.
 
@@ -85,7 +85,7 @@ XE는 json 형식을 지원하며 `JsonPresenter`가 사용됩니다.
   return XePresenter::makeApi(['list' => $list]);
 ```
 
-## 모든 형식 지원 <a id="undefined"></a>
+## 모든 형식 지원
 
 HTML, API 모든 형식을 지원하기 위해서 `XePresenter::make()`를 사용합니다.
 
@@ -100,4 +100,3 @@ HTML, API 모든 형식을 지원하기 위해서 `XePresenter::make()`를 사�
 ```
 
 > XE의 API를 이용한 개발 케이스가 많지 않아 API 지원에 대한 부분은 계속 개선해야 합니다.
-
