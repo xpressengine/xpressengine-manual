@@ -20,7 +20,7 @@ class Category extends AbstractType {}
 
 ### 빈 다이나믹 필드 생성 \(draft\)
 
-다이나믹 필드 생성 커맨드를 사용하려면 우선 플러그인이 마련되어 있어야 합니다. 플러그인 생성은 [플러그인 개발 시작하기](../d50c-b7ec-adf8-c778/plugin-generation.md)를 참고 바랍니다.
+다이나믹 필드 생성 커맨드를 사용하려면 우선 플러그인이 마련되어 있어야 합니다. 플러그인 생성은 [플러그인 개발 시작하기](https://www.xpressengine.io/manual/plugin-make-guide/start-make-plugin)를 참고 바랍니다.
 
 아래 커맨드로 빈 다이나믹 필드를 만들 수 있습니다.
 
