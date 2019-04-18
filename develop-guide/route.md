@@ -282,7 +282,7 @@ XE는 사용자별 CSRF "토큰"을 자동으로 생성합니다. 이 토큰은 
 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 ```
 
-다음처럼 Blade [템플릿]()에서 사용할 수 있습니다.
+다음처럼 Blade [템플릿](./)에서 사용할 수 있습니다.
 
 ```php
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
