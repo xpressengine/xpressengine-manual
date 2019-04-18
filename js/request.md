@@ -22,7 +22,3 @@ XE에 비동기 요청을 요청하고 처리하기 위해 사용합니다. 요�
 ```text
 XE.get('/path/to/target', { data: { id: 123 } }).then(function (response) {  console.log(response);  // => response = { data, status, statusText }});
 ```
-
-[  
-](https://xpressengine.gitbook.io/xpressengine-front-end/docs/pagemodal)
-
