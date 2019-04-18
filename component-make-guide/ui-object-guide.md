@@ -62,7 +62,7 @@ class ImageUIObject extends AbstractUIObject
 
 작성한 UI오브젝트 클래스는 다른 컴포넌트와 마찬가지로 XE에 등록해야 합니다. UI오브젝트는 `uiobject/<plugin_name>@<pure_id>` 형식의 컴포넌트 아이디를 지정해야 합니다. 여기에서는 `uiobject/myplugin@image`를 아이디로 사용하겠습니다.
 
-등록 방법은 [컴포넌트 등록](https://www.xpressengine.io/manual/plugin-make-guide/how-to-add-component) 문서를 참고하시기 바랍니다.
+등록 방법은 [컴포넌트 등록](../plugin-make-guide/how-to-add-component.md) 문서를 참고하시기 바랍니다.
 
 성공적으로 등록되었는지 아래 코드로 테스트해 볼 수 있습니다.
 
@@ -118,7 +118,7 @@ uio('image', ['src'=>'path/to/image.jpg', 'alt'=>'test image']);
 ],
 ```
 
-위 별칭 목록 중에 `form*`의 형식으로 등록된 UI오브젝트가 있습니다. 이 UI오브젝트들은 의미 그대로 폼을 구성할 때 사용할 수 있는 UI오브젝트들입니다. 이 UI오브젝트들은 테마나 스킨, 위젯와 같은 컴포넌트가 사이트 관리자에게 설정 폼을 출력할 때 사용됩니다. 폼 관련 UI오브젝트의 사용법은 [폼 출력](https://www.xpressengine.io/manual/xe-service/service-uiobject_form) 문서에서 자세히 설명합니다.
+위 별칭 목록 중에 `form*`의 형식으로 등록된 UI오브젝트가 있습니다. 이 UI오브젝트들은 의미 그대로 폼을 구성할 때 사용할 수 있는 UI오브젝트들입니다. 이 UI오브젝트들은 테마나 스킨, 위젯와 같은 컴포넌트가 사이트 관리자에게 설정 폼을 출력할 때 사용됩니다. 폼 관련 UI오브젝트의 사용법은 [폼 출력](../xe-service/service-uiobject_form.md) 문서에서 자세히 설명합니다.
 
 폼 관련 UI오브젝트로 등록되는 UI오브젝트는 몇가지 규칙이 준수해야 합니다.
 
