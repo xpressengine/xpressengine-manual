@@ -47,7 +47,7 @@ public function enable()
 }
 ```
 
-XE 의 기능을 이용하여 검사를 하고자 한다면 [권한](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/service-permission.md) 페이지를 확인해 주십시오.
+XE 의 기능을 이용하여 검사를 하고자 한다면 [권한](https://www.xpressengine.io/manual/xe-service/service-permission) 페이지를 확인해 주십시오.
 
 ### Frontend
 
