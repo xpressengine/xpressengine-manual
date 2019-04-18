@@ -84,7 +84,7 @@ $action = Route::currentRouteAction();
 
 ## 컨트롤러 미들웨어 <a id="undefined-1"></a>
 
-​[미들웨어](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/middleware/README.md)는 다음과 같이 컨트롤러 라우트에 지정합니다.
+미들웨어는 다음과 같이 컨트롤러 라우트에 지정합니다.
 
 ```php
 Route::get('profile', [
