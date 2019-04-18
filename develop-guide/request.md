@@ -119,7 +119,7 @@ XE는 현재 request의 입력값을 다음 request까지 유지하는 방법을
 
 #### 입력값들 세션에 저장하기
 
-`flash` 메소드는 현재의 입력들을 [세션](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/session/README.md)에 저장하여 사용자가 다음번에 request를 보내도 사용가능하게 만들어 줍니다.
+`flash` 메소드는 현재의 입력들을 [세션](../xe-service/service-session.md)에 저장하여 사용자가 다음번에 request를 보내도 사용가능하게 만들어 줍니다.
 
 ```php
 $request->flash();
