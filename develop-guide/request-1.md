@@ -2,9 +2,9 @@
 
 ## Response 사용의 제한
 
-XE의 기본 프레임워크인 라라벨에서는 대부분의 라우트나 컨트롤러 액션에서 `Illuminate\Http\Response`의 인스턴스나 [뷰](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/views/README.md)를 반환하도록 합니다.
+XE의 기본 프레임워크인 라라벨에서는 대부분의 라우트나 컨트롤러 액션에서 `Illuminate\Http\Response`의 인스턴스나 [뷰](https://www.xpressengine.io/manual/develop-guide/view)를 반환하도록 합니다.
 
-하지만 XE는 웹 브라우저로 html 형식의 응답을 보낼 때, 스킨과 테마를 적용한 후 보내야 합니다. 특별한 경우가 아니라면 컨트롤러에서 `Illuminate\Http\Response` 인스턴스나 뷰를 직접 반환\(return\)하지 마십시오. 대신, [프리젠터]()를 사용하여 반환하십시오. 반드시 [프리젠터]()를 사용해야만 테마와 스킨이 적용되고 위젯 또한 정상적으로 출력됩니다.
+하지만 XE는 웹 브라우저로 html 형식의 응답을 보낼 때, 스킨과 테마를 적용한 후 보내야 합니다. 특별한 경우가 아니라면 컨트롤러에서 `Illuminate\Http\Response` 인스턴스나 뷰를 직접 반환\(return\)하지 마십시오. 대신, [프리젠터]()를 사용하여 반환하십시오. 반드시 [프레젠터](https://www.xpressengine.io/manual/develop-guide/presenter)를 사용해야만 테마와 스킨이 적용되고 위젯 또한 정상적으로 출력됩니다.
 
 ## 리다이렉트
 
@@ -20,7 +20,7 @@ return redirect('user/login');
 
 ### 리다이렉트에 플래시 데이터와 함께 반환하기
 
-새로운 URL로 리다이렉트 이동하고 [플래시 데이터를 세션에 저장](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/session/README.md) 하는 것은 일반적으로 동시에 진행됩니다. 따라서 편의성을 높이기 위해 `RedirectResponse` 인스턴스를 생성하고 **동시에** 메소드 체인을 통해 플래시 데이터를 세션에 저장할 수 있습니다:
+새로운 URL로 리다이렉트 이동하고 플래시 데이터를 세션에 저장 하는 것은 일반적으로 동시에 진행됩니다. 따라서 편의성을 높이기 위해 `RedirectResponse` 인스턴스를 생성하고 **동시에** 메소드 체인을 통해 플래시 데이터를 세션에 저장할 수 있습니다:
 
 ```text
 return redirect('user/login')->with('message', 'Login Failed');
@@ -64,7 +64,7 @@ return redirect()->route('profile', ['user' => 1]);
 
 ### 컨트롤러 액션으로 리다이렉트 하기
 
-이름이 지정된 라우트로 이동하는 `RedirectResponse` 인스턴스를 생성하는것과 비슷하게 [컨트롤러 액션](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/controllers/README.md)으로 리다이렉션 할 수 있습니다.
+이름이 지정된 라우트로 이동하는 `RedirectResponse` 인스턴스를 생성하는것과 비슷하게 컨트롤러 액션으로 리다이렉션 할 수 있습니다.
 
 ```text
 return redirect()->action('App\Http\Controllers\HomeController@index');
@@ -86,7 +86,7 @@ return redirect()->action('App\Http\Controllers\UserController@profile', ['user'
 
 ## 기타 Response
 
-`response` 헬퍼 함수를 사용하여 편리하게 다른 타입의 response 인스턴스를 생성할 수도 있습니다. `response` 헬퍼함수를 인자없이 호출하게 되면 `Illuminate\Contracts\Routing\ResponseFactory` [contract](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/contracts/README.md)를 반환합니다. 이 contract는 response를 생성하기 위한 다양한 메소드를 제공합니다.
+`response` 헬퍼 함수를 사용하여 편리하게 다른 타입의 response 인스턴스를 생성할 수도 있습니다. `response` 헬퍼함수를 인자없이 호출하게 되면 `Illuminate\Contracts\Routing\ResponseFactory` contract를 반환합니다. 이 contract는 response를 생성하기 위한 다양한 메소드를 제공합니다.
 
 ### JSON response 생성하기
 
