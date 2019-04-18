@@ -142,5 +142,5 @@ php artisan migrate
 
 Redis 세션을 사용하기 위해서는 컴포저를 통해서 `predis/predis (~1.0)` 패키지를 설치해야만 합니다.
 
-> **주의:** 배열 드라이버의 경우에는 실제로 세션은 유지되지 않기 때문에 [unit tests](https://github.com/xpressengine/xpressengine-manual/tree/c7478cb51aab4433d992bac673751500bc61d523/docs/5.0/testing/README.md)를 수행하는 데에만 사용하시기 바랍니다.
+> **주의:** 배열 드라이버의 경우에는 실제로 세션은 유지되지 않기 때문에 unit tests를 수행하는 데에만 사용하시기 바랍니다.
 
