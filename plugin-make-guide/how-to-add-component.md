@@ -1,8 +1,8 @@
 # 컴포넌트 추가 방법
 
-XE는 다양한 타입의 [컴포넌트](https://www.xpressengine.io/manual/xe-architecture/component)가 있습니다. 여러분이 컴포넌트를 가지는 플러그인 개발을 시작한다면, 먼저 뼈대만 갖춘 컴포넌트를 작성하고, 플러그인을 통해 작성한 컴포넌트를 XE에 등록해야 합니다. 타입이 다른 컴포넌트라도 XE에 등록하는 방법은 모두 동일합니다.
+XE는 다양한 타입의 [컴포넌트](../xe-architecture/component.md)가 있습니다. 여러분이 컴포넌트를 가지는 플러그인 개발을 시작한다면, 먼저 뼈대만 갖춘 컴포넌트를 작성하고, 플러그인을 통해 작성한 컴포넌트를 XE에 등록해야 합니다. 타입이 다른 컴포넌트라도 XE에 등록하는 방법은 모두 동일합니다.
 
-## 컴포넌트 아이디 <a id="undefined"></a>
+## 컴포넌트 아이디
 
 각각의 컴포넌트는 모두 고유의 아이디를 가지고 있어야 합니다. XE는 컴포넌트의 아이디를 통해 등록된 컴포넌트를 효과적으로 관리합니다. 또, 컴포넌트 아이디는 컴포넌트 타입을 구분짓는 역할도 병행합니다. 각 컴포넌트 타입마다 아이디를 지정하는 규칙이 아래와 같이 정해져있습니다.
 
@@ -18,7 +18,7 @@ XE는 다양한 타입의 [컴포넌트](https://www.xpressengine.io/manual/xe-a
 | 에디터 | ... | ... |
 | 에디터툴 | ... | ... |
 
-## composer.json을 사용하여 등록하기 <a id="composer-json"></a>
+## composer.json을 사용하여 등록하기
 
 플러그인의 필수 구성 파일인 `composer.json`을 통해 컴포넌트를 등록할 수 있습니다.
 
@@ -44,7 +44,7 @@ Alice 플러그인의 `composer.json` 파일 예제입니다. Alice 플러그인
 {  "name": "xpressengine-plugin/alice",  "description": "This Package is Xpressengine Plugin - Alice Theme.",​  ...​  "extra": {    "xpressengine": {      "title": "Alice Theme",      "icon": "icon.png",      "component": {        "theme/alice@alice": {          "class": "Xpressengine\\Plugins\\Alice\\Theme\\Alice",          "name": "Alice",          "description": "The First Theme for XpressEngine3",          "screenshot": "/plugins/alice/screenshots/main.png",        }      }    }  },​  ...​}
 ```
 
-## plugin.php를 사용하여 등록하기 <a id="plugin-php"></a>
+## plugin.php를 사용하여 등록하기
 
 `component.json`을 사용하지 않고, PHP 코드를 사용하여 컴포넌트를 등록할 수도 있습니다. 만약 컴포넌트가 항상 등록될 필요가 없다면, 즉, 특정 조건에 의해 동적으로 등록하고 싶다면 이 방법을 사용할 수 있습니다.
 
