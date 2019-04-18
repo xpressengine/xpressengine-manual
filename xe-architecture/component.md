@@ -21,15 +21,11 @@ XE는 기본적으로 10개 타입의 컴포넌트를 가지고 있습니다. �
 ```text
 \Xpressengine\Plugin\ComponentInterface
   ├── 테마 - \Xpressengine\Theme\AbstractTheme
-  ├── 모듈 - \Xpressengine\Module\AbstractModule
   ├── 스킨 - \Xpressengine\Skin\AbstractSkin
   ├── 다이나믹필드 - \Xpressengine\DynamicField\AbstractType
   ├── 다이나믹필드 스킨 - \Xpressengine\DynamicField\AbstractSkin
-  ├── 토글메뉴 - \Xpressengine\ToggleMenu\AbstractToggleMenu
   ├── UI오브젝트 - \Xpressengine\UIObject\AbstractUIObject
-  ├── 위젯 - \Xpressengine\Widget\AbstractWidget
-  ├── 에디터 - \Xpressengine\Editor\AbstractEditor
-  └── 에디터툴 - \Xpressengine\Editor\AbstractTool
+  └── 위젯 - \Xpressengine\Widget\AbstractWidget
 ```
 
 플러그인 개발자는 10개의 타입 이외에 플러그인에서 필요한 타입을 직접 생성하여 사용할 수도 있습니다. 플러그인에서 필요한 컴포넌트 타입을 정의해 놓으면, 다른 플러그인 개발자들이 정의한 타입의 컴포넌트를 제작하여 등록할 수 있습니다.
