@@ -4,7 +4,7 @@
 
 컨트롤러는 `App\Http\Controllers\Controller` 클래스를 상속받아 작성하십시오.
 
-## 기본 컨트롤러 <a id="undefined"></a>
+## 기본 컨트롤러
 
 다음은 기본적인 컨트롤러 클래스의 예제입니다:
 
@@ -35,7 +35,7 @@ class UserController extends Controller {
 Route::get('user/{id}', 'App\Http\UserController@showProfile');
 ```
 
-### 컨트롤러 & 네임스페이스 <a id="and-1"></a>
+### 컨트롤러 & 네임스페이스
 
 컨트롤러의 네임스페이스를 지정할 때에는 반드시 전체 네임스페이스를 다 써주어야 합니다.
 
@@ -52,7 +52,7 @@ Route::group(['prefix' => 'photos', 'namespace' => 'Photos'], function()
 });
 ```
 
-### 이름이 지정된 컨트롤러 라우트 <a id="undefined-3"></a>
+### 이름이 지정된 컨트롤러 라우트
 
 클로저 라우트와 같이 컨트롤러 라우트에 이름을 지정할 수 있습니다.
 
@@ -60,7 +60,7 @@ Route::group(['prefix' => 'photos', 'namespace' => 'Photos'], function()
 Route::get('foo', ['uses' => 'FooController@method', 'as' => 'name']);
 ```
 
-### 컨트롤러 액션의 URL 구하기 <a id="url"></a>
+### 컨트롤러 액션의 URL 구하기 
 
 컨트롤러 액션에 대한 URL을 생성하기 위해서 `action` 헬퍼함수를 사용합니다:
 
@@ -82,7 +82,7 @@ $url = action('FooController@method');
 $action = Route::currentRouteAction();
 ```
 
-## 컨트롤러 미들웨어 <a id="undefined-1"></a>
+## 컨트롤러 미들웨어
 
 미들웨어는 다음과 같이 컨트롤러 라우트에 지정합니다.
 
@@ -112,7 +112,7 @@ class UserController extends Controller {
 }
 ```
 
-## 묵시적 컨트롤러 <a id="undefined-2"></a>
+## 묵시적 컨트롤러
 
 XE에서는 한번의 라우팅 등록으로 컨트롤러를 통해 모든 액션들을 처리할 수 있는 손쉬운 방법을 제공합니다. 먼저 `Route::controller` 메소드를 사용하여 경로를 지정합니다:
 
@@ -151,7 +151,7 @@ class UserController extends Controller {
 public function getAdminProfile() {}
 ```
 
-### 라우트에 이름 지정하기 <a id="undefined-4"></a>
+### 라우트에 이름 지정하기
 
 컨트롤러 라우트에 어떤 “이름”을 지정하고자 한다면 `controller` 메소드의 세 번째 인자를 통해서 지정할 수 있습니다:
 
@@ -159,9 +159,9 @@ public function getAdminProfile() {}
 Route::controller('users', 'UserController', [    'anyLogin' => 'user.login',]);
 ```
 
-## 의존성 주입 & 컨트롤러 <a id="and"></a>
+## 의존성 주입 & 컨트롤러
 
-### 생성자 주입 <a id="undefined-5"></a>
+### 생성자 주입
 
 XE의 서비스 컨테이너는 모든 컨트롤러의 의존성을 해결하기 위해서 사용됩니다. 그 결과 컨트롤러가 필요로 하는 의존 객체들에 대해서 생성자에서 타입힌트로 지정할 수 있게 됩니다:
 
@@ -195,7 +195,7 @@ class UserController extends Controller {
 
 서비스 컨테이너가 의존성을 해결을 할 수 있다면 타입 힌트에 지정할 수는 있습니다.
 
-### 메소드 인젝션-주입 <a id="undefined-6"></a>
+### 메소드 인젝션-주입
 
 생성자 주입과 더불어 컨트롤러의 메소드에서도 타입힌트를 통한 의존성 주입을 할 수 있습니다. 예를 들어, 메소드에서 `Request` 인스턴스를 타입힌트를 통해서 주입할 수 있습니다:
 
@@ -248,7 +248,3 @@ class UserController extends Controller {
 }
 
 ```
-
-[  
-](https://xpressengine.gitbook.io/xpressengine-manual/ko/undefined/routing)
-
