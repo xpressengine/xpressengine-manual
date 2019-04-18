@@ -2,7 +2,7 @@
 
 ## 쿠키\(cookie\)
 
-XE에서 모든 쿠키는 서버에서 미들웨어를 거치면서 인증 코드와 함께 암호화 됩니다. 이 말은 클라이언트가 변경되었을 때 쿠키가 유효하지 않다는 것을 의미합니다. 쿠키 값은 [Request](../undefined/request.md) 인스턴스와 [Response](../undefined/response.md) 인스턴스를 사용하여 조회하거나 저장할 수 있습니다.
+XE에서 모든 쿠키는 서버에서 미들웨어를 거치면서 인증 코드와 함께 암호화 됩니다. 이 말은 클라이언트가 변경되었을 때 쿠키가 유효하지 않다는 것을 의미합니다. 쿠키 값은 [Request](../develop-guide/request.md) 인스턴스와 [Response](../develop-guide/request-1.md) 인스턴스를 사용하여 조회하거나 저장할 수 있습니다.
 
 ### 쿠키 값 가져오기
 
