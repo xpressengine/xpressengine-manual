@@ -66,7 +66,7 @@ dd($foo, $bar, $baz);
 
 ### 로그파일에 기록하기
 
-Log 파사드를 이용해 로그 파일에 내용을 기록할 수 있습니다. 로그 파일의 위치는 `storage/log/laravel.log`입니다.
+Log 파사드를 이용해 로그 파일에 내용을 기록할 수 있습니다. 로그 파일의 위치는 `storage/log/laravel-yyyy-mm-dd.log`입니다.
 
 ```text
 $var = 'a';
