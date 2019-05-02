@@ -15,8 +15,8 @@ XE는 다양한 타입의 [컴포넌트](../xe-architecture/component.md)가 있
 | UI오브젝트 | `uiobject/<plugin_name>@<pure_id>` | `uiobject/myplugin@formSelect` |
 | 다이나믹필드 | `FieldType/<plugin_name>@<pure_id>` | `FieldType/myplugin@Text` |
 | 다이나믹필드스킨 | `<dynamic_field_id>/FieldSkin/<plugin_name>@<pure_id>` | `FieldType/myplugin@Text/FieldSkin/fooplugin@TextDefault` |
-| 에디터 | ... | ... |
-| 에디터툴 | ... | ... |
+| 에디터 | `editor/<plugin_name>@<pure_id>` | `editor/myplugin@editor |
+| 에디터툴 | `editortool/<plugin_name>@<pure_id>` | `editortool/myplugin@editortool` |
 
 ## composer.json을 사용하여 등록하기
 
