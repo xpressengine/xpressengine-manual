@@ -89,7 +89,6 @@ The current UNIX timestamp is {{ time() }}.
 
 #### 블레이드 & 자바스크립트 프레임워크
 
-Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the `@` symbol to inform the Blade rendering engine an expression should remain untouched. For example:
 
 많은 자바스크립트 프레임웍에서도 브라우저에 출력되어야 할 데이터를 표시하기 위해 중괄호\("curly" braces\)를 사용하고 있습니다. 이럴 경우, `@` 기호를 사용하면 블레이드 랜더링 엔진은 이 구문을 변환하지 않고 그대로 출력할 것입니다. 예를 들어:
 
@@ -101,7 +100,6 @@ Since many JavaScript frameworks also use "curly" braces to indicate a given exp
 
 #### 데이터가 존재하는지 확인후 출력하기
 
-Sometimes you may wish to echo a variable, but you aren't sure if the variable has been set. We can express this in verbose PHP code like so:
 
 가끔 변수를 출력할 때, 그 변수가 실제로 존재하는지 확신하지 못할 때도 있습니다. 이때 다음과 같이 PHP 코드를 사용할 수 있습니다.
 
@@ -118,8 +116,6 @@ Sometimes you may wish to echo a variable, but you aren't sure if the variable h
 위의 예에서, 만약 `$name` 변수가 존재하면 그 값이 출력될 것이고, 존재하지 않는다면 대신 `Default`라는 문자가 출력될 것입니다.
 
 #### 이스케이프하지 않고 데이터 출력하기
-
-By default, Blade `{{ }}` statements are automatically sent through PHP's `htmlentities` function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:
 
 기본적으로, `{{ }}` 구문은 XSS 공격을 방어하기 위해 자동으로 PHP의 `htmlentities` 함수를 실행후 반환합니다. 만약 데이터를 `htmlentities` 함수를 거치지 않은채 출력하고 싶다면, 다음과 같은 구문을 사용하십시오.
 
