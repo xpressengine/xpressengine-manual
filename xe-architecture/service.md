@@ -12,7 +12,7 @@ XE는 개발자들이 원하는 기능을 쉽게 구현할 수 있도록 많은 
 * Console
 * Container
 * Cookie
-* Database
+* DB
 * Encryption
 * Events
 * Filesystem
@@ -24,7 +24,10 @@ XE는 개발자들이 원하는 기능을 쉽게 구현할 수 있도록 많은 
 * Redis
 * Routing
 * Session
-* Translation
+* Translator
+* Templory
+* Route
+* Module
 * Validation
 * View
 
