@@ -40,7 +40,7 @@ XE 3.0.1 버전에서 이모지 지원을 위해 Mysql의 Charset이 UTF8MB4가 
 
 이해를 위해 짧은 이미지를 준비했습니다
 
-![&#xC124;&#xCE58;&#xB97C; &#xC704;&#xD55C; &#xBAA8;&#xB4E0; &#xB2E8;&#xACC4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ](../.gitbook/assets/install_xe.gif)
+<center><img src="../.gitbook/assets/install.gif"></center>
 
 #### FileZila
 
@@ -54,7 +54,7 @@ FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용�
 
 > 권한 설정할 때 `하위 디렉터리로 이동`, `모든 파일과 디렉터리에 적용` 을 반드시 체크해 주세요
 
-![&#xC6D0;&#xD65C;&#xD55C; &#xC124;&#xCE58; &amp; &#xC6B4;&#xC601;&#xC744; &#xC704;&#xD55C; &#xD55C; &#xAC78;&#xC74C;! &#xC78A;&#xC9C0;&#xB9C8;&#xC138;&#xC694; :\)](../.gitbook/assets/permission.gif)
+<center><img src="../.gitbook/assets/ftp_permission.gif"></center>
 
 ### 웹 인스톨러 실행
 
