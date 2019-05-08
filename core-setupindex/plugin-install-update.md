@@ -11,7 +11,7 @@
 ### 플러그인 설치하기
 
 >플러그인을 설치할때, Composer에 SSL 설정이 되어 있지 않으면 오류가 발생할 수 있습니다.    
-php.ini 의 openssl extension 이 주석해제 되었는지 확인해주세요.
+[여기를 눌러](https://typo3.org/article/certificate-issue-with-composer/) 문서를 확인하세요
 
 1. 관리자 사이트에 로그인하여, `플러그인 & 업데이트`를 클릭한 후 `플러그인 설치`를 클릭해주세요.
 2. 설치할 플러그인의 왼쪽에 위치하고 있는 체크박스를 체크 해 주세요.
