@@ -38,7 +38,7 @@ $readCounter = XeCounter::make($request, 'read');
 $readCounter->setGuest();
 
 $user = Auth::user();
-if ($readCounter->has($doc->id, $user) === true) {
+if ($readCounter->has($doc->id, $user) === false) {
   $readCounter->add($doc->id, $user);
 }
 

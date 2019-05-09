@@ -22,8 +22,8 @@ XE는 기본적으로 10개 타입의 컴포넌트를 가지고 있습니다. �
 \Xpressengine\Plugin\ComponentInterface
   ├── 테마 - \Xpressengine\Theme\AbstractTheme
   ├── 스킨 - \Xpressengine\Skin\AbstractSkin
-  ├── 다이나믹필드 - \Xpressengine\DynamicField\AbstractType
-  ├── 다이나믹필드 스킨 - \Xpressengine\DynamicField\AbstractSkin
+  ├── 확장 필드 - \Xpressengine\DynamicField\AbstractType
+  ├── 확장 필드 스킨 - \Xpressengine\DynamicField\AbstractSkin
   ├── UI오브젝트 - \Xpressengine\UIObject\AbstractUIObject
   └── 위젯 - \Xpressengine\Widget\AbstractWidget
 ```
@@ -56,7 +56,7 @@ XE는 기본적으로 10개 타입의 컴포넌트를 가지고 있습니다. �
 
 다이나믹 필드 스킨은 다이나믹 필드를 출력할 때 사용하는 스킨 입니다.
 
-라디오 버튼을 제공하는 다이나믹 필드를 사용할 때 테마나 스킨에 따라 스타일을 변경할 수 있도록 합니다.
+모든 확장 필드에 스타일을 변경할 수 있도록 합니다.
 
 ### UI오브젝트
 

@@ -321,15 +321,15 @@ $messages = [
 * [Unique \(Database\)](service-validataion.md#rule-unique)
 * [URL](service-validataion.md#rule-url)
 
-**accepted**
+**accepted**<a name="rule-accepted"></a>
 
 필드의 값이 _yes_, _on_, _1_, 또는 _true_이어야 합니다. 이 것은 "이용약관" 동의와 같은 필드의 검사에 유용합니다.
 
-**active\_url**
+**active\_url**<a name="rule-active_url"></a>
 
 필드의 값이 PHP 함수 `checkdnsrr`에 기반하여 올바른 URL이어야 합니다.
 
-**after:date**
+**after:date**<a name="rule-after"></a>
 
 필드의 값이 주어진 날짜 이후여야 합니다. 이때 날짜는 `strtotime` PHP 함수를 통해 생성된 값입니다.
 
@@ -343,69 +343,69 @@ $messages = [
 'finish_date' => 'required|date|after:start_date'
 ```
 
-**alpha**
+**alpha**<a name="rule-alpha"></a>
 
 필드의 값이 완벽하게 \(숫자나 기호가 아닌\) 알파벳\[자음과 모음\] 문자로 이루어져야 합니다.
 
 \(역자주: 영문 알파벳만을 의미하지 않고, 숫자나 기호가 아닌경우에 해당하여, 한글도 허용합니다.\)
 
-**alpha\_dash**
+**alpha\_dash**<a name="rule-alpha-dash"></a>
 
 필드의 값이 \(숫자나 기호가 아닌\) 알파벳\[자음과 모음\] 문자 및 숫자와 dash\(-\), underscore\(\_\)로 이루어져야 합니다.
 
-**alpha\_num**
+**alpha\_num**<a name="rule-alpha-num"></a>
 
 필드의 값이 완벽하게 \(숫자나 기호가 아닌\) 알파벳\[자음과 모음\] 문자 및 숫자로 이루어져야 합니다.
 
-**array**
+**array**<a name="rule-array"></a>
 
 필드의 값이 반드시 PHP 배열 형태이어야 합니다.
 
-**before:date**
+**before:date**<a name="rule-before"></a>
 
 필드의 값이 반드시 주어진 날짜보다 앞서야 합니다. 날짜는 `strtotime` PHP 함수를 통해 비교됩니다.
 
-**between:min,max**
+**between:min,max**<a name="rule-between"></a>
 
 필드의 값이, 주어진 _min_ 과 _max_의 사이의 값이어야 합니다. 문자열, 숫자, 그리고 파일이 [`size`](service-validataion.md#rule-size) 룰에 의해 같은 방식으로 평가될 수 있습니다.
 
-**boolean**
+**boolean**<a name="rule-boolean"></a>
 
 필드의 값이 반드시 boolean으로 캐스팅될 수 있어야 합니다. 허용되는 값은 `true`, `false`, `1`, `0`, `"1"`, `"0"` 입니다.
 
-**confirmed**
+**confirmed**<a name="rule-confirmed"></a>
 
 필드의 값이 `foo_confirmation`의 매칭되는 필드를 가져야 합니다. 예를 들어 만약 필드가 `password`라면, `password_confirmation`라는 필드가 입력값 중에 있어야 합니다.
 
-**date**
+**date**<a name="rule-date"></a>
 
 필드의 값이 `strtotime` PHP 함수에서 인식할 수 있는 올바른 날짜여야 합니다.
 
-**dateformat:\_format**
+**dateformat:\_format**<a name="rule-date-format"></a>
 
 필드의 값이 반드시 주어진 _format_과 일지해야 합니다. 주어진 포맷은 `date_parse_from_format` PHP 함수에 의해서 연산될 것입니다. 필드의 유효성을 검사할 때에는 `date`와 `date_format` 중 **하나만** 사용해야 합니다.
 
-**different:field**
+**different:field**<a name="rule-different"></a>
 
 필드의 값이 주어진 _field_의 값과 달라야 합니다.
 
-**digits:value**
+**digits:value**<a name="rule-digits"></a>
 
 필드의 값이 반드시 _숫자_여야 하고, 길이가 _value_이어야 합니다.
 
-**digitsbetween:\_min,max**
+**digitsbetween:\_min,max**<a name="rule-digits-between"></a>
 
 필드의 값이 주어진 _min_과 _max_ 사이의 길이를 가져야 합니다.
 
-**email**
+**email**<a name="rule-email"></a>
 
 필드의 값이 이메일 주소 형식이어야 합니다.
 
-**exists:table,column**
+**exists:table,column**<a name="rule-exists"></a>
 
 필드의 값이 주어진 데이터베이스 테이블에 존재하는 값이어야 합니다.
 
-**exists 룰의 기본 사용법**
+**exists 룰의 기본 사용법** 
 
 ```text
 'state' => 'exists:states'

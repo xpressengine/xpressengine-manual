@@ -5,6 +5,7 @@
 XE의 라이프 사이클은 크게 두 가지 경우로 나눌 수 있습니다. 사용자들의 웹브라우저로 부터 http 요청을 받았을 때, 이를 처리하고 응답하는 일반적인 경우와, 사이트 관리자가 ssh와 같은 콘솔에 접근하여 php 명령을 실행시킬 경우가 있습니다. 이 문서에서는 더 일반적으로 생각할 수 있는 http 요청을 처리하는 경우에 대하여 살펴보겠습니다.
 
 아래 다이어그램은 XE의 요청 처리 흐름을 개략적으로 보여줍니다.
+<center><img src="https://raw.githubusercontent.com/xpressengine/xpressengine-manual/Develop/.gitbook/assets/xe3lifecycle.png"></center>
 
 ## index.php
 
@@ -48,7 +49,7 @@ Http 미들웨어는 글로벌 미들웨어\(global middleware\)와 라우트 �
 
 컨트롤러는 `Request`를 처리하기 위해 여러가지 서비스나 모델 그리고 헬퍼함수들을 가져다 사용합니다.
 
-## 프젠터
+## 프레젠터
 
 컨트롤러가 `Request`를 처리하고 나면 `Response`를 생성하기 위해 프리젠터를 호출합니다. 이 때 만약 화면 출력이 필요하다면 화면 출력에 필요한 데이터와 출력할 때 사용할 스킨정보를 프리젠터에게 전달합니다.
 
