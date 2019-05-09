@@ -1,3 +1,4 @@
+
 # 문제 해결\(디버깅\)
 
 
@@ -15,9 +16,11 @@ XE3가 예상대로 설치되지 않거나 작동하지 않으면, 사용자 환
 
 ### 주의!  
   
->실제 서비스가 운영되는 환경에서는 디버깅 모드를 활성화하지 마세요. 디버깅 모드를 활성화 해 놓으면, 일반 사용자도 오류가 발생할 경우, 브라우저에서 오류의 자세한 내용을 볼 수 있으므로, 보안상 문제가 될 수 있습니다.
+>실제 서비스가 운영되는 환경에서는 디버깅 모드를 활성화하지 마세요.
+>디버깅 모드를 활성화 해 놓으면, 일반 사용자도 오류가 발생할 경우, 브라우저에서 오류의 자세한 내용을 볼 수 있으므로, 보안상 문제가 될 수 있습니다.
 
-XE를 디버깅모드로 설정하면 오류가 발생한 경우, 브라우저에 오류의 자세한 정보가 바로 출력됩니다. 디버그 모드를 활성화 하기위해서는 `config/production/app.php` 파일의 `debug` 값을 `true`로 설정해야 합니다.
+XE를 디버깅모드로 설정하면 오류가 발생한 경우, 브라우저에 오류의 자세한 정보가 바로 출력됩니다.
+디버그 모드를 활성화 하기위해서는 `config/production/app.php` 파일의 `debug` 값을 `true`로 설정해야 합니다.
 
 현재 환경에 맞는 config 파일을 열어 값을 변경합니다.
 
@@ -42,7 +45,10 @@ XE를 디버깅모드로 설정하면 오류가 발생한 경우, 브라우저�
 ```text
 # in .env file
 APP_DEBUG=true
+
 ```
+
+
 
 ## 변수값 확인하기\(dump\)
 
@@ -64,7 +70,29 @@ dump($foo, $bar, $baz);
 dd($foo, $bar, $baz);
 ```
 
-### 로그파일에 기록하기
+## 로그파일에 기록하기
+XE3에서는 디버그 모드를 활성화 할 경우 별다른 설정이 없다면, daily파일로 저장됩니다.
+최대 5개의 로그 파일을 날짜별로 저장하고 있습니다.
+
+XE3에서 지원하는 로그 모드는 ``single`` , ``daily`` , ``syslog`` , ``errorlog`` 의 로그 모드를 지원합니다.
+사용할 로그 모드를 설정하기 위해서는 ``config/app.php`` 설정 파일의 ``log`` 옵션을 수정해야 합니다.
+
+```php
+// in config/app.php
+
+//Single Mode laravel.log
+'log' => env('APP_LOG', 'single'),
+
+//Daily Mode - laravel-yyyy-mm-dd.log
+'log' => env('APP_LOG', 'daily'),
+
+//Syslog Mode
+'log' => env('APP_LOG', 'syslog'),
+
+//Errorlog Mode
+'log' => env('APP_LOG', 'errorlog'),
+
+```
 
 Log 파사드를 이용해 로그 파일에 내용을 기록할 수 있습니다. 로그 파일의 위치는 `storage/log/laravel-yyyy-mm-dd.log`입니다.
 
