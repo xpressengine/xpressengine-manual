@@ -98,7 +98,7 @@ Log 파사드를 이용해 로그 파일에 내용을 기록할 수 있습니다
 ```text
 $var = 'a';
 $bar = 'b';
-Log::info($var . ' ' . $bar); // [0000-00-00 00:00:00] production.INFO: a b
+\Log::info($var . ' ' . $bar); // [0000-00-00 00:00:00] production.INFO: a b
 ```
 
 > log 파일에는 사용자의 호출에 의한 기록 이외에도 장애시 발생한 오류 정보 등이 기록되어 있습니다.
