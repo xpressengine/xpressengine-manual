@@ -42,7 +42,7 @@ class Plugin extends AbstractPlugin
       // http://<domain>/settings/my_plugin url로 접근 가능
       Route::settings(static::getId(), function() {
         Route::get('/', function(){
-          return Presenter::make(static::view('views.settings');
+          return Presenter::make(static::view('views.settings'));
         }
       });
   }
