@@ -28,7 +28,7 @@
   * [템플릿](develop-guide/template-blade.md)
 * [플러그인 제작 가이드](plugin-make-guide/start-make-plugin.md)
   * [제작 시작하기](plugin-make-guide/start-make-plugin.md)
-  * [버전 관리](plugin-make-guide/branch.md)
+  * [버전 관리](plugin-make-guide/branch_and_version.md)
   * [관리자 사이트 메뉴 추가 방법](plugin-make-guide/admin-site-menu-extend.md)
   * [컴포넌트 추가 방법](plugin-make-guide/how-to-add-component.md)
   * [개인설정 페이지 추가](plugin-make-guide/personal-setting-page.md)
