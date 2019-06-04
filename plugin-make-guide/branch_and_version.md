@@ -10,7 +10,7 @@
 
 ```json
 "require": {
-    "xpressengine/xpressengine": "~3.0.1"
+    "xpressengine/xpressengine": "~3.0.2"
   },
 ```
 
