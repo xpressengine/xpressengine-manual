@@ -1,47 +1,9 @@
 
 # 테마 제작 방법
-
-## 빈 테마 생성(터미널 환경)
+## 빈 테마 생성
 
 테마를 만들기 위해서는, 테마를 포함시킬 플러그인에 테마를 생성해야합니다.
 플러그인 생성을 먼저 한 후 아래의 순서를 따라해주세요.
-
-테마 생성 커맨드를 사용하려면 우선 테마가 소속될 플러그인이 마련되어 있어야 합니다. 아직 플러그인이 준비되지 않았다면, [플러그인 개발 시작하기](../plugin-make-guide/start-make-plugin.md) 문서를 참고하여 플러그인을 생성하길 바랍니다.
-
-플러그인이 준비되었다면 아래 커맨드를 사용하여 빈 테마를 생성합니다.
-
-```php
-$ php artisan make:theme <plugin> <name>
-```
-
-`plugin` 은 테마가 소속될 플러그인입니다. 플러그인이 위치한 디렉토리 이름을 입력해줍니다.
-
-`name`에는 테마의 제목을 지정해 주십시오. 지정한 테마 제목은 사이트 관리자에서 테마의 이름으로 표시됩니다.
-
-만약 `my_plugin` 플러그인\([플러그인 개발 시작하기](../plugin-make-guide/start-make-plugin.md)의 예제를 그대로 사용합니다.\)에 테마를 넣고, 테마 이름을 `First Theme`로 지정하고 싶다면, 아래와 같이 커맨드를 실행하시면 됩니다. 커맨드를 실행하면 생성되는 테마의 개략적인 정보를 터미널에서 볼 수 있습니다.
-
-```text
-$ php artisan make:theme my_plugin 'First Theme'
-
-[New theme info]
-  plugin:        my_plugin
-  path:          src/Themes/FirstTheme
-  class file:    src/Themes/FirstTheme/FirstThemeTheme.php
-  class name:    GilDongHong\XePlugin\MyPlugin\Themes\FirstTheme\FirstThemeTheme
-  id:            theme/my_plugin@first theme
-  title:         FirstTheme theme
-  description:   The Theme supported by My_plugin plugin.
-
- Do you want to add theme? [yes|no]:
- > yes
-
-Generating autoload files
-Theme is created successfully.
-```
-
-## 빈 테마 생성(웹 환경)
->주의    
->본 환경은 XE 3.0.2 이후로는 지원하지 않습니다.
 
 `플러그인 > 설치된 플러그인 > 직접 설치한 플러그인` 페이지에서 테마 생성 버튼을 눌러주세요.
 

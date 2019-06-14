@@ -12,15 +12,15 @@ XE3 웹사이트를 운영하는데 필요한 역동적인 설계는 유연한 �
 
 
 # 주요 도움말 링크
-* [테마 제작 방법](./component-make-guide/theme-guide.md)
-* [플러그인 제작 가이드](./plugin-make-guide/start-make-plugin.md)
-* [XE3 개발 가이드](./develop-guide/life-cycle.md)
+* [테마 제작 방법](component-make-guide/theme-guide.md)
+* [플러그인 제작 가이드](plugin-make-guide/start-make-plugin.md)
+* [XE3 개발 가이드](develop-guide/life-cycle.md)
 * [XE3 API](http://api.xpressengine.io/master/index.html)
 
 
 # 도움이 필요하신가요?
 설치부터 운영까지 생기는 문제들을 정리한 헬프센터에서 미리 준비된 가이드를 통해 문제를 해결하고, 찾아낼 수 있습니다.
-그리고 문제를 해결할 수 없거나 더 깊은 기술지원을 받고 싶다면, QnA 게시판과 기술지원 서비스를 신청할 수 있습니다.
+그리고 문제를 해결할 수 없거나 더 깊은 기술지원을 받고 싶다면 QnA 게시판과 기술지원 서비스를 신청할 수 있습니다.
 
 * XE3 공식 커뮤니티에서의 도움은 [QnA](https://www.xpressengine.io/qna) 에서 받을 수 있습니다.
 * 기술적인 부분의 도움을 받고 싶다면 [기술지원 서비스](https://www.xpressengine.io/tech_service)를 통해 더 심도있는 지원을 받을 수 있습니다.
