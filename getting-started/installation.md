@@ -28,7 +28,7 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 터미널에서 아래와 같이 명령어를 실행합니다.
 
 ```text
-$ php -r "copy('http://start.xpressengine.io/installer', 'installer');" && php installer install
+$ php -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer install
 ```
 ### Git
 
