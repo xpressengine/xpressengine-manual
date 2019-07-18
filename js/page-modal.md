@@ -6,7 +6,7 @@ XE.page의 기능을 사용하기 위해서는 **xe-page.js**파일을 로드하
 
 ```php
 //blade파일(php)에서 로드할 경우
-{{ XeFrontend::js('assets/core/xe-ui-component/js/xe-page.js')->appendTo('body')->load() }}
+{{ XeFrontend::js('assets/core/xe-ui-component/js/xe-page.js')->load() }}
 ```
 
 ### XE.pageModal\(url, options, callback\)
@@ -41,9 +41,20 @@ xe.page.js파일을 로드하면 `data-toggle="xe-page-modal"` attribute를 사�
 * data-params로 요청시 전송할 파라미터 정보를 명시합니다. \(JSON string\)
 
 ```markup
-<a href="/api/test" 
+<a href="api/test" 
     data-toggle="xe-page-modal" 
     data-params="{'param1':'value1'}" 
     data-callback="callbackFunc">[XE.pageModal 실행]</a>
 ```
 
+Controller 예시
+```
+class ExampleController extends Controller
+{
+    public function exampleReturnPopup()
+    {
+        //api_render 헬퍼 함수의 인자로 blade 파일의 경로를 지정하면 팝업으로 띄울 수 있도록 변환해줍니다. 
+        return api_render('example_blade');
+    }
+}
+```
