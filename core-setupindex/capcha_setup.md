@@ -27,7 +27,7 @@ return [
     'driver' => env('CAPTCHA_DRIVER', 'google'),
     
     // 캡챠를 naver로 사용하는 경우
-    'driver' => env('CAPTCHA_DRIVER', 'naver.com'),
+    'driver' => env('CAPTCHA_DRIVER', 'naver'),
     
     
     'apis' => [
