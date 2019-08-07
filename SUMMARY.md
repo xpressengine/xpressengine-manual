@@ -13,6 +13,7 @@
   * [SEO 설정](core-setupindex/seo.md)
   * [다국어 설정](core-setupindex/language-setting.md)
   * [미디어 라이브러리](core-setupindex/media_library.md)
+  * [캡챠 설정](core-setupindex/capcha_setup.md)
 * [XE 구조](xe-architecture/xe-diretory-info.md)
   * [디렉토리 구조](xe-architecture/xe-diretory-info.md)
   * [컴포넌트](xe-architecture/component.md)
