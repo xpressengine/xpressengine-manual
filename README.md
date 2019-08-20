@@ -13,7 +13,7 @@ XE3 웹사이트를 운영하는데 필요한 역동적인 설계는 유연한 �
 
 # 주요 도움말 링크
 * [테마 제작 방법](component-make-guide/theme-guide.md)
-* [플러그인 제작 가이드](plugin-make-guide/start-make-plugin.md)
+* [익스텐션 제작 가이드](extension-make-guide/start-make-extension.md)
 * [XE3 개발 가이드](develop-guide/life-cycle.md)
 * [XE3 API](http://api.xpressengine.io/master/index.html)
 
