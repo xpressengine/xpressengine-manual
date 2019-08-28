@@ -22,7 +22,9 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 ## 권장 호스팅 환경
 현재 일부 호스팅사에서 XE3를 정상적으로 사용할 수 있는 환경이 있으니 참고 부탁드립니다.
 * <a href="https://www.cafe24.com/?controller=product_page&type=basic&page=autoban" target="_blank">CAFE24 - 10G 광아우토반</a>
+ PHP 7.0 이상의 PHP버전을 권장하며, 가급적 php 7.1 이상의 버전을 선택하여 주시기 바랍니다.
 * <a href="https://www.dothome.co.kr/web/premium/#section1" target="_blank">Dothome - 무제한 웹 호스팅 Basic 이상(Basic 포함)</a>
+무제한 웹 호스팅의 FREE 플랜에서는 PHP 7.0 을 설치하더라도 ``allow_url_fopen`` 과 같은 옵션을 사용할 수 없기에, Basic 이상의 상품을 신청 후 기술지원 게시판을 통해 설정 변경 요청이 필요합니다.
 
   
 ## 다운로드
