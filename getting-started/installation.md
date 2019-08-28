@@ -18,8 +18,14 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 * 디스크 300M 이상의 여유 공간
   * 500M 이상 권장
   
+
+## 권장 호스팅 환경
+현재 일부 호스팅사에서 XE3를 정상적으로 사용할 수 있는 환경이 있으니 참고 부탁드립니다.
+* <a href="https://www.cafe24.com/?controller=product_page&type=basic&page=autoban" target="_blank">CAFE24 - 10G 광아우토반</a>
+* <a href="https://www.dothome.co.kr/web/premium/#section1" target="_blank">Dothome - 무제한 웹 호스팅 Basic 이상(Basic 포함)</a>
+
   
-## 다운로드 및 
+## 다운로드
 우선 XE 최신버전을 다운로드 받은 후, 압축을 풀어서 XE가 설치된 디렉토리에 덮어씌웁니다.
 
 ## 최신버전 다운로드 (터미널 환경)
