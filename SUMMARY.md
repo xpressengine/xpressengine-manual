@@ -17,7 +17,7 @@
 * [XE 구조](xe-architecture/xe-diretory-info.md)
   * [디렉토리 구조](xe-architecture/xe-diretory-info.md)
   * [컴포넌트](xe-architecture/component.md)
-  * [](xe-architecture/extension.md)
+  * [플러그인](xe-architecture/plugin.md)
   * [서비스](xe-architecture/service.md)
 * [개발 가이드](develop-guide/life-cycle.md)
   * [라이프 사이클](develop-guide/life-cycle.md)
