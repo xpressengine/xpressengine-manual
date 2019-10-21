@@ -8,7 +8,7 @@ composer를 설치할 수 있는 환경과 하지 못하는 환경에서 사용�
 XE3를 사용하기 위해서는 composer(컴포저)가 설치 되어 있어야 합니다.
 터미널(SSH)에서 아래의 명령어를 실행하여 컴포저가 설치되어 있는지 확인합니다.
 
-```$ : composer```
+```$ composer```
 
 그 이후 composer와 관련된 명령어와 설명이 나열된 화면이 표시된다면 설치된 것입니다.
 별다른 서버의 설정이 필요 없으며, 바로 설치하여 사용하실 수 있습니다.
@@ -17,13 +17,13 @@ XE3를 사용하기 위해서는 composer(컴포저)가 설치 되어 있어야 
 `Curl` 또는 `sudo`를 실행할 수 있는 환경이거나, 가상 서버 등의 환경이라면 composer를 설치하여 손쉽게 Composer를 사용할 수 있습니다.
 
 1. composer 설치
-`$: curl -sS https://getcomposer.org/installer | sudo php`
+`$ curl -sS https://getcomposer.org/installer | sudo php`
 2. 전역 변수로 사용하기 위한 디렉토리 이동
-`$: mv composer.phar /usr/local/bin/`
+`$ mv composer.phar /usr/local/bin/`
 3. composer를 입력하여 사용하기 위한 심볼릭 링크 생성
-`$: sudo  ln  -s /usr/local/bin/composer.phar /usr/local/bin/composer`
+`$ sudo  ln  -s /usr/local/bin/composer.phar /usr/local/bin/composer`
 4. 설치확인
-`$:  composer`
+`$ composer`
 명령어를 입력 후, composer와 관련된 설명과 명령어가 나열된다면 정상적으로 사용할 수 있습니다.
 
 
