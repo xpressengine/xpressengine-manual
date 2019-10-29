@@ -1,34 +1,7 @@
-
 # 설치하기
 
-## 서버 요구사항
-
-XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니다.
-* 웹서버\(apache, nginx 등\)
-* PHP 7 이상\(XE3.0.0-beta.24 부터\) 
-  * PDO PHP Extension
-  * cURL PHP Extension
-  * FileInfo PHP Extension
-  * GD PHP Extension
-  * Mbstring PHP Extension
-  * OpenSSL PHP Extension
-  * Zip PHP Extension
-* MariaDB or MySQL 5.1 이상
-* 터미널 접속 환경
-* 디스크 300M 이상의 여유 공간
-  * 500M 이상 권장
-  
-
-## 권장 호스팅 환경
-현재 일부 호스팅사에서 XE3를 정상적으로 사용할 수 있는 환경이 있으니 참고 부탁드립니다.
-* <a href="https://www.cafe24.com/?controller=product_page&type=basic&page=autoban" target="_blank">CAFE24 - 10G 광아우토반</a>
- PHP 7.0 이상의 PHP버전을 권장하며, 가급적 php 7.1 이상의 버전을 선택하여 주시기 바랍니다.
-* <a href="https://www.dothome.co.kr/web/premium/#section1" target="_blank">Dothome - 무제한 웹 호스팅 Basic 이상(Basic 포함)</a>
-무제한 웹 호스팅의 FREE 플랜에서는 PHP 7.0 을 설치하더라도 ``allow_url_fopen`` 과 같은 옵션을 사용할 수 없기에, Basic 이상의 상품을 신청 후 기술지원 게시판을 통해 설정 변경 요청이 필요합니다.
-
-## 최신버전 다운로드 (터미널 환경)
-### Linux
-
+## 설치 방법
+### 터미널(SSH) 환경
 터미널에서 아래와 같이 명령어를 실행합니다.
 
 ```text
@@ -51,11 +24,11 @@ $ php artisan xe:install
 위 명령어 실행하면 인스톨이 시작되면 설치 정보를 입력합니다.
 
 ### FTP
-XE 홈페이지의 메인에서 다운로드 받아 상위폴더 없이 루트 디렉토리에 압축을 풀러 올립니다.
+XE 홈페이지의 메인에서 다운로드 받아 상위폴더 없이 루트 디렉토리에 압축을 풀어 올립니다.
 
 ## 설치 정보 입력
 
-#### 1. 데이터베이스, 사이트 정보 입력
+### 1. 데이터베이스, 사이트 정보 입력
 
 _인스톨러 캡쳐 이미지_\(database, site 정보 입력 / 엔터\) 인스톨러가 Database 및 기본 설정 파일을 생성합니다. 이 작업은 시간이 오래 걸릴 수 있습니다.
 
@@ -78,7 +51,7 @@ _인스톨러 캡쳐 이미지_\(database, site 정보 입력 / 엔터\) 인스�
 
 인스톨은 영여, 한국어 두가지 언어 설치를 지원합니다. 다른 언어의 설치는 인스톨 후에 언어팩을 업로드 해서 사용가능합니다. RC 버전에서 지원할 예정입니다.
 
-#### 2. 관리자 정보 입력
+### 2. 관리자 정보 입력
 
 _인스톨러 캡쳐 이미지_\(관리자 정보 입력\)
 
@@ -87,7 +60,7 @@ _인스톨러 캡쳐 이미지_\(관리자 정보 입력\)
 * Password : 관리자 비밀번호
 * Password again : 관리자 비밀번호 확인
 
-#### 3. 디렉토리 권한 및 서버 정보 수집 동의
+### 3. 디렉토리 권한 및 서버 정보 수집 동의
 
 _인스톨러 캡쳐 이미지_\(설정\)
 
@@ -111,7 +84,7 @@ xe\_install\_config.yaml 파일이 생성됩니다. 파일을 열고 설치 정�
 $ php installer install --config=.xe_install_config.yaml --no-interact
 ```
 
-#### 설치옵션
+### 설치옵션
 
 * --config=&lt; configfile&gt; 설정파일을 지정합니다.
 * --no-interact 대화형입력을 사용하지 않고 설정파일의 정보를 사용하여 자동으로 설치합니다. 이 옵션을 --config옵션과 같이 사용해야 합니다.
