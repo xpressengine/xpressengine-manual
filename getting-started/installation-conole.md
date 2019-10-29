@@ -1,13 +1,12 @@
 # 설치하기
 
-## 설치 방법
-### 터미널(SSH) 환경
+## 터미널(SSH) 환경 설치 방법
 터미널에서 아래와 같이 명령어를 실행합니다.
 
 ```text
 $ php -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer install
 ```
-### Git
+## Git
 
 > Git을 사용하면 업데이트 및 현재 개발중인 코드를 손쉽게 적용할 수 있습니다. 코어 버전 업데이트할 때 FTP 없이 Git 을 통해 업데이트 할 수 있습니다.
 
@@ -22,9 +21,6 @@ $ php artisan xe:install
 ...
 ```
 위 명령어 실행하면 인스톨이 시작되면 설치 정보를 입력합니다.
-
-### FTP
-XE 홈페이지의 메인에서 다운로드 받아 상위폴더 없이 루트 디렉토리에 압축을 풀어 올립니다.
 
 ## 설치 정보 입력
 
