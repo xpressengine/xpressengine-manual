@@ -10,6 +10,7 @@
   * [회원 설정 및 관리](core-setupindex/member-management.md)
   * [관리자 비밀번호 설정](core-setupindex/administrator-password.md)
   * [사이트맵 추가 및 제거](core-setupindex/sitemap-management.md)
+  * [외부페이지 사용](core-setupindex/extern_page.md)
   * [컨텐츠 관리 및 신고 집계](core-setupindex/content-management.md)
   * [익스텐션 설치 / 업데이트](core-setupindex/extension-install-update.md)
   * [기본 테마 설정](core-setupindex/default-theme-setting.md)
