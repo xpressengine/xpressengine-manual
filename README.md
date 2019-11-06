@@ -14,7 +14,7 @@ XE3 웹사이트를 운영하는데 필요한 역동적인 설계는 유연한 �
 이 [모든 문서는 Github](https://github.com/xpressengine/xpressengine-manual)에 있으며 수정과 개선이 필요한 경우 알려주세요 <3
 
 # 버그
-XE에 버그가 있다고 생각하거나 잘못된 문서의 내용을 보고하려면 [이슈트래커](https://github.com/xpressengine/xpressengine-manual/issues)에 알려주세요.
+XE에 버그가 있다고 생각하거나 잘못된 문서의 내용을 보고하려면 [이슈트래커](https://github.com/xpressengine/xpressengine/issues)에 알려주세요.
 
 
 # 주요 도움말 링크
