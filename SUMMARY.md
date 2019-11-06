@@ -1,3 +1,4 @@
+
 # Table of contents
 * [INTRODUCE](README.md)
 * [시작하기](getting-started/installation.md)
@@ -10,14 +11,15 @@
   * [회원 설정 및 관리](core-setupindex/member-management.md)
   * [관리자 비밀번호 설정](core-setupindex/administrator-password.md)
   * [사이트맵 추가 및 제거](core-setupindex/sitemap-management.md)
-  * [외부페이지 사용](core-setupindex/extern_page.md)
   * [컨텐츠 관리 및 신고 집계](core-setupindex/content-management.md)
   * [익스텐션 설치 / 업데이트](core-setupindex/extension-install-update.md)
   * [기본 테마 설정](core-setupindex/default-theme-setting.md)
   * [SEO 설정](core-setupindex/seo.md)
   * [다국어 설정](core-setupindex/language-setting.md)
-  * [미디어 라이브러리](core-setupindex/media_library.md)
   * [캡챠 설정](core-setupindex/capcha_setup.md)
+* [번들 플러그인](bundle-plugin/media-library.md)
+	* [미디어 라이브러리](bundle-plugin/media-library.md)
+	* [외부페이지 플러그인](bundle-plugin/external-page.md)
 * [XE 구조](xe-architecture/xe-diretory-info.md)
   * [디렉토리 구조](xe-architecture/xe-diretory-info.md)
   * [컴포넌트](xe-architecture/component.md)
