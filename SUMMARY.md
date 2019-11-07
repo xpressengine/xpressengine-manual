@@ -55,7 +55,6 @@
 	* [서브 테마 활용](theme-develop/sub-theme.md)
 	* [설정 파일 작성](theme-develop/theme-config-edit.md)
 	* [다국어 지원](theme-develop/language-support.md)
-	* [활용 TIP](theme-develop/package-tip.md)
 	
 * [스킨 개발/제작](skin-develop/introduce.md)
 	* [개요](skin-develop/introduce.md)
@@ -63,7 +62,6 @@
 	* [기본 스킨 생성](skin-develop/common-skin-make.md)
 	* [설정 파일 작성](skin-develop/skin-config-edit.md)
 	* [다국어 지원](skin-develop/language-support.md)
-	* [활용 TIP](skin-develop/package-tip.md)
 	
 * [위젯 개발/제작](widget-develop/introduce.md)
 	* [개요](widget-develop/introduce.md)
@@ -71,14 +69,12 @@
 	* [기본 위젯 만들기](widget-develop/common-widget-make.md)
 	* [다국어 지원](widget-develop/language-support.md)
 	* [위젯코드 함수](widget-develop/get-widget-code.md)
-	* [활용TIP](widget-develop/package-tip.md)
 	
 * [모듈 개발/제작](module-develop/introduce.md)
 	* [개요](module-develop/introduce.md)
 	* [기본 경로 및 구조](module-develop/common-structure.md)
 	* [기본 모듈 만들기](module-develop/common-module-make.md)
 	* [패키징 방법](module-develop/package-information.md)
-	* [활용 TIP](module-develop/package-tip.md)
 	
 * [컴포넌트 제작](component-develop/introduce.md)
 	* [개요](component-develop/introduce.md)
