@@ -17,25 +17,27 @@
   * [SEO 설정](core-setupindex/seo.md)
   * [다국어 설정](core-setupindex/language-setting.md)
   * [캡챠 설정](core-setupindex/capcha_setup.md)
+  
 * [번들 플러그인](bundle-plugin/media-library.md)
 	* [미디어 라이브러리](bundle-plugin/media-library.md)
 	* [외부페이지 플러그인](bundle-plugin/external-page.md)
+    
 * 개발자 문서
 	* [개요](developer-docs/introduce.md)
 	* [디렉토리 구조](developer-docs/xe-diretory-info.md)
 	* [주요 변수](developer-docs/function.md)
-	* [컴포넌트](xe-architecture/component.md)
-	* [플러그인](xe-architecture/plugin.md)
-	* [서비스](xe-architecture/service.md)
-* XE구조
+	* [컴포넌트](developer-docs/component.md)
+	* [플러그인](developer-docs/plugin.md)
+	* [서비스](developer-docs/service.md)
 	* [라이프 사이클](developer-docs/life-cycle.md)
-	* [라우팅](develop-guide/route.md)
-	* [컨트롤러](develop-guide/controller.md)
-	* [요청](develop-guide/request.md)
-	* [응답](develop-guide/response.md)
-	* [프레젠터](develop-guide/presenter.md)
-	* [뷰](develop-guide/view.md)
-	* [템플릿](develop-guide/template-blade.md)
+	* [라우팅](developer-docs/route.md)
+	* [컨트롤러](developer-docs/controller.md)
+	* [요청](developer-docs/request.md)
+	* [응답](developer-docs/response.md)
+	* [프레젠터](developer-docs/presenter.md)
+	* [뷰](developer-docs/view.md)
+	* [템플릿](developer-docs/template-blade.md)
+	
 * [플러그인 개발](plugin-develop/introduce.md)
 	* [기본경로 및 구조](plugin-develop/common-structure.md)
 	* [기본 플러그인 생성](plugin-develop/common-plugin-make.md)
@@ -45,6 +47,7 @@
 	* [다국어 지원(언어셋)](plugin-develop/language-support.md)
 	* [패키징 방법](plugin-develop/package-information.md)
 	* [활용 TIP](plugin-develop/package-tip.md)
+    
 * [테마 개발/제작](theme-develop/introduce.md)
 	* [개요](theme-develop/introduce.md)
 	* [기본경로 및 구조](theme-develop/common-structure.md)
@@ -53,6 +56,7 @@
 	* [설정 파일 작성](theme-develop/theme-config-edit.md)
 	* [다국어 지원](theme-develop/language-support.md)
 	* [활용 TIP](theme-develop/package-tip.md)
+	
 * [스킨 개발/제작](skin-develop/introduce)
 	* [개요](skin-develop/introduce)
 	* [기본경로 및 구조](skin-develop/common-structure.md)
@@ -60,6 +64,7 @@
 	* [설정 파일 작성](skin-develop/skin-config-edit.md)
 	* [다국어 지원](skin-develop/language-support.md)
 	* [활용 TIP](skin-develop/package-tip.md)
+	
 * [위젯 개발/제작](widget-develop/introduce.md)
 	* [개요](widget-develop/introduce.md)
 	* [기본경로 및 구조](widget-develop/common-structure.md)
@@ -67,6 +72,7 @@
 	* [다국어 지원](widget-develop/language-support.md)
 	* [위젯코드 함수](widget-develop/get-widget-code.md)
 	* [활용TIP](widget-develop/package-tip.md)
+	
 * [모듈 개발/제작](module-develop/introduce.md)
 	* [개요](module-develop/introduce.md)
 	* [데이터 흐름](module-develop/data-flow.md)
@@ -74,6 +80,7 @@
 	* [기본 모듈 만들기](module-develop/common-module-make.md)
 	* [패키징 방법](module-develop/package-information.md)
 	* [활용 TIP](module-develop/package-tip.md)
+	
 * [컴포넌트 제작](component-develop/introduce.md)
 	* [개요](component-develop/introduce.md)
 	* [기본경로 및 구조](component-develop/common-structure.md)
@@ -83,6 +90,7 @@
 	* [토글 메뉴 제작](component-develop/toggle-menu-guide.md)
 	* [다이나믹 필드 제작](component-develop/dynamic-field-guide.md)
 	* [다이나믹 필드 스킨 제작](component-develop/dynamic-field-skin.md)
+	
 * [서비스](xe-service/service-category.md)
 	* [카테고리](xe-service/service-category.md)
 	* [캡챠](xe-service/service-captcha.md)
@@ -109,6 +117,7 @@
 	* [오류처리](xe-service/service-error_catch.md)
 	* [테마](xe-service/service-themes.md)
 	* [위젯박스](xe-service/service-widget_box.md)
+	
 * [프론트엔드 \(JS\)](js/js.md)
 	* [프론트 엔드 JS 시작하기](js/js.md)
 	* [Lang](js/lang.md)
