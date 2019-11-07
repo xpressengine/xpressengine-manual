@@ -12,15 +12,23 @@ XE3 웹사이트를 운영하는데 필요한 역동적인 설계는 유연한 �
 한 번의 설정 변경으로 여러 개의 게시판에 적용되게 설계할 수 있습니다. 
 
 이 [모든 문서는 Github](https://github.com/xpressengine/xpressengine-manual)에 있으며 수정과 개선이 필요한 경우 알려주세요 <3
+당신의 참여로 오픈소스 프로젝트가 발전할 수 있답니다!
 
 # 버그
 XE에 버그가 있다고 생각하거나 잘못된 문서의 내용을 보고하려면 [이슈트래커](https://github.com/xpressengine/xpressengine/issues)에 알려주세요.
 
 
 # 주요 도움말 링크
-* [테마 제작 방법](component-make-guide/theme-guide.md)
-* [익스텐션 제작 가이드](extension-make-guide/start-make-extension.md)
-* [XE3 개발 가이드](develop-guide/life-cycle.md)
+
+* [사이트 설정](core-setupindex/member-management.md)
+* [개발자 문서](developer-docs/introduce.md)
+* [테마 개발/제작](theme-develop/introduce.md)
+* [스킨 개발/제작](skin-develop/introduce.md)
+* [위젯 개발/제작](widget-develop/introduce.md)
+* [모듈 개발/제작](module-develop/introduce.md)
+* [컴포넌트 제작](component-develop/introduce.md)
+* [서비스](xe-service/service-category.md)
+* [프론트엔드 \(JS\)](js/js.md)
 * [XE3 API](http://api.xpressengine.io/master/index.html)
 
 # 멋진 작품을 만들어보세요!
