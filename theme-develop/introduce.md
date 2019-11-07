@@ -8,7 +8,7 @@
 
 ## 주요 도움말
 
-* [기본경로 및 구조](theme-develop/common-structure.md)
-* [기본 테마 생성](theme-develop/common-theme-make.md)
-* [서브 테마 활용](theme-develop/sub-theme.md)
-* [설정 파일 작성](theme-develop/theme-config-edit.md)
+* [기본경로 및 구조](./common-structure.md)
+* [기본 테마 생성](./common-theme-make.md)
+* [서브 테마 활용](./sub-theme.md)
+* [설정 파일 작성](./theme-config-edit.md)
