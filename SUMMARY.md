@@ -32,7 +32,7 @@
 	* [라우팅](develop-guide/route.md)
 	* [컨트롤러](develop-guide/controller.md)
 	* [요청](develop-guide/request.md)
-	* [응답](develop-guide/request-1.md)
+	* [응답](develop-guide/response.md)
 	* [프레젠터](develop-guide/presenter.md)
 	* [뷰](develop-guide/view.md)
 	* [템플릿](develop-guide/template-blade.md)
