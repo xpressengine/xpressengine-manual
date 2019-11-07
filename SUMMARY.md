@@ -57,8 +57,8 @@
 	* [다국어 지원](theme-develop/language-support.md)
 	* [활용 TIP](theme-develop/package-tip.md)
 	
-* [스킨 개발/제작](skin-develop/introduce)
-	* [개요](skin-develop/introduce)
+* [스킨 개발/제작](skin-develop/introduce.md)
+	* [개요](skin-develop/introduce.md)
 	* [기본경로 및 구조](skin-develop/common-structure.md)
 	* [기본 스킨 생성](skin-develop/common-skin-make.md)
 	* [설정 파일 작성](skin-develop/skin-config-edit.md)
