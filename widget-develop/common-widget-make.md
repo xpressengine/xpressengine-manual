@@ -1,4 +1,50 @@
-# 위젯 제작 방법
+# 위젯 제작
+## 클래스 생성하기
+
+가장 먼저 해야할 작업은 다른 컴포넌트와 마찬가지로 추상클래스인 `\Xpressengine\Widget\AbstractWidget`을 상속받는 클래스를 구현해야 합니다. 그 다음 구현한 클래스를 XE에 등록해 주면 됩니다.
+위젯 작성법을 쉽게 이해할 수 있도록 '로그인 정보 위젯'을 예로 들어 설명하겠습니다. 로그인 정보 위젯은 현재 로그인되어 있는 회원의 정보를 출력하는 간단한 위젯입니다.
+
+```php
+<?php
+// plugins/myplugin/src/Widgets/UserInfoWidget.php
+namespace MyPlugin\Widgets;
+
+class UserInfoWidget extends \Xpressengine\Widget\AbstractWidget
+{
+    public function render()
+    {
+    }
+
+    public function renderSetting(array $args = [])
+    {
+    }
+
+    public function resolveSetting(array $inputs = [])
+    {
+    }
+}
+```
+
+위와 같이 작성한 클래스 파일을 컴포넌트를 담을 플러그인에 생성합니다. 파일의 위치는 플러그인 디렉토리 내의 어느 곳이든 상관없습니다. 다만 플러그인 디렉토리의 `src/Widgets/UserInfoWidget.php`에 생성하는 것을 권장합니다.
+
+위젯 클래스는 기본적으로 작성해야 할 메소드가 있습니다.
+
+`render` - 위젯을 출력할 때 호출되는 메소드입니다.
+
+`renderSetting` - 위젯변수를 입력받기 위한 폼을 출력합니다. 위젯변수는 위젯을 출력할 때 필요한 컨텐츠에 대하여 사이트 관리자로부터 입력받는 값을 말합니다. 사이트 관리자가 위젯 생성기를 통해 위젯\(위젯코드\)을 생성할 때, 위젯 생성기는 이 메소드를 실행하여 위젯 변수 입력폼을 출력합니다.
+
+`resolveSetting` - 사이트 관리자가 위젯 생성기에서 입력한 위젯 변수를 조합하여 위젯코드를 생성합니다. 이 메소드는 입력받은 위젯 변수를 파라미터로 전달 받은 다음, 위젯 변수를 한번 재가공하여 반환합니다.
+
+## 위젯 등록하기
+
+작성한 위젯 클래스는 다른 컴포넌트와 마찬가지로 XE에 등록해야 합니다. 위젯은 `widget/<plugin_name>@<pure_id>` 형식의 컴포넌트 아이디를 지정해야 합니다. 여기에서는 `widget/myplugin@userinfo`를 아이디로 사용하겠습니다.
+
+등록 방법은 [컴포넌트 등록](../plugin-make-guide/how-to-add-component.md) 문서를 참고하시기 바랍니다.
+
+성공적으로 등록되었는지 아래 코드로 테스트해 볼 수 있습니다.
+
+```text
+<xewidget id="widget/myplugin@userinfo"></xewidget># 위젯 제작 방법
 
 가장 먼저 해야할 작업은 다른 컴포넌트와 마찬가지로 추상클래스인 `\Xpressengine\Widget\AbstractWidget`을 상속받는 클래스를 구현해야 합니다. 그 다음 구현한 클래스를 XE에 등록해 주면 됩니다.
 

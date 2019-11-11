@@ -11,7 +11,7 @@ XE3는 특히 커뮤니티에 강합니다. 다양한 게시판을 활용해 나
 XE3 웹사이트를 운영하는데 필요한 역동적인 설계는 유연한 설정 관리로부터 시작됩니다.
 한 번의 설정 변경으로 여러 개의 게시판에 적용되게 설계할 수 있습니다. 
 
-이 [모든 문서는 Github](https://github.com/xpressengine/xpressengine-manual)에 있으며 수정과 개선이 필요한 경우 알려주세요 <3
+이 [모든 문서는 Github](https://github.com/xpressengine/xpressengine-manual)에 있으며 수정과 개선이 필요한 경우 알려주세요 <3<br>
 당신의 참여로 오픈소스 프로젝트가 발전할 수 있답니다!
 
 # 버그
