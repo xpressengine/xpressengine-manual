@@ -28,7 +28,7 @@
 * [개발자 문서](developer-docs/introduce.md)
 	* [개요](developer-docs/introduce.md)
 	* [디렉토리 구조](developer-docs/xe-directory-info.md)
-	* [주요 변수](developer-docs/function.md)
+	<!--* [주요 변수](developer-docs/function.md)-->
 	* [컴포넌트](developer-docs/component.md)
 	* [플러그인](developer-docs/plugin.md)
 	* [서비스](developer-docs/service.md)
@@ -47,7 +47,14 @@
 	* [기본 플러그인 생성](plugin-develop/common-plugin-make.md)
 	* [플러그인 정보 추가 및 수정](plugin-develop/creator-info-edit.md)
 	* [관리자 사이트 메뉴 추가](plugin-develop/admin-menu-extend.md)
-	<!--* [패키징 방법](plugin-develop/package-information.md)-->
+    * [위젯 개발/제작](plugin-develop/common-widget-make.md)
+    * [모듈 개발/제작](plugin-develop/common-module-make.md)
+    * [에디터 제작](plugin-develop/editor-guide.md)
+	* [에디터 툴 제작](plugin-develop/editor-tool-guide.md)
+	* [UI 오프젝트 제작](plugin-develop/ui-object-guide.md)
+	* [토글 메뉴 제작](plugin-develop/toggle-menu-guide.md)
+	* [다이나믹 필드 제작](plugin-develop/dynamic-field-guide.md)
+	* [다이나믹 필드 스킨 제작](plugin-develop/dynamic-field-skin.md)
     
 * [테마 개발/제작](theme-develop/common-structure.md)
 	* [기본경로 및 구조](theme-develop/common-structure.md)
@@ -55,32 +62,12 @@
 	* [서브 테마 활용](theme-develop/sub-theme.md)
 	* [설정 파일 작성](theme-develop/theme-config-edit.md)
     * [테마 편집 기능](theme-develop/theme-edit.md)
-	<!--* [다국어 지원](theme-develop/language-support.md)-->
 	
 * [스킨 개발/제작](skin-develop/common-structure.md)
 	* [기본경로 및 구조](skin-develop/common-structure.md)
 	* [기본 스킨 생성](skin-develop/common-skin-make.md)
 	* [설정 파일 작성](skin-develop/skin-config-edit.md)
-	<!--* [다국어 지원](skin-develop/language-support.md)-->
-	
-* [위젯 개발/제작](widget-develop/common-structure.md)
-	* [기본경로 및 구조](widget-develop/common-structure.md)
-	* [기본 위젯 만들기](widget-develop/common-widget-make.md)
-	<!--* [다국어 지원](widget-develop/language-support.md)-->
-	<!--* [위젯코드 함수](widget-develop/get-widget-code.md)-->
-	
-* [모듈 개발/제작](module-develop/common-structure.md)
-	* [기본 경로 및 구조](module-develop/common-structure.md)
-	* [기본 모듈 만들기](module-develop/common-module-make.md)
-	<!--* [패키징 방법](module-develop/package-information.md)-->
-	
-* [그 외 컴포넌트](component-develop/editor-guide.md)
-	* [에디터 제작](component-develop/editor-guide.md)
-	* [에디터 툴 제작](component-develop/editor-tool-guide.md)
-	* [UI 오프젝트 제작](component-develop/ui-object-guide.md)
-	* [토글 메뉴 제작](component-develop/toggle-menu-guide.md)
-	* [다이나믹 필드 제작](component-develop/dynamic-field-guide.md)
-	* [다이나믹 필드 스킨 제작](component-develop/dynamic-field-skin.md)
+
 	
 * [서비스](xe-service/service-category.md)
 	* [카테고리](xe-service/service-category.md)

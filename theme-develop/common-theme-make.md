@@ -37,8 +37,9 @@ Theme is created successfully.
 
 
 ## 빈 테마 생성 (웹 환경)
->주의   
->본 환경은 XE 3.0.2 이후로는 지원하지 않습니다.
+<blockquote class="caution">
+    <p>본 환경은 XE 3.0.2 이후로는 지원하지 않습니다.</p>
+</blockquote>
 
 `플러그인 > 설치된 플러그인 > 직접 설치한 플러그인` 페이지에서 테마 생성 버튼을 눌러주세요.
 

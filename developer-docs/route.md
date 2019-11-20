@@ -78,7 +78,9 @@ Route::get('user/{id}', function($id)
 });
 ```
 
-> **주의:** 라우트 파라미터는 `-` 문자를 포함하면 안됩니다. \(`_`\)를 사용하십시오.
+<blockquote class="caution">
+    <p><strong>주의:</strong> 라우트 파라미터는 <code>-</code> 문자를 포함하면 안됩니다. (<code>_</code>)를 사용하십시오.</p>
+</blockquote>
 
 #### 선택적인 라우트 파라미터
 
@@ -167,7 +169,9 @@ $url = route('profile', ['id' => 1]);
 
 라우트 그룹에 지정하는 배열의 `middleware` 값에 미들웨어의 목록을 정의함으로써 그룹 내의 모든 라우트에 미들웨어가 적용됩니다. 라우트 미들웨어는 배열에 정의된 순서대로 실행될것입니다:
 
-> 주의! 라우트 미들웨어는 Http 커널의 미들웨어와는 다른 별개의 기능입니다.
+<blockquote class="warning">
+    <p>주의! 라우트 미들웨어는 Http 커널의 미들웨어와는 다른 별개의 기능입니다.</p>
+</blockquote>
 
 ```php
 Route::group(['middleware' => ['foo','bar']], function()
@@ -200,7 +204,11 @@ Route::group(['namespace' => 'Admin'], function()
 });
 ```
 
-> **참고:** 기본적으로 `RouteServiceProvider`에서 포함하고 있는 `routes.php` 파일에는 라우트 컨트롤들을 위해서 네임스페이스가 지정되어 있습니다. 따라서 `App\Http\Controllers`의 전체 네임스페이스를 따로 지정할 필요는 없습니다.
+<blockquote class="safe">
+    <p><strong>참고:</strong> 기본적으로 <code>RouteServiceProvider</code>에서 포함하고 있는 <code>routes.php</code> 파일에는 라우트 컨트롤들을 위해서 네임스페이스가 지정되어 있습니다.
+        따라서 <code>App\Http\Controllers</code>의 전체 네임스페이스를 따로 지정할 필요는 없습니다.
+    </p>
+</blockquote>
 
 ### 라우트 접두어 지정하기
 
