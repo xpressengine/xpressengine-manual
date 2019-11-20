@@ -32,8 +32,10 @@ $ php artisan make:plugin my_plugin GilDongHong
 를 실행한다면, 생성커맨드는 자동으로 `GildongHong\XePlugin\MyPlugin`를 네임스페이스로 생성할 것입니다. 
 
 ### 플러그인 생성 방법 (웹 환경)
->주의    
->본 환경은 XE 3.0.2 부터는 지원하지 않는 기능입니다.
+<blockquote class="caution">
+    <p>주의<br>
+        본 환경은 XE 3.0.2 부터는 지원하지 않는 기능입니다.</p>
+</blockquote>
 
 `관리자 사이트 > 플러그인 > 설치된 플러그인 > 직접 설치한 플러그인` 으로 이동합니다.
 

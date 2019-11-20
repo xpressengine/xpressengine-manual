@@ -85,7 +85,9 @@ Hello, {{ $name }}.
 The current UNIX timestamp is {{ time() }}.
 ```
 
-> **주의:** `{{ $foo }}` 구문은 자동으로 PHP의 `htmlentities` 함수로 감싼 후 출력합니다. XSS 공격을 방어하기 위함입니다.
+<blockquote class="caution">
+    <p><strong>주의:</strong> <code>{{ $foo }}</code> 구문은 자동으로 PHP의 <code>htmlentities</code> 함수로 감싼 후 출력합니다. XSS 공격을 방어하기 위함입니다.</p>
+</blockquote>
 
 #### 블레이드 & 자바스크립트 프레임워크
 
@@ -123,7 +125,9 @@ The current UNIX timestamp is {{ time() }}.
 Hello, {!! $name !!}.
 ```
 
-> **주의:** 사용자로부터 입력 된 내용을 표시 할 때에는 escape에 대한 매우 세심한 주의가 필요합니다. 컨텐츠의 HTML 엔티티를 escape 하기위해 항상 이중 중괄호 표기법을 사용하십시오.
+<blockquote class="caution">
+    <p><strong>주의:</strong> 사용자로부터 입력 된 내용을 표시 할 때에는 escape에 대한 매우 세심한 주의가 필요합니다. 컨텐츠의 HTML 엔티티를 escape 하기위해 항상 이중 중괄호 표기법을 사용하십시오.</p>
+</blockquote>
 
 ## 제어문
 
@@ -193,7 +197,9 @@ Hello, {!! $name !!}.
 @include('view.name', ['some' => 'data'])
 ```
 
-> **주의:** 블레이드 뷰 안에서 `__DIR__`과 `__FILE__`과 같은 상수를 사용하지 마십시오. 블레이드 뷰는 캐싱된 뷰의 위치를 참조하기 때문입니다.
+<blockquote class="caution">
+    <p><strong>주의:</strong> 블레이드 뷰 안에서 <code>__DIR__</code>과 <code>__FILE__</code>과 같은 상수를 사용하지 마십시오. 블레이드 뷰는 캐싱된 뷰의 위치를 참조하기 때문입니다.</p>
+</blockquote>
 
 #### 컬렉션을 뷰에서 렌더링하기
 

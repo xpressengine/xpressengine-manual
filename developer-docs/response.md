@@ -70,7 +70,9 @@ return redirect()->route('profile', ['user' => 1]);
 return redirect()->action('App\Http\Controllers\HomeController@index');
 ```
 
-> **주의:** `URL:setRootControllerNamespace`를 통해서 컨트롤러의 루트 네임스페이스가 지정되었다면, 전체 네임 스페이스를 지정할 필요가 없습니다.
+<blockquote class="caution">
+    <p><strong>주의:</strong> <code>URL:setRootControllerNamespace</code>를 통해서 컨트롤러의 루트 네임스페이스가 지정되었다면, 전체 네임 스페이스를 지정할 필요가 없습니다.</p>
+</blockquote>
 
 ### 컨트롤러 액션으로 파라미터와 함께 리다이렉트 하기
 
@@ -113,5 +115,6 @@ return response()->download($pathToFile, $name, $headers);
 return response()->download($pathToFile)->deleteFileAfterSend(true);
 ```
 
-> **참고:** 파일 다운로드를 관리하는 Symfony의 HttpFoundation에서 다운로드 할 파일의 이름이 ASCII 파일 이름임을 필요로 하고 있습니다.
-
+<blockquote class="caution">
+    <p><strong>참고:</strong> 파일 다운로드를 관리하는 Symfony의 HttpFoundation에서 다운로드 할 파일의 이름이 ASCII 파일 이름임을 필요로 하고 있습니다.</p>
+</blockquote>

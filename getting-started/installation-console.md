@@ -7,8 +7,11 @@
 $ php -r "copy('http://start.xpressengine.io/download/installer', 'installer');" && php installer install
 ```
 ## Git
-
-> Git을 사용하면 업데이트 및 현재 개발중인 코드를 손쉽게 적용할 수 있습니다. 코어 버전 업데이트할 때 FTP 없이 Git 을 통해 업데이트 할 수 있습니다.
+<blockquote class="safe">
+    <p>
+        Git을 사용하면 업데이트 및 현재 개발중인 코드를 손쉽게 적용할 수 있습니다. 코어 버전 업데이트할 때 FTP 없이 Git 을 통해 업데이트 할 수 있습니다.
+    </p>
+</blockquote>
 
 Github 저장소 파일을 이용해 설치합니다
 
@@ -39,7 +42,12 @@ $ php artisan xe:install
 | TimeZone | [타임존 정보](http://php.net/manual/kr/timezones.php)를 입력합니다<br>`기본 값 : Asia/Seoul`  |
 | Locale | 언어를 입력합니다. 영어, 한국어 총 두가지를 지원합니다.<br>`기본 값 : ko / 영어 : en`  |
 
-> Locale의 경우 다른 언어의 설치는 인스톨 후에 언어팩을 업로드 해서 사용가능합니다. RC 버전에서 지원할 예정입니다.
+<blockquote class="safe">
+    <p>
+        Locale의 경우 다른 언어의 설치는 인스톨 후에 언어팩을 업로드 하여 사용 할 수 있습니다.
+    </p>
+</blockquote>
+
 
 ### 2. 관리자 정보 입력
 
@@ -62,7 +70,12 @@ $ php artisan xe:install
 | ./plugins | XE 플러그인 폴더<br>`기본 권한 0707` |
 | 그외 루트 파일 | XE최상위 파일(index.php, composer.phar 등)<br>`기본 권한 0707` |
 
-> 더나은 서비스 제공을 위해 설치된 서버의 환경을 수집하고 있습니다. 서버, 웹서버, PHP, Database 등의 정보를 수집합니다.
+<blockquote class="safe">
+    <p>
+        더 나이은 제품 및 서비스 제공을 위하여 XE가 설치된 서버의 환경을 수집하고 있습니다. 수집하는 항목은 서버, 웹서버, PHP, DB 등의 정보를 수집하고 있습니다.
+    </p>
+</blockquote>
+
 
 ## 설정 파일을 이용한 설치
 
