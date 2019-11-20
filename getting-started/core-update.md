@@ -1,14 +1,19 @@
 # 업데이트
 
-> [XE 3.0.0-rc.8 버전에서는 deprecated 코드가 삭제](https://www.xpressengine.io/blog/XE-300-rc8-배포-안내)되었습니다. 코어 업데이트 전에 플러그인 업데이트 및 개별 제작 사용된 플러그인에 관련코드를 수정하시기 바랍니다.    
->[XE 3.0.0 버전 업데이트에서는 migration update 코드가 삭제](https://www.xpressengine.io/blog/XE-300-배포-안내)되었습니다. 3.0.0 으로 업데이트 하기전에 rc.8 버전으로 업데이트를 수행하신 후 3.0.0 으로 업데이트 하시기 바랍니다.
+<blockquote class="warning">
+    <p><a href="https://www.xpressengine.io/blog/XE-300-rc8-배포-안내">XE 3.0.0-rc.8 버전에서는 deprecated 코드가 삭제</a>되었습니다. 코어 업데이트 전에 플러그인 업데이트 및 개별 제작 사용된 플러그인에 관련코드를 수정하시기 바랍니다.<br>
+        <a href="https://www.xpressengine.io/blog/XE-300-배포-안내">XE 3.0.0 버전 업데이트에서는 migration update 코드가 삭제</a>되었습니다. 3.0.0 으로 업데이트 하기전에 rc.8 버전으로 업데이트를 수행하신 후 3.0.0 으로 업데이트 하시기 바랍니다.</p>
+</blockquote>
 
 XE 업데이트는 웹페이지에서 업데이트 할 수 있습니다.
 
 ## 웹 페이지에서 업데이트 적용
 
-> 주의!  
-> 만약, XE소스코드나 플러그인 소스코드를 수정했다면 미리 백업해두시길 바랍니다.
+<blockquote class="warning">
+    <p>만약, XE소스코드나 플러그인 소스코드를 수정했다면 미리 백업해두시길 바랍니다.<br>
+        <code>allow_url_fopen</code> PHP옵션이 비활성화 되어 있는 경우 업데이트를 진행할 수 없습니다. 꼭 확인해주세요.
+    </p>
+</blockquote>
 
 '관리자사이트 > 대시보드 > 업데이트' 페이지에서 업데이트 할 수 있습니다.
 
@@ -26,10 +31,12 @@ SSH를 사용한 콘솔 환경에서 업데이트를 할 수 있습니다.
 3. 업데이트가 진행됩니다.
 4. 끝!
 
-> TIP!  
-> php artisan xe:update 에 버전을 명시하면 예) php artisan xe:update 3.0.2  
-> 해당 명시한 버전으로 업데이트 할 수 있습니다 :)
-
+<blockquote class="safe">
+    <p>
+        php artisan xe:update 에 버전을 명시하면 예) php artisan xe:update 3.0.2<br>
+        해당 명시한 버전으로 업데이트 할 수 있습니다 :)
+    </p>
+</blockquote>
 
 
 ## 최신버전 다운로드
@@ -38,10 +45,11 @@ SSH를 사용한 콘솔 환경에서 업데이트를 할 수 있습니다.
 
 만약 최신버전 바로 이전의 버전을 설치하여 사용하고 계셨다면, 최신버전에서 변경된 파일만 덮어씌우셔도 됩니다. 변경된 파일은 XE3의 [Github 릴리즈 페이지](https://github.com/xpressengine/xpressengine/releases)에서 다운로드 받을 수 있습니다. 변경된 파일 모음은 각 릴리즈마다 `changed.xxx.zip`의 형식으로 첨부되어 있습니다.
 
-> 주의!  
-> 만약, XE소스코드나 플러그인 소스코드를 수정했다면 미리 백업해두시길 바랍니다.
-
-
+<blockquote class="caution">
+    <p>
+        만약 XE소스코드나 플러그인 소스코드를 수정했다면 변경된 코드를 미리 백업해두시길 바랍니다.
+    </p>
+</blockquote>
 
 ## 설치된 플러그인의 업데이트
 
