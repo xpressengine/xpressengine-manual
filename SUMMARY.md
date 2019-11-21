@@ -15,6 +15,7 @@
   * [관리자 비밀번호 설정](core-setupindex/administrator-password.md)
   * [사이트맵 추가 및 제거](core-setupindex/sitemap-management.md)
   * [컨텐츠 관리 및 신고 집계](core-setupindex/content-management.md)
+  * [Store 토큰 설정](core-setupindex/xe-store-token.md)
   * [익스텐션 설치 / 업데이트](core-setupindex/extension-install-update.md)
   * [기본 테마 설정](core-setupindex/default-theme-setting.md)
   * [SEO 설정](core-setupindex/seo.md)
@@ -24,6 +25,7 @@
 * [번들 플러그인](bundle-plugin/media-library.md)
 	* [미디어 라이브러리](bundle-plugin/media-library.md)
 	* [외부페이지 플러그인](bundle-plugin/external-page.md)
+    * [플러그인 업로드](bundle-plugin/plugin-upload.md)
     
 * [개발자 문서](developer-docs/introduce.md)
 	* [개요](developer-docs/introduce.md)
