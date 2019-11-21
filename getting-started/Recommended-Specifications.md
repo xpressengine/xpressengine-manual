@@ -5,8 +5,8 @@
 
 XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니다.
 
-| 서버 요구사양 |         |
-|:--------|:--------:|
+| 서버 요구사양 | 사양 설명  |
+|:--------|:--------|
 | 웹 서버 | Apache & Nginx 등 |
 | PHP 버전 | PHP 7 이상(XE3.0.0-beta.24 부터)  |
 | PHP 모듈 | PDO PHP Extension <br>cURL PHP Extension<br>FileInfo PHP Extension<br>GD PHP Extension<br>Mbstring PHP Extension<br>OpenSSL PHP Extension<br>Zip PHP Extension |
@@ -17,11 +17,12 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 
 
 ## 권장 호스팅 환경
-현재 일부 호스팅사에서 XE3를 정상적으로 사용할 수 있는 환경이 있으니 참고 부탁드립니다.
+<a href="https://www.xpressengine.io/hosting" target="_blank">XE 호스팅</a>을 사용하여 XE를 안정적으로 운영 및 설치할 수 있습니다.
+현재 일부 호스팅사에서 XE3를 사용할 수 있는 환경을 운용하는 것으로 확인되나 기능 작동에 대한 보증은 지원하지 않습니다.
 
 | 호스팅사 | 호스팅 제품 |
-|:--------|:--------:|
-| XE Hosting | <a href="https://www.xpressengine.io/hosting" target="_blank">XE 호스팅 전체 상품</a> |
+|:--------|:--------|
+| XE Hosting (추천) | <a href="https://www.xpressengine.io/hosting" target="_blank">XE 호스팅 전체 상품</a> |
 | Cafe24 | <a href="https://www.cafe24.com/?controller=product_page&type=basic&page=autoban" target="_blank">CAFE24 - 10G 광아우토반</a> |
 | 닷홈 | <a href="https://www.dothome.co.kr/web/premium/#section1" target="_blank">무제한 웹 호스팅 Basic 이상(Basic 포함)</a> |
 
