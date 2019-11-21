@@ -32,15 +32,15 @@ $ php artisan xe:install
 인스톨러가 Database 및 기본 설정 파일을 생성합니다. 이 작업은 시간이 오래 걸릴 수 있습니다.
 
 | 항목 | 설명 및 기본 값 (미 입력시) |
-|:--------|:--------:|
-| Host | `localhost` 또는 `127.0.0.1` <br>DB 서버의 IP또는 도메인 입력 |
-| Port | 데이터베이스 포트<br>`기본 값 : 3306` |
-| DB NAME | 데이터 베이스 이름<br>`기본 값 없음` |
-| UserID | 데이터 베이스 USER ID<br>기본 값 :`root` |
-| Password | 데이터 베이스 PW<br>`기본 값 없음`  |
-| site url | http://mysite.com 또는 https://mysite.com<br>홈페이지 주소 입력<br>하위 디렉토리인 경우 도메인에 디렉토리를 입력해야합니다. |
-| TimeZone | [타임존 정보](http://php.net/manual/kr/timezones.php)를 입력합니다<br>`기본 값 : Asia/Seoul`  |
-| Locale | 언어를 입력합니다. 영어, 한국어 총 두가지를 지원합니다.<br>`기본 값 : ko / 영어 : en`  |
+|:--------|:--------|
+| Host | `localhost` 또는 `127.0.0.1`   DB 서버의 IP또는 도메인 입력 |
+| Port | 데이터베이스 포트  `기본 값 : 3306` |
+| DB NAME | 데이터 베이스 이름  `기본 값 없음` |
+| UserID | 데이터 베이스 USER ID  기본 값 :`root` |
+| Password | 데이터 베이스 PW  `기본 값 없음`  |
+| site url | http://mysite.com 또는 https://mysite.com  홈페이지 주소 입력  하위 디렉토리인 경우 도메인에 디렉토리를 입력해야합니다. |
+| TimeZone | [타임존 정보](http://php.net/manual/kr/timezones.php)를 입력합니다  `기본 값 : Asia/Seoul`  |
+| Locale | 언어를 입력합니다. 영어, 한국어 총 두가지를 지원합니다.  `기본 값 : ko / 영어 : en`  |
 
 <blockquote class="safe">
     <p>
@@ -52,9 +52,9 @@ $ php artisan xe:install
 ### 2. 관리자 정보 입력
 
 | 항목 | 설명 및 기본 값 (미 입력시) |
-|:--------|:--------:|
+|:--------|:--------|
 | Email | 관리자 이메일 주소 |
-| Name | 관리자 이름<br>`기본 값 : admin` |
+| Name | 관리자 이름  `기본 값 : admin` |
 | Password | 관리자 비밀번호 |
 | Password Again | 관리자 비밀번호 확인 |
 
@@ -62,13 +62,13 @@ $ php artisan xe:install
 ### 3. 디렉토리 권한 및 서버 정보 수집 동의
 
 | 폴더 목록 | 권한 및 설명 |
-|:--------|:--------:|
-| ./storage | 미디어 첨부 및 로그 저장 파일 경로<br>`기본 권한 0707` |
-| ./bootstrap<br>./bootstrap/cache | `기본 권한 0707` |
-| ./config<br>./config/production | XE의 기본설정 폴더<br>`기본 권한 0707` |
-| ./vendor | composer등 XE 라이브러리 폴더<br>`기본 권한 0707` |
-| ./plugins | XE 플러그인 폴더<br>`기본 권한 0707` |
-| 그외 루트 파일 | XE최상위 파일(index.php, composer.phar 등)<br>`기본 권한 0707` |
+|:--------|:--------|
+| ./storage | 미디어 첨부 및 로그 저장 파일 경로 `기본 권한 0707` |
+| ./bootstrap  ./bootstrap/cache | `기본 권한 0707` |
+| ./config  ./config/production | XE의 기본설정 폴더  `기본 권한 0707` |
+| ./vendor | composer등 XE 라이브러리 폴더  `기본 권한 0707` |
+| ./plugins | XE 플러그인 폴더  `기본 권한 0707` |
+| 그외 루트 파일 | XE최상위 파일(index.php, composer.phar 등)  `기본 권한 0707` |
 
 <blockquote class="safe">
     <p>
