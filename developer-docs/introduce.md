@@ -7,7 +7,7 @@
 ## 주요 내용 링크
 창작에 필요한 주요 내용들을 준비해보았습니다. 주로 XE 플러그인 제작에 필요한 내용들로 구성되어 있습니다.
 
-* [디렉토리 구조](developer-docs/xe-diretory-info.md)
+* [디렉토리 구조](developer-docs/xe-directory-info.md)
 * [주요 변수](developer-docs/function.md)
 * [기본 플러그인 생성](plugin-develop/common-plugin-make.md)
 * [기본 테마 생성](theme-develop/common-theme-make.md)
