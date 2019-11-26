@@ -7,7 +7,7 @@
 </blockquote>
 
 ## Composer 설정
-플러그인을 웹에서 간편하게 설치하기 위해서는 COMPOSER HOME DIRECTORY 정보를 정확하게 입력해야합니다.
+플러그인을 웹에서 간편하게 설치하기 위해서는 `COMPOSER HOME DIRECTORY` 정보를 정확하게 입력해야합니다.
 composer를 별도로 설치 및 관리하고 있다면 홈 디렉토리를 서버 설정에 맞게 입력해주시기 바랍니다.
 
 만약, 호스팅사에서 제공하지 않거나 설치할 수 없다면 `/vendor/composer/bin`를 입력하여 XE에서 제공하는 composer를 사용하시기 바랍니다.
