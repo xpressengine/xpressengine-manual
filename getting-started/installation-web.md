@@ -21,7 +21,7 @@ FTP는 FileZila 를 사용해서 설명합니다. FileZila 는 무료로 사용�
 ### 디렉토리 권한 설정
 
 | 폴더 목록 | 권한 및 설명 |
-|:--------|:--------:|
+|:--------|:--------|
 | ./storage | 미디어 첨부 및 로그 저장 파일 경로<br>`기본 권한 0707` |
 | ./bootstrap<br>./bootstrap/cache | `기본 권한 0707` |
 | ./config<br>./config/production | XE의 기본설정 폴더<br>`기본 권한 0707` |
