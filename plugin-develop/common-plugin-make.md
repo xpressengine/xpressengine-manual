@@ -40,5 +40,5 @@ $ php artisan make:plugin my_plugin GilDongHong
 `관리자 사이트 > 플러그인 > 설치된 플러그인`으로 이동합니다.
 [플러그인 생성하기]를 클릭하여 빈 플러그인을 만들 수 있습니다.
 
-![&#xADF8; &#xC774;&#xD6C4;&#xC5D0;&#xB294; &#xC774;&#xBBF8;&#xC9C0; &#xB300;&#xB85C; &#xC791;&#xC5C5;&#xC744; &#xC9C4;&#xD589;&#xD574;&#xC8FC;&#xC138;&#xC694;. &#xBE48; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC774; &#xC27D;&#xAC8C; &#xBFC5;! &#xD558;&#xACE0; &#xC0DD;&#xC131; &#xB41C; &#xB2F5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/undefined.gif)
+![플러그인생성](../.gitbook/assets/make_plugins.gif)
 
