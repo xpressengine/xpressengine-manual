@@ -23,6 +23,7 @@ XE를 설치하기 위해서는 아래의 요구사항이 만족되어야 합니
 | 호스팅사 | 호스팅 제품 |
 |:--------|:--------|
 | XE Hosting (추천) | <a href="https://www.xpressengine.io/hosting" target="_blank">XE 호스팅 전체 상품</a> |
+| Amazon AWS | <a href="https://aws.amazon.com/ko/lightsail" target="_blank">Amazon Lightsail</a> |
 | Cafe24 | <a href="https://www.cafe24.com/?controller=product_page&type=basic&page=autoban" target="_blank">CAFE24 - 10G 광아우토반</a> |
 | 닷홈 | <a href="https://www.dothome.co.kr/web/premium/#section1" target="_blank">무제한 웹 호스팅 Basic 이상(Basic 포함)</a> |
 
