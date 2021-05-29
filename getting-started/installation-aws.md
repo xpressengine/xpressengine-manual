@@ -68,7 +68,7 @@ $ sudo apt-get install mysql-server -y
 $ sudo apt-get install curl -y
 $ sudo curl -s https://getcomposer.org/installer | php
 $ sudo mv composer.phar /usr/local/bin/composer
-$ sudo composer self-update  1.8.6
+$ sudo composer self-update 1.8.6
 ```
 
 ### 5. XpressEngine3 의존성 설치하기
