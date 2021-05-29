@@ -136,6 +136,7 @@ $ sudo service apache2 restart
 $ chmod 0707 ./storage ./bootstrap ./bootstrap/cache ./config ./config/production ./vendor ./plugins index.php composer.phar
 ```
 
+### 9. XpressEngine3 설치
 ```text
 $ php artisan xe:install
 > Driver [mysql]: mysql
@@ -145,3 +146,6 @@ $ php artisan xe:install
 > UserID [root]: root
 ...
 ```
+
+### 9. XpressEngine3 완료
+static IP 주소로 이동하면 XE3가 설치된 것을 확인할 수 있습니다.
