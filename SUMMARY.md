@@ -9,6 +9,7 @@
   * [웹 환경 설치](getting-started/installation-web.md)
   * [업데이트](getting-started/core-update.md)
   * [문제 해결\(디버깅\)](getting-started/core-debug.md)
+  * [AWS로 시작하기](getting-started/installation-aws.md)
   
 * [사이트 설정](core-setupindex/member-management.md)
   * [회원 설정 및 관리](core-setupindex/member-management.md)
