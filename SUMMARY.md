@@ -9,6 +9,7 @@
   * [웹 환경 설치](getting-started/installation-web.md)
   * [업데이트](getting-started/core-update.md)
   * [문제 해결\(디버깅\)](getting-started/core-debug.md)
+  * [AWS로 시작하기](getting-started/installation-aws.md)
   
 * [사이트 설정](core-setupindex/member-management.md)
   * [회원 설정 및 관리](core-setupindex/member-management.md)
@@ -53,7 +54,7 @@
     * [모듈 개발/제작](plugin-develop/common-module-make.md)
     * [에디터 제작](plugin-develop/editor-guide.md)
 	* [에디터 툴 제작](plugin-develop/editor-tool-guide.md)
-	* [UI 오프젝트 제작](plugin-develop/ui-object-guide.md)
+	* [UI 오브젝트 제작](plugin-develop/ui-object-guide.md)
 	* [토글 메뉴 제작](plugin-develop/toggle-menu-guide.md)
 	* [다이나믹 필드 제작](plugin-develop/dynamic-field-guide.md)
 	* [다이나믹 필드 스킨 제작](plugin-develop/dynamic-field-skin.md)
