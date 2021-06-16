@@ -102,13 +102,6 @@ $ create database xe;
 
 ### 7. XpressEngine3 Apache2 설정
 ```text
-$ mysql -uroot -p
-$ create database xe;
-# exit;
-```
-
-### 8. XpressEngine3 Apache2 설정
-```text
 $ sudo vim /etc/apache2/sites-available/000-default.conf
 ```
 
@@ -136,7 +129,7 @@ $ sudo service apache2 restart
 $ chmod 0707 ./storage ./bootstrap ./bootstrap/cache ./config ./config/production ./vendor ./plugins index.php composer.phar
 ```
 
-### 9. XpressEngine3 설치
+### 8. XpressEngine3 설치
 ```text
 $ php artisan xe:install
 > Driver [mysql]: mysql
