@@ -8,7 +8,7 @@ XE는 관리자 시스템을 통한 동적인 권한검사를 위해 laravel 의
 
 permission 에서는 권한을 검사하기 위해 5가지 유형의 데이터를 가지고 있습니다.
 
-* `RATING_TYPE`: 사용자의 등급을 나타냅니다. 등급은 `GUEST`, `MEMBER`, `MANAGER`, `SUPER` 로 구분합니다.
+* `RATING_TYPE`: 사용자의 등급을 나타냅니다. 등급은 `GUEST`, `USER`, `MANAGER`, `SUPER` 로 구분합니다.
 * `GROUP_TYPE`: 권한을 가지는 그룹들을 지정합니다.
 * `USER_TYPE`: 권한을 가지는 특정 사용자들을 지정합니다.
 * `EXCEPT_TYPE`: 권한을 가지지 않는 특정 사용자들을 지정합니다.
@@ -22,7 +22,7 @@ permission 에서는 권한을 검사하기 위해 5가지 유형의 데이터�
 
 ```php
 $grant = new Grant();
-$grant->set('show', Rating::MEMBER);
+$grant->set('show', Rating::USER);
 $grant->set('create', Grant::GROUP_TYPE, ['{groupId}']);
 $grant->set('create', Grant::EXCEPT_TYPE, ['{userId}']);
 
@@ -33,7 +33,7 @@ app('xe.permission')->register('foo.bar', $grant);
 
 ```php
 $grant->set('create', [
-  Grant::RATING_TYPE => Rating::MEMBER,
+  Grant::RATING_TYPE => Rating::USER,
   Grant::GROUP_TYPE => ['{groupId}'],
   Grant::EXCEPT_TYPE => ['{userId}']
 ]);
