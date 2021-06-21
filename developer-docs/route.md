@@ -190,7 +190,7 @@ Route::group(['middleware' => ['foo','bar']], function()
 
 ### 네임스페이스
 
-그룹의 속성 배열에 `namespace` 파라미터를 사용하여 가룹의 모든 컨트롤러에 네임스페이스를 지정할 수 있습니다:
+그룹의 속성 배열에 `namespace` 파라미터를 사용하여 그룹의 모든 컨트롤러에 네임스페이스를 지정할 수 있습니다:
 
 ```php
 Route::group(['namespace' => 'Admin'], function()
