@@ -32,7 +32,7 @@ namespace MyPlugin;
 
 use Xpressengine\Plugin\AbstractPlugin;
 use Route;
-use Presenter;
+use XePresenter;
 
 class Plugin extends AbstractPlugin
 {
@@ -49,7 +49,7 @@ class Plugin extends AbstractPlugin
 }
 ```
 
-사이트 관리 페이지들이 출력될 때에는 사이트 관리 영역용 테마를 적용한 후 출력돼야 합니다. `Presenter`를 사용하여 결과를 반환하십시오. 자동으로 사이트 관리 영역용 테마가 적용됩니다.
+사이트 관리 페이지들이 출력될 때에는 사이트 관리 영역용 테마를 적용한 후 출력돼야 합니다. `XePresenter`를 사용하여 결과를 반환하십시오. 자동으로 사이트 관리 영역용 테마가 적용됩니다.
 
 ## 메뉴 등록
 
