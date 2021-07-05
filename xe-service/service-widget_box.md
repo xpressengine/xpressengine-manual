@@ -27,7 +27,7 @@
 위젯박스를 출력하기 전에 미리 위젯박스를 생성할 수 있습니다. `XeWidgetBox` 파사드를 사용하십시오.
 
 ```php
-XeWidgetbox::create(['id'=>'sidebar', 'title'=>'사이드바', 'content'=>'');
+XeWidgetBox::create(['id'=>'sidebar', 'title'=>'사이드바', 'content'=>'');
 ```
 
 ### 위젯박스 삭제하기
@@ -35,6 +35,6 @@ XeWidgetbox::create(['id'=>'sidebar', 'title'=>'사이드바', 'content'=>'');
 생성된 위젯박스는 `XeWidgetBox` 파사드의 `delete` 메소드를 사용하여 삭제할 수 있습니다.
 
 ```php
-XeWidgetbox::delete('sidebar');
+XeWidgetBox::delete('sidebar');
 ```
 
